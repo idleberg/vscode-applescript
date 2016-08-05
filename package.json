@@ -1,0 +1,72 @@
+{
+    "name": "applescript",
+    "displayName": "AppleScript",
+    "description": "Language syntax and snippets for AppleScript",
+    "version": "0.0.0",
+    "publisher": "idleberg",
+    "license": "MIT",
+    "author": {
+        "name": "Jan T. Sott",
+        "url": "http://github.com/idleberg"
+    },
+    "keywords": [
+        "apple",
+        "applescript",
+        "macos"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/idleberg/vscode-applescript.git"
+    },
+    "bugs": {
+        "url": "https://github.com/idleberg/vscode-applescript/issues"
+    },
+    "icon": "images/logo.svg",
+    "engines": {
+        "vscode": ">=1.0.0 <2.0.0"
+    },
+    "categories": [
+        "Languages",
+        "Snippets"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "applescript",
+                "aliases": [
+                    "AppleScript",
+                    "applescript"
+                ],
+                "extensions": [
+                    ".applescript"
+                ],
+                "configuration": "./applescript.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "applescript",
+                "scopeName": "source.applescript",
+                "path": "./syntaxes/applescript.tmLanguage"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "applescript",
+                "path": "./snippets/applescript.json"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "gulp lint"
+    },
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-debug": "^2.1.2",
+        "gulp-json-lint": "^0.1.0",
+        "gulp-xml-validator": "^0.1.1",
+        "gulp-yaml-validate": "^1.0.2",
+        "vscode": "^0.11.0"
+    }
+}
