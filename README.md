@@ -35,7 +35,7 @@ $ git clone https://github.com/idleberg/vscode-applescript applescript
 
 ## License
 
-This work is dual-licensed under [The MIT License](https://opensource.org/licenses/MIT) and the [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+This work is licensed under [The MIT License](https://opensource.org/licenses/MIT)
 
 ## Donate
 
