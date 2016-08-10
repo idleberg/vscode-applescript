@@ -18,6 +18,7 @@
         "type": "git",
         "url": "git+https://github.com/idleberg/vscode-applescript.git"
     },
+    "homepage": "https://github.com/idleberg/vscode-applescript",
     "bugs": {
         "url": "https://github.com/idleberg/vscode-applescript/issues"
     },
