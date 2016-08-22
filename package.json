@@ -1,7 +1,7 @@
 {
     "name": "applescript",
     "displayName": "AppleScript",
-    "description": "Language syntax and snippets for AppleScript",
+    "description": "Language syntax, snippets and build system for AppleScript",
     "version": "0.2.0",
     "publisher": "idleberg",
     "license": "MIT",

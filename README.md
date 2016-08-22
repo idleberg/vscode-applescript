@@ -5,7 +5,7 @@
 [![Travis](https://img.shields.io/travis/idleberg/vscode-applescript.svg?style=flat-square)](https://travis-ci.org/idleberg/vscode-applescript)
 [![David](https://img.shields.io/david/dev/idleberg/vscode-applescript.svg?style=flat-square)](https://david-dm.org/idleberg/vscode-applescript#info=devDependencies)
 
-Language syntax, snippets and build tools for AppleScript
+Language syntax, snippets and build system for AppleScript
 
 ## Installation
 
