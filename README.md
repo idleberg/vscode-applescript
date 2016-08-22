@@ -5,7 +5,7 @@
 [![Travis](https://img.shields.io/travis/idleberg/vscode-applescript.svg?style=flat-square)](https://travis-ci.org/idleberg/vscode-applescript)
 [![David](https://img.shields.io/david/dev/idleberg/vscode-applescript.svg?style=flat-square)](https://david-dm.org/idleberg/vscode-applescript#info=devDependencies)
 
-Language syntax and snippets for AppleScript
+Language syntax, snippets and build tools for AppleScript
 
 ## Installation
 
@@ -32,6 +32,17 @@ Clone repository as `applescript`:
 ```bash
 $ git clone https://github.com/idleberg/vscode-applescript applescript
 ```
+
+## Usage
+
+### Building
+
+On macOS, you can make use of the following build commands through the [command-palette](https://code.visualstudio.com/docs/editor/codebasics#_command-palette):
+
+* AppleScript: Run Script
+* AppleScript: Compile Script
+* AppleScript: Compile Script bundle
+* AppleScript: Compile Application
 
 ## License
 
