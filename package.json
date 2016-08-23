@@ -58,12 +58,12 @@
         "keybindings": [
             {
                 "key": "shift+alt+b",
-                "when": "editorFocus && editorLangId == innosetup",
+                "when": "editorFocus && editorLangId == applescript",
                 "command": "extension.applescript.compile"
             },
             {
                 "key": "shift+alt+r",
-                "when": "editorFocus && editorLangId == innosetup",
+                "when": "editorFocus && editorLangId == applescript",
                 "command": "extension.applescript.run"
             }
         ],
