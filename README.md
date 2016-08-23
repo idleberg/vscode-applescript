@@ -39,8 +39,8 @@ $ git clone https://github.com/idleberg/vscode-applescript applescript
 
 On macOS, you can make use of the following build commands through the [command-palette](https://code.visualstudio.com/docs/editor/codebasics#_command-palette):
 
-* AppleScript: Run Script
-* AppleScript: Compile Script
+* AppleScript: Run Script (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>)
+* AppleScript: Compile Script (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd>)
 * AppleScript: Compile Script bundle
 * AppleScript: Compile Application
 

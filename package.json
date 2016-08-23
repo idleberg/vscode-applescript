@@ -30,7 +30,8 @@
     },
     "categories": [
         "Languages",
-        "Snippets"
+        "Snippets",
+        "Other"
     ],
     "activationEvents": [
         "onLanguage:applescript"
@@ -52,6 +53,18 @@
             {
                 "command": "extension.applescript.compileApp",
                 "title": "AppleScript: Compile Application"
+            }
+        ],
+        "keybindings": [
+            {
+                "key": "shift+alt+b",
+                "when": "editorFocus && editorLangId == innosetup",
+                "command": "extension.applescript.compile"
+            },
+            {
+                "key": "shift+alt+r",
+                "when": "editorFocus && editorLangId == innosetup",
+                "command": "extension.applescript.run"
             }
         ],
         "languages": [
