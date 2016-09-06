@@ -3,7 +3,7 @@
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 [![GitHub](https://img.shields.io/github/release/idleberg/vscode-applescript.svg?style=flat-square)](https://github.com/idleberg/vscode-applescript/releases)
 [![Travis](https://img.shields.io/travis/idleberg/vscode-applescript.svg?style=flat-square)](https://travis-ci.org/idleberg/vscode-applescript)
-[![David](https://img.shields.io/david/dev/idleberg/vscode-applescript.svg?style=flat-square)](https://david-dm.org/idleberg/vscode-applescript#info=devDependencies)
+[![David](https://img.shields.io/david/dev/idleberg/vscode-applescript.svg?style=flat-square)](https://david-dm.org/idleberg/vscode-applescript?type=dev)
 
 Language syntax, snippets and build system for AppleScript
 
