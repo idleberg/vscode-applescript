@@ -1,114 +1,114 @@
 {
-  "name": "applescript",
-  "displayName": "AppleScript",
-  "description": "Language syntax, snippets and build system for AppleScript",
-  "version": "0.3.2",
-  "publisher": "idleberg",
-  "license": "MIT",
-  "author": {
-    "name": "Jan T. Sott",
-    "url": "http://github.com/idleberg"
-  },
-  "keywords": [
-    "apple",
-    "applescript",
-    "macos",
-    "build"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/idleberg/vscode-applescript.git"
-  },
-  "homepage": "https://github.com/idleberg/vscode-applescript",
-  "bugs": {
-    "url": "https://github.com/idleberg/vscode-applescript/issues"
-  },
-  "main": "./lib/main",
-  "icon": "images/logo.svg",
-  "engines": {
-    "vscode": "^1.0.0"
-  },
-  "categories": [
-    "Languages",
-    "Snippets",
-    "Other"
-  ],
-  "activationEvents": [
-    "onLanguage:applescript"
-  ],
-  "contributes": {
-    "commands": [
-      {
-        "command": "extension.applescript.run",
-        "title": "AppleScript: Run Script"
-      },
-      {
-        "command": "extension.applescript.compile",
-        "title": "AppleScript: Compile Script"
-      },
-      {
-        "command": "extension.applescript.compileBundle",
-        "title": "AppleScript: Compile Script bundle"
-      },
-      {
-        "command": "extension.applescript.compileApp",
-        "title": "AppleScript: Compile Application"
-      }
+    "name": "applescript",
+    "displayName": "AppleScript",
+    "description": "Language syntax, snippets and build system for AppleScript",
+    "version": "0.3.3",
+    "publisher": "idleberg",
+    "license": "MIT",
+    "author": {
+        "name": "Jan T. Sott",
+        "url": "http://github.com/idleberg"
+    },
+    "keywords": [
+        "apple",
+        "applescript",
+        "macos",
+        "build"
     ],
-    "keybindings": [
-      {
-        "key": "shift+alt+b",
-        "when": "editorFocus && editorLangId == applescript",
-        "command": "extension.applescript.compile"
-      },
-      {
-        "key": "shift+alt+r",
-        "when": "editorFocus && editorLangId == applescript",
-        "command": "extension.applescript.run"
-      }
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/idleberg/vscode-applescript.git"
+    },
+    "homepage": "https://github.com/idleberg/vscode-applescript",
+    "bugs": {
+        "url": "https://github.com/idleberg/vscode-applescript/issues"
+    },
+    "main": "./lib/main",
+    "icon": "images/logo.svg",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "categories": [
+        "Languages",
+        "Snippets",
+        "Other"
     ],
-    "languages": [
-      {
-        "id": "applescript",
-        "aliases": [
-          "AppleScript",
-          "applescript"
+    "activationEvents": [
+        "onLanguage:applescript"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.applescript.run",
+                "title": "AppleScript: Run Script"
+            },
+            {
+                "command": "extension.applescript.compile",
+                "title": "AppleScript: Compile Script"
+            },
+            {
+                "command": "extension.applescript.compileBundle",
+                "title": "AppleScript: Compile Script bundle"
+            },
+            {
+                "command": "extension.applescript.compileApp",
+                "title": "AppleScript: Compile Application"
+            }
         ],
-        "extensions": [
-          ".applescript"
+        "keybindings": [
+            {
+                "key": "shift+alt+b",
+                "when": "editorFocus && editorLangId == applescript",
+                "command": "extension.applescript.compile"
+            },
+            {
+                "key": "shift+alt+r",
+                "when": "editorFocus && editorLangId == applescript",
+                "command": "extension.applescript.run"
+            }
         ],
-        "configuration": "./applescript.configuration.json"
-      }
-    ],
-    "grammars": [
-      {
-        "language": "applescript",
-        "scopeName": "source.applescript",
-        "path": "./syntaxes/applescript.tmLanguage"
-      }
-    ],
-    "snippets": [
-      {
-        "language": "applescript",
-        "path": "./snippets/applescript.json"
-      }
-    ]
-  },
-  "scripts": {
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "gulp lint"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-debug": "^2.1.2",
-    "gulp-json-lint": "^0.1.0",
-    "gulp-xml-validator": "^0.1.2",
-    "gulp-yaml-validate": "^1.0.2",
-    "vscode": "^0.11.18"
-  },
-  "__metadata": {
-    "id": "d57cfcbb-5746-48be-a607-96967331a91c",
-    "publisherId": "d142cf02-af52-4395-9363-148909445cb3",
-    "publisherDisplayName": "idleberg"
-  }
+        "languages": [
+            {
+                "id": "applescript",
+                "aliases": [
+                    "AppleScript",
+                    "applescript"
+                ],
+                "extensions": [
+                    ".applescript"
+                ],
+                "configuration": "./applescript.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "applescript",
+                "scopeName": "source.applescript",
+                "path": "./syntaxes/applescript.tmLanguage"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "applescript",
+                "path": "./snippets/applescript.json"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "gulp lint"
+    },
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-debug": "^2.1.2",
+        "gulp-json-lint": "^0.1.0",
+        "gulp-xml-validator": "^0.1.2",
+        "gulp-yaml-validate": "^1.0.2",
+        "vscode": "^0.11.18"
+    },
+    "__metadata": {
+        "id": "d57cfcbb-5746-48be-a607-96967331a91c",
+        "publisherId": "d142cf02-af52-4395-9363-148909445cb3",
+        "publisherDisplayName": "idleberg"
+    }
 }
