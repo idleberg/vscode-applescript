@@ -104,11 +104,6 @@
         "gulp-json-lint": "^0.1.0",
         "gulp-xml-validator": "^0.1.2",
         "gulp-yaml-validate": "^1.0.2",
-        "vscode": "^0.11.18"
-    },
-    "__metadata": {
-        "id": "d57cfcbb-5746-48be-a607-96967331a91c",
-        "publisherId": "d142cf02-af52-4395-9363-148909445cb3",
-        "publisherDisplayName": "idleberg"
+        "vscode": "^1.0.0"
     }
 }
