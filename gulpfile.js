@@ -13,16 +13,18 @@ const jsonlint = require('gulp-json-lint');
 const xmlVal = require('gulp-xml-validator');
 
 // Supported files
-var jsFiles = [
-    'lib/*.js'
+const jsFiles = [
+  'lib/*.js'
 
-];var jsonFiles = [
-    '*.json',
-    'snippets/*.json'
 ];
 
-var xmlFiles = [
-    'syntaxes/*.tmLanguage'
+const jsonFiles = [
+  '*.json',
+  'snippets/*.json'
+];
+
+const xmlFiles = [
+  'syntaxes/*.tmLanguage'
 ];
 
 // Available tasks
