@@ -15,7 +15,6 @@ const xmlVal = require('gulp-xml-validator');
 // Supported files
 const jsFiles = [
   'lib/*.js'
-
 ];
 
 const jsonFiles = [
