@@ -9,12 +9,13 @@
 const gulp = require('gulp');
 const debug = require('gulp-debug');
 const eslint = require('gulp-eslint');
-const jsonlint = require('gulp-json-lint');
+const jsonlint = require('gulp-jsonlint');
 const xmlVal = require('gulp-xml-validator');
 
 // Supported files
 const jsFiles = [
-  'lib/*.js'
+  'lib/*.js',
+  'src/*.js',
 ];
 
 const jsonFiles = [
@@ -42,7 +43,9 @@ gulp.task('lint:js', () => {
 gulp.task('lint:json', function(){
   return gulp.src(jsonFiles)
     .pipe(debug({title: 'json-lint'}))
-    .pipe(jsonlint());
+    .pipe(jsonlint())
+    .pipe(jsonlint.failAfterError())
+    .pipe(jsonlint.reporter());
 });
 
 // Validate XML
