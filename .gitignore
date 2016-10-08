@@ -1,6 +1,6 @@
 *.vsix
 bower_components/
 node_modules/
-npm-debug.log
+npm-debug.log*
 todo.md
 vendor/
