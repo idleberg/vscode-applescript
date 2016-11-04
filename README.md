@@ -7,6 +7,8 @@
 
 Language syntax, snippets and build system for AppleScript
 
+**Note:** I'm happy to add support for binary AppleScript once Visual Studio Code has a pre-open event
+
 ## Installation
 
 ### Extension Marketplace
