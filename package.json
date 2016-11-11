@@ -1,111 +1,111 @@
 {
-    "name": "applescript",
-    "displayName": "AppleScript",
-    "description": "Language syntax, snippets and build system for AppleScript",
-    "version": "0.3.7",
-    "publisher": "idleberg",
-    "license": "MIT",
-    "author": {
-        "name": "Jan T. Sott",
-        "url": "http://github.com/idleberg"
-    },
-    "keywords": [
-        "apple",
-        "applescript",
-        "macos",
-        "build"
+  "name": "applescript",
+  "displayName": "AppleScript",
+  "description": "Language syntax, snippets and build system for AppleScript",
+  "version": "0.3.7",
+  "publisher": "idleberg",
+  "license": "MIT",
+  "author": {
+    "name": "Jan T. Sott",
+    "url": "http://github.com/idleberg"
+  },
+  "keywords": [
+    "apple",
+    "applescript",
+    "macos",
+    "build"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idleberg/vscode-applescript.git"
+  },
+  "homepage": "https://github.com/idleberg/vscode-applescript",
+  "bugs": {
+    "url": "https://github.com/idleberg/vscode-applescript/issues"
+  },
+  "main": "./lib/main",
+  "icon": "images/logo.svg",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "categories": [
+    "Languages",
+    "Snippets",
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:applescript"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.applescript.run",
+        "title": "AppleScript: Run Script"
+      },
+      {
+        "command": "extension.applescript.compile",
+        "title": "AppleScript: Compile Script"
+      },
+      {
+        "command": "extension.applescript.compileBundle",
+        "title": "AppleScript: Compile Script bundle"
+      },
+      {
+        "command": "extension.applescript.compileApp",
+        "title": "AppleScript: Compile Application"
+      }
     ],
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/idleberg/vscode-applescript.git"
-    },
-    "homepage": "https://github.com/idleberg/vscode-applescript",
-    "bugs": {
-        "url": "https://github.com/idleberg/vscode-applescript/issues"
-    },
-    "main": "./lib/main",
-    "icon": "images/logo.svg",
-    "engines": {
-        "vscode": "^1.0.0"
-    },
-    "categories": [
-        "Languages",
-        "Snippets",
-        "Other"
+    "keybindings": [
+      {
+        "key": "shift+alt+b",
+        "when": "editorFocus && editorLangId == applescript",
+        "command": "extension.applescript.compile"
+      },
+      {
+        "key": "shift+alt+r",
+        "when": "editorFocus && editorLangId == applescript",
+        "command": "extension.applescript.run"
+      }
     ],
-    "activationEvents": [
-        "onLanguage:applescript"
+    "languages": [
+      {
+        "id": "applescript",
+        "aliases": [
+          "AppleScript",
+          "applescript"
+        ],
+        "extensions": [
+          ".applescript"
+        ],
+        "configuration": "./applescript.configuration.json"
+      }
     ],
-    "contributes": {
-        "commands": [
-            {
-                "command": "extension.applescript.run",
-                "title": "AppleScript: Run Script"
-            },
-            {
-                "command": "extension.applescript.compile",
-                "title": "AppleScript: Compile Script"
-            },
-            {
-                "command": "extension.applescript.compileBundle",
-                "title": "AppleScript: Compile Script bundle"
-            },
-            {
-                "command": "extension.applescript.compileApp",
-                "title": "AppleScript: Compile Application"
-            }
-        ],
-        "keybindings": [
-            {
-                "key": "shift+alt+b",
-                "when": "editorFocus && editorLangId == applescript",
-                "command": "extension.applescript.compile"
-            },
-            {
-                "key": "shift+alt+r",
-                "when": "editorFocus && editorLangId == applescript",
-                "command": "extension.applescript.run"
-            }
-        ],
-        "languages": [
-            {
-                "id": "applescript",
-                "aliases": [
-                    "AppleScript",
-                    "applescript"
-                ],
-                "extensions": [
-                    ".applescript"
-                ],
-                "configuration": "./applescript.configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "applescript",
-                "scopeName": "source.applescript",
-                "path": "./syntaxes/applescript.tmLanguage"
-            }
-        ],
-        "snippets": [
-            {
-                "language": "applescript",
-                "path": "./snippets/applescript.json"
-            }
-        ]
-    },
-    "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "gulp lint"
-    },
-    "devDependencies": {
-        "babel-eslint": "^7.0.0",
-        "eslint": "^3.7.0",
-        "gulp": "^3.9.1",
-        "gulp-debug": "^2.1.2",
-        "gulp-eslint": "^3.0.1",
-        "gulp-jsonlint": "^1.1.2",
-        "gulp-xml-validator": "^0.1.2",
-        "vscode": "^1.0.0"
-    }
+    "grammars": [
+      {
+        "language": "applescript",
+        "scopeName": "source.applescript",
+        "path": "./syntaxes/applescript.tmLanguage"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "applescript",
+        "path": "./snippets/applescript.json"
+      }
+    ]
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "gulp lint"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.0",
+    "eslint": "^3.9.1",
+    "gulp": "^3.9.1",
+    "gulp-debug": "^3.0.0",
+    "gulp-eslint": "^3.0.1",
+    "gulp-jsonlint": "^1.1.2",
+    "gulp-xml-validator": "^0.1.2",
+    "vscode": "^1.0.3"
+  }
 }
