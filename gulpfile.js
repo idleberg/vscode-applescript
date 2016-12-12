@@ -27,30 +27,35 @@ const xmlFiles = [
   'syntaxes/*.tmLanguage'
 ];
 
-// Available tasks
-gulp.task('lint', ['lint:js', 'lint:json', 'lint:xml']);
-
 // Lint JavaScript
-gulp.task('lint:js', () => {
-  return gulp.src(jsFiles)
+gulp.task('lint:js', gulp.series(function(done) {
+  gulp.src(jsFiles)
     .pipe(debug({title: 'eslint'}))
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
-});
+  done();
+}));
 
 // Lint JSON
-gulp.task('lint:json', function(){
-  return gulp.src(jsonFiles)
+gulp.task('lint:json', gulp.series(function(done) { 
+  gulp.src(jsonFiles)
     .pipe(debug({title: 'json-lint'}))
     .pipe(jsonlint())
     .pipe(jsonlint.failAfterError())
     .pipe(jsonlint.reporter());
-});
+  done();
+}));
 
 // Validate XML
-gulp.task('lint:xml', function() {
-  return gulp.src(xmlFiles)
+gulp.task('lint:xml', gulp.series(function(done) { 
+  gulp.src(xmlFiles)
     .pipe(debug({title: 'xml-validator'}))
     .pipe(xmlVal());
-});
+  done();
+}));
+
+// Available tasks
+gulp.task('lint', gulp.parallel('lint:js', 'lint:json', 'lint:xml', function(done) {
+  done();
+}));
