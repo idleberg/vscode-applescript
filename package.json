@@ -37,6 +37,22 @@
     "onLanguage:applescript"
   ],
   "contributes": {
+    "configuration": {
+        "type": "object",
+        "title": "AppleScript",
+        "properties": {
+            "applescript.showNotifications": {
+                "type": "boolean",
+                "default": true,
+                "description": "Show build notifications indicating success or failure"
+            },
+            "applescript.alwaysShowOutput": {
+                "type": "boolean",
+                "default": false,
+                "description": "If `false` the output channel will only be shown on errors"
+            }
+        }
+    },
     "commands": [
       {
         "command": "extension.applescript.run",
