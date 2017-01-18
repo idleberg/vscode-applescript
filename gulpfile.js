@@ -1,7 +1,7 @@
  /*
  * vscode-gulpfile.js
  *
- * Copyright (c) 2016 Jan T. Sott
+ * Copyright (c) 2016, 2017 Jan T. Sott
  * Licensed under the MIT license.
  */
 
