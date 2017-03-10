@@ -1,127 +1,127 @@
 {
-  "name": "applescript",
-  "displayName": "AppleScript",
-  "description": "Language syntax, snippets and build system for AppleScript",
-  "version": "0.4.2",
-  "publisher": "idleberg",
-  "license": "MIT",
-  "author": {
-    "name": "Jan T. Sott",
-    "url": "http://github.com/idleberg"
-  },
-  "keywords": [
-    "apple",
-    "applescript",
-    "macos",
-    "build"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/idleberg/vscode-applescript.git"
-  },
-  "homepage": "https://github.com/idleberg/vscode-applescript",
-  "bugs": {
-    "url": "https://github.com/idleberg/vscode-applescript/issues"
-  },
-  "main": "./lib/main",
-  "icon": "images/logo.svg",
-  "engines": {
-    "vscode": "^1.0.0"
-  },
-  "categories": [
-    "Languages",
-    "Snippets",
-    "Other"
-  ],
-  "activationEvents": [
-    "onLanguage:applescript"
-  ],
-  "contributes": {
-    "configuration": {
-      "type": "object",
-      "title": "AppleScript",
-      "properties": {
-        "applescript.showNotifications": {
-          "type": "boolean",
-          "default": true,
-          "description": "Show build notifications indicating success or failure"
-        },
-        "applescript.alwaysShowOutput": {
-          "type": "boolean",
-          "default": false,
-          "description": "If `false` the output channel will only be shown on errors"
-        }
-      }
+    "name": "applescript",
+    "displayName": "AppleScript",
+    "description": "Language syntax, snippets and build system for AppleScript",
+    "version": "0.5.0",
+    "publisher": "idleberg",
+    "license": "MIT",
+    "author": {
+        "name": "Jan T. Sott",
+        "url": "http://github.com/idleberg"
     },
-    "commands": [
-      {
-        "command": "extension.applescript.run",
-        "title": "AppleScript: Run Script"
-      },
-      {
-        "command": "extension.applescript.compile",
-        "title": "AppleScript: Compile Script"
-      },
-      {
-        "command": "extension.applescript.compileBundle",
-        "title": "AppleScript: Compile Script bundle"
-      },
-      {
-        "command": "extension.applescript.compileApp",
-        "title": "AppleScript: Compile Application"
-      }
+    "keywords": [
+        "apple",
+        "applescript",
+        "macos",
+        "build"
     ],
-    "keybindings": [
-      {
-        "key": "shift+alt+b",
-        "when": "editorFocus && editorLangId == applescript",
-        "command": "extension.applescript.compile"
-      },
-      {
-        "key": "shift+alt+r",
-        "when": "editorFocus && editorLangId == applescript",
-        "command": "extension.applescript.run"
-      }
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/idleberg/vscode-applescript.git"
+    },
+    "homepage": "https://github.com/idleberg/vscode-applescript",
+    "bugs": {
+        "url": "https://github.com/idleberg/vscode-applescript/issues"
+    },
+    "main": "./lib/main",
+    "icon": "images/logo.svg",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "categories": [
+        "Languages",
+        "Snippets",
+        "Other"
     ],
-    "languages": [
-      {
-        "id": "applescript",
-        "aliases": [
-          "AppleScript",
-          "applescript"
+    "activationEvents": [
+        "onLanguage:applescript"
+    ],
+    "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "AppleScript",
+            "properties": {
+                "applescript.showNotifications": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Show build notifications indicating success or failure"
+                },
+                "applescript.alwaysShowOutput": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If `false` the output channel will only be shown on errors"
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "extension.applescript.run",
+                "title": "AppleScript: Run Script"
+            },
+            {
+                "command": "extension.applescript.compile",
+                "title": "AppleScript: Compile Script"
+            },
+            {
+                "command": "extension.applescript.compileBundle",
+                "title": "AppleScript: Compile Script bundle"
+            },
+            {
+                "command": "extension.applescript.compileApp",
+                "title": "AppleScript: Compile Application"
+            }
         ],
-        "extensions": [
-          ".applescript"
+        "keybindings": [
+            {
+                "key": "shift+alt+b",
+                "when": "editorFocus && editorLangId == applescript",
+                "command": "extension.applescript.compile"
+            },
+            {
+                "key": "shift+alt+r",
+                "when": "editorFocus && editorLangId == applescript",
+                "command": "extension.applescript.run"
+            }
         ],
-        "configuration": "./applescript.configuration.json"
-      }
-    ],
-    "grammars": [
-      {
-        "language": "applescript",
-        "scopeName": "source.applescript",
-        "path": "./syntaxes/applescript.tmLanguage"
-      }
-    ],
-    "snippets": [
-      {
-        "language": "applescript",
-        "path": "./snippets/applescript.json"
-      }
-    ]
-  },
-  "scripts": {
-    "postinstall": "node ./node_modules/vscode/bin/install && node ./node_modules/log-smith/bin/cli > CHANGELOG.md",
-    "test": "gulp lint"
-  },
-  "devDependencies": {
-    "babel-eslint": "^7.1.1",
-    "eslint": "^3.17.1",
-    "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-debug": "^3.1.0",
-    "gulp-eslint": "^3.0.1",
-    "gulp-jsonlint": "^1.2.0",
-    "gulp-xml-validator": "^0.1.2",
-    "vscode": "^1.1.0"
-  }
+        "languages": [
+            {
+                "id": "applescript",
+                "aliases": [
+                    "AppleScript",
+                    "applescript"
+                ],
+                "extensions": [
+                    ".applescript"
+                ],
+                "configuration": "./applescript.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "applescript",
+                "scopeName": "source.applescript",
+                "path": "./syntaxes/applescript.tmLanguage"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "applescript",
+                "path": "./snippets/applescript.json"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install && node ./node_modules/log-smith/bin/cli > CHANGELOG.md",
+        "test": "gulp lint"
+    },
+    "devDependencies": {
+        "babel-eslint": "^7.1.1",
+        "eslint": "^3.17.1",
+        "gulp": "github:gulpjs/gulp#4.0",
+        "gulp-debug": "^3.1.0",
+        "gulp-eslint": "^3.0.1",
+        "gulp-jsonlint": "^1.2.0",
+        "gulp-xml-validator": "^0.1.2",
+        "vscode": "^1.1.0"
+    }
 }
