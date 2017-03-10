@@ -9,7 +9,7 @@ branches:
   - master
 cache:
   timeout: 1800
-  yarn: true
+  yarn: false
   directories:
     - node_modules
 env:
