@@ -1,6 +1,5 @@
 *.vsix
 bower_components/
-CHANGELOG.md
 node_modules/
 npm-debug.log*
 todo.md

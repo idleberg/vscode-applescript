@@ -111,11 +111,8 @@
         ]
     },
     "scripts": {
-        "postinstall": "node ./node_modules/log-smith/bin/cli > CHANGELOG.md && node ./node_modules/vscode/bin/install",
+        "postinstall": "node ./node_modules/vscode/bin/install",
         "test": "gulp lint"
-    },
-    "dependencies": {
-        "log-smith": "^0.2.0"
     },
     "devDependencies": {
         "babel-eslint": "^7.1.1",
