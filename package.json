@@ -24,7 +24,7 @@
         "url": "https://github.com/idleberg/vscode-applescript/issues"
     },
     "main": "./lib/main",
-    "icon": "images/logo.svg",
+    "icon": "images/logo.png",
     "engines": {
         "vscode": "^1.0.0"
     },
