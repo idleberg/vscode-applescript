@@ -18,8 +18,8 @@ const tsFiles = [
 ];
 
 const jsonFiles = [
+  '*.json',
   '.eslintrc',
-  'package.json',
   'snippets/*.json'
 ];
 
