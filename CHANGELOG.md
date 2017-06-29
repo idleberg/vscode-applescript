@@ -1,3 +1,7 @@
+# v0.6.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.6.1)
+
+* use PNG logo (as required by upcoming versions of Code)
+
 # v0.6.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.6.0)
 
 * remove `log-smith` dependency
