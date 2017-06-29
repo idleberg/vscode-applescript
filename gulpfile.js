@@ -8,37 +8,32 @@
  // Dependencies
 const gulp = require('gulp');
 const debug = require('gulp-debug');
-const eslint = require('gulp-eslint');
 const jsonlint = require('gulp-jsonlint');
+const svg2png = require('gulp-svg2png');
 const xmlVal = require('gulp-xml-validator');
 
 // Supported files
-const jsFiles = [
-  'lib/*.js',
-  'src/*.js',
+const tsFiles = [
+  'src/*.ts',
 ];
 
 const jsonFiles = [
-  '*.json',
-  'snippets/*.json'
+  'package.json',
+  'snippets/*.json',
+  'tsconfig.json',
+  'tslint.json'
 ];
 
 const xmlFiles = [
   'syntaxes/*.tmLanguage'
 ];
 
-// Lint JavaScript
-gulp.task('lint:js', gulp.series(function(done) {
-  gulp.src(jsFiles)
-    .pipe(debug({title: 'eslint'}))
-    .pipe(eslint())
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
-  done();
-}));
+const svgFiles = [
+  'src/logo.svg'
+];
 
 // Lint JSON
-gulp.task('lint:json', gulp.series(function(done) { 
+gulp.task('lint:json', gulp.series( (done) => { 
   gulp.src(jsonFiles)
     .pipe(debug({title: 'json-lint'}))
     .pipe(jsonlint())
@@ -48,14 +43,25 @@ gulp.task('lint:json', gulp.series(function(done) {
 }));
 
 // Validate XML
-gulp.task('lint:xml', gulp.series(function(done) { 
+gulp.task('lint:xml', gulp.series( (done) => { 
   gulp.src(xmlFiles)
     .pipe(debug({title: 'xml-validator'}))
     .pipe(xmlVal());
   done();
 }));
 
+// Convert SVG
+gulp.task('convert:svg', gulp.series( (done) => { 
+  gulp.src(svgFiles)
+    .pipe(svg2png({width: 128, height: 128}))
+    .pipe(gulp.dest('./images'));
+  done();
+}));
+
 // Available tasks
-gulp.task('lint', gulp.parallel('lint:js', 'lint:json', 'lint:xml', function(done) {
+gulp.task('lint', gulp.parallel('lint:json', 'lint:xml', (done) => {
+  done();
+}));
+gulp.task('build', gulp.parallel('convert:svg', (done) => {
   done();
 }));
