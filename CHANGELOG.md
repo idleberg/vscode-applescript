@@ -1,7 +1,12 @@
+# v0.6.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.6.2)
+
+- fix typo
+- update `devDependencies`
+
 # v0.6.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.6.1)
 
 * use PNG logo (as required by upcoming versions of Code)
-* update `devDepencencies`
+* update `devDependencies`
 
 # v0.6.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.6.0)
 
@@ -23,7 +28,7 @@
 
 # v0.5.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.5.1)
 
-* (temporarily) downgrade devDepencencies
+* (temporarily) downgrade devDependencies
 
 # v0.5.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.5.0)
 
