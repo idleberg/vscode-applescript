@@ -1,3 +1,7 @@
+# v0.7.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.7.0)
+
+- move to TypeScript
+
 # v0.6.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.6.2)
 
 - fix typo
