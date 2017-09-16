@@ -2,8 +2,8 @@
 
 import { commands } from 'vscode';
 
-const osascript = require('./osascript');
-const osacompile = require('./osacompile');
+import { osascript } from './osascript';
+import { osacompile } from './osacompile';
 
 const activate = (context) => {
   context.subscriptions.push(

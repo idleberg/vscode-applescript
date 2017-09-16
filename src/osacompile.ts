@@ -52,4 +52,4 @@ const osacompile = (compileTarget: string) => {
   });
 };
 
-module.exports = osacompile;
+export { osacompile };

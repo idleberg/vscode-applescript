@@ -45,4 +45,4 @@ const osascript = () => {
   });
 };
 
-module.exports = osascript;
+export { osascript };
