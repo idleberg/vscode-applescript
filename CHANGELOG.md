@@ -1,3 +1,7 @@
+# v0.7.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.7.1)
+
+- remove precompiled files
+
 # v0.7.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.7.0)
 
 - move to TypeScript
