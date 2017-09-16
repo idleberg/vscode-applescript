@@ -1,3 +1,7 @@
+# v0.7.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.7.2)
+
+- consistently use import/export
+
 # v0.7.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.7.1)
 
 - remove precompiled files
@@ -13,35 +17,35 @@
 
 # v0.6.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.6.1)
 
-* use PNG logo (as required by upcoming versions of Code)
-* update `devDependencies`
+- use PNG logo (as required by upcoming versions of Code)
+- update `devDependencies`
 
 # v0.6.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.6.0)
 
-* remove `log-smith` dependency
-* include `CHANGELOG.log`
+- remove `log-smith` dependency
+- include `CHANGELOG.log`
 
 # v0.5.4 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.5.4)
 
-* fix issue with VSIX file
+- fix issue with VSIX file
 
 # v0.5.3 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.5.3)
 
-* re-enable yarn on Travis CI
-* update devDependencies
+- re-enable yarn on Travis CI
+- update devDependencies
 
 # v0.5.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.5.2)
 
-* modify script order in `postinstall`
+- modify script order in `postinstall`
 
 # v0.5.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.5.1)
 
-* (temporarily) downgrade devDependencies
+- (temporarily) downgrade devDependencies
 
 # v0.5.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.5.0)
 
-* add `log-smith` dependency (closes #3)
-* update devDependencies
+- add `log-smith` dependency (closes #3)
+- update devDependencies
 
 # v0.4.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.4.2)
 
@@ -112,4 +116,3 @@
 # v0.1.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.1.0)
 
 - first release
-
