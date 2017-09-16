@@ -2,7 +2,7 @@
     "name": "applescript",
     "displayName": "AppleScript",
     "description": "Language syntax, snippets and build system for AppleScript",
-    "version": "0.7.2",
+    "version": "0.7.1",
     "publisher": "idleberg",
     "license": "MIT",
     "author": {
@@ -128,10 +128,5 @@
         "tslint": "^5.6.0",
         "typescript": "^2.5.1",
         "vscode": "^1.1.5"
-    },
-    "__metadata": {
-        "id": "d57cfcbb-5746-48be-a607-96967331a91c",
-        "publisherId": "d142cf02-af52-4395-9363-148909445cb3",
-        "publisherDisplayName": "idleberg"
     }
 }
