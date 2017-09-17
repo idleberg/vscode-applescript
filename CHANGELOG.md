@@ -1,3 +1,8 @@
+# v0.8.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.8.0)
+
+- DRY code
+- add `ignoreOS` setting
+
 # v0.7.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.7.2)
 
 - consistently use import/export
