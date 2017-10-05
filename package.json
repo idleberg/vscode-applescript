@@ -61,21 +61,61 @@
         "commands": [
             {
                 "command": "extension.applescript.run",
-                "title": "AppleScript: Run Script"
+                "title": "AppleScript: Run Script",
+                "icon": {
+                    "dark": "./images/icon--run-dark.svg",
+                    "light": "./images/icon--run-light.svg"
+                }
             },
             {
                 "command": "extension.applescript.compile",
-                "title": "AppleScript: Compile Script"
+                "title": "AppleScript: Compile Script",
+                "icon": {
+                    "dark": "./images/icon--script-dark.svg",
+                    "light": "./images/icon--script-light.svg"
+                }
             },
             {
                 "command": "extension.applescript.compileBundle",
-                "title": "AppleScript: Compile Script bundle"
+                "title": "AppleScript: Compile Script bundle",
+                "icon": {
+                    "dark": "./images/icon--bundle-dark.svg",
+                    "light": "./images/icon--bundle-light.svg"
+                }
             },
             {
                 "command": "extension.applescript.compileApp",
-                "title": "AppleScript: Compile Application"
+                "title": "AppleScript: Compile Application",
+                "icon": {
+                    "dark": "./images/icon--app-dark.svg",
+                    "light": "./images/icon--app-light.svg"
+                }
             }
         ],
+        "menus": {
+            "editor/title": [
+                {
+                    "when": "resourceLangId == applescript",
+                    "command": "extension.applescript.run",
+                    "group": "navigation@1"
+                },
+                {
+                    "when": "resourceLangId == applescript",
+                    "command": "extension.applescript.compile",
+                    "group": "navigation@2"
+                },
+                {
+                    "when": "resourceLangId == applescript",
+                    "command": "extension.applescript.compileBundle",
+                    "group": "navigation@3"
+                },
+                {
+                    "when": "resourceLangId == applescript",
+                    "command": "extension.applescript.compileApp",
+                    "group": "navigation@4"
+                }
+            ]
+        },
         "keybindings": [
             {
                 "key": "shift+alt+b",
@@ -123,6 +163,7 @@
     },
     "devDependencies": {
         "@types/node": "^8.0.25",
+        "applescript-svg-icon": "github:idleberg/applescript-svg-icon",
         "gulp": "github:gulpjs/gulp#4.0",
         "gulp-debug": "^3.1.0",
         "gulp-jsonlint": "^1.2.0",
