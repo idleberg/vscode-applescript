@@ -8,7 +8,9 @@
 
 Language syntax, snippets and build system for AppleScript
 
-**Note:** I'm happy to add support for binary AppleScript once Visual Studio Code has a pre-open event
+![Screenshot](https://raw.githubusercontent.com/idleberg/vscode-applescript/master/images/screenshot.png)
+
+*Screenshot of AppleScript in Visual Studio Code with [Hopscotch](https://marketplace.visualstudio.com/items?itemName=idleberg.hopscotch) theme*
 
 ## Installation
 
