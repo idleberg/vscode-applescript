@@ -31,7 +31,7 @@ const xmlFiles = [
 ];
 
 const svgFiles = [
-  'src/logo.svg'
+  'node_modules/applescript-svg-icon/src/applescript.svg'
 ];
 
 // Lint TypeScript
