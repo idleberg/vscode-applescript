@@ -1,3 +1,7 @@
+# v0.9.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.9.1)
+
+- update menu icons
+
 # v0.9.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.9.0)
 
 - add menu icons
