@@ -1,6 +1,7 @@
 # v0.9.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.9.2)
 
 - update development toolchain
+- update Travis CI tests
 
 # v0.9.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.9.1)
 
