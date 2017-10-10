@@ -114,28 +114,6 @@
                     "command": "extension.applescript.compileApp",
                     "group": "navigation@4"
                 }
-            ],
-            "touchBar": [
-                  {
-                    "when": "resourceLangId == applescript",
-                    "command": "extension.applescript.run",
-                    "group": "navigation@1"
-                },
-                {
-                    "when": "resourceLangId == applescript",
-                    "command": "extension.applescript.compile",
-                    "group": "navigation@2"
-                },
-                {
-                    "when": "resourceLangId == applescript",
-                    "command": "extension.applescript.compileBundle",
-                    "group": "navigation@3"
-                },
-                {
-                    "when": "resourceLangId == applescript",
-                    "command": "extension.applescript.compileApp",
-                    "group": "navigation@4"
-                }
             ]
         },
         "keybindings": [
