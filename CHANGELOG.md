@@ -1,3 +1,7 @@
+# v0.9.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.9.2)
+
+- update build tools
+
 # v0.9.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.9.1)
 
 - update menu icons
