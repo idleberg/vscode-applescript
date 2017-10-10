@@ -16,9 +16,9 @@ Language syntax, snippets and build system for AppleScript
 
 ### Extension Marketplace
 
-Launch Quick Open, paste the following command, and press <kbd>Enter</kbd>
+In the editor, launch *Quick Open* and paste `ext install applescript`
 
-`ext install applescript`
+Alternatively, install from the command-line using `code --install-extension idleberg.applescript`
 
 ### Packaged Extension
 
