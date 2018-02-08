@@ -159,7 +159,7 @@
         "compile": "tsc -p ./",
         "postinstall": "node ./node_modules/vscode/bin/install",
         "test": "vscode-linter",
-        "vscode:prepublish": "tsc -p ./ && gulp build"
+        "vscode:prepublish": "tsc -p ./ && gulp"
     },
     "devDependencies": {
         "@types/node": "^9.4.2",
