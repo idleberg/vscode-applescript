@@ -1,254 +1,255 @@
 {
-	"name": "applescript",
-	"displayName": "AppleScript",
-	"description": "Language syntax, snippets and build system for AppleScript and JavaScript for Automation",
-	"version": "0.9.3",
-	"publisher": "idleberg",
-	"license": "MIT",
-	"author": {
-		"name": "Jan T. Sott",
-		"url": "http://github.com/idleberg"
-	},
-	"keywords": [
-		"apple",
-		"applescript",
-		"jxa",
-		"javascript for automation",
-		"macos"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/idleberg/vscode-applescript.git"
-	},
-	"homepage": "https://github.com/idleberg/vscode-applescript",
-	"bugs": {
-		"url": "https://github.com/idleberg/vscode-applescript/issues"
-	},
-	"main": "./lib/main",
-	"icon": "images/logo.png",
-	"engines": {
-		"vscode": "^1.0.0"
-	},
-	"categories": [
-		"Languages",
-		"Snippets",
-		"Other"
-	],
-	"activationEvents": [
-		"onLanguage:applescript"
-	],
-	"contributes": {
-		"configuration": {
-			"type": "object",
-			"title": "AppleScript",
-			"properties": {
-				"applescript.showNotifications": {
-					"type": "boolean",
-					"default": true,
-					"description": "Show build notifications indicating success or failure"
-				},
-				"applescript.alwaysShowOutput": {
-					"type": "boolean",
-					"default": false,
-					"description": "If `false` the output channel will only be shown on errors"
-				},
-				"applescript.ignoreOS": {
-					"type": "boolean",
-					"default": false,
-					"description": "For debugging purposes, you can disable the OS eligibility test"
-				}
-			}
-		},
-		"commands": [
-			{
-				"command": "extension.applescript.run",
-				"title": "AppleScript: Run Script",
-				"icon": {
-					"dark": "./images/icon--run-dark.svg",
-					"light": "./images/icon--run-light.svg"
-				}
-			},
-			{
-				"command": "extension.applescript.compile",
-				"title": "AppleScript: Compile Script",
-				"icon": {
-					"dark": "./images/icon--script-dark.svg",
-					"light": "./images/icon--script-light.svg"
-				}
-			},
-			{
-				"command": "extension.applescript.compileBundle",
-				"title": "AppleScript: Compile Script bundle",
-				"icon": {
-					"dark": "./images/icon--bundle-dark.svg",
-					"light": "./images/icon--bundle-light.svg"
-				}
-			},
-			{
-				"command": "extension.applescript.compileApp",
-				"title": "AppleScript: Compile Application",
-				"icon": {
-					"dark": "./images/icon--app-dark.svg",
-					"light": "./images/icon--app-light.svg"
-				}
-			},
-			{
-				"command": "extension.jxa.run",
-				"title": "JXA: Run Script",
-				"icon": {
-					"dark": "./images/icon--run-dark.svg",
-					"light": "./images/icon--run-light.svg"
-				}
-			},
-			{
-				"command": "extension.jxa.compile",
-				"title": "JXA: Compile Script",
-				"icon": {
-					"dark": "./images/icon--script-dark.svg",
-					"light": "./images/icon--script-light.svg"
-				}
-			},
-			{
-				"command": "extension.jxa.compileBundle",
-				"title": "JXA: Compile Script bundle",
-				"icon": {
-					"dark": "./images/icon--bundle-dark.svg",
-					"light": "./images/icon--bundle-light.svg"
-				}
-			},
-			{
-				"command": "extension.jxa.compileApp",
-				"title": "JXA: Compile Application",
-				"icon": {
-					"dark": "./images/icon--app-dark.svg",
-					"light": "./images/icon--app-light.svg"
-				}
-			}
-		],
-		"menus": {
-			"editor/title": [
-				{
-					"when": "resourceLangId == applescript",
-					"command": "extension.applescript.run",
-					"group": "navigation@1"
-				},
-				{
-					"when": "resourceLangId == applescript",
-					"command": "extension.applescript.compile",
-					"group": "navigation@2"
-				},
-				{
-					"when": "resourceLangId == applescript",
-					"command": "extension.applescript.compileBundle",
-					"group": "navigation@3"
-				},
-				{
-					"when": "resourceLangId == applescript",
-					"command": "extension.applescript.compileApp",
-					"group": "navigation@4"
-				},
-				{
-					"when": "resourceLangId == jxa",
-					"command": "extension.jxa.run",
-					"group": "navigation@1"
-				},
-				{
-					"when": "resourceLangId == jxa",
-					"command": "extension.jxa.compile",
-					"group": "navigation@2"
-				},
-				{
-					"when": "resourceLangId == jxa",
-					"command": "extension.jxa.compileBundle",
-					"group": "navigation@3"
-				},
-				{
-					"when": "resourceLangId == jxa",
-					"command": "extension.jxa.compileApp",
-					"group": "navigation@4"
-				}
-			]
-		},
-		"keybindings": [
-			{
-				"key": "shift+alt+b",
-				"when": "editorFocus && editorLangId == applescript",
-				"command": "extension.applescript.compile"
-			},
-			{
-				"key": "shift+alt+r",
-				"when": "editorFocus && editorLangId == applescript",
-				"command": "extension.applescript.run"
-			},
-			{
-				"key": "shift+alt+b",
-				"when": "editorFocus && editorLangId == jxa",
-				"command": "extension.jxa.compile"
-			},
-			{
-				"key": "shift+alt+r",
-				"when": "editorFocus && editorLangId == jxa",
-				"command": "extension.jxa.run"
-			}
-		],
-		"languages": [
-			{
-				"id": "applescript",
-				"aliases": [
-					"AppleScript",
-					"applescript"
-				],
-				"extensions": [
-					".applescript"
-				],
-				"configuration": "./config/applescript.configuration.json"
-			},
-			{
-				"id": "jxa",
-				"aliases": [
-					"JavaScript for Automation (JXA)",
-					"jxa"
-				],
-				"extensions": [
-					".jxa"
-				],
-				"configuration": "./config/jxa.configuration.json"
-			}
-		],
-		"grammars": [
-			{
-				"language": "applescript",
-				"scopeName": "source.applescript",
-				"path": "./syntaxes/applescript.tmLanguage"
-			},
-			{
-				"language": "jxa",
-				"scopeName": "source.js.jxa",
-				"path": "./syntaxes/jxa.tmLanguage"
-			}
-		],
-		"snippets": [
-			{
-				"language": "applescript",
-				"path": "./snippets/applescript.json"
-			}
-		]
-	},
-	"scripts": {
-		"compile": "tsc -p ./",
-		"postinstall": "node ./node_modules/vscode/bin/install",
-		"test": "vscode-linter",
-		"vscode:prepublish": "tsc -p ./ && gulp"
-	},
-	"devDependencies": {
-		"@types/node": "^9.4.2",
-		"applescript-svg-icon": "github:idleberg/applescript-svg-icon",
-		"gulp": "^4.0.0",
-		"gulp-raster": "^0.2.0",
-		"gulp-rename": "^1.2.2",
-		"tslint": "^5.9.1",
-		"typescript": "^2.7.1",
-		"vscode": "^1.1.10",
-		"vscode-linter": "^0.1.0"
-	}
+  "name": "applescript",
+  "displayName": "AppleScript",
+  "description": "Language syntax, snippets and build system for AppleScript and JavaScript for Automation",
+  "version": "0.9.3",
+  "publisher": "idleberg",
+  "license": "MIT",
+  "author": {
+    "name": "Jan T. Sott",
+    "url": "http://github.com/idleberg"
+  },
+  "keywords": [
+    "apple",
+    "applescript",
+    "jxa",
+    "javascript for automation",
+    "macos"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idleberg/vscode-applescript.git"
+  },
+  "homepage": "https://github.com/idleberg/vscode-applescript",
+  "bugs": {
+    "url": "https://github.com/idleberg/vscode-applescript/issues"
+  },
+  "main": "./lib/main",
+  "icon": "images/logo.png",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "categories": [
+    "Languages",
+    "Snippets",
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:applescript"
+  ],
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "AppleScript",
+      "properties": {
+        "applescript.showNotifications": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show build notifications indicating success or failure"
+        },
+        "applescript.alwaysShowOutput": {
+          "type": "boolean",
+          "default": false,
+          "description": "If `false` the output channel will only be shown on errors"
+        },
+        "applescript.ignoreOS": {
+          "type": "boolean",
+          "default": false,
+          "description": "For debugging purposes, you can disable the OS eligibility test"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "extension.applescript.run",
+        "title": "AppleScript: Run Script",
+        "icon": {
+          "dark": "./images/icon--run-dark.svg",
+          "light": "./images/icon--run-light.svg"
+        }
+      },
+      {
+        "command": "extension.applescript.compile",
+        "title": "AppleScript: Compile Script",
+        "icon": {
+          "dark": "./images/icon--script-dark.svg",
+          "light": "./images/icon--script-light.svg"
+        }
+      },
+      {
+        "command": "extension.applescript.compileBundle",
+        "title": "AppleScript: Compile Script bundle",
+        "icon": {
+          "dark": "./images/icon--bundle-dark.svg",
+          "light": "./images/icon--bundle-light.svg"
+        }
+      },
+      {
+        "command": "extension.applescript.compileApp",
+        "title": "AppleScript: Compile Application",
+        "icon": {
+          "dark": "./images/icon--app-dark.svg",
+          "light": "./images/icon--app-light.svg"
+        }
+      },
+      {
+        "command": "extension.jxa.run",
+        "title": "JXA: Run Script",
+        "icon": {
+          "dark": "./images/icon--run-dark.svg",
+          "light": "./images/icon--run-light.svg"
+        }
+      },
+      {
+        "command": "extension.jxa.compile",
+        "title": "JXA: Compile Script",
+        "icon": {
+          "dark": "./images/icon--script-dark.svg",
+          "light": "./images/icon--script-light.svg"
+        }
+      },
+      {
+        "command": "extension.jxa.compileBundle",
+        "title": "JXA: Compile Script bundle",
+        "icon": {
+          "dark": "./images/icon--bundle-dark.svg",
+          "light": "./images/icon--bundle-light.svg"
+        }
+      },
+      {
+        "command": "extension.jxa.compileApp",
+        "title": "JXA: Compile Application",
+        "icon": {
+          "dark": "./images/icon--app-dark.svg",
+          "light": "./images/icon--app-light.svg"
+        }
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "when": "resourceLangId == applescript",
+          "command": "extension.applescript.run",
+          "group": "navigation@1"
+        },
+        {
+          "when": "resourceLangId == applescript",
+          "command": "extension.applescript.compile",
+          "group": "navigation@2"
+        },
+        {
+          "when": "resourceLangId == applescript",
+          "command": "extension.applescript.compileBundle",
+          "group": "navigation@3"
+        },
+        {
+          "when": "resourceLangId == applescript",
+          "command": "extension.applescript.compileApp",
+          "group": "navigation@4"
+        },
+        {
+          "when": "resourceLangId == jxa",
+          "command": "extension.jxa.run",
+          "group": "navigation@1"
+        },
+        {
+          "when": "resourceLangId == jxa",
+          "command": "extension.jxa.compile",
+          "group": "navigation@2"
+        },
+        {
+          "when": "resourceLangId == jxa",
+          "command": "extension.jxa.compileBundle",
+          "group": "navigation@3"
+        },
+        {
+          "when": "resourceLangId == jxa",
+          "command": "extension.jxa.compileApp",
+          "group": "navigation@4"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "key": "shift+alt+b",
+        "when": "editorFocus && editorLangId == applescript",
+        "command": "extension.applescript.compile"
+      },
+      {
+        "key": "shift+alt+r",
+        "when": "editorFocus && editorLangId == applescript",
+        "command": "extension.applescript.run"
+      },
+      {
+        "key": "shift+alt+b",
+        "when": "editorFocus && editorLangId == jxa",
+        "command": "extension.jxa.compile"
+      },
+      {
+        "key": "shift+alt+r",
+        "when": "editorFocus && editorLangId == jxa",
+        "command": "extension.jxa.run"
+      }
+    ],
+    "languages": [
+      {
+        "id": "applescript",
+        "aliases": [
+          "AppleScript",
+          "applescript"
+        ],
+        "extensions": [
+          ".applescript"
+        ],
+        "configuration": "./config/applescript.configuration.json"
+      },
+      {
+        "id": "jxa",
+        "aliases": [
+          "JavaScript for Automation (JXA)",
+          "jxa"
+        ],
+        "extensions": [
+          ".jxa",
+          ".jxainc"
+        ],
+        "configuration": "./config/jxa.configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "applescript",
+        "scopeName": "source.applescript",
+        "path": "./syntaxes/applescript.tmLanguage"
+      },
+      {
+        "language": "jxa",
+        "scopeName": "source.js.jxa",
+        "path": "./syntaxes/jxa.tmLanguage"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "applescript",
+        "path": "./snippets/applescript.json"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "vscode-linter",
+    "vscode:prepublish": "tsc -p ./ && gulp"
+  },
+  "devDependencies": {
+    "@types/node": "^9.4.2",
+    "applescript-svg-icon": "github:idleberg/applescript-svg-icon",
+    "gulp": "^4.0.0",
+    "gulp-raster": "^0.2.0",
+    "gulp-rename": "^1.2.2",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.1",
+    "vscode": "^1.1.10",
+    "vscode-linter": "^0.1.0"
+  }
 }
