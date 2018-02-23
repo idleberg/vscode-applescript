@@ -6,7 +6,7 @@
 [![Travis](https://img.shields.io/travis/idleberg/vscode-applescript.svg?style=flat-square)](https://travis-ci.org/idleberg/vscode-applescript)
 [![David](https://img.shields.io/david/dev/idleberg/vscode-applescript.svg?style=flat-square)](https://david-dm.org/idleberg/vscode-applescript?type=dev)
 
-Language syntax, snippets and build system for AppleScript
+Language syntax, snippets and build system for AppleScript and JavaScript for Automation
 
 ![Screenshot](https://raw.githubusercontent.com/idleberg/vscode-applescript/master/images/screenshot.png)
 
@@ -58,6 +58,10 @@ On macOS, you can make use of the following build commands through the [command-
 * AppleScript: Compile Script – <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd>
 * AppleScript: Compile Script bundle
 * AppleScript: Compile Application
+* JXA: Run Script – <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>R</kbd>
+* JXA: Compile Script – <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd>
+* JXA: Compile Script bundle
+* JXA: Compile Application
 
 ## License
 
