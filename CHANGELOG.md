@@ -1,3 +1,7 @@
+# v0.10.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.10.0)
+
+- add support for JavaScript for Automation (JXA)
+
 # v0.9.3 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.9.3)
 
 - replace linter
