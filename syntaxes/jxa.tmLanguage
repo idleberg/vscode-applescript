@@ -4,10 +4,9 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
-		<string>applescript</string>
-		<string>js</string>
 		<string>jxa</string>
 		<string>jxainc</string>
+		<string>js</string>
 	</array>
 	<key>name</key>
 	<string>JavaScript for Automation (JXA)</string>
