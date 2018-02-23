@@ -35,7 +35,8 @@
     "Other"
   ],
   "activationEvents": [
-    "onLanguage:applescript"
+    "onLanguage:applescript",
+    "onLanguage:jxa"
   ],
   "contributes": {
     "configuration": {
