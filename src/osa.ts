@@ -47,7 +47,7 @@ const osascript = (isJXA: boolean = false) => {
   let doc = window.activeTextEditor.document;
   const args = [];
 
-  if (config.onlyRunSavedFile !== false) {
+  if (doc.isDirty) {
     const lines = doc.getText().split('\n');
 
     lines.forEach(function(line) {
@@ -61,21 +61,11 @@ const osascript = (isJXA: boolean = false) => {
     args.unshift('-l', 'JavaScript');
   }
 
-  if (config.onlyRunSavedFile !== false) {
-    spawnPromise('osascript', args, outputChannel)
-    .catch( () => {
-      outputChannel.show(true);
-      if (config.showNotifications) window.showErrorMessage('Failed to run script (see output for details)');
-    });
-  } else {
-    doc.save().then( () => {
-      spawnPromise('osascript', args, outputChannel)
-      .catch( () => {
-        outputChannel.show(true);
-        if (config.showNotifications) window.showErrorMessage('Failed to run script (see output for details)');
-      });
-    });
-  }
+  spawnPromise('osascript', args, outputChannel)
+  .catch( () => {
+    outputChannel.show(true);
+    if (config.showNotifications) window.showErrorMessage('Failed to run script (see output for details)');
+  });
 };
 
 export { osacompile, osascript };

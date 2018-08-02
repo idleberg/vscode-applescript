@@ -1,3 +1,7 @@
+# v0.12.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.12.0)
+
+- always use current buffer on run
+
 # v0.11.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.11.1)
 
 - fix: add missing config
