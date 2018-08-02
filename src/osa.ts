@@ -38,24 +38,44 @@ const osacompile = (compileTarget: string, isJXA: boolean = false) => {
 };
 
 const osascript = (isJXA: boolean = false) => {
-  if (platform() !== 'darwin' && getConfig().ignoreOS !== true) {
+  const config = getConfig();
+
+  if (platform() !== 'darwin' && config.ignoreOS !== true) {
     return window.showWarningMessage('This command is only available on macOS');
   }
 
   let doc = window.activeTextEditor.document;
-  const args = [doc.fileName];
+  const args = [];
+
+  if (config.onlyRunSavedFile !== false) {
+    const lines = doc.getText().split('\n');
+
+    lines.forEach(function(line) {
+      args.push('-e', line);
+    });
+  } else {
+    args.push(doc.fileName);
+  }
 
   if (isJXA === true) {
     args.unshift('-l', 'JavaScript');
   }
 
-  doc.save().then( () => {
+  if (config.onlyRunSavedFile !== false) {
     spawnPromise('osascript', args, outputChannel)
     .catch( () => {
       outputChannel.show(true);
-      if (getConfig().showNotifications) window.showErrorMessage('Failed to run script (see output for details)');
+      if (config.showNotifications) window.showErrorMessage('Failed to run script (see output for details)');
     });
-  });
+  } else {
+    doc.save().then( () => {
+      spawnPromise('osascript', args, outputChannel)
+      .catch( () => {
+        outputChannel.show(true);
+        if (config.showNotifications) window.showErrorMessage('Failed to run script (see output for details)');
+      });
+    });
+  }
 };
 
 export { osacompile, osascript };

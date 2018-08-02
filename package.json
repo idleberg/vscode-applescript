@@ -10,8 +10,9 @@
         "url": "http://github.com/idleberg"
     },
     "scripts": {
-        "compile": "tsc -p ./",
+        "build": "tsc -p ./",
         "postinstall": "node ./node_modules/vscode/bin/install",
+        "precommit": "npm run test",
         "test": "vscode-linter",
         "vscode:prepublish": "tsc -p ./ && gulp"
     },
@@ -243,15 +244,15 @@
         ]
     },
     "devDependencies": {
-        "@types/node": "^9.4.2",
+        "@types/node": "^10.5.5",
         "applescript-svg-icon": "github:idleberg/applescript-svg-icon",
         "gulp": "^4.0.0",
         "gulp-raster": "^0.2.0",
-        "gulp-rename": "^1.2.2",
+        "gulp-rename": "^1.4.0",
         "husky": "^0.14.3",
-        "tslint": "^5.9.1",
-        "typescript": "^2.7.1",
-        "vscode": "^1.1.10",
+        "tslint": "^5.11.0",
+        "typescript": "^3.0.1",
+        "vscode": "^1.1.18",
         "vscode-linter": "^0.2.1"
     }
 }
