@@ -1,3 +1,12 @@
+# v0.11.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.11.1)
+
+- fix: add missing config
+
+# v0.11.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.11.0)
+
+- add `onlyRunSavedFile` option
+- update dependencies
+
 # v0.10.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.10.0)
 
 - add support for JavaScript for Automation (JXA)

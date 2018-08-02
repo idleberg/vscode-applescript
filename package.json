@@ -64,6 +64,11 @@
                     "type": "boolean",
                     "default": false,
                     "description": "For debugging purposes, you can disable the OS eligibility test"
+                },
+                "applescript.onlyRunSavedFile": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "Controls whether to run saved file or current buffer"
                 }
             }
         },
