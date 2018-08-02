@@ -2,7 +2,7 @@
     "name": "applescript",
     "displayName": "AppleScript",
     "description": "Language syntax, snippets and build system for AppleScript and JavaScript for Automation",
-    "version": "0.10.0",
+    "version": "0.11.0",
     "publisher": "idleberg",
     "license": "MIT",
     "author": {
