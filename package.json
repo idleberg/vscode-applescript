@@ -2,7 +2,7 @@
     "name": "applescript",
     "displayName": "AppleScript",
     "description": "Language syntax, snippets and build system for AppleScript and JavaScript for Automation",
-    "version": "0.11.0",
+    "version": "0.11.1",
     "publisher": "idleberg",
     "license": "MIT",
     "author": {
@@ -66,9 +66,9 @@
                     "description": "For debugging purposes, you can disable the OS eligibility test"
                 },
                 "applescript.onlyRunSavedFile": {
-                  "type": "boolean",
-                  "default": false,
-                  "description": "Controls whether to run saved file or current buffer"
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Controls whether to run saved file or current buffer"
                 }
             }
         },
