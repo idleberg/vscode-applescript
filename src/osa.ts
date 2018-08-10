@@ -9,8 +9,11 @@ import { getConfig, getOutName, spawnPromise } from './util';
 
 const outputChannel = window.createOutputChannel('AppleScript');
 
-const osacompile = (compileTarget: string, isJXA: boolean = false) => {
+const osacompile = (compileTarget: string, options: CommandFlags = { isJXA: false }) => {
   const config = getConfig();
+
+  // might become useful in a future release
+  options = {...options, ...config.osacompile};
 
   if (platform() !== 'darwin' && config.ignoreOS !== true) {
     return window.showWarningMessage('This command is only available on macOS');
@@ -22,7 +25,19 @@ const osacompile = (compileTarget: string, isJXA: boolean = false) => {
     const outName = getOutName(doc.fileName, compileTarget);
     const args = ['-o', outName, doc.fileName];
 
-    if (isJXA === true) {
+    if (options.executeOnly === true) {
+      args.unshift('-x');
+    }
+
+    if (compileTarget === 'app' && options.stayOpen === true) {
+      args.unshift('-s');
+    }
+
+    if (compileTarget === 'app' && options.startupScreen === true) {
+      args.unshift('-u');
+    }
+
+    if (options.isJXA === true) {
       args.unshift('-l', 'JavaScript');
     }
 
@@ -37,7 +52,7 @@ const osacompile = (compileTarget: string, isJXA: boolean = false) => {
   });
 };
 
-const osascript = (isJXA: boolean = false) => {
+const osascript = (options: CommandFlags = { isJXA: false }) => {
   const config = getConfig();
 
   if (platform() !== 'darwin' && config.ignoreOS !== true) {
@@ -57,7 +72,11 @@ const osascript = (isJXA: boolean = false) => {
     args.push(doc.fileName);
   }
 
-  if (isJXA === true) {
+  if (config.osascript.outputStyle.trim().length > 0 && config.osascript.outputStyle.trim().length <= 4) {
+    args.unshift('-s', config.osascript.outputStyle.trim());
+  }
+
+  if (options.isJXA === true) {
     args.unshift('-l', 'JavaScript');
   }
 

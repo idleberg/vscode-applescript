@@ -29,22 +29,22 @@ const activate = (context) => {
   );
   context.subscriptions.push(
     commands.registerTextEditorCommand('extension.jxa.run', () => {
-      return osascript(true);
+      return osascript({ isJXA: true });
     })
   );
   context.subscriptions.push(
     commands.registerTextEditorCommand('extension.jxa.compile', () => {
-      return osacompile('scpt', true);
+      return osacompile('scpt', { isJXA: true });
     })
   );
   context.subscriptions.push(
     commands.registerTextEditorCommand('extension.jxa.compileBundle', () => {
-      return osacompile('scptd', true);
+      return osacompile('scptd', { isJXA: true });
     })
   );
   context.subscriptions.push(
     commands.registerTextEditorCommand('extension.jxa.compileApp', () => {
-      return osacompile('app', true);
+      return osacompile('app', { isJXA: true });
     })
   );
 };
