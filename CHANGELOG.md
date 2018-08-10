@@ -1,3 +1,8 @@
+# v0.13.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.13.0)
+
+- add support for `osacompile` flags
+- add support for `osascript` flags
+
 # v0.12.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.12.0)
 
 - always use current buffer on run
