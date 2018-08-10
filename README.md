@@ -63,6 +63,19 @@ On macOS, you can make use of the following build commands through the [command-
 * JXA: Compile Script bundle
 * JXA: Compile Application
 
+### Settings
+
+You can tweak the defaults for this package, `osacompile` and `osascript` in the package settings.
+
+Setting                    | Default | Description
+---------------------------|---------|------------
+`showNotifications`        |`true`   | Show build notifications indicating success or failure
+`alwaysShowOutput`         | `false` | If `false` the output channel will only be shown on errors
+`osacompile.executeOnly`   |`false`  | Save the resulting script as execute-only
+`osacompile.stayOpen`      | `false` | Stay open after run handler
+`osacompile.startupScreen` | `false` | Show startup-screen
+`osascript.outputStyle`    | -       | The flags argument is a string consisting of any of the modifier characters e, h, o, and s:
+
 ## License
 
 This work is licensed under [The MIT License](https://opensource.org/licenses/MIT)
