@@ -74,7 +74,7 @@ Setting                    | Default | Description
 `osacompile.executeOnly`   |`false`  | Save the resulting script as execute-only
 `osacompile.stayOpen`      | `false` | Stay open after run handler
 `osacompile.startupScreen` | `false` | Show startup-screen
-`osascript.outputStyle`    | -       | The flags argument is a string consisting of any of the modifier characters e, h, o, and s:
+`osascript.outputStyle`    | -       | The flags argument is a string consisting of any of the modifier characters `e`, `h`, `o`, and `s`
 
 ## License
 
