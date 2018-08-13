@@ -5,6 +5,7 @@ import { commands } from 'vscode';
 
 // Modules
 import { osacompile, osascript } from './osa';
+import { createBuildTask } from './task';
 
 const activate = (context) => {
   context.subscriptions.push(
@@ -28,6 +29,11 @@ const activate = (context) => {
     })
   );
   context.subscriptions.push(
+    commands.registerTextEditorCommand('extension.applescript.createBuildTask', () => {
+      return createBuildTask();
+    })
+  );
+  context.subscriptions.push(
     commands.registerTextEditorCommand('extension.jxa.run', () => {
       return osascript({ isJXA: true });
     })
@@ -45,6 +51,11 @@ const activate = (context) => {
   context.subscriptions.push(
     commands.registerTextEditorCommand('extension.jxa.compileApp', () => {
       return osacompile('app', { isJXA: true });
+    })
+  );
+  context.subscriptions.push(
+    commands.registerTextEditorCommand('extension.jxa.createBuildTask', () => {
+      return createBuildTask(true);
     })
   );
 };
