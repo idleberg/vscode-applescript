@@ -72,7 +72,7 @@ const osascript = (options: CommandFlags = { isJXA: false }) => {
     args.push(doc.fileName);
   }
 
-  if (config.osascript.outputStyle.trim().length > 0 && config.osascript.outputStyle.trim().length <= 4) {
+  if (config.osascript.outputStyle.trim().length > 0 && config.osascript.outputStyle.trim().length <= 2) {
     args.unshift('-s', config.osascript.outputStyle.trim());
   }
 
