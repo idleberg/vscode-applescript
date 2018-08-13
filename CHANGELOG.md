@@ -1,3 +1,8 @@
+# v0.14.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.14.0)
+
+- add *Create Build Task* command
+- fix `outputStyle` max length
+
 # v0.13.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.13.0)
 
 - add support for `osacompile` flags
