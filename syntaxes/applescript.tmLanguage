@@ -5,6 +5,7 @@
 	<key>fileTypes</key>
 	<array>
 		<string>applescript</string>
+		<string>script editor</string>
 	</array>
 	<key>firstLineMatch</key>
 	<string>^#!.*(osascript)</string>
@@ -1489,6 +1490,39 @@
 					<string>\n</string>
 					<key>name</key>
 					<string>comment.line.number-sign.applescript</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(^[ \t]+)?(?=#)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.whitespace.comment.leading.applescript</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?!\G)</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>begin</key>
+							<string>#</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.comment.applescript</string>
+								</dict>
+							</dict>
+							<key>end</key>
+							<string>\n</string>
+							<key>name</key>
+							<string>comment.line.number-sign.applescript</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>begin</key>
