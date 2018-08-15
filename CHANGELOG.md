@@ -1,3 +1,7 @@
+# v0.14.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.14.1)
+
+- update syntax definition from [applescript.tmbundle](https://github.com/textmate/applescript.tmbundle)
+
 # v0.14.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.14.0)
 
 - add *Create Build Task* command
