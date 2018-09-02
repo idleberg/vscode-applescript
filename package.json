@@ -302,10 +302,5 @@
 		"typescript": "^3.0.1",
 		"vscode": "^1.1.18",
 		"vscode-linter": "^0.2.1"
-	},
-	"__metadata": {
-		"id": "d57cfcbb-5746-48be-a607-96967331a91c",
-		"publisherDisplayName": "idleberg",
-		"publisherId": "d142cf02-af52-4395-9363-148909445cb3"
 	}
 }
