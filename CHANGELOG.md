@@ -1,22 +1,27 @@
-# v0.14.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.14.1)
+# v0.14.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.14.2)
+
+- set default character encoding to [Mac Roman](https://www.wikiwand.com/en/Mac_OS_Roman)
+- update dependencies
+
+# v0.14.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.14.1)
 
 - update syntax definition from [applescript.tmbundle](https://github.com/textmate/applescript.tmbundle)
 
-# v0.14.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.14.0)
+# v0.14.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.14.0)
 
 - add *Create Build Task* command
 - fix `outputStyle` max length
 
-# v0.13.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.13.0)
+# v0.13.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.13.0)
 
 - add support for `osacompile` flags
 - add support for `osascript` flags
 
-# v0.12.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.12.0)
+# v0.12.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.12.0)
 
 - always use current buffer on run
 
-# v0.11.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/0.11.1)
+# v0.11.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.11.1)
 
 - fix: add missing config
 
