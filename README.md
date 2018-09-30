@@ -79,7 +79,7 @@ Setting                    | Default  | Description
 
 #### File Encoding
 
-The default character encoding for AppleScript text files is [Mac Roman](https://www.wikiwand.com/en/Mac_OS_Roman). If you wish to change this, you can do so in the package settings.
+The default character encoding for AppleScript text files is [Mac Roman](https://www.wikiwand.com/en/Mac_OS_Roman). If you wish to change this, you can do so in the settings.
 
 **Example:**
 
