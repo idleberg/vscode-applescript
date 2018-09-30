@@ -297,14 +297,14 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^10.5.5",
+    "@types/node": "^10.11.3",
     "applescript-svg-icon": "github:idleberg/applescript-svg-icon",
     "gulp": "^4.0.0",
     "gulp-raster": "^0.2.0",
     "gulp-rename": "^1.4.0",
     "husky": "^1.0.1",
     "tslint": "^5.11.0",
-    "typescript": "^3.0.1",
+    "typescript": "^3.1.1",
     "vscode": "^1.1.21",
     "vscode-linter": "^0.2.1"
   }
