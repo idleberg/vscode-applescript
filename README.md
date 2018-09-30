@@ -77,6 +77,20 @@ Setting                    | Default  | Description
 `osacompile.startupScreen` | `false`  | Show startup-screen
 `osascript.outputStyle`    | -        | The flags argument is a string consisting of any of the modifier characters `e`, `h`, `o`, and `s`
 
+#### File Encoding
+
+The default character encoding for AppleScript text files is [Mac Roman](https://www.wikiwand.com/en/Mac_OS_Roman). If you wish to change this, you can do so in the package settings.
+
+**Example:**
+
+```
+{
+  "[applescript]": {
+    "files.encoding": "utf8"
+  }
+}
+```
+
 ## License
 
 This work is licensed under [The MIT License](https://opensource.org/licenses/MIT)
