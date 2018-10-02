@@ -86,7 +86,7 @@ The default character encoding for AppleScript text files is [Mac Roman](https:/
 ```json
 {
   "[applescript]": {
-    "files.encoding": "utf8"
+    "files.encoding": "utf16le"
   }
 }
 ```
