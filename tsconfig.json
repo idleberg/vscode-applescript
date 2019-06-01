@@ -5,6 +5,7 @@
             "es2015"
         ],
         "target": "es6",
+        "incremental": true,
         "outDir": "lib",
         "noFallthroughCasesInSwitch": true,
         "noImplicitAny": false,
