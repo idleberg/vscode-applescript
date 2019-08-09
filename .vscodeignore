@@ -1,5 +1,29 @@
+# Development
+*.map
+.circleci/
 .editorconfig
 .gitignore
 .travis.yml
 gulpfile.js
+package-lock.json
+src/
+tsconfig.json
+tsconfig.tsbuildinfo
 tslint.json
+webpack.config.js
+
+# Package managers
+npm-debug.log*
+package-lock.json
+vendor/
+yarn-error.log
+yarn.lock
+
+# Visual Studio Code
+**/**.vsix
+.vscode-test/**
+.vscode/**
+
+# Project specific
+images/logo.svg
+todo.md

@@ -1,8 +1,16 @@
-*.vsix
-bower_components/
+# Development
+*.map
 lib/
+tsconfig.tsbuildinfo
+
+# Package managers
+bower_components/
 node_modules/
 npm-debug.log*
 package-lock.json
-todo.md
 vendor/
+
+# Project specific
+*.vsix
+images/logo.svg
+todo.md

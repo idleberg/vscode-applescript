@@ -10,12 +10,11 @@
     "url": "http://github.com/idleberg"
   },
   "scripts": {
-    "build": "tsc --pretty --project ./",
-    "dev": "tsc --watch --pretty --project ./",
+    "build": "webpack --mode production",
+    "dev": "webpack --mode none --watch",
     "postinstall": "node ./node_modules/vscode/bin/install",
-    "precommit": "npm run test",
     "test": "vscode-linter",
-    "vscode:prepublish": "node run build && gulp"
+    "vscode:prepublish": "webpack --mode production && gulp"
   },
   "keywords": [
     "apple",
@@ -298,15 +297,22 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^10.11.3",
+    "@types/node": "^12.7.1",
     "applescript-svg-icon": "github:idleberg/applescript-svg-icon",
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.2",
     "gulp-raster": "^0.2.0",
     "gulp-rename": "^1.4.0",
-    "husky": "^1.0.1",
-    "tslint": "^5.11.0",
-    "typescript": "^3.1.1",
-    "vscode": "^1.1.21",
-    "vscode-linter": "^0.2.1"
+    "husky": "^3.0.3",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3",
+    "vscode": "^1.1.36",
+    "vscode-linter": "^0.2.2",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test"
+    }
   }
 }
