@@ -1,3 +1,8 @@
+# v0.15.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.15.0)
+
+- compiled with Webpack
+- update dependencies
+
 # v0.14.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.14.2)
 
 - set default character encoding to [Mac Roman](https://www.wikiwand.com/en/Mac_OS_Roman)
