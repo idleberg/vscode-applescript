@@ -31,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/idleberg/vscode-applescript/issues"
   },
-  "main": "./lib/main",
+  "main": "./lib/extension",
   "icon": "images/logo.png",
   "engines": {
     "vscode": "^1.0.0"
@@ -303,6 +303,7 @@
     "gulp-raster": "^0.2.0",
     "gulp-rename": "^1.4.0",
     "husky": "^3.0.3",
+    "ts-loader": "^6.0.4",
     "tslint": "^5.18.0",
     "typescript": "^3.5.3",
     "vscode": "^1.1.36",
