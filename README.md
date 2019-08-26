@@ -4,7 +4,6 @@
 [![GitHub](https://flat.badgen.net/github/release/idleberg/vscode-applescript)](https://github.com/idleberg/vscode-applescript/releases)
 [![Visual Studio Marketplace](https://vsmarketplacebadge.apphb.com/installs-short/idleberg.applescript.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=idleberg.applescript)
 [![CircleCI](https://flat.badgen.net/circleci/github/idleberg/vscode-nsis)](https://circleci.com/gh/idleberg/vscode-applescript)
-[![David](https://flat.badgen.net/david/dev/idleberg/vscode-applescript)](https://david-dm.org/idleberg/vscode-applescript?type=dev)
 
 Language syntax, snippets and build system for AppleScript and JavaScript for Automation
 
