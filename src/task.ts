@@ -14,40 +14,34 @@ const createBuildTask = (isJXA = false) => {
   let config: WorkspaceConfiguration = getConfig();
   let command = 'osacompile';
 
-  let doc = window.activeTextEditor.document;
+  const doc = window.activeTextEditor.document;
+  const fileName: string = basename(doc.fileName);
 
   const args = [];
-  let runArgs = [basename(doc.fileName)];
-  let scriptArgs = ['-o', basename(getOutName(doc.fileName)), basename(doc.fileName)];
-  let bundleArgs = ['-o', basename(getOutName(doc.fileName, 'scptd')), basename(doc.fileName)];
-  let appArgs = ['-o', basename(getOutName(doc.fileName, 'app')), basename(doc.fileName)];
-
-  if (config.osacompile.executeOnly === true) {
-    args.unshift('-x');
-  }
-
-  if (config.osacompile.stayOpen === true) {
-    appArgs.unshift('-s');
-  }
-
-  if (config.osacompile.startupScreen === true) {
-    appArgs.unshift('-u');
-  }
+  const runArgs = [];
+  const scriptArgs = [];
+  const bundleArgs = [];
+  const appArgs = [];
 
   if (isJXA === true) {
     args.push('-l', 'JavaScript');
   }
 
-  if (config.osascript.outputStyle.trim().length > 0 && config.osascript.outputStyle.trim().length <= 2) {
-    runArgs.unshift('-s', config.osascript.outputStyle.trim());
+  if (config.osacompile.executeOnly === true) {
+    args.push('-x');
   }
 
-  runArgs = args.concat(runArgs);
-  scriptArgs = args.concat(scriptArgs);
-  bundleArgs = args.concat(bundleArgs);
-  appArgs = args.concat(appArgs);
+  if (config.osacompile.stayOpen === true) {
+    appArgs.push('-s');
+  }
 
-  const { version } = require('../package.json');
+  if (config.osacompile.startupScreen === true) {
+    appArgs.push('-u');
+  }
+
+  if (config.osascript.outputStyle.trim().length > 0 && config.osascript.outputStyle.trim().length <= 2) {
+    runArgs.push('-s', config.osascript.outputStyle.trim());
+  }
 
   let taskFile = {
     'version': '2.0.0',
@@ -56,27 +50,27 @@ const createBuildTask = (isJXA = false) => {
         'label': 'Run Script',
         'type': 'shell',
         'command': 'osascript',
-        'args': runArgs,
+        'args': [ ...args, ...runArgs, fileName ],
       },
       {
         'label': 'Compile Script',
         'type': 'shell',
         'command': 'osacompile',
-        'args': scriptArgs,
+        'args': [ ...args, '-o', basename(getOutName(doc.fileName)), fileName ],
         'group': (config.defaultBuildTask === 'script') ? 'build' : 'none'
       },
       {
         'label': 'Compile Script Bundle',
         'type': 'shell',
         'command': 'osacompile',
-        'args': bundleArgs,
+        'args': [ ...args, '-o', basename(getOutName(doc.fileName, 'scptd')), fileName ],
         'group': (config.defaultBuildTask === 'bundle') ? 'build' : 'none'
       },
       {
         'label': 'Compile Application',
         'type': 'shell',
         'command': 'osacompile',
-        'args': appArgs,
+        'args': [ ...args, '-o', basename(getOutName(doc.fileName, 'app')), fileName ],
         'group': (config.defaultBuildTask === 'app') ? 'build' : 'none'
       }
     ]

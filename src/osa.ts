@@ -23,23 +23,25 @@ const osacompile = (compileTarget: string, options: CommandFlags = { isJXA: fals
 
   doc.save().then( () => {
     const outName = getOutName(doc.fileName, compileTarget);
-    const args = ['-o', outName, doc.fileName];
+    const args = ['-o', outName];
+
+    if (options.isJXA === true) {
+      args.push('-l', 'JavaScript');
+    }
 
     if (options.executeOnly === true) {
-      args.unshift('-x');
+      args.push('-x');
     }
 
     if (compileTarget === 'app' && options.stayOpen === true) {
-      args.unshift('-s');
+      args.push('-s');
     }
 
     if (compileTarget === 'app' && options.startupScreen === true) {
-      args.unshift('-u');
+      args.push('-u');
     }
 
-    if (options.isJXA === true) {
-      args.unshift('-l', 'JavaScript');
-    }
+    args.push(doc.fileName);
 
     spawnPromise('osacompile', args, outputChannel)
     .then( () => {
