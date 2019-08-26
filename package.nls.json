@@ -1,0 +1,3 @@
+{
+  "osascriptOutputStyle": "The flags argument is a string consisting of any of the modifier characters `e`, `h`, `o`, and `s`:\n- `h` — \tPrint values in human-readable form (default)\n- `s` — \tPrint values in recompilable source form\n- `e` — \tPrint script errors to `stderr` (default)\n- `o` — \tPrint script errors to `stdout`"
+}

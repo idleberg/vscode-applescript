@@ -103,7 +103,7 @@
         "applescript.osascript.outputStyle": {
           "type": "string",
           "default": "",
-          "description": "The flags argument is a string consisting of any of the modifier characters e, h, o, and s:\nh\tPrint values in human-readable form (default)\ns\tPrint values in recompilable source form\ne\tPrint script errors to stderr (default)\no\tPrint script errors to stdout"
+          "markdownDescription": "%osascriptOutputStyle%"
         }
       }
     },
