@@ -1,3 +1,9 @@
+# v0.16.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.16.0)
+
+- add support for Tasks 2.0.0
+- refactor argument handling
+- update dependencies
+
 # v0.15.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.15.0)
 
 - compiled with Webpack
