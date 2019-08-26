@@ -2,6 +2,7 @@
 
 - add support for Tasks 2.0.0
 - refactor argument handling
+- use Markdown descriptions in settings
 - update dependencies
 
 # v0.15.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.15.0)
