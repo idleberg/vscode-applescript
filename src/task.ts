@@ -50,34 +50,34 @@ const createBuildTask = (isJXA = false) => {
   const { version } = require('../package.json');
 
   let taskFile = {
-    'version': `0.1.0`,
-    'isShellCommand': false,
-    'showOutput': 'always',
-    'suppressTaskName': true,
-    'echoCommand': false,
+    'version': '2.0.0',
     'tasks': [
       {
+        'label': 'Run Script',
+        'type': 'shell',
         'command': 'osascript',
-        'taskName': 'Run Script',
         'args': runArgs,
       },
       {
+        'label': 'Compile Script',
+        'type': 'shell',
         'command': 'osacompile',
-        'taskName': 'Compile Script',
         'args': scriptArgs,
-        'isBuildCommand': (config.defaultBuildTask === 'script') ? true : false
+        'group': (config.defaultBuildTask === 'script') ? 'build' : 'none'
       },
       {
+        'label': 'Compile Script Bundle',
+        'type': 'shell',
         'command': 'osacompile',
-        'taskName': 'Compile Script Bundle',
         'args': bundleArgs,
-        'isBuildCommand': (config.defaultBuildTask === 'bundle') ? true : false
+        'group': (config.defaultBuildTask === 'bundle') ? 'build' : 'none'
       },
       {
+        'label': 'Compile Application',
+        'type': 'shell',
         'command': 'osacompile',
-        'taskName': 'Compile Application',
         'args': appArgs,
-        'isBuildCommand': (config.defaultBuildTask === 'app') ? true : false
+        'group': (config.defaultBuildTask === 'app') ? 'build' : 'none'
       }
     ]
   };
