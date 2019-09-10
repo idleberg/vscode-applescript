@@ -241,16 +241,6 @@
         "key": "shift+alt+r",
         "when": "editorFocus && editorLangId == applescript",
         "command": "extension.applescript.run"
-      },
-      {
-        "key": "shift+alt+b",
-        "when": "editorFocus && (editorLangId == jxa || editorLangId == javascript)",
-        "command": "extension.jxa.compile"
-      },
-      {
-        "key": "shift+alt+r",
-        "when": "editorFocus && (editorLangId == jxa || editorLangId == javascript)",
-        "command": "extension.jxa.run"
       }
     ],
     "languages": [

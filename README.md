@@ -57,8 +57,8 @@ On macOS, you can make use of the following build commands through the [command-
 * AppleScript: Compile Script – <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd>
 * AppleScript: Compile Script bundle
 * AppleScript: Compile Application
-* JXA: Run Script – <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>R</kbd>
-* JXA: Compile Script – <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd>
+* JXA: Run Script
+* JXA: Compile Script
 * JXA: Compile Script bundle
 * JXA: Compile Application
 

@@ -1,3 +1,10 @@
+# v0.17.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.17.0)
+
+- enable JXA menu icons for JavaScript
+- embed JavaScript into JXA
+- remove broken keybindings
+- update dependencies
+
 # v0.16.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.16.0)
 
 - add support for Tasks 2.0.0
