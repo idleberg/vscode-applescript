@@ -43,7 +43,8 @@
   ],
   "activationEvents": [
     "onLanguage:applescript",
-    "onLanguage:jxa"
+    "onLanguage:jxa",
+    "onLanguage:javascript"
   ],
   "contributes": {
     "configurationDefaults": {
@@ -209,22 +210,22 @@
           "group": "navigation@5"
         },
         {
-          "when": "resourceLangId == jxa",
+          "when": "resourceLangId == jxa || resourceLangId == javascript",
           "command": "extension.jxa.run",
           "group": "navigation@1"
         },
         {
-          "when": "resourceLangId == jxa",
+          "when": "resourceLangId == jxa || resourceLangId == javascript",
           "command": "extension.jxa.compile",
           "group": "navigation@2"
         },
         {
-          "when": "resourceLangId == jxa",
+          "when": "resourceLangId == jxa || resourceLangId == javascript",
           "command": "extension.jxa.compileBundle",
           "group": "navigation@3"
         },
         {
-          "when": "resourceLangId == jxa",
+          "when": "resourceLangId == jxa || resourceLangId == javascript",
           "command": "extension.jxa.compileApp",
           "group": "navigation@4"
         }
@@ -243,12 +244,12 @@
       },
       {
         "key": "shift+alt+b",
-        "when": "editorFocus && editorLangId == jxa",
+        "when": "editorFocus && (editorLangId == jxa || editorLangId == javascript)",
         "command": "extension.jxa.compile"
       },
       {
         "key": "shift+alt+r",
-        "when": "editorFocus && editorLangId == jxa",
+        "when": "editorFocus && (editorLangId == jxa || editorLangId == javascript)",
         "command": "extension.jxa.run"
       }
     ],
@@ -286,7 +287,10 @@
       {
         "language": "jxa",
         "scopeName": "source.js.jxa",
-        "path": "./syntaxes/jxa.tmLanguage"
+        "path": "./syntaxes/jxa.tmLanguage",
+        "embeddedLanguages": {
+          "source.js": "javascript"
+        }
       }
     ],
     "snippets": [
