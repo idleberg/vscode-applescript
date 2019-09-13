@@ -2,9 +2,9 @@
 
 import { window, workspace, WorkspaceConfiguration } from 'vscode';
 
-import { mkdir, writeFile } from 'fs';
-import { getConfig, getOutName } from './util';
 import { basename, join } from 'path';
+import { getConfig, getOutName } from './util';
+import { mkdir, writeFile } from 'fs';
 
 const createBuildTask = (isJXA = false) => {
   if (typeof workspace.rootPath === 'undefined' || workspace.rootPath === null) {

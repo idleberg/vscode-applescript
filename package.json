@@ -309,5 +309,8 @@
     "hooks": {
       "pre-commit": "npm run test"
     }
+  },
+  "dependencies": {
+    "line-column": "^1.0.2"
   }
 }

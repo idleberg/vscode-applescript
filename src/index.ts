@@ -4,8 +4,8 @@
 import { commands } from 'vscode';
 
 // Modules
-import { osacompile, osascript } from './osa';
 import { createBuildTask } from './task';
+import { osacompile, osascript } from './osa';
 
 const activate = (context) => {
   context.subscriptions.push(
