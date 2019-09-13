@@ -22,7 +22,10 @@ const getLineCol = (lineString: string) => {
   const fileName = window.activeTextEditor.document.fileName;
   const lineCol = lineColumn(editorText, {origin: 1}).fromIndex(result.groups.rangeFrom);
 
-  return (result.groups.rangeTo) ? `${fileName}:${lineCol.line}:${lineCol.col}:${result.groups.message}` : `${fileName}:${lineCol.line}:1:${result.groups.message}`;
+  // is range end specified?
+  lineCol.col = (result.groups.rangeTo) ? lineCol.col : 1;
+
+  return `${fileName}:${lineCol.line}:${lineCol.col}:${result.groups.message}`;
 };
 
 const getOutName = (fileName, extension = 'scpt') => {
