@@ -295,6 +295,9 @@
       }
     ]
   },
+  "dependencies": {
+    "line-column": "^1.0.2"
+  },
   "devDependencies": {
     "@types/node": "^12.7.2",
     "applescript-svg-icon": "github:idleberg/applescript-svg-icon",
@@ -314,8 +317,5 @@
     "hooks": {
       "pre-commit": "npm run test"
     }
-  },
-  "dependencies": {
-    "line-column": "^1.0.2"
   }
 }
