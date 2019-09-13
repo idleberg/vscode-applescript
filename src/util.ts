@@ -22,7 +22,7 @@ const getLineCol = (lineString: string) => {
   const fileName = window.activeTextEditor.document.fileName;
   const lineCol = lineColumn(editorText, {origin: 1}).fromIndex(result.groups.rangeFrom);
 
-  return `${fileName}:${lineCol.line}:${lineCol.col}:${result.groups.message}`;
+  return (result.groups.rangeTo) ? `${fileName}:${lineCol.line}:${lineCol.col}:${result.groups.message}` : `${fileName}:${lineCol.line}:1:${result.groups.message}`;
 };
 
 const getOutName = (fileName, extension = 'scpt') => {
@@ -36,6 +36,7 @@ const getOutName = (fileName, extension = 'scpt') => {
 const spawnPromise = (cmd: any, args: Array<string>, outputChannel) => {
   return new Promise((resolve, reject) => {
     outputChannel.clear();
+
     if (getConfig().alwaysShowOutput === true) {
       outputChannel.show();
     }
@@ -65,7 +66,7 @@ const spawnPromise = (cmd: any, args: Array<string>, outputChannel) => {
     });
 
     process.on('close', (code) => {
-      return (code !== 0) ? reject() : resolve();
+      return (code === 0) ? resolve() : reject();
     });
   });
 };
