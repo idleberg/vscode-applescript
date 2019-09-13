@@ -16,7 +16,7 @@ const getLineCol = (lineString: string) => {
   const re = /^(?<filePath>[^:]+):(?<rangeFrom>\d+):((?<rangeTo>\d+):)?(?<message>.*)$/u;
   const result = re.exec(lineString);
 
-  if (!result.groups.rangeFrom) return false;
+  if (!result || !result.groups.rangeFrom) return false;
 
   const editorText = window.activeTextEditor.document.getText();
   const fileName = window.activeTextEditor.document.fileName;

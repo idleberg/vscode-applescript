@@ -1,3 +1,7 @@
+# v0.18.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.18.1)
+
+- improve error handling in `getLineCol()`
+
 # v0.18.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.18.0)
 
 - add option to convert error range to line/column
