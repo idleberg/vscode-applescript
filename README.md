@@ -70,6 +70,7 @@ Setting                    | Default  | Description
 ---------------------------|----------|------------
 `showNotifications`        | `true`   | Show build notifications indicating success or failure
 `alwaysShowOutput`         | `false`  | Specify whether to show the output panel on errors only or on each build
+`convertErrorRange`        | `false`  | Convert error range to line/column
 `defaultBuildTask`         | `script` | Specify the default build task when creating a new task file
 `osacompile.executeOnly`   | `false`  | Save the resulting script as execute-only
 `osacompile.stayOpen`      | `false`  | Stay open after run handler

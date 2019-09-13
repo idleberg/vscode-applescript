@@ -68,7 +68,7 @@
         },
         "applescript.convertErrorRange": {
           "type": "boolean",
-          "default": true,
+          "default": false,
           "description": "Convert error range to line/column"
         },
         "applescript.alwaysOpenBuildTask": {
