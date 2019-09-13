@@ -66,6 +66,11 @@
           "default": false,
           "description": "Specify whether to show the output panel on errors only or on each build"
         },
+        "applescript.convertErrorRange": {
+          "type": "boolean",
+          "default": true,
+          "description": "Convert error range to line/column"
+        },
         "applescript.alwaysOpenBuildTask": {
           "type": "boolean",
           "default": true,
