@@ -1,3 +1,7 @@
+# v0.18.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.18.0)
+
+- add option to convert error range to line/column
+
 # v0.17.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.17.0)
 
 - enable JXA menu icons for JavaScript
