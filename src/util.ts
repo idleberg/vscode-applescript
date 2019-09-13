@@ -42,14 +42,11 @@ const spawnPromise = (cmd: any, args: Array<string>, outputChannel) => {
 
     const process = spawn(cmd, args);
 
-    let stdErr: string = '';
-
     process.stdout.on('data', line => {
       const lineString: string = line.toString().trim();
 
       if (lineString.length) {
         const lineCol = getLineCol(lineString);
-        console.info(lineCol);
         const appendLine = (lineCol) ? lineCol : lineString;
 
         outputChannel.appendLine(appendLine);
@@ -59,11 +56,8 @@ const spawnPromise = (cmd: any, args: Array<string>, outputChannel) => {
     process.stderr.on('data', line => {
       const lineString: string = line.toString().trim();
 
-      stdErr += '\n' + lineString;
-
       if (lineString.length) {
         const lineCol = getLineCol(lineString);
-        console.info(lineCol);
         const appendLine = (lineCol) ? lineCol : lineString;
 
         outputChannel.appendLine(appendLine);
@@ -71,12 +65,7 @@ const spawnPromise = (cmd: any, args: Array<string>, outputChannel) => {
     });
 
     process.on('close', (code) => {
-      if (code !== 0) {
-        console.error(`Exit code ${code}:\n${stdErr}`);
-        return reject();
-      }
-
-      return resolve();
+      return (code !== 0) ? reject() : resolve();
     });
   });
 };
