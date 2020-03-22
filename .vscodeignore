@@ -13,6 +13,7 @@ tslint.json
 webpack.config.js
 
 # Package managers
+node_modules/
 npm-debug.log*
 package-lock.json
 vendor/
