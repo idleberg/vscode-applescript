@@ -15,18 +15,28 @@ Language syntax, snippets and build system for AppleScript and JavaScript for Au
 
 ### Extension Marketplace
 
-Click the Extensions icon in the activity bar and search for *idleberg.applescript*. With shell commands installed, you can use the following command to install the extension:
+Launch Quick Open, paste the following command, and press <kbd>Enter</kbd>
 
-```bash
-$ code --install-extension idleberg.applescript
-```
+`ext install idleberg.applescript`
+
+### CLI
+
+With [shell commands](https://code.visualstudio.com/docs/editor/command-line) installed, you can use the following command to install the extension:
+
+`$ code --install-extension idleberg.applescript`
 
 ### Packaged Extension
 
-Download the package extension from the the [release page](https://github.com/idleberg/vscode-applescript/releases) and install it from the command-line:
+Download the packaged extension from the the [release page](https://github.com/idleberg/vscode-applescript/releases) and install it from the command-line:
 
 ```bash
-$ code --install-extension applescript-*.vsix
+$ code --install-extension path/to/applescript-*.vsix
+```
+
+Alternatively, you can download the packaged extension from the [Open VSX Registry](https://open-vsx.org/) or using the [`ovsx`](https://www.npmjs.com/package/ovsx) command-line tool:
+
+```bash
+$ ovsx get idleberg.applescript
 ```
 
 ### Clone Repository
