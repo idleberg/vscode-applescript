@@ -1,3 +1,8 @@
+# v0.18.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.18.2)
+
+- remove `node_modules` from distribution
+- update dependencies
+
 # v0.18.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.18.1)
 
 - improve error handling in `getLineCol()`
