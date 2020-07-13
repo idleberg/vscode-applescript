@@ -11,8 +11,9 @@
   },
   "scripts": {
     "build": "webpack --mode production",
-    "dev": "webpack --mode none --watch",
+    "dev": "npm run start",
     "postinstall": "node ./node_modules/vscode/bin/install",
+    "start": "webpack --mode none --watch",
     "test": "vscode-linter",
     "vscode:prepublish": "webpack --mode production && gulp"
   },
