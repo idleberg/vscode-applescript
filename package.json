@@ -215,22 +215,22 @@
           "group": "navigation@5"
         },
         {
-          "when": "resourceLangId == jxa || resourceLangId == javascript",
+          "when": "resourceLangId == jxa",
           "command": "extension.jxa.run",
           "group": "navigation@1"
         },
         {
-          "when": "resourceLangId == jxa || resourceLangId == javascript",
+          "when": "resourceLangId == jxa",
           "command": "extension.jxa.compile",
           "group": "navigation@2"
         },
         {
-          "when": "resourceLangId == jxa || resourceLangId == javascript",
+          "when": "resourceLangId == jxa",
           "command": "extension.jxa.compileBundle",
           "group": "navigation@3"
         },
         {
-          "when": "resourceLangId == jxa || resourceLangId == javascript",
+          "when": "resourceLangId == jxa",
           "command": "extension.jxa.compileApp",
           "group": "navigation@4"
         }
@@ -299,19 +299,19 @@
     "line-column": "^1.0.2"
   },
   "devDependencies": {
-    "@types/node": "^13.11.0",
+    "@types/node": "^14.0.22",
     "applescript-svg-icon": "github:idleberg/applescript-svg-icon",
     "gulp": "^4.0.2",
     "gulp-raster": "^0.2.0",
     "gulp-rename": "^2.0.0",
-    "husky": "^4.2.3",
-    "ts-loader": "^6.2.2",
-    "tslint": "^6.1.1",
-    "typescript": "^3.8.3",
-    "vscode": "^1.1.36",
+    "husky": "^4.2.5",
+    "ts-loader": "^8.0.0",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.6",
+    "vscode": "^1.1.37",
     "vscode-linter": "^0.3.1",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
   },
   "husky": {
     "hooks": {
