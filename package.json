@@ -10,12 +10,15 @@
     "url": "http://github.com/idleberg"
   },
   "scripts": {
-    "build": "webpack --mode production",
+    "compile": "npm run build",
+    "build": "NODE_ENV=production rollup --config",
     "dev": "npm run start",
+    "fix": "eslint --fix ./src",
+    "lint": "eslint ./src && jsonlint --quiet ./snippets/*.json",
     "postinstall": "node ./node_modules/vscode/bin/install",
-    "start": "webpack --mode none --watch",
-    "test": "vscode-linter",
-    "vscode:prepublish": "webpack --mode production && gulp"
+    "start": "NODE_ENV=development rollup --watch --config",
+    "test": "npm run lint",
+    "vscode:prepublish": "npm run build && gulp"
   },
   "keywords": [
     "apple",
@@ -33,6 +36,7 @@
     "url": "https://github.com/idleberg/vscode-applescript/issues"
   },
   "main": "./lib/extension",
+  "typings": "./types",
   "icon": "images/logo.png",
   "engines": {
     "vscode": "^1.0.0"
@@ -297,22 +301,30 @@
     ]
   },
   "dependencies": {
-    "line-column": "^1.0.2"
+    "line-column": "^1.0.2",
+    "vscode-get-config": "^0.1.2"
   },
   "devDependencies": {
-    "@types/node": "^14.0.22",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-typescript": "^6.0.0",
+    "@types/node": "^14.14.2",
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
     "applescript-svg-icon": "github:idleberg/applescript-svg-icon",
+    "eslint": "^7.11.0",
+    "eslint-plugin-json": "^2.1.2",
     "gulp": "^4.0.2",
     "gulp-raster": "^0.2.0",
     "gulp-rename": "^2.0.0",
-    "husky": "^4.2.5",
-    "ts-loader": "^8.0.0",
-    "tslint": "^6.1.2",
-    "typescript": "^3.9.6",
-    "vscode": "^1.1.37",
-    "vscode-linter": "^0.3.1",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12"
+    "husky": "^4.3.0",
+    "jsonlint": "^1.6.3",
+    "rollup": "^2.32.1",
+    "rollup-plugin-filesize": "^9.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.0.3",
+    "vscode": "^1.1.37"
   },
   "husky": {
     "hooks": {
