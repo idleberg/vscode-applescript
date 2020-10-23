@@ -1,27 +1,27 @@
-'use strict';
-
 // Dependencies
 import { platform } from 'os';
-import { workspace, window } from 'vscode';
+import { window } from 'vscode';
 
 // Modules
-import { getConfig, getOutName, spawnPromise } from './util';
+import { getConfig } from 'vscode-get-config';
+import { getOutName, spawnPromise } from './util';
 
 const outputChannel = window.createOutputChannel('AppleScript');
 
-const osacompile = (compileTarget: string, options: CommandFlags = { isJXA: false }) => {
-  const config = getConfig();
+async function osacompile(compileTarget: string, options: CommandFlags = { isJXA: false }): Promise<void> {
+  const { ignoreOS, osacompile, showNotifications } = await getConfig('applescript');
 
   // might become useful in a future release
-  options = {...options, ...config.osacompile};
+  options = { ...options, ...osacompile };
 
-  if (platform() !== 'darwin' && config.ignoreOS !== true) {
-    return window.showWarningMessage('This command is only available on macOS');
+  if (platform() !== 'darwin' && ignoreOS !== true) {
+    window.showWarningMessage('This command is only available on macOS');
+    return;
   }
 
-  let doc = window.activeTextEditor.document;
+  const doc = window.activeTextEditor.document;
 
-  doc.save().then( () => {
+  doc.save().then(() => {
     const outName = getOutName(doc.fileName, compileTarget);
     const args = ['-o', outName];
 
@@ -44,38 +44,41 @@ const osacompile = (compileTarget: string, options: CommandFlags = { isJXA: fals
     args.push(doc.fileName);
 
     spawnPromise('osacompile', args, outputChannel)
-    .then( () => {
-      if (config.showNotifications) window.showInformationMessage(`Successfully compiled '${doc.fileName}'`);
-     })
-    .catch( () => {
-      outputChannel.show(true);
-      if (config.showNotifications) window.showErrorMessage('Failed to run compile (see output for details)');
-    });
+      .then(() => {
+        if (showNotifications)
+          window.showInformationMessage(`Successfully compiled '${doc.fileName}'`);
+      })
+      .catch(() => {
+        outputChannel.show(true);
+        if (showNotifications)
+          window.showErrorMessage('Failed to run compile (see output for details)');
+      });
   });
-};
+}
 
-const osascript = (options: CommandFlags = { isJXA: false }) => {
-  const config = getConfig();
+async function osascript(options: CommandFlags = { isJXA: false }): Promise<void> {
+  const { ignoreOS, osascript, showNotifications } = await getConfig('applescript');
 
-  if (platform() !== 'darwin' && config.ignoreOS !== true) {
-    return window.showWarningMessage('This command is only available on macOS');
+  if (platform() !== 'darwin' && ignoreOS !== true) {
+    window.showWarningMessage('This command is only available on macOS');
+    return;
   }
 
-  let doc = window.activeTextEditor.document;
+  const doc = window.activeTextEditor.document;
   const args = [];
 
   if (doc.isDirty) {
     const lines = doc.getText().split('\n');
 
-    lines.forEach(function(line) {
+    lines.forEach(function (line) {
       args.push('-e', line);
     });
   } else {
     args.push(doc.fileName);
   }
 
-  if (config.osascript.outputStyle.trim().length > 0 && config.osascript.outputStyle.trim().length <= 2) {
-    args.unshift('-s', config.osascript.outputStyle.trim());
+  if (osascript.outputStyle.trim().length > 0 && osascript.outputStyle.trim().length <= 2) {
+    args.unshift('-s', osascript.outputStyle.trim());
   }
 
   if (options.isJXA === true) {
@@ -83,10 +86,11 @@ const osascript = (options: CommandFlags = { isJXA: false }) => {
   }
 
   spawnPromise('osascript', args, outputChannel)
-  .catch( () => {
-    outputChannel.show(true);
-    if (config.showNotifications) window.showErrorMessage('Failed to run script (see output for details)');
-  });
-};
+    .catch(() => {
+      outputChannel.show(true);
+      if (showNotifications)
+        window.showErrorMessage('Failed to run script (see output for details)');
+    });
+}
 
 export { osacompile, osascript };

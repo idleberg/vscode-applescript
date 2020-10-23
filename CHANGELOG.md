@@ -1,3 +1,10 @@
+# v0.19.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.19.0)
+
+- add support for variable substitution when reading config
+- builds with Rollup
+- lints with ESLint
+- update dependencies
+
 # v0.18.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.18.2)
 
 - remove `node_modules` from distribution

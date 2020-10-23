@@ -1,99 +1,96 @@
-'use strict';
-
-import { window, workspace, WorkspaceConfiguration } from 'vscode';
-
 import { basename, join } from 'path';
-import { getConfig, getOutName } from './util';
+import { getConfig } from 'vscode-get-config';
+import { getOutName } from './util';
 import { mkdir, writeFile } from 'fs';
+import { window, workspace } from 'vscode';
 
-const createBuildTask = (isJXA = false) => {
+async function createBuildTask(isJXA = false): Promise<void> {
   if (typeof workspace.rootPath === 'undefined' || workspace.rootPath === null) {
-    return window.showErrorMessage('Task support is only available when working on a workspace folder. It is not available when editing single files.');
+    window.showErrorMessage('Task support is only available when working on a workspace folder. It is not available when editing single files.');
+    return;
   }
 
-  let config: WorkspaceConfiguration = getConfig();
-  let command = 'osacompile';
+  const { alwaysOpenBuildTask, defaultBuildTask, osacompile, osascript } = await getConfig('applescript');
 
   const doc = window.activeTextEditor.document;
   const fileName: string = basename(doc.fileName);
 
   const args = [];
   const runArgs = [];
-  const scriptArgs = [];
-  const bundleArgs = [];
   const appArgs = [];
 
   if (isJXA === true) {
     args.push('-l', 'JavaScript');
   }
 
-  if (config.osacompile.executeOnly === true) {
+  if (osacompile.executeOnly === true) {
     args.push('-x');
   }
 
-  if (config.osacompile.stayOpen === true) {
+  if (osacompile.stayOpen === true) {
     appArgs.push('-s');
   }
 
-  if (config.osacompile.startupScreen === true) {
+  if (osacompile.startupScreen === true) {
     appArgs.push('-u');
   }
 
-  if (config.osascript.outputStyle.trim().length > 0 && config.osascript.outputStyle.trim().length <= 2) {
-    runArgs.push('-s', config.osascript.outputStyle.trim());
+  if (osascript.outputStyle.trim().length > 0 && osascript.outputStyle.trim().length <= 2) {
+    runArgs.push('-s', osascript.outputStyle.trim());
   }
 
-  let taskFile = {
+  const taskFile = {
     'version': '2.0.0',
     'tasks': [
       {
         'label': 'Run Script',
         'type': 'shell',
         'command': 'osascript',
-        'args': [ ...args, ...runArgs, fileName ],
+        'args': [...args, ...runArgs, fileName],
       },
       {
         'label': 'Compile Script',
         'type': 'shell',
         'command': 'osacompile',
-        'args': [ ...args, '-o', basename(getOutName(doc.fileName)), fileName ],
-        'group': (config.defaultBuildTask === 'script') ? 'build' : 'none'
+        'args': [...args, '-o', basename(getOutName(doc.fileName)), fileName],
+        'group': (defaultBuildTask === 'script') ? 'build' : 'none'
       },
       {
         'label': 'Compile Script Bundle',
         'type': 'shell',
         'command': 'osacompile',
-        'args': [ ...args, '-o', basename(getOutName(doc.fileName, 'scptd')), fileName ],
-        'group': (config.defaultBuildTask === 'bundle') ? 'build' : 'none'
+        'args': [...args, '-o', basename(getOutName(doc.fileName, 'scptd')), fileName],
+        'group': (defaultBuildTask === 'bundle') ? 'build' : 'none'
       },
       {
         'label': 'Compile Application',
         'type': 'shell',
         'command': 'osacompile',
-        'args': [ ...args, '-o', basename(getOutName(doc.fileName, 'app')), fileName ],
-        'group': (config.defaultBuildTask === 'app') ? 'build' : 'none'
+        'args': [...args, '-o', basename(getOutName(doc.fileName, 'app')), fileName],
+        'group': (defaultBuildTask === 'app') ? 'build' : 'none'
       }
     ]
   };
 
-  let jsonString = JSON.stringify(taskFile, null, 2);
-  let dotFolder = join(workspace.rootPath, '/.vscode');
-  let buildFile = join(dotFolder, 'tasks.json');
+  const jsonString = JSON.stringify(taskFile, null, 2);
+  const dotFolder = join(workspace.rootPath, '/.vscode');
+  const buildFile = join(dotFolder, 'tasks.json');
 
-  mkdir(dotFolder, (error) => {
+  mkdir(dotFolder, () => {
     // ignore errors for now
     writeFile(buildFile, jsonString, (error) => {
       if (error) {
         window.showErrorMessage(error.toString());
       }
-      if (config.alwaysOpenBuildTask === false) return;
+      if (alwaysOpenBuildTask === false)
+        return;
 
       // Open tasks.json
-      workspace.openTextDocument(buildFile).then( (doc) => {
-          window.showTextDocument(doc);
+      workspace.openTextDocument(buildFile).then((doc) => {
+        window.showTextDocument(doc);
       });
     });
   });
-};
+}
 
 export { createBuildTask };
