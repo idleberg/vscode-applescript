@@ -51,7 +51,7 @@ async function osacompile(compileTarget: string, options: CommandFlags = { isJXA
       .catch(() => {
         outputChannel.show(true);
         if (showNotifications)
-          window.showErrorMessage('Failed to run compile (see output for details)');
+          window.showErrorMessage('Failed to compile or exited with error (see output for details)');
       });
   });
 }
@@ -89,7 +89,7 @@ async function osascript(options: CommandFlags = { isJXA: false }): Promise<void
     .catch(() => {
       outputChannel.show(true);
       if (showNotifications)
-        window.showErrorMessage('Failed to run script (see output for details)');
+        window.showErrorMessage('Failed to run script or exited with error (see output for details)');
     });
 }
 
