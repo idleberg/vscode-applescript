@@ -33,7 +33,7 @@ Download the packaged extension from the the [release page](https://github.com/i
 $ code --install-extension path/to/applescript-*.vsix
 ```
 
-Alternatively, you can download the packaged extension from the [Open VSX Registry](https://open-vsx.org/) or using the [`ovsx`](https://www.npmjs.com/package/ovsx) command-line tool:
+Alternatively, you can download the packaged extension from the [Open VSX Registry](https://open-vsx.org/) or install it using the [`ovsx`](https://www.npmjs.com/package/ovsx) command-line tool:
 
 ```bash
 $ ovsx get idleberg.applescript
