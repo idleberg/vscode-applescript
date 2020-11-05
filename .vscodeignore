@@ -2,10 +2,12 @@
 *.map
 .circleci/
 .editorconfig
+.eslintrc*
 .gitignore
 .travis.yml
 gulpfile.js
 package-lock.json
+rollup.config.js
 src/
 tsconfig.json
 tsconfig.tsbuildinfo
