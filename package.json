@@ -14,7 +14,9 @@
     "build": "NODE_ENV=production rollup --config",
     "dev": "npm run start",
     "fix": "eslint --fix ./src",
-    "lint": "eslint ./src && jsonlint --quiet ./snippets/*.json",
+    "lint:json": "jsonlint ./config/*.json snippets/*.json --quiet",
+    "lint:ts": "eslint ./src && jsonlint --quiet ./snippets/*.json",
+    "lint": "npm-run-all lint:*",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "start": "NODE_ENV=development rollup --watch --config",
     "test": "npm run lint",
@@ -320,6 +322,8 @@
     "gulp-rename": "^2.0.0",
     "husky": "^4.3.6",
     "jsonlint": "^1.6.3",
+    "lint-staged": "^10.5.3",
+    "npm-run-all": "^4.1.5",
     "rollup": "^2.35.1",
     "rollup-plugin-filesize": "^9.1.0",
     "rollup-plugin-terser": "^7.0.2",
@@ -328,7 +332,11 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test"
+      "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "*.ts": "eslint --cache --fix",
+    "*.json": "npm run lint:json"
   }
 }
