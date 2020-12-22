@@ -16,7 +16,7 @@
     "fix": "eslint --fix ./src",
     "lint:json": "jsonlint ./config/*.json snippets/*.json --quiet",
     "lint:ts": "eslint ./src && jsonlint --quiet ./snippets/*.json",
-    "lint": "npm-run-all lint:*",
+    "lint": "npm-run-all --parallel lint:*",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "start": "NODE_ENV=development rollup --watch --config",
     "test": "npm run lint",
