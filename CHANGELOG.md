@@ -1,3 +1,8 @@
+# v0.19.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.19.1)
+
+- use `lint-staged`
+- update dependencies
+
 # v0.19.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.19.0)
 
 - add support for variable substitution when reading config
