@@ -63,8 +63,8 @@ $ git clone https://github.com/idleberg/vscode-applescript applescript
 
 On macOS, you can make use of the following build commands through the [command-palette](https://code.visualstudio.com/docs/editor/codebasics#_command-palette):
 
-* AppleScript: Run Script – <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>R</kbd>
-* AppleScript: Compile Script – <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd>
+* AppleScript: Run Script – <kbd>⇧</kbd>+<kbd>⌥</kbd>+<kbd>R</kbd>
+* AppleScript: Compile Script – <kbd>⇧</kbd>+<kbd>⌥</kbd>+<kbd>B</kbd>
 * AppleScript: Compile Script bundle
 * AppleScript: Compile Application
 * JXA: Run Script
