@@ -11,14 +11,14 @@
   },
   "scripts": {
     "compile": "npm run build",
-    "build": "NODE_ENV=production rollup --config",
+    "build": "node ./tools/build.cjs",
     "dev": "npm run start",
     "fix": "eslint --fix ./src",
     "lint:json": "jsonlint ./config/*.json snippets/*.json --quiet",
     "lint:ts": "eslint ./src && jsonlint --quiet ./snippets/*.json",
     "lint": "npm-run-all --parallel lint:*",
     "postinstall": "node ./node_modules/vscode/bin/install",
-    "start": "NODE_ENV=development rollup --watch --config",
+    "start": "NODE_ENV=development node ./tools/build.cjs",
     "test": "npm run lint",
     "vscode:prepublish": "npm run build && gulp"
   },
@@ -307,14 +307,11 @@
     "vscode-get-config": "^0.3.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^17.0.0",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^11.0.1",
-    "@rollup/plugin-typescript": "^8.1.0",
     "@types/node": "^14.14.14",
     "@typescript-eslint/eslint-plugin": "^4.10.0",
     "@typescript-eslint/parser": "^4.10.0",
     "applescript-svg-icon": "github:idleberg/applescript-svg-icon",
+    "esbuild": "^0.8.56",
     "eslint": "^7.16.0",
     "eslint-plugin-json": "^2.1.2",
     "gulp": "^4.0.2",
@@ -324,9 +321,6 @@
     "jsonlint": "^1.6.3",
     "lint-staged": "^10.5.3",
     "npm-run-all": "^4.1.5",
-    "rollup": "^2.35.1",
-    "rollup-plugin-filesize": "^9.1.0",
-    "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.1.3",
     "vscode": "^1.1.37"
   },
