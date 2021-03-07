@@ -1,3 +1,8 @@
+# v0.20.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.20.0)
+
+- builds with esbuild
+- update dependencies
+
 # v0.19.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.19.1)
 
 - use `lint-staged`

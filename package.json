@@ -304,7 +304,7 @@
   },
   "dependencies": {
     "line-column": "^1.0.2",
-    "vscode-get-config": "^0.3.0"
+    "vscode-get-config": "^0.4.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.14",
