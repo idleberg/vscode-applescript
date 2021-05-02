@@ -1,38 +1,45 @@
 version: 2.1
 
 commands:
-  run-tests:
+  run-test:
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          name: Restore npm Package Data Cache
+          keys:
+            - v1-dependency-cache-{{ checksum "package-lock.json" }}-{{ .Environment.CIRCLE_JOB }}
+            - v1-dependency-cache-
       - run:
-          name: Installing Dependencies
+          name: Installing Node packages
           command: npm ci
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          name: Cache npm Package Data
+          key: v1-dependency-cache-{{ checksum "package-lock.json" }}-{{ .Environment.CIRCLE_JOB }}
           paths:
             - ./node_modules
       - run:
-          name: Lint Source
-          command: npm run test
+          name: Linting Source
+          command: npm run lint
+      - run:
+          name: Building Source
+          command: npm run build
 
 jobs:
-  node-latest:
+  node-current:
     docker:
-      - image: circleci/node:latest
+      - image: cimg/node:current
     steps:
-      - run-tests
+      - run-test
 
   node-lts:
     docker:
-      - image: circleci/node:lts
+      - image: cimg/node:lts
     steps:
-      - run-tests
+      - run-test
 
 workflows:
-  node-multi-build:
+  node-run-tests:
     jobs:
-    - node-latest
-    - node-lts
+      - node-current
+      - node-lts
   version: 2
