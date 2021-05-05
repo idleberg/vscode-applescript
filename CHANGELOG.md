@@ -1,3 +1,8 @@
+# v0.21.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.21.0)
+
+- add support to detect syntax from shebang
+- update dependencies
+
 # v0.20.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.20.0)
 
 - builds with esbuild
