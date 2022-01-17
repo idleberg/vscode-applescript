@@ -11,14 +11,15 @@
   },
   "scripts": {
     "compile": "npm run build",
-    "build": "node ./tools/build.cjs",
+    "build": "node ./tools/build.mjs",
     "dev": "npm run start",
     "fix": "eslint --fix ./src",
-    "lint:json": "jsonlint ./config/*.json snippets/*.json --quiet",
-    "lint:ts": "eslint ./src && jsonlint --quiet ./snippets/*.json",
+    "lint:json": "eslint --ext .json --ignore-path .gitignore",
+    "lint:ts": "eslint ./src --ignore-path .gitignore",
+    "lint:yaml": "eslint --ext .yaml --ext .yml --ignore-path .gitignore",
     "lint": "npm-run-all --parallel lint:*",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "start": "NODE_ENV=development node ./tools/build.cjs",
+    "prepare": "husky install",
+    "start": "cross-env ESBUILD_WATCH=true node ./tools/build.mjs",
     "test": "npm run lint",
     "vscode:prepublish": "npm run build && gulp"
   },
@@ -308,30 +309,25 @@
     "vscode-get-config": "^0.4.0"
   },
   "devDependencies": {
-    "@types/node": "^14.14.44",
-    "@typescript-eslint/eslint-plugin": "^4.22.1",
-    "@typescript-eslint/parser": "^4.22.1",
+    "@types/node": "^16.11.6",
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "@typescript-eslint/parser": "^5.3.0",
     "applescript-svg-icon": "github:idleberg/applescript-svg-icon",
-    "esbuild": "^0.8.57",
-    "eslint": "^7.25.0",
-    "eslint-plugin-json": "^2.1.2",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.14.2",
+    "eslint": "^8.2.0",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-yaml": "^0.5.0",
     "gulp": "^4.0.2",
     "gulp-raster": "^0.2.0",
     "gulp-rename": "^2.0.0",
-    "husky": ">=4 <5",
-    "jsonlint": "^1.6.3",
-    "lint-staged": "^10.5.3",
+    "husky": "^7.0.0",
+    "lint-staged": "^12.1.7",
+    "log-symbols": "^5.1.0",
     "npm-run-all": "^4.1.5",
-    "typescript": "^4.2.4",
-    "vscode": "^1.1.37"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "typescript": "^4.2.4"
   },
   "lint-staged": {
-    "*.ts": "eslint --cache --fix",
-    "*.json": "npm run lint:json"
+    "*.(ts|json|yml)": "eslint --cache --fix"
   }
 }
