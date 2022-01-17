@@ -2,13 +2,16 @@
 *.map
 .circleci/
 .editorconfig
+.eslintcache
 .eslintrc*
 .gitignore
+.husky/
 .travis.yml
 gulpfile.js
 package-lock.json
 rollup.config.js
 src/
+tools/
 tsconfig.json
 tsconfig.tsbuildinfo
 tslint.json

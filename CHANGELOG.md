@@ -1,3 +1,8 @@
+# v0.21.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.21.1)
+
+- update tooling
+- update dependencies
+
 # v0.21.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.21.0)
 
 - add support to detect syntax from shebang
