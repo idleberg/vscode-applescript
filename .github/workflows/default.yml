@@ -45,7 +45,7 @@ jobs:
         run: pnpm install
 
       - name: Lint Source
-        run: pnpm run lint --if-present
+        run: pnpm run lint -- --if-present
 
       - name: Build Source
-        run: pnpm run build --if-present
+        run: pnpm run build -- --if-present
