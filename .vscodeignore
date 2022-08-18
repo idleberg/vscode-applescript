@@ -5,6 +5,7 @@
 .eslintcache
 .eslintrc*
 .gitignore
+.github/
 .husky/
 .travis.yml
 gulpfile.js
@@ -15,6 +16,7 @@ tools/
 tsconfig.json
 tsconfig.tsbuildinfo
 tslint.json
+types/
 webpack.config.js
 
 # Package managers
