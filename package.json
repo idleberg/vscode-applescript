@@ -18,7 +18,9 @@
     "lint:ts": "eslint ./src --ignore-path .gitignore",
     "lint:yaml": "eslint --ext .yaml --ext .yml --ignore-path .gitignore",
     "lint": "npm-run-all --parallel lint:*",
+    "package": "vsce package --no-dependencies --githubBranch main",
     "prepare": "husky install",
+    "publish": "vsce publish --no-dependencies --githubBranch main",
     "start": "cross-env ESBUILD_WATCH=true node ./tools/build.mjs",
     "test": "npm run lint",
     "vscode:prepublish": "npm run build && gulp"
@@ -309,23 +311,24 @@
     "vscode-get-config": "^0.4.0"
   },
   "devDependencies": {
-    "@types/node": "^16.11.6",
-    "@typescript-eslint/eslint-plugin": "^5.3.0",
-    "@typescript-eslint/parser": "^5.3.0",
+    "@types/node": "^16.11.49",
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@typescript-eslint/parser": "^5.33.1",
     "applescript-svg-icon": "github:idleberg/applescript-svg-icon",
     "cross-env": "^7.0.3",
-    "esbuild": "^0.14.2",
-    "eslint": "^8.2.0",
+    "esbuild": "^0.15.5",
+    "eslint": "^8.22.0",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-yaml": "^0.5.0",
     "gulp": "^4.0.2",
     "gulp-raster": "^0.2.0",
     "gulp-rename": "^2.0.0",
-    "husky": "^7.0.0",
-    "lint-staged": "^12.1.7",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "log-symbols": "^5.1.0",
     "npm-run-all": "^4.1.5",
-    "typescript": "^4.2.4"
+    "typescript": "^4.7.4",
+    "vsce": "^2.10.0"
   },
   "lint-staged": {
     "*.(ts|json|yml)": "eslint --cache --fix"
