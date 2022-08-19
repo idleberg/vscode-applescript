@@ -21,7 +21,6 @@
     "lint:yaml": "eslint --ext .yaml --ext .yml --ignore-path .gitignore",
     "lint": "npm-run-all --parallel lint:*",
     "package": "vsce package --no-dependencies --githubBranch main",
-    "prepare": "husky install",
     "publish": "vsce publish --no-dependencies --githubBranch main",
     "start": "cross-env ESBUILD_WATCH=true node ./tools/build.mjs",
     "test": "npm run lint",
