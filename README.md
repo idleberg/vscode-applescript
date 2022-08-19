@@ -7,7 +7,7 @@
 
 Language syntax, snippets and build system for AppleScript and JavaScript for Automation
 
-![Screenshot](https://raw.githubusercontent.com/idleberg/vscode-applescript/master/images/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/idleberg/vscode-applescript/main/images/screenshot.png)
 
 *Screenshot of AppleScript in Visual Studio Code with [Hopscotch](https://marketplace.visualstudio.com/items?itemName=idleberg.hopscotch) theme*
 
