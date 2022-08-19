@@ -5,7 +5,7 @@ import { build } from 'esbuild';
 build({
   bundle: true,
   entryPoints: ['src/index.ts'],
-    external: ['vscode'],
+  external: ['vscode'],
   minify: true,
   outfile: 'lib/extension.js',
   platform: 'node',
