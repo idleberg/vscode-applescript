@@ -11,7 +11,9 @@
   },
   "scripts": {
     "compile": "npm run build",
-    "build": "node ./tools/build.mjs",
+    "build": "npm-run-all --parallel build:*",
+    "build:code": "node ./tools/build.mjs",
+    "build:image": "gulp",
     "dev": "npm run start",
     "fix": "eslint --fix ./src",
     "lint:json": "eslint --ext .json --ignore-path .gitignore",
@@ -23,7 +25,7 @@
     "publish": "vsce publish --no-dependencies --githubBranch main",
     "start": "cross-env ESBUILD_WATCH=true node ./tools/build.mjs",
     "test": "npm run lint",
-    "vscode:prepublish": "npm run build && gulp"
+    "vscode:prepublish": "npm run build"
   },
   "keywords": [
     "apple",
