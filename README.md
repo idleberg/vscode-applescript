@@ -39,24 +39,6 @@ Alternatively, you can download the packaged extension from the [Open VSX Regist
 $ ovsx get idleberg.applescript
 ```
 
-### Clone Repository
-
-Change to your Visual Studio Code extensions directory:
-
-```bash
-# Windows
-$ cd %USERPROFILE%/.vscode/extensions
-
-# Linux & macOS
-$ cd ~/.vscode/extensions/
-```
-
-Clone repository as `applescript`:
-
-```bash
-$ git clone https://github.com/idleberg/vscode-applescript idleberg.applescript
-```
-
 ## Usage
 
 ### Building
