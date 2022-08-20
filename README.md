@@ -45,7 +45,7 @@ Change to your Visual Studio Code extensions directory:
 
 ```bash
 # Windows
-$ cd %USERPROFILE%\.vscode\extensions
+$ cd %USERPROFILE%/.vscode&/extensions
 
 # Linux & macOS
 $ cd ~/.vscode/extensions/
@@ -54,7 +54,7 @@ $ cd ~/.vscode/extensions/
 Clone repository as `applescript`:
 
 ```bash
-$ git clone https://github.com/idleberg/vscode-applescript applescript
+$ git clone https://github.com/idleberg/vscode-applescript idleberg.applescript
 ```
 
 ## Usage
