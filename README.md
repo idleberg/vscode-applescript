@@ -2,7 +2,7 @@
 
 [![The MIT License](https://flat.badgen.net/badge/license/MIT/orange)](http://opensource.org/licenses/MIT)
 [![GitHub](https://flat.badgen.net/github/release/idleberg/vscode-applescript)](https://github.com/idleberg/vscode-applescript/releases)
-[![Visual Studio Marketplace](https://vsmarketplacebadge.apphb.com/installs-short/idleberg.applescript.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=idleberg.applescript)
+[![Visual Studio Marketplace](https://flat.badgen.net/vs-marketplace/i/idleberg.applescript)](https://marketplace.visualstudio.com/items?itemName=idleberg.applescript)
 [![CI](https://img.shields.io/github/actions/workflow/status/idleberg/vscode-applescript/default.yml?style=flat-square)](https://github.com/idleberg/vscode-applescript/actions)
 
 Language syntax, snippets and build system for AppleScript and JavaScript for Automation
