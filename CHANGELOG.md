@@ -1,6 +1,7 @@
 # v0.22.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.22.0)
 
 - add support for highlighter injection into Markdown code fences
+- update dependencies
 
 # v0.21.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.21.2)
 
