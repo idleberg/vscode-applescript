@@ -283,6 +283,9 @@
           ".jxainc"
         ],
         "configuration": "./config/jxa.configuration.json"
+      },
+      {
+      "id": "applescript-injection"
       }
     ],
     "grammars": [
@@ -297,6 +300,17 @@
         "path": "./syntaxes/jxa.tmLanguage",
         "embeddedLanguages": {
           "source.js": "javascript"
+        }
+      },
+      {
+        "language": "applescript-injection",
+        "scopeName": "markdown.applescript.codeblock",
+        "path": "./syntaxes/codeblock.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.applescript": "applescript"
         }
       }
     ],
