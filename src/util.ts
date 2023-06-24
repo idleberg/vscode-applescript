@@ -2,7 +2,8 @@
 import { basename, dirname, extname, join } from 'node:path';
 import { getConfig } from 'vscode-get-config';
 import { spawn } from 'node:child_process';
-import { window } from 'vscode';
+import process from 'node:process';
+import { type OutputChannel, window } from 'vscode';
 import lineColumn from 'line-column';
 
 async function getLineCol(lineString: string): Promise<string | boolean> {
@@ -44,8 +45,7 @@ function getOutName(fileName: string, extension = 'scpt'): string {
   return outName;
 }
 
-// eslint-disable-next-line
-async function spawnPromise(cmd: any, args: Array<string>, outputChannel: any): Promise<void> {
+async function spawnPromise(cmd: string, args: Array<string>, outputChannel: OutputChannel): Promise<void> {
   const { alwaysShowOutput } = await getConfig('applescript');
 
   return new Promise((resolve, reject) => {
@@ -64,7 +64,9 @@ async function spawnPromise(cmd: any, args: Array<string>, outputChannel: any): 
         const lineCol = await getLineCol(lineString);
         const appendLine = (lineCol) ? lineCol : lineString;
 
-        outputChannel.appendLine(appendLine);
+        if (typeof appendLine === 'string') {
+          outputChannel.appendLine(appendLine);
+        }
       }
     });
 
@@ -75,7 +77,9 @@ async function spawnPromise(cmd: any, args: Array<string>, outputChannel: any): 
         const lineCol = await getLineCol(lineString);
         const appendLine = (lineCol) ? lineCol : lineString;
 
-        outputChannel.appendLine(appendLine);
+        if (typeof appendLine === 'string') {
+          outputChannel.appendLine(appendLine);
+        }
       }
     });
 
