@@ -57,6 +57,13 @@ async function spawnPromise(cmd: string, args: Array<string>, outputChannel: Out
 
     const childProcess = spawn(cmd, args);
 
+    window.showInformationMessage(`\`${cmd}\` is currently running (${childProcess.pid})`, {modal: true}, 'Kill Process')
+      .then(result => {
+        if (result === 'Kill Process') {
+          process.kill(childProcess.pid.toString());
+        }
+      });
+
     childProcess.stdout.on('data', async (line: string) => {
       const lineString: string = line.toString().trim();
 
