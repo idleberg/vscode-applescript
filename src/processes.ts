@@ -36,10 +36,10 @@ export async function pick() {
       return;
     }
 
-    const { killMany } = await getConfig('applescript');
+    const { allowMultiTermination } = await getConfig('applescript');
 
     const pick = await window.showQuickPick(processList, {
-      canPickMany: killMany,
+      canPickMany: allowMultiTermination,
       matchOnDescription: true
     });
 

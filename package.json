@@ -122,10 +122,10 @@
           "default": "",
           "markdownDescription": "%osascriptOutputStyle%"
         },
-        "applescript.killMany": {
+        "applescript.allowMultiTermination": {
           "type": "boolean",
           "default": false,
-          "description": "Allows killing multiple processes at once"
+          "description": "Allows the selection of multiple processes to be terminated"
         }
       }
     },
@@ -160,6 +160,22 @@
         "icon": {
           "dark": "./images/icon--app-dark.svg",
           "light": "./images/icon--app-light.svg"
+        }
+      },
+      {
+        "command": "extension.applescript.openSettings",
+        "title": "AppleScript: Open Settings",
+        "icon": {
+          "dark": "./images/icon--settings-dark.svg",
+          "light": "./images/icon--settings-light.svg"
+        }
+      },
+      {
+        "command": "extension.applescript.terminateProcess",
+        "title": "AppleScript: Terminate Process",
+        "icon": {
+          "dark": "./images/icon--terminate-dark.svg",
+          "light": "./images/icon--terminate-light.svg"
         }
       },
       {
@@ -203,11 +219,19 @@
         }
       },
       {
-        "command": "extension.applescript.killProcess",
-        "title": "AppleScript: Kill Process",
+        "command": "extension.jxa.openSettings",
+        "title": "JXA: Open Settings",
         "icon": {
-          "dark": "./images/icon--kill-dark.svg",
-          "light": "./images/icon--kill-light.svg"
+          "dark": "./images/icon--settings-dark.svg",
+          "light": "./images/icon--settings-light.svg"
+        }
+      },
+      {
+        "command": "extension.jxa.terminateProcess",
+        "title": "JXA: Terminate Process",
+        "icon": {
+          "dark": "./images/icon--terminate-dark.svg",
+          "light": "./images/icon--terminate-light.svg"
         }
       }
     ],
@@ -240,7 +264,12 @@
         },
         {
           "when": "resourceLangId == applescript",
-          "command": "extension.applescript.killProcess",
+          "command": "extension.applescript.terminateProcess",
+          "group": "navigation@6"
+        },
+        {
+          "when": "resourceLangId == applescript",
+          "command": "extension.applescript.openSettings",
           "group": "navigation@6"
         },
         {
@@ -265,8 +294,13 @@
         },
         {
           "when": "resourceLangId == jxa",
-          "command": "extension.jxa.killProcess",
+          "command": "extension.applescript.terminateProcess",
           "group": "navigation@5"
+        },
+        {
+          "when": "resourceLangId == jxa",
+          "command": "extension.applescript.openSettings",
+          "group": "navigation@6"
         }
       ]
     },

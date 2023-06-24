@@ -33,7 +33,11 @@ async function activate(context: ExtensionContext): Promise<void> {
       return await createBuildTask();
     }),
 
-    commands.registerTextEditorCommand('extension.applescript.killProcess', async () => {
+    commands.registerCommand('extension.applescript.openSettings', () => {
+      commands.executeCommand('workbench.action.openSettings', '@ext:idleberg.applescript');
+    }),
+
+    commands.registerTextEditorCommand('extension.applescript.terminateProcess', async () => {
       await pick();
     }),
 
@@ -60,7 +64,11 @@ async function activate(context: ExtensionContext): Promise<void> {
       return await createBuildTask(true);
     }),
 
-    commands.registerTextEditorCommand('extension.jxa.killProcess', async () => {
+    commands.registerCommand('extension.jxa.openSettings', () => {
+      commands.executeCommand('workbench.action.openSettings', '@ext:idleberg.applescript');
+    }),
+
+    commands.registerTextEditorCommand('extension.jxa.terminateProcess', async () => {
       await pick();
     })
   );
