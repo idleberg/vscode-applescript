@@ -6,7 +6,7 @@ import { commands, ExtensionContext } from 'vscode';
 // Modules
 import { createBuildTask } from './task';
 import { osacompile, osascript } from './osa';
-import { pick } from './active-processes';
+import { pick } from './processes';
 
 async function activate(context: ExtensionContext): Promise<void> {
   context.subscriptions.push(
