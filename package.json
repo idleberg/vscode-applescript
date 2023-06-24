@@ -70,22 +70,26 @@
         "applescript.showNotifications": {
           "type": "boolean",
           "default": true,
-          "description": "Show build notifications indicating success or failure"
+          "description": "Show build notifications indicating success or failure",
+          "order": 1
         },
         "applescript.alwaysShowOutput": {
           "type": "boolean",
           "default": false,
-          "description": "Specify whether to show the output panel on errors only or on each build"
+          "description": "Specify whether to show the output panel on errors only or on each build",
+          "order": 2
         },
         "applescript.convertErrorRange": {
           "type": "boolean",
           "default": false,
-          "description": "Convert error range to line/column"
+          "description": "Convert error range to line/column",
+          "order": 3
         },
         "applescript.alwaysOpenBuildTask": {
           "type": "boolean",
           "default": true,
-          "description": "Specify whether to open the newly created build task"
+          "description": "Specify whether to open the newly created build task",
+          "order": 4
         },
         "applescript.defaultBuildTask": {
           "type": "string",
@@ -95,37 +99,44 @@
             "app"
           ],
           "default": "script",
-          "description": "Specify the default build task when creating a new task file"
+          "description": "Specify the default build task when creating a new task file",
+          "order": 5
         },
         "applescript.ignoreOS": {
           "type": "boolean",
           "default": false,
-          "description": "For debugging purposes, you can disable the OS eligibility test"
+          "description": "For debugging purposes, you can disable the OS eligibility test",
+          "order": 6
         },
         "applescript.osacompile.executeOnly": {
           "type": "boolean",
           "default": false,
-          "description": "Save the resulting script as execute-only"
+          "description": "Save the resulting script as execute-only",
+          "order": 7
         },
         "applescript.osacompile.stayOpen": {
           "type": "boolean",
           "default": false,
-          "description": "Stay open after run handler"
+          "description": "Stay open after run handler",
+          "order": 8
         },
         "applescript.osacompile.startupScreen": {
           "type": "boolean",
           "default": false,
-          "description": "Show startup-screen"
+          "description": "Show startup-screen",
+          "order": 9
         },
         "applescript.osascript.outputStyle": {
           "type": "string",
           "default": "",
-          "markdownDescription": "%osascriptOutputStyle%"
+          "markdownDescription": "%osascriptOutputStyle%",
+          "order": 10
         },
         "applescript.allowMultiTermination": {
           "type": "boolean",
           "default": false,
-          "description": "Allows the selection of multiple processes to be terminated"
+          "description": "Allows the selection of multiple processes to be terminated",
+          "order": 11
         }
       }
     },

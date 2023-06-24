@@ -3,6 +3,7 @@
 - add command to terminate `osascript` / `osacompile` processes
 - add command to open extension settings
 - add support for highlighter injection into Markdown code fences
+- put options in order
 - update dependencies
 
 # v0.21.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.21.2)
