@@ -1,11 +1,11 @@
 # AppleScript for Visual Studio Code
 
-[![The MIT License](https://flat.badgen.net/badge/license/MIT/orange)](http://opensource.org/licenses/MIT)
-[![GitHub](https://flat.badgen.net/github/release/idleberg/vscode-applescript)](https://github.com/idleberg/vscode-applescript/releases)
-[![Visual Studio Marketplace](https://flat.badgen.net/vs-marketplace/i/idleberg.applescript)](https://marketplace.visualstudio.com/items?itemName=idleberg.applescript)
-[![CI](https://img.shields.io/github/actions/workflow/status/idleberg/vscode-applescript/default.yml?style=flat-square)](https://github.com/idleberg/vscode-applescript/actions)
+[![License](https://img.shields.io/github/license/idleberg/vscode-applescript?style=for-the-badge)](LICENSE)
+[![Version](https://img.shields.io/github/v/release/idleberg/vscode-applescript?style=for-the-badge)](https://github.com/idleberg/vscode-applescript/releases)
+[![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/idleberg.nsis?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=idleberg.nsis)
+[![Build](https://img.shields.io/github/actions/workflow/status/idleberg/vscode-applescript/default.yml?style=for-the-badge)](https://github.com/idleberg/vscode-applescript/actions)
 
-Language syntax, snippets and build system for AppleScript and JavaScript for Automation
+> Language syntax, snippets and build system for AppleScript and JavaScript for Automation
 
 ![Screenshot](https://raw.githubusercontent.com/idleberg/vscode-applescript/main/images/screenshot.png)
 
