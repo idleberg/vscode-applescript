@@ -1,7 +1,7 @@
 // Dependencies
-import { basename, dirname, extname, join } from 'path';
+import { basename, dirname, extname, join } from 'node:path';
 import { getConfig } from 'vscode-get-config';
-import { spawn } from 'child_process';
+import { spawn } from 'node:child_process';
 import { window } from 'vscode';
 import lineColumn from 'line-column';
 
@@ -12,11 +12,22 @@ async function getLineCol(lineString: string): Promise<string | boolean> {
   const re = /^(?<filePath>[^:]+):(?<rangeFrom>\d+):((?<rangeTo>\d+):)?(?<message>.*)$/u;
   const result = re.exec(lineString);
 
-  if (!result || !result.groups.rangeFrom)
+  if (!result?.groups?.rangeFrom)
     return false;
 
-  const editorText = window.activeTextEditor.document.getText();
-  const fileName = window.activeTextEditor.document.fileName;
+    const doc = window.activeTextEditor?.document;
+
+    if (!doc) {
+      console.error('[idleberg.applescript] Document not found');
+      return false;
+    }
+
+  const editorText = doc.getText();
+
+  if (!editorText) {
+    console.error('[idleberg.applescript]')
+  }
+  const fileName = doc.fileName;
   const lineCol = lineColumn(editorText, { origin: 1 }).fromIndex(result.groups.rangeFrom);
 
   // is range end specified?
@@ -46,7 +57,7 @@ async function spawnPromise(cmd: any, args: Array<string>, outputChannel: any): 
 
     const process = spawn(cmd, args);
 
-    process.stdout.on('data', async line => {
+    process.stdout.on('data', async (line: string) => {
       const lineString: string = line.toString().trim();
 
       if (lineString.length) {
@@ -57,7 +68,7 @@ async function spawnPromise(cmd: any, args: Array<string>, outputChannel: any): 
       }
     });
 
-    process.stderr.on('data', async line => {
+    process.stderr.on('data', async (line: string) => {
       const lineString: string = line.toString().trim();
 
       if (lineString.length) {
@@ -68,7 +79,7 @@ async function spawnPromise(cmd: any, args: Array<string>, outputChannel: any): 
       }
     });
 
-    process.on('close', (code) => {
+    process.on('close', (code: number) => {
       return (code === 0) ? resolve() : reject();
     });
   });

@@ -1,5 +1,5 @@
 // Dependencies
-import { platform } from 'os';
+import { platform } from 'node:os';
 import { window } from 'vscode';
 
 // Modules
@@ -19,11 +19,16 @@ async function osacompile(compileTarget: string, options: CommandFlags = { isJXA
     return;
   }
 
-  const doc = window.activeTextEditor.document;
+  const doc = window.activeTextEditor?.document;
+
+  if (!doc) {
+    console.error('[idleberg.applescript] Document not found');
+    return;
+  }
 
   doc.save().then(() => {
     const outName = getOutName(doc.fileName, compileTarget);
-    const args = ['-o', outName];
+    const args: string[] = ['-o', outName];
 
     if (options.isJXA === true) {
       args.push('-l', 'JavaScript');
@@ -64,8 +69,14 @@ async function osascript(options: CommandFlags = { isJXA: false }): Promise<void
     return;
   }
 
-  const doc = window.activeTextEditor.document;
-  const args = [];
+  const doc = window?.activeTextEditor?.document;
+
+  if (!doc) {
+    console.error('[idleberg.applescript] Document not found');
+    return;
+  }
+
+  const args: string[] = [];
 
   if (doc.isDirty) {
     const lines = doc.getText().split('\n');

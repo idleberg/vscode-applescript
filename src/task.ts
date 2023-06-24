@@ -1,23 +1,28 @@
-import { basename, join } from 'path';
+import { basename, join } from 'node:path';
 import { getConfig } from 'vscode-get-config';
 import { getOutName } from './util';
-import { mkdir, writeFile } from 'fs';
+import { mkdir, writeFile } from 'node:fs';
 import { window, workspace } from 'vscode';
 
 async function createBuildTask(isJXA = false): Promise<void> {
-  if (typeof workspace.rootPath === 'undefined' || workspace.rootPath === null) {
+  if (!workspace.workspaceFolders?.length) {
     window.showErrorMessage('Task support is only available when working on a workspace folder. It is not available when editing single files.');
     return;
   }
 
   const { alwaysOpenBuildTask, defaultBuildTask, osacompile, osascript } = await getConfig('applescript');
 
-  const doc = window.activeTextEditor.document;
+  const doc = window.activeTextEditor?.document;
+
+  if (!doc) {
+    console.error('[idleberg.applescript] Document not found');
+    return;
+  }
   const fileName: string = basename(doc.fileName);
 
-  const args = [];
-  const runArgs = [];
-  const appArgs = [];
+  const args: string[] = [];
+  const runArgs: string[] = [];
+  const appArgs: string[] = [];
 
   if (isJXA === true) {
     args.push('-l', 'JavaScript');
@@ -73,12 +78,12 @@ async function createBuildTask(isJXA = false): Promise<void> {
   };
 
   const jsonString = JSON.stringify(taskFile, null, 2);
-  const dotFolder = join(workspace.rootPath, '/.vscode');
+  const dotFolder = join(workspace.workspaceFolders?.[0], '/.vscode');
   const buildFile = join(dotFolder, 'tasks.json');
 
   mkdir(dotFolder, () => {
     // ignore errors for now
-    writeFile(buildFile, jsonString, (error) => {
+    writeFile(buildFile, jsonString, (error: Error) => {
       if (error) {
         window.showErrorMessage(error.toString());
       }

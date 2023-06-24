@@ -327,6 +327,7 @@
   },
   "devDependencies": {
     "@types/node": "^16.11.49",
+    "@types/vscode": "^1.75.0",
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.60.0",
     "applescript-svg-icon": "github:idleberg/applescript-svg-icon",
