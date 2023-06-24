@@ -1,5 +1,6 @@
 # v0.22.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.22.0)
 
+- add option to terminate `osascript` / `osacompile` processes
 - add support for highlighter injection into Markdown code fences
 - update dependencies
 
