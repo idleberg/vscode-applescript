@@ -55,9 +55,9 @@ async function spawnPromise(cmd: any, args: Array<string>, outputChannel: any): 
       outputChannel.show();
     }
 
-    const spawnedProcess = spawn(cmd, args);
+    const childProcess = spawn(cmd, args);
 
-    spawnedProcess.stdout.on('data', async (line: string) => {
+    childProcess.stdout.on('data', async (line: string) => {
       const lineString: string = line.toString().trim();
 
       if (lineString.length) {
@@ -68,7 +68,7 @@ async function spawnPromise(cmd: any, args: Array<string>, outputChannel: any): 
       }
     });
 
-    spawnedProcess.stderr.on('data', async (line: string) => {
+    childProcess.stderr.on('data', async (line: string) => {
       const lineString: string = line.toString().trim();
 
       if (lineString.length) {
@@ -79,7 +79,7 @@ async function spawnPromise(cmd: any, args: Array<string>, outputChannel: any): 
       }
     });
 
-    spawnedProcess.on('close', (code: number) => {
+    childProcess.on('close', (code: number) => {
       return (code === 0) ? resolve() : reject();
     });
   });
