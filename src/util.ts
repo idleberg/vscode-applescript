@@ -2,8 +2,8 @@
 import { basename, dirname, extname, join } from 'node:path';
 import { getConfig } from 'vscode-get-config';
 import { spawn } from 'node:child_process';
-import process from 'node:process';
 import { type OutputChannel, window } from 'vscode';
+import * as activeProcesses from './active-processes';
 import lineColumn from 'line-column';
 
 async function getLineCol(lineString: string): Promise<string | boolean> {
@@ -45,7 +45,7 @@ function getOutName(fileName: string, extension = 'scpt'): string {
   return outName;
 }
 
-async function spawnPromise(cmd: string, args: Array<string>, outputChannel: OutputChannel): Promise<void> {
+async function spawnPromise(cmd: string, fileName: string, args: Array<string>, outputChannel: OutputChannel): Promise<void> {
   const { alwaysShowOutput } = await getConfig('applescript');
 
   return new Promise((resolve, reject) => {
@@ -57,12 +57,7 @@ async function spawnPromise(cmd: string, args: Array<string>, outputChannel: Out
 
     const childProcess = spawn(cmd, args);
 
-    window.showInformationMessage(`\`${cmd}\` is currently running (${childProcess.pid})`, {modal: true}, 'Kill Process')
-      .then(result => {
-        if (result === 'Kill Process') {
-          process.kill(childProcess.pid.toString());
-        }
-      });
+    activeProcesses.add(childProcess.pid, fileName, cmd);
 
     childProcess.stdout.on('data', async (line: string) => {
       const lineString: string = line.toString().trim();
@@ -91,6 +86,8 @@ async function spawnPromise(cmd: string, args: Array<string>, outputChannel: Out
     });
 
     childProcess.on('close', (code: number) => {
+      activeProcesses.remove(childProcess.pid);
+
       return (code === 0) ? resolve() : reject();
     });
   });

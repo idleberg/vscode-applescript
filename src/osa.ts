@@ -48,7 +48,7 @@ async function osacompile(compileTarget: string, options: CommandFlags = { isJXA
 
     args.push(doc.fileName);
 
-    spawnPromise('osacompile', args, outputChannel)
+    spawnPromise('osacompile', doc.fileName, args, outputChannel)
       .then(() => {
         if (showNotifications)
           window.showInformationMessage(`Successfully compiled '${doc.fileName}'`);
@@ -96,7 +96,7 @@ async function osascript(options: CommandFlags = { isJXA: false }): Promise<void
     args.unshift('-l', 'JavaScript');
   }
 
-  spawnPromise('osascript', args, outputChannel)
+  spawnPromise('osascript', doc.fileName, args, outputChannel)
     .catch(() => {
       outputChannel.show(true);
       if (showNotifications)

@@ -121,6 +121,11 @@
           "type": "string",
           "default": "",
           "markdownDescription": "%osascriptOutputStyle%"
+        },
+        "applescript.killMany": {
+          "type": "boolean",
+          "default": false,
+          "description": "Allows killing multiple processes at once"
         }
       }
     },
@@ -196,6 +201,14 @@
           "dark": "./images/icon--app-dark.svg",
           "light": "./images/icon--app-light.svg"
         }
+      },
+      {
+        "command": "extension.applescript.killProcess",
+        "title": "AppleScript: Kill Process",
+        "icon": {
+          "dark": "./images/icon--kill-dark.svg",
+          "light": "./images/icon--kill-light.svg"
+        }
       }
     ],
     "menus": {
@@ -226,6 +239,11 @@
           "group": "navigation@5"
         },
         {
+          "when": "resourceLangId == applescript",
+          "command": "extension.applescript.killProcess",
+          "group": "navigation@6"
+        },
+        {
           "when": "resourceLangId == jxa",
           "command": "extension.jxa.run",
           "group": "navigation@1"
@@ -244,6 +262,11 @@
           "when": "resourceLangId == jxa",
           "command": "extension.jxa.compileApp",
           "group": "navigation@4"
+        },
+        {
+          "when": "resourceLangId == jxa",
+          "command": "extension.jxa.killProcess",
+          "group": "navigation@5"
         }
       ]
     },
