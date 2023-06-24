@@ -2,10 +2,10 @@
 
 [![License](https://img.shields.io/github/license/idleberg/vscode-applescript?style=for-the-badge)](LICENSE)
 [![Version](https://img.shields.io/github/v/release/idleberg/vscode-applescript?style=for-the-badge)](https://github.com/idleberg/vscode-applescript/releases)
-[![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/idleberg.nsis?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=idleberg.nsis)
+[![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/idleberg.nsis?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=idleberg.applescript)
 [![Build](https://img.shields.io/github/actions/workflow/status/idleberg/vscode-applescript/default.yml?style=for-the-badge)](https://github.com/idleberg/vscode-applescript/actions)
 
-> Language syntax, snippets and build system for AppleScript and JavaScript for Automation
+Language syntax, snippets and build system for AppleScript and JavaScript for Automation
 
 ![Screenshot](https://raw.githubusercontent.com/idleberg/vscode-applescript/main/images/screenshot.png)
 
