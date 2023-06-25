@@ -1,4 +1,4 @@
-# v0.22.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.22.0)
+# v0.23.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.23.0)
 
 - add command to terminate `osascript` / `osacompile` processes
 - add command to open extension settings
