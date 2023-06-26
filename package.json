@@ -43,7 +43,7 @@
   },
   "main": "./lib/extension",
   "typings": "./types",
-  "icon": "images/logo.png",
+  "icon": "resources/logo.png",
   "engines": {
     "vscode": "^1.75.0"
   },
@@ -145,104 +145,104 @@
         "command": "extension.applescript.run",
         "title": "AppleScript: Run Script",
         "icon": {
-          "dark": "./images/icon--run-dark.svg",
-          "light": "./images/icon--run-light.svg"
+          "dark": "./resources/dark/run.svg",
+          "light": "./resources/light/run.svg"
         }
       },
       {
         "command": "extension.applescript.compile",
         "title": "AppleScript: Compile Script",
         "icon": {
-          "dark": "./images/icon--script-dark.svg",
-          "light": "./images/icon--script-light.svg"
+          "dark": "./resources/dark/script.svg",
+          "light": "./resources/light/script.svg"
         }
       },
       {
         "command": "extension.applescript.compileBundle",
         "title": "AppleScript: Compile Script bundle",
         "icon": {
-          "dark": "./images/icon--bundle-dark.svg",
-          "light": "./images/icon--bundle-light.svg"
+          "dark": "./resources/dark/bundle.svg",
+          "light": "./resources/light/bundle.svg"
         }
       },
       {
         "command": "extension.applescript.compileApp",
         "title": "AppleScript: Compile Application",
         "icon": {
-          "dark": "./images/icon--app-dark.svg",
-          "light": "./images/icon--app-light.svg"
+          "dark": "./resources/dark/app.svg",
+          "light": "./resources/light/app.svg"
         }
       },
       {
         "command": "extension.applescript.openSettings",
         "title": "AppleScript: Open Settings",
         "icon": {
-          "dark": "./images/icon--settings-dark.svg",
-          "light": "./images/icon--settings-light.svg"
+          "dark": "./resources/dark/settings.svg",
+          "light": "./resources/light/settings.svg"
         }
       },
       {
         "command": "extension.applescript.terminateProcess",
         "title": "AppleScript: Terminate Process",
         "icon": {
-          "dark": "./images/icon--terminate-dark.svg",
-          "light": "./images/icon--terminate-light.svg"
+          "dark": "./resources/dark/terminate.svg",
+          "light": "./resources/light/terminate.svg"
         }
       },
       {
         "command": "extension.applescript.createBuildTask",
         "title": "AppleScript: Create Build Task",
         "icon": {
-          "dark": "./images/icon--task-dark.svg",
-          "light": "./images/icon--task-light.svg"
+          "dark": "./resources/dark/task.svg",
+          "light": "./resources/light/task.svg"
         }
       },
       {
         "command": "extension.jxa.run",
         "title": "JXA: Run Script",
         "icon": {
-          "dark": "./images/icon--run-dark.svg",
-          "light": "./images/icon--run-light.svg"
+          "dark": "./resources/dark/run.svg",
+          "light": "./resources/light/run.svg"
         }
       },
       {
         "command": "extension.jxa.compile",
         "title": "JXA: Compile Script",
         "icon": {
-          "dark": "./images/icon--script-dark.svg",
-          "light": "./images/icon--script-light.svg"
+          "dark": "./resources/dark/script.svg",
+          "light": "./resources/light/script.svg"
         }
       },
       {
         "command": "extension.jxa.compileBundle",
         "title": "JXA: Compile Script bundle",
         "icon": {
-          "dark": "./images/icon--bundle-dark.svg",
-          "light": "./images/icon--bundle-light.svg"
+          "dark": "./resources/dark/bundle.svg",
+          "light": "./resources/light/bundle.svg"
         }
       },
       {
         "command": "extension.jxa.compileApp",
         "title": "JXA: Compile Application",
         "icon": {
-          "dark": "./images/icon--app-dark.svg",
-          "light": "./images/icon--app-light.svg"
+          "dark": "./resources/dark/app.svg",
+          "light": "./resources/light/app.svg"
         }
       },
       {
         "command": "extension.jxa.openSettings",
         "title": "JXA: Open Settings",
         "icon": {
-          "dark": "./images/icon--settings-dark.svg",
-          "light": "./images/icon--settings-light.svg"
+          "dark": "./resources/dark/settings.svg",
+          "light": "./resources/light/settings.svg"
         }
       },
       {
         "command": "extension.jxa.terminateProcess",
         "title": "JXA: Terminate Process",
         "icon": {
-          "dark": "./images/icon--terminate-dark.svg",
-          "light": "./images/icon--terminate-light.svg"
+          "dark": "./resources/dark/terminate.svg",
+          "light": "./resources/light/terminate.svg"
         }
       }
     ],
