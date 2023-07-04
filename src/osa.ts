@@ -53,8 +53,10 @@ async function osacompile(compileTarget: string, options: CommandFlags = { isJXA
         if (showNotifications)
           window.showInformationMessage(`Successfully compiled '${doc.fileName}'`);
       })
-      .catch(() => {
+      .catch(error => {
+        console.error('[idleberg.applescript]', error instanceof Error ? error.message : error);
         outputChannel.show(true);
+
         if (showNotifications)
           window.showErrorMessage('Failed to compile or exited with error (see output for details)');
       });
@@ -97,8 +99,11 @@ async function osascript(options: CommandFlags = { isJXA: false }): Promise<void
   }
 
   spawnPromise('osascript', doc.fileName, args, outputChannel)
-    .catch(() => {
+    .catch(error => {
+      console.error('[idleberg.applescript]', error instanceof Error ? error.message : error);
+
       outputChannel.show(true);
+
       if (showNotifications)
         window.showErrorMessage('Failed to run script or exited with error (see output for details)');
     });
