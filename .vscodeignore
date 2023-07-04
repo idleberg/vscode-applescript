@@ -33,5 +33,5 @@ yarn.lock
 .vscode/**
 
 # Project specific
-images/logo.svg
+resources/logo.svg
 todo.md
