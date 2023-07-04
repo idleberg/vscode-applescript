@@ -88,7 +88,7 @@ async function spawnPromise(cmd: string, fileName: string, args: Array<string>, 
     childProcess.on('close', (code: number) => {
       activeProcesses.remove(childProcess.pid);
 
-      return (code === 0 || activeProcesses.lastDeleted === childProcess.pid) ? resolve() : reject();
+      return (code === 0 || activeProcesses.lastKilledProcessId === childProcess.pid) ? resolve() : reject();
     });
   });
 }
