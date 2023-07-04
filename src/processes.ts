@@ -1,7 +1,10 @@
 import { getConfig } from 'vscode-get-config';
 import { kill } from 'node:process';
 import { window } from 'vscode';
+
 const activeProcesses = new Map<number, ActiveProcess>();
+
+export let lastDeleted = 0;
 
 export function add(pid: number, file: string, command: string) {
   activeProcesses.set(pid, {
@@ -15,6 +18,7 @@ export function add(pid: number, file: string, command: string) {
 
 export function remove(pid: number) {
   activeProcesses.delete(pid);
+  lastDeleted = pid;
 
   console.log('activeProcesses.remove()', Object.fromEntries(activeProcesses));
 }
