@@ -1,3 +1,7 @@
+# v0.23.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.23.1)
+
+- prevent errors when `osascript` / `osacompile` are terminated by user
+
 # v0.23.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.23.0)
 
 - add command to terminate `osascript` / `osacompile` processes
