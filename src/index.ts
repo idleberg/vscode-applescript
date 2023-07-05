@@ -1,14 +1,14 @@
 'use strict';
 
-// Dependencies
 import { commands, ExtensionContext } from 'vscode';
-
-// Modules
 import { createBuildTask } from './task';
 import { osacompile, osascript } from './osa';
 import { pick } from './processes';
+import { reporter } from './telemetry';
 
 async function activate(context: ExtensionContext): Promise<void> {
+  context.subscriptions.push(reporter);
+
   context.subscriptions.push(
     /**
      * AppleScript

@@ -2,6 +2,7 @@ import { basename, join } from 'node:path';
 import { getConfig } from 'vscode-get-config';
 import { getOutName } from './util';
 import { mkdir, writeFile } from 'node:fs';
+import { sendTelemetryEvent } from './telemetry';
 import { window, workspace } from 'vscode';
 
 async function createBuildTask(isJXA = false): Promise<void> {
@@ -86,9 +87,14 @@ async function createBuildTask(isJXA = false): Promise<void> {
     writeFile(buildFile, jsonString, (error: Error) => {
       if (error) {
         window.showErrorMessage(error.toString());
-      }
-      if (alwaysOpenBuildTask === false)
         return;
+      }
+
+      sendTelemetryEvent('buildTask');
+
+      if (alwaysOpenBuildTask === false) {
+        return;
+      }
 
       // Open tasks.json
       workspace.openTextDocument(buildFile).then((doc) => {

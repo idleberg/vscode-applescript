@@ -5,6 +5,7 @@ import { spawn } from 'node:child_process';
 import { type OutputChannel, window } from 'vscode';
 import * as activeProcesses from './processes';
 import lineColumn from 'line-column';
+import { type TelemetryEventProperties } from '@vscode/extension-telemetry';
 
 async function getLineCol(lineString: string): Promise<string | boolean> {
   if (!await getConfig('applescript.convertErrorRange'))
@@ -37,7 +38,7 @@ async function getLineCol(lineString: string): Promise<string | boolean> {
   return `${fileName}:${lineCol.line}:${lineCol.col}:${result.groups.message}`;
 }
 
-function getOutName(fileName: string, extension = 'scpt'): string {
+export function getOutName(fileName: string, extension = 'scpt'): string {
   const dirName = dirname(fileName);
   const baseName = basename(fileName, extname(fileName));
   const outName = join(dirName, `${baseName}.${extension}`);
@@ -45,7 +46,7 @@ function getOutName(fileName: string, extension = 'scpt'): string {
   return outName;
 }
 
-async function spawnPromise(cmd: string, fileName: string, args: Array<string>, outputChannel: OutputChannel): Promise<void> {
+export async function spawnPromise(cmd: string, fileName: string, args: Array<string>, outputChannel: OutputChannel): Promise<void> {
   const { alwaysShowOutput } = await getConfig('applescript');
 
   return new Promise((resolve, reject) => {
@@ -93,7 +94,9 @@ async function spawnPromise(cmd: string, fileName: string, args: Array<string>, 
   });
 }
 
-export {
-  getOutName,
-  spawnPromise
-};
+export function stringifyProperties(properties: Record<string, unknown>): TelemetryEventProperties {
+  const newProperties = {};
+  Object.entries(properties).map(([key, value]) => newProperties[key] = value.toString());
+
+  return newProperties;
+}
