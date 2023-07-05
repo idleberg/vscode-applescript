@@ -79,7 +79,7 @@ async function createBuildTask(isJXA = false): Promise<void> {
   };
 
   const jsonString = JSON.stringify(taskFile, null, 2);
-  const dotFolder = resolve(workspace.workspaceFolders[0].uri.path, '.vscode');
+  const dotFolder = resolve(workspace.workspaceFolders[0].uri.fsPath, '.vscode');
   const buildFile = resolve(dotFolder, 'tasks.json');
 
   await fs.mkdir(dotFolder);
