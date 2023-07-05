@@ -6,7 +6,7 @@ import { sendTelemetryEvent } from './telemetry';
 import { window, workspace } from 'vscode';
 
 async function createBuildTask(isJXA = false): Promise<void> {
-  if (!workspace.workspaceFolders?.length) {
+  if (typeof workspace.workspaceFolders === 'undefined') {
     window.showErrorMessage('Task support is only available when working on a workspace folder. It is not available when editing single files.');
     return;
   }
@@ -84,13 +84,13 @@ async function createBuildTask(isJXA = false): Promise<void> {
 
   mkdir(dotFolder, () => {
     // ignore errors for now
-    writeFile(buildFile, jsonString, (error: Error) => {
+    writeFile(buildFile, jsonString, async (error: Error) => {
       if (error) {
         window.showErrorMessage(error.toString());
         return;
       }
 
-      sendTelemetryEvent('buildTask');
+      await sendTelemetryEvent('buildTask');
 
       if (alwaysOpenBuildTask === false) {
         return;

@@ -2,12 +2,17 @@
 
 import { commands, ExtensionContext } from 'vscode';
 import { createBuildTask } from './task';
+import { getConfig } from 'vscode-get-config';
 import { osacompile, osascript } from './osa';
 import { pick } from './processes';
 import { reporter, sendTelemetryEvent } from './telemetry';
 
 async function activate(context: ExtensionContext): Promise<void> {
-  context.subscriptions.push(reporter);
+  const { disableTelemetry } = await getConfig('applescript');
+
+  if (disableTelemetry === false) {
+    context.subscriptions.push(reporter);
+  }
 
   context.subscriptions.push(
     /**
@@ -33,9 +38,9 @@ async function activate(context: ExtensionContext): Promise<void> {
       return await createBuildTask();
     }),
 
-    commands.registerCommand('extension.applescript.openSettings', () => {
+    commands.registerCommand('extension.applescript.openSettings', async () => {
       commands.executeCommand('workbench.action.openSettings', '@ext:idleberg.applescript');
-      sendTelemetryEvent('openSettings');
+      await sendTelemetryEvent('openSettings');
     }),
 
     commands.registerTextEditorCommand('extension.applescript.terminateProcess', async () => {

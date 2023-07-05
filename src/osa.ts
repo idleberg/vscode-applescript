@@ -1,6 +1,6 @@
 // Dependencies
 import { getConfig } from 'vscode-get-config';
-import { getOutName, spawnPromise, stringifyProperties } from './util';
+import { getOutName, spawnPromise } from './util';
 import { platform } from 'node:os';
 import { sendTelemetryEvent } from './telemetry';
 import { window } from 'vscode';
@@ -64,8 +64,8 @@ async function osacompile(compileTarget: string, options: CommandFlags = { isJXA
           window.showErrorMessage('Failed to compile or exited with error (see output for details)');
         }
       })
-      .finally(() => {
-        sendTelemetryEvent('osaCompile', {
+      .finally(async () => {
+        await sendTelemetryEvent('osacompile', {
           compileTarget,
           hasErrors,
           options
@@ -121,8 +121,8 @@ async function osascript(options: CommandFlags = { isJXA: false }): Promise<void
         window.showErrorMessage('Failed to run script or exited with error (see output for details)');
       }
     })
-    .finally(() => {
-      sendTelemetryEvent('osaScript', {
+    .finally(async () => {
+      await sendTelemetryEvent('osascript', {
         hasErrors,
         options
       });

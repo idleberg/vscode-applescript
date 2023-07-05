@@ -108,35 +108,41 @@
           "description": "For debugging purposes, you can disable the OS eligibility test",
           "order": 6
         },
+        "applescript.disableTelemetry": {
+          "type": "boolean",
+          "default": false,
+          "description": "Disables extension telemetry, even though the global preferences might allow tracking",
+          "order": 7
+        },
         "applescript.osacompile.executeOnly": {
           "type": "boolean",
           "default": false,
           "description": "Save the resulting script as execute-only",
-          "order": 7
+          "order": 8
         },
         "applescript.osacompile.stayOpen": {
           "type": "boolean",
           "default": false,
           "description": "Stay open after run handler",
-          "order": 8
+          "order": 9
         },
         "applescript.osacompile.startupScreen": {
           "type": "boolean",
           "default": false,
           "description": "Show startup-screen",
-          "order": 9
+          "order": 10
         },
         "applescript.osascript.outputStyle": {
           "type": "string",
           "default": "",
           "markdownDescription": "%osascriptOutputStyle%",
-          "order": 10
+          "order": 11
         },
         "applescript.allowMultiTermination": {
           "type": "boolean",
           "default": false,
           "description": "Allows the selection of multiple processes to be terminated",
-          "order": 11
+          "order": 12
         }
       }
     },

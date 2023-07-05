@@ -1,7 +1,14 @@
+import { getConfig } from 'vscode-get-config';
 import { stringifyProperties } from './util';
 import TelemetryReporter, { type TelemetryEventMeasurements } from '@vscode/extension-telemetry';
 
-export function sendTelemetryEvent(name: string, properties: Record<string, unknown> = {}, measurements: TelemetryEventMeasurements = {}) {
+export async function sendTelemetryEvent(name: string, properties: Record<string, unknown> = {}, measurements: TelemetryEventMeasurements = {}) {
+  const { disableTelemetry } = await getConfig('applescript');
+
+  if (disableTelemetry) {
+    return;
+  }
+
   reporter.sendTelemetryEvent(name, stringifyProperties(properties), measurements);
 }
 
