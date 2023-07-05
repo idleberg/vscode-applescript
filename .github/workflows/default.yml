@@ -1,8 +1,27 @@
 name: CI
 
 on:
-- push
-- pull_request
+  push:
+    branches:
+    - main
+    paths:
+    - '.github/**'
+    - 'resources/**'
+    - 'src/**'
+    - 'types/**'
+    - 'package.json'
+    - 'pnpm-lock.yaml'
+  pull_request:
+    branches:
+    - main
+    paths:
+      - '.github/**'
+      - 'resources/**'
+      - 'src/**'
+      - 'types/**'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+  workflow_dispatch:
 
 jobs:
   default:
