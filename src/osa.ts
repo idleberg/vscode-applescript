@@ -51,8 +51,9 @@ async function osacompile(compileTarget: string, options: CommandFlags = { isJXA
 
     spawnPromise('osacompile', doc.fileName, args, outputChannel)
       .then(() => {
-        if (showNotifications)
+        if (showNotifications) {
           window.showInformationMessage(`Successfully compiled '${doc.fileName}'`);
+        }
       })
       .catch(error => {
         hasErrors = true;

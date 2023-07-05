@@ -8,14 +8,16 @@ import lineColumn from 'line-column';
 import { type TelemetryEventProperties } from '@vscode/extension-telemetry';
 
 async function getLineCol(lineString: string): Promise<string | boolean> {
-  if (!await getConfig('applescript.convertErrorRange'))
+  if (!await getConfig('applescript.convertErrorRange')) {
     return false;
+  }
 
   const re = /^(?<filePath>[^:]+):(?<rangeFrom>\d+):((?<rangeTo>\d+):)?(?<message>.*)$/u;
   const result = re.exec(lineString);
 
-  if (!result?.groups?.rangeFrom)
+  if (!result?.groups?.rangeFrom) {
     return false;
+  }
 
     const doc = window.activeTextEditor?.document;
 
