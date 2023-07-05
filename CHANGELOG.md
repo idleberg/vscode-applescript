@@ -1,7 +1,8 @@
 # v0.24.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.24.0)
 
 - add telemetry
-- minor refactorings & fixes
+- fix build task creation
+- minor refactorings & improvements
 
 # v0.23.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.23.1)
 
