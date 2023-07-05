@@ -1,7 +1,7 @@
-import { basename, join } from 'node:path';
+import { basename, resolve } from 'node:path';
 import { getConfig } from 'vscode-get-config';
 import { getOutName } from './util';
-import { mkdir, writeFile } from 'node:fs';
+import { promises as fs } from 'node:fs';
 import { sendTelemetryEvent } from './telemetry';
 import { window, workspace } from 'vscode';
 
@@ -79,29 +79,28 @@ async function createBuildTask(isJXA = false): Promise<void> {
   };
 
   const jsonString = JSON.stringify(taskFile, null, 2);
-  const dotFolder = join(workspace.workspaceFolders?.[0], '/.vscode');
-  const buildFile = join(dotFolder, 'tasks.json');
+  const dotFolder = resolve(workspace.workspaceFolders[0].uri.path, '.vscode');
+  const buildFile = resolve(dotFolder, 'tasks.json');
 
-  mkdir(dotFolder, () => {
-    // ignore errors for now
-    writeFile(buildFile, jsonString, async (error: Error) => {
-      if (error) {
-        window.showErrorMessage(error.toString());
-        return;
-      }
+  await fs.mkdir(dotFolder);
 
-      await sendTelemetryEvent('buildTask');
+  let hasErrors = false;
 
-      if (alwaysOpenBuildTask === false) {
-        return;
-      }
+  try {
+    await fs.writeFile(buildFile, jsonString)
 
-      // Open tasks.json
-      workspace.openTextDocument(buildFile).then((doc) => {
-        window.showTextDocument(doc);
-      });
+    if (alwaysOpenBuildTask ) {
+      const taskFile = await workspace.openTextDocument(buildFile);
+      window.showTextDocument(taskFile);
+    }
+  } catch (error) {
+    hasErrors = true;
+    console.error('[idleberg.applescript]', error instanceof Error ? error.message : error);
+  } finally {
+    await sendTelemetryEvent('buildTask', {
+      hasErrors
     });
-  });
+  }
 }
 
 export { createBuildTask };
