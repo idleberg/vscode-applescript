@@ -95,10 +95,3 @@ export async function spawnPromise(cmd: string, fileName: string, args: Array<st
     });
   });
 }
-
-export function stringifyProperties(properties: Record<string, unknown>): TelemetryEventProperties {
-  const newProperties = {};
-  Object.entries(properties).map(([key, value]) => newProperties[key] = value.toString());
-
-  return newProperties;
-}
