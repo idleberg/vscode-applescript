@@ -1,3 +1,7 @@
+# v0.24.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.24.1)
+
+- fix: stringify request options
+
 # v0.24.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.24.0)
 
 - add telemetry
