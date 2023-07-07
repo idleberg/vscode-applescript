@@ -69,7 +69,7 @@ async function osacompile(compileTarget: string, options: CommandFlags = { isJXA
         await sendTelemetryEvent('osacompile', {
           compileTarget,
           hasErrors,
-          options
+          options: JSON.stringify(options)
         });
       });
   });
@@ -125,7 +125,7 @@ async function osascript(options: CommandFlags = { isJXA: false }): Promise<void
     .finally(async () => {
       await sendTelemetryEvent('osascript', {
         hasErrors,
-        options
+        options: JSON.stringify(options)
       });
     });
 }
