@@ -5,7 +5,6 @@ import { spawn } from 'node:child_process';
 import { type OutputChannel, window } from 'vscode';
 import * as activeProcesses from './processes';
 import lineColumn from 'line-column';
-import { type TelemetryEventProperties } from '@vscode/extension-telemetry';
 
 async function getLineCol(lineString: string): Promise<string | boolean> {
   if (!await getConfig('applescript.convertErrorRange')) {
@@ -35,7 +34,7 @@ async function getLineCol(lineString: string): Promise<string | boolean> {
   const lineCol = lineColumn(editorText, { origin: 1 }).fromIndex(result.groups.rangeFrom);
 
   // is range end specified?
-  lineCol.col = (result.groups.rangeTo) ? lineCol.col : 1;
+  lineCol.col = lineCol?.col && result.groups.rangeTo ? lineCol.col : 1;
 
   return `${fileName}:${lineCol.line}:${lineCol.col}:${result.groups.message}`;
 }
