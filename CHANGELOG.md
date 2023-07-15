@@ -1,3 +1,8 @@
+# v0.24.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.24.2)
+
+- prevent errors in column detection
+- update dependencies
+
 # v0.24.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.24.1)
 
 - fix: stringify request options
