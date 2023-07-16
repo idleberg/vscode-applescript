@@ -1,3 +1,4 @@
+import { env } from 'vscode';
 import { getConfig } from 'vscode-get-config';
 import TelemetryReporter, { type TelemetryEventProperties, type TelemetryEventMeasurements } from '@vscode/extension-telemetry';
 
@@ -11,7 +12,7 @@ function stringifyProperties(properties: Record<string, unknown>): TelemetryEven
 export async function sendTelemetryEvent(name: string, properties: Record<string, unknown> = {}, measurements: TelemetryEventMeasurements = {}) {
   const { disableTelemetry } = await getConfig('applescript');
 
-  if (disableTelemetry) {
+  if (env.appName === 'VSCodium' || disableTelemetry) {
     return;
   }
 

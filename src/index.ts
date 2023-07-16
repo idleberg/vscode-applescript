@@ -1,6 +1,6 @@
 'use strict';
 
-import { commands, ExtensionContext } from 'vscode';
+import { commands, env, type ExtensionContext } from 'vscode';
 import { createBuildTask } from './task';
 import { getConfig } from 'vscode-get-config';
 import { osacompile, osascript } from './osa';
@@ -10,7 +10,7 @@ import { reporter, sendTelemetryEvent } from './telemetry';
 async function activate(context: ExtensionContext): Promise<void> {
   const { disableTelemetry } = await getConfig('applescript');
 
-  if (disableTelemetry === false) {
+  if (env.appName !== 'VSCodium' && disableTelemetry === false) {
     context.subscriptions.push(reporter);
   }
 
