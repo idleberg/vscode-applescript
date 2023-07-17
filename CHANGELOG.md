@@ -1,3 +1,7 @@
+# v0.24.3 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.24.3)
+
+- minor telemetry adjustments
+
 # v0.24.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.24.2)
 
 - prevent errors in column detection
