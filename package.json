@@ -412,7 +412,7 @@
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-yaml": "^0.5.0",
     "gulp": "^4.0.2",
-    "gulp-raster": "^0.2.0",
+    "gulp-raster-update": "^0.2.0",
     "gulp-rename": "^2.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",

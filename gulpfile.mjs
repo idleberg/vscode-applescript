@@ -1,7 +1,6 @@
- // Dependencies
- import gulp from 'gulp';
- import raster from 'gulp-raster';
- import rename from 'gulp-rename';
+import gulp from 'gulp';
+import raster from 'gulp-raster-update';
+import rename from 'gulp-rename';
 
 // Convert SVG
 gulp.task('default', (done) => {
