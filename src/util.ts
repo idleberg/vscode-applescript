@@ -27,16 +27,21 @@ async function getLineCol(lineString: string): Promise<string | boolean> {
 
   const editorText = doc.getText();
 
-  if (!editorText) {
-    console.error('[idleberg.applescript]')
+  if (!editorText?.length) {
+    console.error('[idleberg.applescript] Empty document');
+		return false;
   }
-  const fileName = doc.fileName;
+
   const lineCol = lineColumn(editorText, { origin: 1 }).fromIndex(result.groups.rangeFrom);
+
+	if (!lineCol) {
+		return false;
+	}
 
   // is range end specified?
   lineCol.col = lineCol?.col && result.groups.rangeTo ? lineCol.col : 1;
 
-  return `${fileName}:${lineCol.line}:${lineCol.col}:${result.groups.message}`;
+  return `${doc.fileName}:${lineCol.line}:${lineCol.col}:${result.groups.message}`;
 }
 
 export function getOutName(fileName: string, extension = 'scpt'): string {
