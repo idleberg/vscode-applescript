@@ -377,7 +377,7 @@
     "customEditors": [
       {
         "viewType": "applescript.binary",
-        "displayName": "Binary AppleScript (scpt)",
+        "displayName": "AppleScript (Binary)",
         "selector": [
           {
             "filenamePattern": "*.scpt"
