@@ -341,7 +341,7 @@
           "applescript"
         ],
         "extensions": [
-					".applescript"
+          ".applescript"
         ],
         "firstLine": "^#!/.*\\bosascript\\b",
         "configuration": "./config/applescript.configuration.json"
@@ -350,11 +350,11 @@
         "id": "applescript.binary",
         "aliases": [
           "Binary AppleScript",
-					"applescript.binary",
-					"scpt"
+          "applescript.binary",
+          "scpt"
         ],
         "extensions": [
-					".scpt"
+          ".scpt"
         ],
         "configuration": "./config/applescript.configuration.json"
       },
@@ -374,7 +374,7 @@
         "id": "applescript-injection"
       }
     ],
-		"customEditors": [
+    "customEditors": [
       {
         "viewType": "applescript.binary",
         "displayName": "Binary AppleScript (scpt)",
@@ -423,29 +423,29 @@
     ]
   },
   "dependencies": {
-    "@vscode/extension-telemetry": "^0.8.1",
+    "@vscode/extension-telemetry": "^0.8.4",
     "line-column": "^1.0.2",
     "vscode-get-config": "^0.4.0"
   },
   "devDependencies": {
     "@types/node": "^16.18.38",
     "@types/vscode": "1.75.0",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.62.0",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
     "applescript-svg-icon": "github:idleberg/applescript-svg-icon",
     "cross-env": "^7.0.3",
     "esbuild": "^0.18.13",
-    "eslint": "^8.45.0",
+    "eslint": "^8.48.0",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-yaml": "^0.5.0",
     "gulp": "^4.0.2",
     "gulp-raster-update": "^0.2.0",
     "gulp-rename": "^2.0.0",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.3",
+    "lint-staged": "^14.0.1",
     "log-symbols": "^5.1.0",
     "npm-run-all2": "^6.0.6",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   },
   "lint-staged": {
     "*.(ts|json|yml)": "eslint --cache --fix"

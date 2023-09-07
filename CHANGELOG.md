@@ -1,3 +1,8 @@
+# v0.25.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.25.0)
+
+- add support for viewing binary AppleScript files
+- update dependencies
+
 # v0.24.3 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.24.3)
 
 - minor telemetry adjustments
