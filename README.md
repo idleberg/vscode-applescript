@@ -64,11 +64,13 @@ You can tweak the defaults for this package, `osacompile` and `osascript` in the
 | `alwaysShowOutput`         | `false`    | Specify whether to show the output panel on errors only or on each build                           |
 | `convertErrorRange`        | `false`    | Convert error range to line/column                                                                 |
 | `defaultBuildTask`         | `"script"` | Specify the default build task when creating a new task file                                       |
-| `allowMultiTermination`    | `false`    | Allows the selection of multiple processes to be terminated                                         |
+| `allowMultiTermination`    | `false`    | Allows the selection of multiple processes to be terminated                                        |
 | `osacompile.executeOnly`   | `false`    | Save the resulting script as execute-only                                                          |
 | `osacompile.stayOpen`      | `false`    | Stay open after run handler                                                                        |
 | `osacompile.startupScreen` | `false`    | Show startup-screen                                                                                |
 | `osascript.outputStyle`    | -          | The flags argument is a string consisting of any of the modifier characters `e`, `h`, `o`, and `s` |
+| `scpt.theme`               | `"(none)"` | Custom syntax theme for binary AppleScript files, which are opened in a custom web-view            |
+| `scpt.overrideBackground`  | `false`    | Allows overriding the syntax-theme's background color                                              |
 
 #### File Encoding
 

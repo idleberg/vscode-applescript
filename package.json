@@ -176,7 +176,7 @@
           "markdownDescription": "You can specify a syntax theme for binary AppleScript files, which are displayed in a custom web-view. Changes apply after re-opening the file or editor.",
           "order": 12
         },
-        "applescript.scpt.overrideThemeBackground": {
+        "applescript.scpt.overrideBackground": {
           "type": "boolean",
           "default": false,
           "description": "Override theme background color of the syntax theme. Changes apply after re-opening the file or editor.",

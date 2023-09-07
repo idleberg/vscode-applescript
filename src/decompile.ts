@@ -56,7 +56,7 @@ async function renderLockfile(webviewPanel: vscode.WebviewPanel, preview: string
 	const shikiStyle = `
 	.shiki {
 		padding: 1em;
-		${scpt.overrideThemeBackground ? 'background-color: transparent !important' : ''}
+		${scpt.overrideBackground ? 'background-color: transparent !important' : ''}
 	}
 
 	.shiki code {
