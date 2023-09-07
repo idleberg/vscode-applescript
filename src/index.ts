@@ -80,7 +80,7 @@ async function activate(context: ExtensionContext): Promise<void> {
     })
   );
 
-	activateDecompiler(context);
+	activateDecompiler();
 }
 
 export { activate };

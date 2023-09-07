@@ -69,9 +69,9 @@ function previewLockfile(uri: vscode.Uri, token?: vscode.CancellationToken): Pro
 	});
 }
 
-export default function (context: vscode.ExtensionContext): void {
+export default function (): void {
 	const viewType = 'applescript.binary';
-	const provider = new ScptFileEditorProvider(context);
+	const provider = new ScptFileEditorProvider();
 
 	vscode.window.registerCustomEditorProvider(viewType, provider, {
 		supportsMultipleEditorsPerDocument: true,
