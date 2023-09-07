@@ -12,7 +12,7 @@
   "scripts": {
     "compile": "npm run build",
     "build": "npm-run-all --parallel build:*",
-    "build:code": "esbuild src/index.ts --bundle --platform=node --outfile=lib/extension.js --sourcemap --minify --external:vscode",
+    "build:code": "esbuild src/index.ts --bundle --platform=node --outfile=lib/extension.js --sourcemap --minify --external:vscode --external:vscode-oniguruma",
     "build:icon": "gulp",
     "dev": "npm run start",
     "fix": "eslint --fix ./src",
@@ -138,11 +138,49 @@
           "markdownDescription": "%osascriptOutputStyle%",
           "order": 11
         },
+        "applescript.scpt.theme": {
+          "type": "string",
+					"enum": [
+						"(none)",
+						"css-variables",
+						"dark-plus",
+						"dracula-soft",
+						"dracula",
+						"github-dark-dimmed",
+						"github-dark",
+						"github-light",
+						"hc_light",
+						"light-plus",
+						"material-theme-darker",
+						"material-theme-lighter",
+						"material-theme-ocean",
+						"material-theme-palenight",
+						"material-theme",
+						"min-dark",
+						"min-light",
+						"monokai",
+						"nord",
+						"one-dark-pro",
+						"poimandres",
+						"rose-pine-dawn",
+						"rose-pine-moon",
+						"rose-pine",
+						"slack-dark",
+						"slack-ochin",
+						"solarized-dark",
+						"solarized-light",
+						"vitesse-dark",
+						"vitesse-light"
+					],
+          "default": "(none)",
+          "markdownDescription": "You can specify a syntax theme for binary AppleScript files, which are displayed in a custom web-view",
+          "order": 12
+        },
         "applescript.allowMultiTermination": {
           "type": "boolean",
           "default": false,
           "description": "Allows the selection of multiple processes to be terminated",
-          "order": 12
+          "order": 13
         }
       }
     },
@@ -425,6 +463,7 @@
   "dependencies": {
     "@vscode/extension-telemetry": "^0.8.4",
     "line-column": "^1.0.2",
+    "shikiji": "^0.6.8",
     "vscode-get-config": "^0.4.0"
   },
   "devDependencies": {

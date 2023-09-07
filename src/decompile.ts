@@ -1,11 +1,23 @@
-import * as vscode from 'vscode';
+import { bundledThemes, getHighlighter } from 'shikiji'
+import { getConfig } from 'vscode-get-config';
 import { spawn } from 'node:child_process';
+import * as vscode from 'vscode';
 
 const style = [
 	'font-family: var(--vscode-editor-font-family)',
 	'font-size: var(--vscode-editor-font-size)',
 	'font-weight: var(--vscode-editor-font-weight)'
 ].join(';');
+
+const shikiStyle = `
+	.shiki {
+		padding: 1em;
+	}
+
+	.shiki code {
+		${style}
+	}
+`.split('\n').join('');
 
 export type ScptFile = vscode.CustomDocument & {
 	readonly preview: string;
@@ -27,12 +39,31 @@ export class ScptFileEditorProvider implements vscode.CustomReadonlyEditorProvid
 
 	async resolveCustomEditor(document: ScptFile, webviewPanel: vscode.WebviewPanel): Promise<void> {
 		const { preview } = document;
-		renderLockfile(webviewPanel, preview);
+		await renderLockfile(webviewPanel, preview);
 	}
 }
 
-function renderLockfile(webviewPanel: vscode.WebviewPanel, preview: string): void {
-	webviewPanel.webview.html = `<pre><code style="${style}">${preview}</code></pre>`;
+async function renderLockfile(webviewPanel: vscode.WebviewPanel, preview: string): void {
+	const { scpt } = await getConfig('applescript');
+
+	if (scpt.theme === '(none)') {
+		webviewPanel.webview.html = `<pre style="${style}"><code>${preview}</code></pre>`;
+		return;
+	}
+
+	const highlighter = await getHighlighter({
+		themes: Object.keys(bundledThemes),
+		langs: [
+			'applescript'
+		]
+	});
+
+	const highlighted = highlighter.codeToHtml(preview, {
+		lang: 'applescript',
+		theme: scpt.theme
+	});
+
+	webviewPanel.webview.html = `<style>${shikiStyle}</style>${highlighted}`;
 }
 
 function previewLockfile(uri: vscode.Uri, token?: vscode.CancellationToken): Promise<string> {
