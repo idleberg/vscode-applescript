@@ -78,8 +78,7 @@ export default function (context: vscode.ExtensionContext): void {
 		supportsMultipleEditorsPerDocument: true,
 		webviewOptions: {
 			enableFindWidget: true,
-			retainContextWhenHidden: true,
-
-		},
+			retainContextWhenHidden: true
+		}
 	});
 }
