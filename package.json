@@ -341,9 +341,21 @@
           "applescript"
         ],
         "extensions": [
-          ".applescript"
+					".applescript"
         ],
         "firstLine": "^#!/.*\\bosascript\\b",
+        "configuration": "./config/applescript.configuration.json"
+      },
+      {
+        "id": "applescript.binary",
+        "aliases": [
+          "Binary AppleScript",
+					"applescript.binary",
+					"scpt"
+        ],
+        "extensions": [
+					".scpt"
+        ],
         "configuration": "./config/applescript.configuration.json"
       },
       {
@@ -360,6 +372,21 @@
       },
       {
         "id": "applescript-injection"
+      }
+    ],
+		"customEditors": [
+      {
+        "viewType": "applescript.binary",
+        "displayName": "Binary AppleScript (scpt)",
+        "selector": [
+          {
+            "filenamePattern": "*.scpt"
+          },
+          {
+            "filenamePattern": "*.scptd"
+          }
+        ],
+        "priority": "default"
       }
     ],
     "grammars": [

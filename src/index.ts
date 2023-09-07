@@ -6,6 +6,7 @@ import { getConfig } from 'vscode-get-config';
 import { osacompile, osascript } from './osa';
 import { pick } from './processes';
 import { reporter, sendTelemetryEvent } from './telemetry';
+import activateDecompiler from "./decompile";
 
 async function activate(context: ExtensionContext): Promise<void> {
   const { disableTelemetry } = await getConfig('applescript');
@@ -78,6 +79,8 @@ async function activate(context: ExtensionContext): Promise<void> {
       await pick();
     })
   );
+
+	activateDecompiler(context);
 }
 
 export { activate };
