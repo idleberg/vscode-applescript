@@ -9,16 +9,6 @@ const style = [
 	'font-weight: var(--vscode-editor-font-weight)'
 ].join(';');
 
-const shikiStyle = `
-	.shiki {
-		padding: 1em;
-	}
-
-	.shiki code {
-		${style}
-	}
-`.split('\n').join('');
-
 export type ScptFile = vscode.CustomDocument & {
 	readonly preview: string;
 };
@@ -62,6 +52,17 @@ async function renderLockfile(webviewPanel: vscode.WebviewPanel, preview: string
 		lang: 'applescript',
 		theme: scpt.theme
 	});
+
+	const shikiStyle = `
+	.shiki {
+		padding: 1em;
+		${scpt.overrideThemeBackground ? 'background-color: transparent !important' : ''}
+	}
+
+	.shiki code {
+		${style}
+	}
+`.split('\n').join('');
 
 	webviewPanel.webview.html = `<style>${shikiStyle}</style>${highlighted}`;
 }
