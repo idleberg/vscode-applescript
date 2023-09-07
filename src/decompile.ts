@@ -2,7 +2,6 @@ import * as vscode from 'vscode';
 import { spawn } from 'node:child_process';
 
 const style = [
-	'color: var(--vscode-foreground)',
 	'font-family: var(--vscode-editor-font-family)',
 	'font-size: var(--vscode-editor-font-size)',
 	'font-weight: var(--vscode-editor-font-weight)'
