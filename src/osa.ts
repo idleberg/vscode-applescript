@@ -2,7 +2,6 @@
 import { getConfig } from 'vscode-get-config';
 import { getOutName, spawnPromise } from './util';
 import { platform } from 'node:os';
-import { sendTelemetryEvent } from './telemetry';
 import { window } from 'vscode';
 
 const outputChannel = window.createOutputChannel('AppleScript');
@@ -47,8 +46,6 @@ async function osacompile(compileTarget: string, options: CommandFlags = { isJXA
 
     args.push(doc.fileName);
 
-    let hasErrors = false;
-
     spawnPromise('osacompile', doc.fileName, args, outputChannel)
       .then(() => {
         if (showNotifications) {
@@ -56,7 +53,6 @@ async function osacompile(compileTarget: string, options: CommandFlags = { isJXA
         }
       })
       .catch(error => {
-        hasErrors = true;
         console.error('[idleberg.applescript]', error instanceof Error ? error.message : error);
 
         outputChannel.show(true);
@@ -64,13 +60,6 @@ async function osacompile(compileTarget: string, options: CommandFlags = { isJXA
         if (showNotifications) {
           window.showErrorMessage('Failed to compile or exited with error (see output for details)');
         }
-      })
-      .finally(async () => {
-        await sendTelemetryEvent('osacompile', {
-          compileTarget,
-          hasErrors,
-          options: JSON.stringify(options)
-        });
       });
   });
 }
@@ -110,23 +99,14 @@ async function osascript(options: CommandFlags = { isJXA: false }): Promise<void
     args.unshift('-l', 'JavaScript');
   }
 
-  let hasErrors = false;
-
   spawnPromise('osascript', doc.fileName, args, outputChannel)
     .catch(error => {
-      hasErrors = true;
       console.error('[idleberg.applescript]', error instanceof Error ? error.message : error);
       outputChannel.show(true);
 
       if (showNotifications) {
         window.showErrorMessage('Failed to run script or exited with error (see output for details)');
       }
-    })
-    .finally(async () => {
-      await sendTelemetryEvent('osascript', {
-        hasErrors,
-        options: JSON.stringify(options)
-      });
     });
 }
 

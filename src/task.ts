@@ -2,7 +2,7 @@ import { basename, resolve } from 'node:path';
 import { getConfig } from 'vscode-get-config';
 import { getOutName } from './util';
 import { promises as fs } from 'node:fs';
-import { sendTelemetryEvent } from './telemetry';
+// import { sendTelemetryEvent } from './telemetry';
 import { window, workspace } from 'vscode';
 
 async function createBuildTask(isJXA = false): Promise<void> {
@@ -84,8 +84,6 @@ async function createBuildTask(isJXA = false): Promise<void> {
 
   await fs.mkdir(dotFolder);
 
-  let hasErrors = false;
-
   try {
     await fs.writeFile(buildFile, jsonString)
 
@@ -94,12 +92,7 @@ async function createBuildTask(isJXA = false): Promise<void> {
       window.showTextDocument(taskFile);
     }
   } catch (error) {
-    hasErrors = true;
     console.error('[idleberg.applescript]', error instanceof Error ? error.message : error);
-  } finally {
-    await sendTelemetryEvent('buildTask', {
-      hasErrors
-    });
   }
 }
 

@@ -1,6 +1,5 @@
 import { getConfig } from 'vscode-get-config';
 import { kill } from 'node:process';
-import { reporter } from './telemetry';
 import { window } from 'vscode';
 
 const activeProcesses = new Map<number, ActiveProcess>();
@@ -57,8 +56,6 @@ export async function pick() {
         const pid = item.detail.split(' ')[0];
 
         kill(pid);
-
-        reporter.sendTelemetryEvent('terminateProcess');
       })
     }
 }

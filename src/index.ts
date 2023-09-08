@@ -1,19 +1,12 @@
 'use strict';
 
-import { commands, env, type ExtensionContext } from 'vscode';
+import { commands, type ExtensionContext } from 'vscode';
 import { createBuildTask } from './task';
-import { getConfig } from 'vscode-get-config';
 import { osacompile, osascript } from './osa';
 import { pick } from './processes';
-import { reporter, sendTelemetryEvent } from './telemetry';
 import activateDecompiler from "./decompile";
 
 async function activate(context: ExtensionContext): Promise<void> {
-  const { disableTelemetry } = await getConfig('applescript');
-
-  if (env.appName !== 'VSCodium' && disableTelemetry === false) {
-    context.subscriptions.push(reporter);
-  }
 
   context.subscriptions.push(
     /**
@@ -41,7 +34,7 @@ async function activate(context: ExtensionContext): Promise<void> {
 
     commands.registerCommand('extension.applescript.openSettings', async () => {
       commands.executeCommand('workbench.action.openSettings', '@ext:idleberg.applescript');
-      await sendTelemetryEvent('openSettings');
+      // await sendTelemetryEvent('openSettings');
     }),
 
     commands.registerTextEditorCommand('extension.applescript.terminateProcess', async () => {
