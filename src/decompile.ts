@@ -13,12 +13,12 @@ export type ScptFile = vscode.CustomDocument & {
 	readonly preview: string;
 };
 
-export class ScptFileEditorProvider implements vscode.CustomReadonlyEditorProvider {
+export class ScptFileEditorProvider implements vscode.CustomEditorProvider {
 	// eslint-disable-next-line @typescript-eslint/no-empty-function
 	constructor() { }
 
 	async openCustomDocument(uri: vscode.Uri, openContext: vscode.CustomDocumentOpenContext, token: vscode.CancellationToken): Promise<ScptFile> {
-		const preview = await previewLockfile(uri, token);
+		const preview = await previewFile(uri, token);
 
 		return {
 			uri,
@@ -29,11 +29,11 @@ export class ScptFileEditorProvider implements vscode.CustomReadonlyEditorProvid
 
 	async resolveCustomEditor(document: ScptFile, webviewPanel: vscode.WebviewPanel): Promise<void> {
 		const { preview } = document;
-		await renderLockfile(webviewPanel, preview);
+		await renderFile(webviewPanel, preview);
 	}
 }
 
-async function renderLockfile(webviewPanel: vscode.WebviewPanel, preview: string): void {
+async function renderFile(webviewPanel: vscode.WebviewPanel, preview: string): void {
 	const { scpt } = await getConfig('applescript');
 
 	if (scpt.theme === '(none)') {
@@ -67,7 +67,7 @@ async function renderLockfile(webviewPanel: vscode.WebviewPanel, preview: string
 	webviewPanel.webview.html = `<style>${shikiStyle}</style>${highlighted}`;
 }
 
-function previewLockfile(uri: vscode.Uri, token?: vscode.CancellationToken): Promise<string> {
+function previewFile(uri: vscode.Uri, token?: vscode.CancellationToken): Promise<string> {
 	return new Promise((resolve, reject) => {
 		const process = spawn('osadecompile', [uri.fsPath], {
 			stdio: ['ignore', 'pipe', 'pipe'],
