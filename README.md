@@ -1,6 +1,5 @@
 # AppleScript for Visual Studio Code
 
-[![License](https://img.shields.io/github/license/idleberg/vscode-applescript?style=for-the-badge)](LICENSE)
 [![Version](https://img.shields.io/github/v/release/idleberg/vscode-applescript?style=for-the-badge)](https://github.com/idleberg/vscode-applescript/releases)
 [![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/idleberg.applescript?style=for-the-badge&label=Marketplace)](https://marketplace.visualstudio.com/items?itemName=idleberg.applescript)
 [![Open VSX Downloads](https://img.shields.io/open-vsx/dt/idleberg/applescript?style=for-the-badge&label=Open%20VSX)](https://open-vsx.org/extension/idleberg/applescript)
