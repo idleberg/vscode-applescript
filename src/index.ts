@@ -73,7 +73,7 @@ async function activate(context: ExtensionContext): Promise<void> {
     })
   );
 
-	activateDecompiler();
+	await activateDecompiler();
 }
 
 export { activate };

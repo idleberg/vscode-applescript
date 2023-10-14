@@ -1,3 +1,7 @@
+# v0.25.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.25.1)
+
+- make decoder optional
+
 # v0.25.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.25.0)
 
 - add read-only support for viewing binary AppleScript files

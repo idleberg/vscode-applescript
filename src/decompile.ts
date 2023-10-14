@@ -101,7 +101,13 @@ function previewFile(uri: vscode.Uri, token?: vscode.CancellationToken): Promise
 	});
 }
 
-export default function (): void {
+export default async function (): Promise<void> {
+	const { enableDecompiler } = await getConfig('applescript');
+
+	if (!enableDecompiler) {
+		return;
+	}
+
 	const viewType = 'applescript.binary';
 	const provider = new ScptFileEditorProvider();
 
