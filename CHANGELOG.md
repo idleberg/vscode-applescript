@@ -1,6 +1,7 @@
 # v0.25.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.25.1)
 
 - make decoder optional
+- update dependencies
 
 # v0.25.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.25.0)
 
