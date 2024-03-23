@@ -12,7 +12,7 @@
   "scripts": {
     "compile": "npm run build",
     "build": "npm-run-all --parallel build:*",
-    "build:code": "esbuild src/index.ts --bundle --platform=node --outfile=lib/extension.js --sourcemap --minify --external:vscode --external:vscode-oniguruma",
+    "build:code": "tsup",
     "build:icon": "gulp",
     "dev": "npm run start",
     "fix": "eslint --fix ./src",
@@ -41,7 +41,7 @@
   "bugs": {
     "url": "https://github.com/idleberg/vscode-applescript/issues"
   },
-  "main": "./lib/extension",
+  "main": "./lib/index.js",
   "typings": "./types",
   "icon": "resources/logo.png",
   "engines": {
@@ -478,7 +478,6 @@
     "@typescript-eslint/parser": "^6.7.5",
     "applescript-svg-icon": "github:idleberg/applescript-svg-icon",
     "cross-env": "^7.0.3",
-    "esbuild": "^0.18.13",
     "eslint": "^8.51.0",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-yaml": "^0.5.0",
@@ -489,6 +488,7 @@
     "lint-staged": "^14.0.1",
     "log-symbols": "^5.1.0",
     "npm-run-all2": "^6.1.1",
+    "tsup": "^8.0.2",
     "typescript": "^5.2.2"
   },
   "lint-staged": {
