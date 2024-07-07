@@ -20,8 +20,8 @@
     "lint:ts": "eslint ./src --ignore-path .gitignore",
     "lint:yaml": "eslint --ext .yaml --ext .yml --ignore-path .gitignore",
     "lint": "npm-run-all --parallel lint:*",
-    "package": "vsce package --no-dependencies --githubBranch main",
-    "publish": "vsce publish --no-dependencies --githubBranch main",
+    "publish:ovsx": "ovsx publish --no-dependencies",
+    "publish:vsce": "vsce publish --githubBranch main --no-dependencies",
     "start": "npm run build:code -- --watch",
     "test": "npm run lint",
     "vscode:prepublish": "npm run build"
@@ -53,8 +53,6 @@
     "Other"
   ],
   "activationEvents": [
-    "onLanguage:applescript",
-    "onLanguage:jxa",
     "onLanguage:javascript"
   ],
   "contributes": {
