@@ -16,9 +16,7 @@
     "build:icon": "gulp",
     "dev": "npm run start",
     "fix": "eslint --fix ./src",
-    "lint:json": "eslint --ext .json --ignore-path .gitignore",
-    "lint:ts": "eslint ./src --ignore-path .gitignore",
-    "lint:yaml": "eslint --ext .yaml --ext .yml --ignore-path .gitignore",
+    "lint:ts": "eslint ./src",
     "lint": "npm-run-all --parallel lint:*",
     "publish:ovsx": "ovsx publish --no-dependencies",
     "publish:vsce": "vsce publish --githubBranch main --no-dependencies",
@@ -385,7 +383,7 @@
         "extensions": [
           ".applescript"
         ],
-        "firstLine": "^#!\/.*\\bosascript\\b",
+        "firstLine": "^#!/.*\\bosascript\\b",
         "configuration": "./config/applescript.configuration.json"
       },
       {
@@ -466,28 +464,26 @@
   },
   "dependencies": {
     "line-column": "^1.0.2",
-    "shikiji": "^0.6.10",
+    "shikiji": "^0.6.13",
     "vscode-get-config": "^0.4.0"
   },
   "devDependencies": {
-    "@types/node": "^16.18.38",
+    "@types/node": "^16.18.113",
     "@types/vscode": "1.75.0",
-    "@typescript-eslint/eslint-plugin": "^6.7.5",
-    "@typescript-eslint/parser": "^6.7.5",
     "applescript-svg-icon": "github:idleberg/applescript-svg-icon",
     "cross-env": "^7.0.3",
-    "eslint": "^8.51.0",
-    "eslint-plugin-json": "^3.1.0",
-    "eslint-plugin-yaml": "^0.5.0",
+    "eslint": "9.12.0",
+    "eslint-plugin-jsonc": "^2.16.0",
     "gulp": "^4.0.2",
     "gulp-raster-update": "^0.2.0",
     "gulp-rename": "^2.0.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "log-symbols": "^5.1.0",
-    "npm-run-all2": "^6.1.1",
-    "tsup": "^8.0.2",
-    "typescript": "^5.2.2"
+    "npm-run-all2": "^6.2.3",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.8.1"
   },
   "lint-staged": {
     "*.(ts|json|yml)": "eslint --cache --fix"
