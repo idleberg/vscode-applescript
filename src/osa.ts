@@ -1,6 +1,6 @@
 // Dependencies
 import { getConfig } from 'vscode-get-config';
-import { getOutName, spawnPromise } from './util';
+import { getOutName, spawnPromise } from './util.ts';
 import { platform } from 'node:os';
 import { window } from 'vscode';
 

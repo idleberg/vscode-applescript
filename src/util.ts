@@ -3,7 +3,7 @@ import { basename, dirname, extname, join } from 'node:path';
 import { getConfig } from 'vscode-get-config';
 import { spawn } from 'node:child_process';
 import { type OutputChannel, window } from 'vscode';
-import * as activeProcesses from './processes';
+import * as activeProcesses from './processes.ts';
 import lineColumn from 'line-column';
 
 async function getLineCol(lineString: string): Promise<string | boolean> {
