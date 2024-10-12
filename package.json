@@ -468,7 +468,7 @@
     "vscode-get-config": "^0.4.0"
   },
   "devDependencies": {
-    "@types/node": "^16.18.113",
+    "@types/node": "^20",
     "@types/vscode": "1.75.0",
     "applescript-svg-icon": "github:idleberg/applescript-svg-icon",
     "cross-env": "^7.0.3",
