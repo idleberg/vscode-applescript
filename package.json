@@ -40,7 +40,6 @@
     "url": "https://github.com/idleberg/vscode-applescript/issues"
   },
   "main": "./lib/index.js",
-  "typings": "./types",
   "icon": "resources/logo.png",
   "engines": {
     "vscode": "^1.75.0"
