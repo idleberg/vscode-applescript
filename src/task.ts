@@ -2,7 +2,6 @@ import { basename, resolve } from 'node:path';
 import { getConfig } from 'vscode-get-config';
 import { getOutName } from './util.ts';
 import { promises as fs } from 'node:fs';
-// import { sendTelemetryEvent } from './telemetry';
 import { window, workspace } from 'vscode';
 
 async function createBuildTask(isJXA = false): Promise<void> {

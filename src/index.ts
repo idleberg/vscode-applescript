@@ -34,7 +34,6 @@ async function activate(context: ExtensionContext): Promise<void> {
 
     commands.registerCommand('extension.applescript.openSettings', async () => {
       commands.executeCommand('workbench.action.openSettings', '@ext:idleberg.applescript');
-      // await sendTelemetryEvent('openSettings');
     }),
 
     commands.registerTextEditorCommand('extension.applescript.terminateProcess', async () => {

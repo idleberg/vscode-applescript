@@ -55,7 +55,7 @@ export async function pick() {
       picks.map(item => {
         const pid = item.detail.split(' ')[0];
 
-        kill(pid);
+        kill(Number(pid));
       })
     }
 }
