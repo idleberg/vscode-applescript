@@ -4,7 +4,6 @@ import { commands, type ExtensionContext } from 'vscode';
 import { createBuildTask } from './task.ts';
 import { osacompile, osascript } from './osa.ts';
 import { pick } from './processes.ts';
-import activateDecompiler from "./decompile.ts";
 
 async function activate(context: ExtensionContext): Promise<void> {
 
@@ -71,8 +70,6 @@ async function activate(context: ExtensionContext): Promise<void> {
       await pick();
     })
   );
-
-	await activateDecompiler();
 }
 
 export { activate };

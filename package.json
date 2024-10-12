@@ -127,12 +127,6 @@
           "markdownDescription": "%osascriptOutputStyle%",
           "order": 11
         },
-        "applescript.scpt.enableDecoder": {
-          "type": "boolean",
-          "default": "false",
-          "description": "Enable experimental decoder for binary AppleScript files",
-          "order": 12
-        },
         "applescript.scpt.theme": {
           "type": "string",
           "enum": [

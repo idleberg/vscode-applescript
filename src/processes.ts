@@ -12,20 +12,15 @@ export function add(pid: number, file: string, command: string) {
     file,
     process: command
   });
-
-  console.log('activeProcesses.add()', Object.fromEntries(activeProcesses));
 }
 
 export function remove(pid: number) {
   activeProcesses.delete(pid);
   lastKilledProcessId = pid;
-
-  console.log('activeProcesses.remove()', Object.fromEntries(activeProcesses));
 }
 
 export function get(pid: number) {
   const value = activeProcesses.get(pid);
-  console.log('activeProcesses.get()', value);
 
   return value;
 }
