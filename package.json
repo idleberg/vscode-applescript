@@ -385,7 +385,7 @@
         "extensions": [
           ".applescript"
         ],
-        "firstLine": "^#!/.*\\bosascript\\b",
+        "firstLine": "^#!\/.*\\bosascript\\b",
         "configuration": "./config/applescript.configuration.json"
       },
       {
