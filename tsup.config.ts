@@ -12,5 +12,5 @@ export default defineConfig({
 	outDir: 'lib',
 	platform: 'node',
 	target: 'es2020',
-	treeshake: true,
+
 });
