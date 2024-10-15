@@ -10,7 +10,6 @@ export default defineConfig({
 	minify: true,
 	noExternal: [
 		'line-column',
-		'shikiji',
 		'vscode-get-config'
 	],
 	outDir: 'lib',
