@@ -457,7 +457,6 @@
   },
   "dependencies": {
     "line-column": "^1.0.2",
-    "shikiji": "^0.6.13",
     "vscode-get-config": "^0.4.0"
   },
   "devDependencies": {
@@ -475,7 +474,7 @@
     "npm-run-all2": "^6.2.3",
     "tsup": "^8.3.0",
     "typescript": "^5.6.3",
-    "typescript-eslint": "^8.8.1"
+    "typescript-eslint": "^8.9.0"
   },
   "lint-staged": {
     "*.(ts|json|yml)": "eslint --cache --fix"

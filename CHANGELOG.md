@@ -1,3 +1,8 @@
+# v0.26.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v1.26.1)
+
+- fix `tsup` config
+- update dependencies
+
 # v0.26.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.26.0)
 
 - remove experimental decompiler
