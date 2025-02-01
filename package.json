@@ -364,7 +364,16 @@
         "key": "shift+alt+r",
         "when": "editorFocus && editorLangId == applescript",
         "command": "extension.applescript.run"
-      }
+      },
+      {
+				"key": "alt+enter",
+				"when": "editorFocus && editorLangId == applescript",
+				"command": "editor.action.insertSnippet",
+				"args": {
+					"langid": "applescript",
+					"name": "continued line"
+				}	
+			}
     ],
     "languages": [
       {
