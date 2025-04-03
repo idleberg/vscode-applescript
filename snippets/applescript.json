@@ -1,1942 +1,1942 @@
 {
-  "activate application": {
-    "prefix": "activate application",
-    "body": "activate application \"${1:application_name}\""
-  },
-  "activate": {
-    "prefix": "activate",
-    "body": "activate"
-  },
-  "administrator privileges": {
-    "prefix": "administrator privileges",
-    "body": "administrator privileges"
-  },
-  "as string": {
-    "prefix": "as string",
-    "body": "as string"
-  },
-  "as user name": {
-    "prefix": "as user name",
-    "body": "as user name \"${1:user}\""
-  },
-  "as user name..password": {
-    "prefix": "as user name..password",
-    "body": "as user name \"${1:user}\" with password \"${2:password}\""
-  },
-  "ASCII character": {
-    "prefix": "ASCII character",
-    "body": "ASCII character \"${1:integer}\""
-  },
-  "ASCII number": {
-    "prefix": "ASCII number",
-    "body": "ASCII number \"${1:character}\""
-  },
-  "beep": {
-    "prefix": "beep",
-    "body": "beep \"${1:integer}\""
-  },
-  "before": {
-    "prefix": "before",
-    "body": "before"
-  },
-  "buttons": {
-    "prefix": "buttons",
-    "body": "buttons {\"${1:buttons}\"${2}} "
-  },
-  "buttons:1": {
-    "prefix": "buttons:1",
-    "body": "buttons {\"${1:button}\"} "
-  },
-  "buttons:2": {
-    "prefix": "buttons:2",
-    "body": "buttons {\"${1:button1}\",\"${2:button2}\"} "
-  },
-  "buttons:3": {
-    "prefix": "buttons:3",
-    "body": "buttons {\"${1:button1}\",\"${2:button2}\",\"${3:button3}\"} "
-  },
-  "buttons:4": {
-    "prefix": "buttons:4",
-    "body": "buttons {\"${1:button1}\",\"${2:button2}\",\"${3:button3}\",\"${4:button3}\"} "
-  },
-  "cancel button name": {
-    "prefix": "cancel button name",
-    "body": "cancel button name \"${1:text}\""
-  },
-  "cancel button": {
-    "prefix": "cancel button",
-    "body": "cancel button \"${1:text}\""
-  },
-  "choose application": {
-    "prefix": "choose application",
-    "body": "choose application"
-  },
-  "choose color default color": {
-    "prefix": "choose color default color",
-    "body": "choose color default color ${1:{${2:red}, ${3:green}, ${4:blue}}}"
-  },
-  "choose color": {
-    "prefix": "choose color",
-    "body": "choose color"
-  },
-  "choose file name": {
-    "prefix": "choose file name",
-    "body": "choose file name"
-  },
-  "choose folder": {
-    "prefix": "choose folder",
-    "body": "choose folder"
-  },
-  "choose remote application": {
-    "prefix": "choose remote application",
-    "body": "choose remote application"
-  },
-  "choose URL": {
-    "prefix": "choose URL",
-    "body": "choose URL"
-  },
-  "clipboard info for": {
-    "prefix": "clipboard info for",
-    "body": "clipboard info for ${1:class}"
-  },
-  "clipboard info": {
-    "prefix": "clipboard info",
-    "body": "clipboard info"
-  },
-  "close access": {
-    "prefix": "close access",
-    "body": "close access \"${1:file}\""
-  },
-  "comment": {
-    "prefix": "comment",
-    "body": "-- ${1:comment}"
-  },
-  "comment:multi-line": {
-    "prefix": "comment:multi-line",
-    "body": "(*\n    ${1:comment}\n*)"
-  },
-  "considering case": {
-    "prefix": "considering case",
-    "body": "considering case \"${1:application_name}\"\n\t${2:--your code}\nend case"
-  },
-  "copy to": {
-    "prefix": "copy to",
-    "body": "copy ${1:inVar} to \"${2:outVar}\""
-  },
-  "count": {
-    "prefix": "count",
-    "body": "count ${1:objectVar}"
-  },
-  "current date": {
-    "prefix": "current date",
-    "body": "current date"
-  },
-  "default alert": {
-    "prefix": "default alert",
-    "body": "default alert \"${1:text}\""
-  },
-  "default answer": {
-    "prefix": "default answer",
-    "body": "default answer \"${1:answer}\""
-  },
-  "default button": {
-    "prefix": "default button",
-    "body": "default button \"${1:text}\""
-  },
-  "default items": {
-    "prefix": "default items",
-    "body": "default items {${1:items}}"
-  },
-  "default location": {
-    "prefix": "default location",
-    "body": "default location ${1:alias}"
-  },
-  "default name": {
-    "prefix": "default name",
-    "body": "default name ${1:text}"
-  },
-  "delay": {
-    "prefix": "delay",
-    "body": "delay ${1:integer}"
-  },
-  "display answer": {
-    "prefix": "display answer",
-    "body": "display dialog \"${1:text}\" default answer \"${2:answer}\" "
-  },
-  "display buttons": {
-    "prefix": "display buttons",
-    "body": "display dialog \"${1:text}\" buttons {\"${2:buttons}\"${3}} "
-  },
-  "display buttons:1": {
-    "prefix": "display buttons:1",
-    "body": "display dialog \"${1:text}\" buttons {\"${2:button}\"} "
-  },
-  "display buttons:2": {
-    "prefix": "display buttons:2",
-    "body": "display dialog \"${1:text}\" buttons {\"${2:button1}\",\"${3:button2}\"} "
-  },
-  "display buttons:3": {
-    "prefix": "display buttons:3",
-    "body": "display dialog \"${1:text}\" buttons {\"${2:button1}\",\"${3:button2}\",\"${4:button3}\"} "
-  },
-  "display buttons:4": {
-    "prefix": "display buttons:4",
-    "body": "display dialog \"${1:text}\" buttons {\"${2:button1}\",\"${3:button2}\",\"${4:button3}\",\"${5:button4}\"} "
-  },
-  "display notification": {
-    "prefix": "display notification",
-    "body": "display notification with title \"${1:text}\" ${2:subtitle \"${3:text}\"}"
-  },
-  "display": {
-    "prefix": "display",
-    "body": "display dialog \"${1:text}\" "
-  },
-  "do shell script": {
-    "prefix": "do shell script",
-    "body": "do shell script \"${1:script}\""
-  },
-  "do shell script..as": {
-    "prefix": "do shell script..as",
-    "body": "do shell script \"${1:script}\" as \"${2:class}\""
-  },
-  "editable URL": {
-    "prefix": "editable URL",
-    "body": "editable URL ${1:boolean}"
-  },
-  "empty selection allowed": {
-    "prefix": "empty selection allowed",
-    "body": "empty selection allowed ${1:boolean}"
-  },
-  "error number": {
-    "prefix": "error number",
-    "body": "error number ${2:-${1:integer}}"
-  },
-  "error reporting": {
-    "prefix": "error reporting",
-    "body": "error reporting ${1:boolean}"
-  },
-  "from Classic domain": {
-    "prefix": "from Classic domain",
-    "body": "from Classic domain"
-  },
-  "from local domain": {
-    "prefix": "from local domain",
-    "body": "from local domain"
-  },
-  "from network domain": {
-    "prefix": "from network domain",
-    "body": "from network domain"
-  },
-  "from system domain": {
-    "prefix": "from system domain",
-    "body": "from system domain"
-  },
-  "from user domain": {
-    "prefix": "from user domain",
-    "body": "from user domain"
-  },
-  "from": {
-    "prefix": "from",
-    "body": "from"
-  },
-  "get eof": {
-    "prefix": "get eof",
-    "body": "get eof ${1:objectVar}"
-  },
-  "get item": {
-    "prefix": "get item",
-    "body": "get item ${1:integer} of {\"${2:item1}\", \"${3:item2}\"${4:, \"${5:item3}\"}}"
-  },
-  "get volume settings": {
-    "prefix": "get volume settings",
-    "body": "get volume settings"
-  },
-  "get word": {
-    "prefix": "get word",
-    "body": "get word ${1:integer} of \"${2:string}\""
-  },
-  "giving up after": {
-    "prefix": "giving up after",
-    "body": "giving up after ${1:integer}"
-  },
-  "global": {
-    "prefix": "global",
-    "body": "global ${1:objectVar}"
-  },
-  "if then": {
-    "prefix": "if then",
-    "body": "if ${1:condition} then\n\t${2:--your code}\nend if"
-  },
-  "if then..else if": {
-    "prefix": "if then..else if",
-    "body": "if ${1:condition} then\n\t${2:--your code}\nelse if ${3:else_condition} then\n\t${4:--your code}\nend if"
-  },
-  "if then..else if..else": {
-    "prefix": "if then..else if..else",
-    "body": "if ${1:condition} then\n\t${2:--your code}\nelse if ${3:else_condition} then\n\t${4:--your code}\nelse\n\t${5:--your code}\nend if"
-  },
-  "if then..else": {
-    "prefix": "if then..else",
-    "body": "if ${1:condition} then\n\t${2:--your code}\nelse\n\t${3:--your code}\nend if"
-  },
-  "if": {
-    "prefix": "if",
-    "body": "if ${1:condition} then\n\t${2:--your code}\nend if"
-  },
-  "if..else if": {
-    "prefix": "if..else if",
-    "body": "if ${1:condition} then\n\t${2:--your code}\nelse if ${3:else_condition} then\n\t${4:--your code}\nend if"
-  },
-  "if..else if..else": {
-    "prefix": "if..else if..else",
-    "body": "if ${1:condition} then\n\t${2:--your code}\nelse if ${3:else_condition} then\n\t${4:--your code}\nelse\n\t${5:--your code}\nend if"
-  },
-  "if..else": {
-    "prefix": "if..else",
-    "body": "if ${1:condition}\n\t${2:--your code}\nelse\n\t${3:--your code}\nend if"
-  },
-  "if..else:false": {
-    "prefix": "if..else:false",
-    "body": "if ${1:condition} is false then\n\t${2:--your code}\nelse\n\t${3:--your code}\nend if"
-  },
-  "if..else:true": {
-    "prefix": "if..else:true",
-    "body": "if ${1:condition} is true then\n\t${2:--your code}\nelse\n\t${3:--your code}\nend if"
-  },
-  "if..exit repeat": {
-    "prefix": "if..exit repeat",
-    "body": "if ${1:condition} then exit repeat"
-  },
-  "if:false": {
-    "prefix": "if:false",
-    "body": "if ${1:condition} is false then\n\t${2:--your code}\nend if"
-  },
-  "if:true": {
-    "prefix": "if:true",
-    "body": "if ${1:condition} is true then\n\t${2:--your code}\nend if"
-  },
-  "in AppleTalk zone": {
-    "prefix": "in AppleTalk zone",
-    "body": "in AppleTalk zone \"${1:zone}\""
-  },
-  "info for": {
-    "prefix": "info for",
-    "body": "info for ${1:folder}"
-  },
-  "info for..size": {
-    "prefix": "info for..size",
-    "body": "info for ${1:folder} size ${2:boolean}"
-  },
-  "invisibles": {
-    "prefix": "invisibles",
-    "body": "invisibles ${1:boolean}"
-  },
-  "launch application": {
-    "prefix": "launch application",
-    "body": "launch application \"${1:application}\""
-  },
-  "load script": {
-    "prefix": "load script",
-    "body": "load script \"${1:file}\""
-  },
-  "local": {
-    "prefix": "local",
-    "body": "local ${1:objectVar}"
-  },
-  "localized string": {
-    "prefix": "localized string",
-    "body": "localized string \"${1:text}\""
-  },
-  "localized string..from table": {
-    "prefix": "localized string..from table",
-    "body": "localized string \"${1:text}\" from table ${2:table}"
-  },
-  "localized string..in bundle": {
-    "prefix": "localized string..in bundle",
-    "body": "localized string \"${1:text}\" in bundle ${2:bundle}"
-  },
-  "log": {
-    "prefix": "log",
-    "body": "log ${1:objectVar}"
-  },
-  "mount volume": {
-    "prefix": "mount volume",
-    "body": "mount volume \"${1:volume}\""
-  },
-  "mount volume..in AppleTalk zone": {
-    "prefix": "mount volume..in AppleTalk zone",
-    "body": "mount volume \"${1:volume}\" in AppleTalk zone \"${2:zone}\""
-  },
-  "mount volume..on server": {
-    "prefix": "mount volume..on server",
-    "body": "mount volume \"${1:volume}\" on server \"${2:server}\""
-  },
-  "multiple selections allowed": {
-    "prefix": "multiple selections allowed",
-    "body": "multiple selections allowed ${1:boolean}"
-  },
-  "name of": {
-    "prefix": "name of",
-    "body": "name of ${1:objectVar}"
-  },
-  "of type": {
-    "prefix": "of type",
-    "body": "of type {${1:items}}"
-  },
-  "offset of..in": {
-    "prefix": "offset of..in",
-    "body": "offset of \"${1:string}\" in ${2:objectVar}"
-  },
-  "OK button name": {
-    "prefix": "OK button name",
-    "body": "OK button name \"${1:text}\""
-  },
-  "on server": {
-    "prefix": "on server",
-    "body": "on server \"${1:server}\""
-  },
-  "on": {
-    "prefix": "on",
-    "body": "on ${1:${2:theHandler}(${3:objectVar})}\n\t${4:--your code}\nend ${2:theHandler}"
-  },
-  "open for access": {
-    "prefix": "open for access",
-    "body": "open for access"
-  },
-  "open location": {
-    "prefix": "open location",
-    "body": "open location \"${1:location}\""
-  },
-  "path to application": {
-    "prefix": "path to application",
-    "body": "path to application \"${1:application}\""
-  },
-  "path to current application": {
-    "prefix": "path to current application",
-    "body": "path to current application"
-  },
-  "path to folder": {
-    "prefix": "path to folder",
-    "body": "path to ${1:folder}"
-  },
-  "path to folder..as string": {
-    "prefix": "path to folder..as string",
-    "body": "path to ${1:folder} as string"
-  },
-  "path to frontmost application": {
-    "prefix": "path to frontmost application",
-    "body": "path to frontmost application"
-  },
-  "path to it": {
-    "prefix": "path to it",
-    "body": "path to it"
-  },
-  "path to me": {
-    "prefix": "path to me",
-    "body": "path to me"
-  },
-  "path to resource": {
-    "prefix": "path to resource",
-    "body": "path to resource \"${1:resource}\""
-  },
-  "path to resource..in bundle": {
-    "prefix": "path to resource..in bundle",
-    "body": "path to resource \"${1:resource}\" in bundle \"${2:file}\""
-  },
-  "path to resource..in directory": {
-    "prefix": "path to resource..in directory",
-    "body": "path to resource \"${1:resource}\" in directory \"${2:directory}\""
-  },
-  "path to": {
-    "prefix": "path to",
-    "body": "path to"
-  },
-  "path to..as string": {
-    "prefix": "path to..as string",
-    "body": "path to \"${1:application}\" as string"
-  },
-  "random number from..to": {
-    "prefix": "random number from..to",
-    "body": "random number from ${1:number} to ${2:number}"
-  },
-  "random number": {
-    "prefix": "random number",
-    "body": "random number"
-  },
-  "read": {
-    "prefix": "read",
-    "body": "read ${1:file}"
-  },
-  "repeat times": {
-    "prefix": "repeat times",
-    "body": "repeat ${1:integer} times"
-  },
-  "repeat until": {
-    "prefix": "repeat until",
-    "body": "repeat until ${1:condition}\n\t${2:--your code}\nend repeat"
-  },
-  "repeat while": {
-    "prefix": "repeat while",
-    "body": "repeat while ${1:condition}\n\t${2:--your code}\nend repeat"
-  },
-  "repeat with from": {
-    "prefix": "repeat with from",
-    "body": "repeat with ${1:increment_value} from ${2:start_value} to ${3:end_value}\n\t${4:--your code}\nend repeat"
-  },
-  "repeat with in": {
-    "prefix": "repeat with in",
-    "body": "repeat with ${1:current_value} in ${2:list_of_value}\n\t${4:--your code}\nend repeat"
-  },
-  "repeat": {
-    "prefix": "repeat",
-    "body": "repeat\n\t${1:--your code}\nend repeat"
-  },
-  "round": {
-    "prefix": "round",
-    "body": "round ${1:real}"
-  },
-  "round:down": {
-    "prefix": "round:down",
-    "body": "round ${1:real} rounding down"
-  },
-  "round:up": {
-    "prefix": "round:up",
-    "body": "round ${1:real} rounding up"
-  },
-  "run application": {
-    "prefix": "run application",
-    "body": "run application \"${1:application}\""
-  },
-  "run script": {
-    "prefix": "run script",
-    "body": "run script \"${1:script}\""
-  },
-  "run script..in": {
-    "prefix": "run script..in",
-    "body": "run script \"${1:script}\" in \"${2:component}\""
-  },
-  "run script..with parameters": {
-    "prefix": "run script..with parameters",
-    "body": "run script \"${1:script}\" with parameters {${2:parameters}}"
-  },
-  "run": {
-    "prefix": "run",
-    "body": "run ${1:objectVar}"
-  },
-  "saving to": {
-    "prefix": "saving to",
-    "body": "saving to \"${1:file}\""
-  },
-  "say": {
-    "prefix": "say",
-    "body": "say \"${1:text}\""
-  },
-  "say..displaying": {
-    "prefix": "say..displaying",
-    "body": "say \"${1:text}\" displaying \"${2:text}\""
-  },
-  "scripting components": {
-    "prefix": "scripting components",
-    "body": "scripting components"
-  },
-  "set eof to": {
-    "prefix": "set eof to",
-    "body": "set eof ${1:objectVar} to \"${2:integer}\""
-  },
-  "set the clipboard": {
-    "prefix": "set the clipboard",
-    "body": "set the clipboard \"${1:text}\""
-  },
-  "set to list": {
-    "prefix": "set to list",
-    "body": "set ${1:objectVar} to {\"${2:item1}\",${3:\"item2\"}${4}}"
-  },
-  "set to": {
-    "prefix": "set to",
-    "body": "set ${1:objectVar} to \"${2:string}\""
-  },
-  "set to..display alert": {
-    "prefix": "set to..display alert",
-    "body": "set ${1:objectVar} to display alert \"${2:text}\""
-  },
-  "set volume": {
-    "prefix": "set volume",
-    "body": "set volume ${1:value}"
-  },
-  "set:alert volume": {
-    "prefix": "set:alert volume",
-    "body": "set volume alert volume ${1:value}"
-  },
-  "set:input volume": {
-    "prefix": "set:input volume",
-    "body": "set volume input volume ${1:value}"
-  },
-  "set:output muted": {
-    "prefix": "set:output muted",
-    "body": "set volume output muted ${1:boolean}"
-  },
-  "set:output volume": {
-    "prefix": "set:output volume",
-    "body": "set volume output volume ${1:value}"
-  },
-  "show package contents": {
-    "prefix": "show package contents",
-    "body": "show package contents ${1:boolean}"
-  },
-  "showing": {
-    "prefix": "showing",
-    "body": "showing {${1:items}}"
-  },
-  "sound name": {
-    "prefix": "sound name",
-    "body": "sound name ${1:sound}"
-  },
-  "starting at": {
-    "prefix": "starting at",
-    "body": "starting at"
-  },
-  "store script": {
-    "prefix": "store script",
-    "body": "store script ${1:objectVar}"
-  },
-  "store script..in": {
-    "prefix": "store script..in",
-    "body": "store script ${1:objectVar} in \"${2:file}\""
-  },
-  "store script..in..replacing": {
-    "prefix": "store script..in..replacing",
-    "body": "store script ${1:objectVar} in \"${2:file}\" replacing ${3:yes|no|ask}"
-  },
-  "summarize": {
-    "prefix": "summarize",
-    "body": "summarize \"${1:objectVar}\""
-  },
-  "summarize..in": {
-    "prefix": "summarize..in",
-    "body": "summarize \"${1:objectVar}\" in ${2:integer}"
-  },
-  "system attribute": {
-    "prefix": "system attribute",
-    "body": "system attribute \"${1:attribute}\""
-  },
-  "system info": {
-    "prefix": "system info",
-    "body": "system info \"${1:attribute}\""
-  },
-  "tell application": {
-    "prefix": "tell application",
-    "body": "tell application \"${1:application_name}\"\n\t${2:--your code}\nend tell"
-  },
-  "tell application..to activate": {
-    "prefix": "tell application..to activate",
-    "body": "tell application \"${1:application_name}\" to activate"
-  },
-  "tell application..to launch": {
-    "prefix": "tell application..to launch",
-    "body": "tell application \"${1:application_name}\" to launch"
-  },
-  "tell application..to run": {
-    "prefix": "tell application..to run",
-    "body": "tell application \"${1:application_name}\" to run"
-  },
-  "tell process": {
-    "prefix": "tell process",
-    "body": "tell process \"${1:application_name}\"\n\t${2:--your code}\nend tell"
-  },
-  "tell to": {
-    "prefix": "tell to",
-    "body": "tell ${1:objectVar} to ${2:${3:function}()}"
-  },
-  "the clipboard": {
-    "prefix": "the clipboard",
-    "body": "the clipboard"
-  },
-  "time to GMT": {
-    "prefix": "time to GMT",
-    "body": "time to GMT"
-  },
-  "try": {
-    "prefix": "try",
-    "body": "try\n\t${1:--your code}\nend try"
-  },
-  "until": {
-    "prefix": "until",
-    "body": "until"
-  },
-  "using delimiters": {
-    "prefix": "using delimiters",
-    "body": "using delimiters"
-  },
-  "using": {
-    "prefix": "using",
-    "body": "using \"${1:voice}\""
-  },
-  "waiting until completion": {
-    "prefix": "waiting until completion",
-    "body": "waiting until completion \"${1:boolean}\""
-  },
-  "with hidden answer": {
-    "prefix": "with hidden answer",
-    "body": "with hidden answer"
-  },
-  "with icon": {
-    "prefix": "with icon",
-    "body": "with icon \"${1:icon}\""
-  },
-  "with icon:caution": {
-    "prefix": "with icon:caution",
-    "body": "with icon caution"
-  },
-  "with icon:file": {
-    "prefix": "with icon:file",
-    "body": "with icon file \"${1:icon_file}\""
-  },
-  "with icon:note": {
-    "prefix": "with icon:note",
-    "body": "with icon note"
-  },
-  "with icon:stop": {
-    "prefix": "with icon:stop",
-    "body": "with icon stop"
-  },
-  "with password": {
-    "prefix": "with password",
-    "body": "with password \"${1:password}\""
-  },
-  "with prompt": {
-    "prefix": "with prompt",
-    "body": "with prompt \"${1:prompt}\""
-  },
-  "with seed": {
-    "prefix": "with seed",
-    "body": "with seed"
-  },
-  "with title": {
-    "prefix": "with title",
-    "body": "with title \"${1:title}\""
-  },
-  "write permission": {
-    "prefix": "write permission",
-    "body": "write permission ${1:boolean}"
-  },
-  "write": {
-    "prefix": "write",
-    "body": "write \"${1:string}\" to ${2:file}"
-  },
-  "activate:Activity Monitor": {
-    "prefix": "activate:Activity Monitor",
-    "body": "activate application \"Activity Monitor\""
-  },
-  "activate:AirPort Utility": {
-    "prefix": "activate:AirPort Utility",
-    "body": "activate application \"AirPort Utility\""
-  },
-  "activate:App Store": {
-    "prefix": "activate:App Store",
-    "body": "activate application \"App Store\""
-  },
-  "activate:AppleScript Editor": {
-    "prefix": "activate:AppleScript Editor",
-    "body": "activate application \"AppleScript Editor\""
-  },
-  "activate:Audio MIDI Setup": {
-    "prefix": "activate:Audio MIDI Setup",
-    "body": "activate application \"Audio MIDI Setup\""
-  },
-  "activate:Automator": {
-    "prefix": "activate:Automator",
-    "body": "activate application \"Automator\""
-  },
-  "activate:Bluetooth File Exchange": {
-    "prefix": "activate:Bluetooth File Exchange",
-    "body": "activate application \"Bluetooth File Exchange\""
-  },
-  "activate:Bootcamp Assistant": {
-    "prefix": "activate:Bootcamp Assistant",
-    "body": "activate application \"Bootcamp Assistant\""
-  },
-  "activate:Calculator": {
-    "prefix": "activate:Calculator",
-    "body": "activate application \"Calculator\""
-  },
-  "activate:Calendar": {
-    "prefix": "activate:Calendar",
-    "body": "activate application \"Calendar\""
-  },
-  "activate:Chess": {
-    "prefix": "activate:Chess",
-    "body": "activate application \"Chess\""
-  },
-  "activate:ColorSync Utility": {
-    "prefix": "activate:ColorSync Utility",
-    "body": "activate application \"ColorSync Utility\""
-  },
-  "activate:Console": {
-    "prefix": "activate:Console",
-    "body": "activate application \"Console\""
-  },
-  "activate:Contacts": {
-    "prefix": "activate:Contacts",
-    "body": "activate application \"Contacts\""
-  },
-  "activate:Dashboard": {
-    "prefix": "activate:Dashboard",
-    "body": "activate application \"Dashboard\""
-  },
-  "activate:Dictionary": {
-    "prefix": "activate:Dictionary",
-    "body": "activate application \"Dictionary\""
-  },
-  "activate:DigitalColor Meter": {
-    "prefix": "activate:DigitalColor Meter",
-    "body": "activate application \"DigitalColor Meter\""
-  },
-  "activate:Disk Utility": {
-    "prefix": "activate:Disk Utility",
-    "body": "activate application \"Disk Utility\""
-  },
-  "activate:DVD Player": {
-    "prefix": "activate:DVD Player",
-    "body": "activate application \"DVD Player\""
-  },
-  "activate:FaceTime": {
-    "prefix": "activate:FaceTime",
-    "body": "activate application \"FaceTime\""
-  },
-  "activate:Finder": {
-    "prefix": "activate:Finder",
-    "body": "activate application \"Finder\""
-  },
-  "activate:Font Book": {
-    "prefix": "activate:Font Book",
-    "body": "activate application \"Font Book\""
-  },
-  "activate:Game Center": {
-    "prefix": "activate:Game Center",
-    "body": "activate application \"Game Center\""
-  },
-  "activate:GarageBand": {
-    "prefix": "activate:GarageBand",
-    "body": "activate application \"GarageBand\""
-  },
-  "activate:Grab": {
-    "prefix": "activate:Grab",
-    "body": "activate application \"Grab\""
-  },
-  "activate:Grapher": {
-    "prefix": "activate:Grapher",
-    "body": "activate application \"Grapher\""
-  },
-  "activate:iBooks": {
-    "prefix": "activate:iBooks",
-    "body": "activate application \"iBooks\""
-  },
-  "activate:Image Capture": {
-    "prefix": "activate:Image Capture",
-    "body": "activate application \"Image Capture\""
-  },
-  "activate:iMovie": {
-    "prefix": "activate:iMovie",
-    "body": "activate application \"iMovie\""
-  },
-  "activate:iPhone Configuration Utility": {
-    "prefix": "activate:iPhone Configuration Utility",
-    "body": "activate application \"iPhone Configuration Utility\""
-  },
-  "activate:iTunes": {
-    "prefix": "activate:iTunes",
-    "body": "activate application \"iTunes\""
-  },
-  "activate:Keychain Access": {
-    "prefix": "activate:Keychain Access",
-    "body": "activate application \"Keychain Access\""
-  },
-  "activate:Keynote": {
-    "prefix": "activate:Keynote",
-    "body": "activate application \"Keynote\""
-  },
-  "activate:Launchpad": {
-    "prefix": "activate:Launchpad",
-    "body": "activate application \"Launchpad\""
-  },
-  "activate:Mail": {
-    "prefix": "activate:Mail",
-    "body": "activate application \"Mail\""
-  },
-  "activate:Maps": {
-    "prefix": "activate:Maps",
-    "body": "activate application \"Maps\""
-  },
-  "activate:Migration Assistant": {
-    "prefix": "activate:Migration Assistant",
-    "body": "activate application \"Migration Assistant\""
-  },
-  "activate:Mission Control": {
-    "prefix": "activate:Mission Control",
-    "body": "activate application \"Mission Control\""
-  },
-  "activate:Notes": {
-    "prefix": "activate:Notes",
-    "body": "activate application \"Notes\""
-  },
-  "activate:Numbers": {
-    "prefix": "activate:Numbers",
-    "body": "activate application \"Numbers\""
-  },
-  "activate:Pages": {
-    "prefix": "activate:Pages",
-    "body": "activate application \"Pages\""
-  },
-  "activate:Photo Booth": {
-    "prefix": "activate:Photo Booth",
-    "body": "activate application \"Photo Booth\""
-  },
-  "activate:Reminders": {
-    "prefix": "activate:Reminders",
-    "body": "activate application \"Reminders\""
-  },
-  "activate:Safari": {
-    "prefix": "activate:Safari",
-    "body": "activate application \"Safari\""
-  },
-  "activate:Stickies": {
-    "prefix": "activate:Stickies",
-    "body": "activate application \"Stickies\""
-  },
-  "activate:System Information": {
-    "prefix": "activate:System Information",
-    "body": "activate application \"System Information\""
-  },
-  "activate:Terminal": {
-    "prefix": "activate:Terminal",
-    "body": "activate application \"Terminal\""
-  },
-  "activate:TextEdit": {
-    "prefix": "activate:TextEdit",
-    "body": "activate application \"TextEdit\""
-  },
-  "activate:Time Machine": {
-    "prefix": "activate:Time Machine",
-    "body": "activate application \"Time Machine\""
-  },
-  "activate:VoiceOver Utility": {
-    "prefix": "activate:VoiceOver Utility",
-    "body": "activate application \"VoiceOver Utility\""
-  },
-  "activate:Xcode": {
-    "prefix": "activate:Xcode",
-    "body": "activate application \"Xcode\""
-  },
-  "error:<name> is illegal as a formal parameter (-2761)": {
-    "prefix": "error:<name> is illegal as a formal parameter (-2761)",
-    "body": "error number -2761"
-  },
-  "error:<name> is not a parameter name for the event <event> (-2762)": {
-    "prefix": "error:<name> is not a parameter name for the event <event> (-2762)",
-    "body": "error number -2762"
-  },
-  "error:<name> isn’t running or program linking isn’t enabled (-906)": {
-    "prefix": "error:<name> isn’t running or program linking isn’t enabled (-906)",
-    "body": "error number -906"
-  },
-  "error:<reference> can't be launched because it is not an application (-2703)": {
-    "prefix": "error:<reference> can't be launched because it is not an application (-2703)",
-    "body": "error number -2703"
-  },
-  "error:<reference> isn't scriptable (-2704)": {
-    "prefix": "error:<reference> isn't scriptable (-2704)",
-    "body": "error number -2704"
-  },
-  "error:A <language element> can't go after this <language element> (-2740)": {
-    "prefix": "error:A <language element> can't go after this <language element> (-2740)",
-    "body": "error number -2740"
-  },
-  "error:A resource wasn’t found (-192)": {
-    "prefix": "error:A resource wasn’t found (-192)",
-    "body": "error number -192"
-  },
-  "error:Application is background-only (-606)": {
-    "prefix": "error:Application is background-only (-606)",
-    "body": "error number -606"
-  },
-  "error:Application is not 32-bit clean (-602)": {
-    "prefix": "error:Application is not 32-bit clean (-602)",
-    "body": "error number -602"
-  },
-  "error:Application isn’t running (-600)": {
-    "prefix": "error:Application isn’t running (-600)",
-    "body": "error number -600"
-  },
-  "error:Attempt to create a value larger than the allowable size (-2708)": {
-    "prefix": "error:Attempt to create a value larger than the allowable size (-2708)",
-    "body": "error number -2708"
-  },
-  "error:Bad name for filed (-37)": {
-    "prefix": "error:Bad name for filed (-37)",
-    "body": "error number -37"
-  },
-  "error:Buffer is too small (-607)": {
-    "prefix": "error:Buffer is too small (-607)",
-    "body": "error number -607"
-  },
-  "error:Can't both consider and ignore <attribute> (-2720)": {
-    "prefix": "error:Can't both consider and ignore <attribute> (-2720)",
-    "body": "error number -2720"
-  },
-  "error:Can't declare <name> as both a local and global variable (-2754)": {
-    "prefix": "error:Can't declare <name> as both a local and global variable (-2754)",
-    "body": "error number -2754"
-  },
-  "error:Can't get the event dictionary (-2709)": {
-    "prefix": "error:Can't get the event dictionary (-2709)",
-    "body": "error number -2709"
-  },
-  "error:Can't perform operation on text longer than 32K bytes (-2721)": {
-    "prefix": "error:Can't perform operation on text longer than 32K bytes (-2721)",
-    "body": "error number -2721"
-  },
-  "error:Can’t divide <number> by zero (-2701)": {
-    "prefix": "error:Can’t divide <number> by zero (-2701)",
-    "body": "error number -2701"
-  },
-  "error:Can’t find remote machine (-915)": {
-    "prefix": "error:Can’t find remote machine (-915)",
-    "body": "error number -915"
-  },
-  "error:Connection is invalid (-609)": {
-    "prefix": "error:Connection is invalid (-609)",
-    "body": "error number -609"
-  },
-  "error:Disk <name> full (-34)": {
-    "prefix": "error:Disk <name> full (-34)",
-    "body": "error number -34"
-  },
-  "error:Disk <name> is disconnected (-124)": {
-    "prefix": "error:Disk <name> is disconnected (-124)",
-    "body": "error number -124"
-  },
-  "error:Disk <name> is locked (-46)": {
-    "prefix": "error:Disk <name> is locked (-46)",
-    "body": "error number -46"
-  },
-  "error:Disk <name> is write protected (-44)": {
-    "prefix": "error:Disk <name> is write protected (-44)",
-    "body": "error number -44"
-  },
-  "error:Disk <name> wasn’t found (-35)": {
-    "prefix": "error:Disk <name> wasn’t found (-35)",
-    "body": "error number -35"
-  },
-  "error:Duplicate file name (-48)": {
-    "prefix": "error:Duplicate file name (-48)",
-    "body": "error number -48"
-  },
-  "error:End of file error (-39)": {
-    "prefix": "error:End of file error (-39)",
-    "body": "error number -39"
-  },
-  "error:Exit statement was not in a repeat loop (-2755)": {
-    "prefix": "error:Exit statement was not in a repeat loop (-2755)",
-    "body": "error number -2755"
-  },
-  "error:Expected <language element> but found <language element> (-2741)": {
-    "prefix": "error:Expected <language element> but found <language element> (-2741)",
-    "body": "error number -2741"
-  },
-  "error:File <name> is already open (-49)": {
-    "prefix": "error:File <name> is already open (-49)",
-    "body": "error number -49"
-  },
-  "error:File <name> is busy (-47)": {
-    "prefix": "error:File <name> is busy (-47)",
-    "body": "error number -47"
-  },
-  "error:File <name> is locked (-45)": {
-    "prefix": "error:File <name> is locked (-45)",
-    "body": "error number -45"
-  },
-  "error:File <name> wasn’t found (-43)": {
-    "prefix": "error:File <name> wasn’t found (-43)",
-    "body": "error number -43"
-  },
-  "error:File <name> wasn’t open (-38)": {
-    "prefix": "error:File <name> wasn’t open (-38)",
-    "body": "error number -38"
-  },
-  "error:File not open with write permission (-61)": {
-    "prefix": "error:File not open with write permission (-61)",
-    "body": "error number -61"
-  },
-  "error:File reference number error (-51)": {
-    "prefix": "error:File reference number error (-51)",
-    "body": "error number -51"
-  },
-  "error:Folder <name> wasn’t found (-120)": {
-    "prefix": "error:Folder <name> wasn’t found (-120)",
-    "body": "error number -120"
-  },
-  "error:Internal table overflow (-2707)": {
-    "prefix": "error:Internal table overflow (-2707)",
-    "body": "error number -2707"
-  },
-  "error:Invalid date and time <date string> (-30720)": {
-    "prefix": "error:Invalid date and time <date string> (-30720)",
-    "body": "error number -30720"
-  },
-  "error:Message size too large for the 7.0 Finder (-2729)": {
-    "prefix": "error:Message size too large for the 7.0 Finder (-2729)",
-    "body": "error number -2729"
-  },
-  "error:More memory needed than is specified in the size resource (-605)": {
-    "prefix": "error:More memory needed than is specified in the size resource (-605)",
-    "body": "error number -605"
-  },
-  "error:No error (0)": {
-    "prefix": "error:No error (0)",
-    "body": "error number 0"
-  },
-  "error:No outstanding high-level event (-608)": {
-    "prefix": "error:No outstanding high-level event (-608)",
-    "body": "error number -608"
-  },
-  "error:No result was returned for some argument of this expression (-2763)": {
-    "prefix": "error:No result was returned for some argument of this expression (-2763)",
-    "body": "error number -2763"
-  },
-  "error:Not enough room to launch application with special requirements (-601)": {
-    "prefix": "error:Not enough room to launch application with special requirements (-601)",
-    "body": "error number -601"
-  },
-  "error:Not enough system memory to connect to remote application (-904)": {
-    "prefix": "error:Not enough system memory to connect to remote application (-904)",
-    "body": "error number -904"
-  },
-  "error:Out of memory (-108)": {
-    "prefix": "error:Out of memory (-108)",
-    "body": "error number -108"
-  },
-  "error:Parameter error (-50)": {
-    "prefix": "error:Parameter error (-50)",
-    "body": "error number -50"
-  },
-  "error:Remote access is not allowed (-905)": {
-    "prefix": "error:Remote access is not allowed (-905)",
-    "body": "error number -905"
-  },
-  "error:Stack overflow (-2706)": {
-    "prefix": "error:Stack overflow (-2706)",
-    "body": "error number -2706"
-  },
-  "error:Tell statements are nested too deeply (-2760)": {
-    "prefix": "error:Tell statements are nested too deeply (-2760)",
-    "body": "error number -2760"
-  },
-  "error:The <name> handler is specified more than once (-2752)": {
-    "prefix": "error:The <name> handler is specified more than once (-2752)",
-    "body": "error number -2752"
-  },
-  "error:The <name> parameter is specified more than once (-2750)": {
-    "prefix": "error:The <name> parameter is specified more than once (-2750)",
-    "body": "error number -2750"
-  },
-  "error:The <name> property is specified more than once (-2751)": {
-    "prefix": "error:The <name> property is specified more than once (-2751)",
-    "body": "error number -2751"
-  },
-  "error:The application has a corrupted dictionary (-2705)": {
-    "prefix": "error:The application has a corrupted dictionary (-2705)",
-    "body": "error number -2705"
-  },
-  "error:The result of a numeric operation was too large (-2702)": {
-    "prefix": "error:The result of a numeric operation was too large (-2702)",
-    "body": "error number -2702"
-  },
-  "error:The variable <name> is not defined (-2753)": {
-    "prefix": "error:The variable <name> is not defined (-2753)",
-    "body": "error number -2753"
-  },
-  "error:Too many files open (-42)": {
-    "prefix": "error:Too many files open (-42)",
-    "body": "error number -42"
-  },
-  "error:Unknown error (-2700)": {
-    "prefix": "error:Unknown error (-2700)",
-    "body": "error number -2700"
-  },
-  "error:User cancelled (-128)": {
-    "prefix": "error:User cancelled (-128)",
-    "body": "error number -128"
-  },
-  "launch:Activity Monitor": {
-    "prefix": "launch:Activity Monitor",
-    "body": "launch application \"Activity Monitor\""
-  },
-  "launch:AirPort Utility": {
-    "prefix": "launch:AirPort Utility",
-    "body": "launch application \"AirPort Utility\""
-  },
-  "launch:App Store": {
-    "prefix": "launch:App Store",
-    "body": "launch application \"App Store\""
-  },
-  "launch:AppleScript Editor": {
-    "prefix": "launch:AppleScript Editor",
-    "body": "launch application \"AppleScript Editor\""
-  },
-  "launch:Audio MIDI Setup": {
-    "prefix": "launch:Audio MIDI Setup",
-    "body": "launch application \"Audio MIDI Setup\""
-  },
-  "launch:Automator": {
-    "prefix": "launch:Automator",
-    "body": "launch application \"Automator\""
-  },
-  "launch:Bluetooth File Exchange": {
-    "prefix": "launch:Bluetooth File Exchange",
-    "body": "launch application \"Bluetooth File Exchange\""
-  },
-  "launch:Bootcamp Assistant": {
-    "prefix": "launch:Bootcamp Assistant",
-    "body": "launch application \"Bootcamp Assistant\""
-  },
-  "launch:Calculator": {
-    "prefix": "launch:Calculator",
-    "body": "launch application \"Calculator\""
-  },
-  "launch:Calendar": {
-    "prefix": "launch:Calendar",
-    "body": "launch application \"Calendar\""
-  },
-  "launch:Chess": {
-    "prefix": "launch:Chess",
-    "body": "launch application \"Chess\""
-  },
-  "launch:ColorSync Utility": {
-    "prefix": "launch:ColorSync Utility",
-    "body": "launch application \"ColorSync Utility\""
-  },
-  "launch:Console": {
-    "prefix": "launch:Console",
-    "body": "launch application \"Console\""
-  },
-  "launch:Contacts": {
-    "prefix": "launch:Contacts",
-    "body": "launch application \"Contacts\""
-  },
-  "launch:Dashboard": {
-    "prefix": "launch:Dashboard",
-    "body": "launch application \"Dashboard\""
-  },
-  "launch:Dictionary": {
-    "prefix": "launch:Dictionary",
-    "body": "launch application \"Dictionary\""
-  },
-  "launch:DigitalColor Meter": {
-    "prefix": "launch:DigitalColor Meter",
-    "body": "launch application \"DigitalColor Meter\""
-  },
-  "launch:Disk Utility": {
-    "prefix": "launch:Disk Utility",
-    "body": "launch application \"Disk Utility\""
-  },
-  "launch:DVD Player": {
-    "prefix": "launch:DVD Player",
-    "body": "launch application \"DVD Player\""
-  },
-  "launch:FaceTime": {
-    "prefix": "launch:FaceTime",
-    "body": "launch application \"FaceTime\""
-  },
-  "launch:Finder": {
-    "prefix": "launch:Finder",
-    "body": "launch application \"Finder\""
-  },
-  "launch:Font Book": {
-    "prefix": "launch:Font Book",
-    "body": "launch application \"Font Book\""
-  },
-  "launch:Game Center": {
-    "prefix": "launch:Game Center",
-    "body": "launch application \"Game Center\""
-  },
-  "launch:GarageBand": {
-    "prefix": "launch:GarageBand",
-    "body": "launch application \"GarageBand\""
-  },
-  "launch:Grab": {
-    "prefix": "launch:Grab",
-    "body": "launch application \"Grab\""
-  },
-  "launch:Grapher": {
-    "prefix": "launch:Grapher",
-    "body": "launch application \"Grapher\""
-  },
-  "launch:iBooks": {
-    "prefix": "launch:iBooks",
-    "body": "launch application \"iBooks\""
-  },
-  "launch:Image Capture": {
-    "prefix": "launch:Image Capture",
-    "body": "launch application \"Image Capture\""
-  },
-  "launch:iMovie": {
-    "prefix": "launch:iMovie",
-    "body": "launch application \"iMovie\""
-  },
-  "launch:iPhone Configuration Utility": {
-    "prefix": "launch:iPhone Configuration Utility",
-    "body": "launch application \"iPhone Configuration Utility\""
-  },
-  "launch:iTunes": {
-    "prefix": "launch:iTunes",
-    "body": "launch application \"iTunes\""
-  },
-  "launch:Keychain Access": {
-    "prefix": "launch:Keychain Access",
-    "body": "launch application \"Keychain Access\""
-  },
-  "launch:Keynote": {
-    "prefix": "launch:Keynote",
-    "body": "launch application \"Keynote\""
-  },
-  "launch:Launchpad": {
-    "prefix": "launch:Launchpad",
-    "body": "launch application \"Launchpad\""
-  },
-  "launch:Mail": {
-    "prefix": "launch:Mail",
-    "body": "launch application \"Mail\""
-  },
-  "launch:Maps": {
-    "prefix": "launch:Maps",
-    "body": "launch application \"Maps\""
-  },
-  "launch:Migration Assistant": {
-    "prefix": "launch:Migration Assistant",
-    "body": "launch application \"Migration Assistant\""
-  },
-  "launch:Mission Control": {
-    "prefix": "launch:Mission Control",
-    "body": "launch application \"Mission Control\""
-  },
-  "launch:Notes": {
-    "prefix": "launch:Notes",
-    "body": "launch application \"Notes\""
-  },
-  "launch:Numbers": {
-    "prefix": "launch:Numbers",
-    "body": "launch application \"Numbers\""
-  },
-  "launch:Pages": {
-    "prefix": "launch:Pages",
-    "body": "launch application \"Pages\""
-  },
-  "launch:Photo Booth": {
-    "prefix": "launch:Photo Booth",
-    "body": "launch application \"Photo Booth\""
-  },
-  "launch:Reminders": {
-    "prefix": "launch:Reminders",
-    "body": "launch application \"Reminders\""
-  },
-  "launch:Safari": {
-    "prefix": "launch:Safari",
-    "body": "launch application \"Safari\""
-  },
-  "launch:Stickies": {
-    "prefix": "launch:Stickies",
-    "body": "launch application \"Stickies\""
-  },
-  "launch:System Information": {
-    "prefix": "launch:System Information",
-    "body": "launch application \"System Information\""
-  },
-  "launch:Terminal": {
-    "prefix": "launch:Terminal",
-    "body": "launch application \"Terminal\""
-  },
-  "launch:TextEdit": {
-    "prefix": "launch:TextEdit",
-    "body": "launch application \"TextEdit\""
-  },
-  "launch:Time Machine": {
-    "prefix": "launch:Time Machine",
-    "body": "launch application \"Time Machine\""
-  },
-  "launch:VoiceOver Utility": {
-    "prefix": "launch:VoiceOver Utility",
-    "body": "launch application \"VoiceOver Utility\""
-  },
-  "launch:Xcode": {
-    "prefix": "launch:Xcode",
-    "body": "launch application \"Xcode\""
-  },
-  "mount:afp": {
-    "prefix": "mount:afp",
-    "body": "mount volume \"${1:volume}\" on server \"afp://${2:server}\""
-  },
-  "mount:http": {
-    "prefix": "mount:http",
-    "body": "mount volume \"${1:volume}\" on server \"http://${2:server}\""
-  },
-  "mount:https": {
-    "prefix": "mount:https",
-    "body": "mount volume \"${1:volume}\" on server \"https://${2:server}\""
-  },
-  "mount:smb": {
-    "prefix": "mount:smb",
-    "body": "mount volume \"${1:volume}\" on server \"smb://${2:server}\""
-  },
-  "path to folder:Application Support": {
-    "prefix": "path to folder:Application Support",
-    "body": "path to application support"
-  },
-  "path to folder:Applications Folder": {
-    "prefix": "path to folder:Applications Folder",
-    "body": "path to applications folder"
-  },
-  "path to folder:Desktop Pictures Folder": {
-    "prefix": "path to folder:Desktop Pictures Folder",
-    "body": "path to desktop pictures folder"
-  },
-  "path to folder:Desktop": {
-    "prefix": "path to folder:Desktop",
-    "body": "path to desktop"
-  },
-  "path to folder:Documents Folder": {
-    "prefix": "path to folder:Documents Folder",
-    "body": "path to documents folder"
-  },
-  "path to folder:Downloads Folder": {
-    "prefix": "path to folder:Downloads Folder",
-    "body": "path to downloads folder"
-  },
-  "path to folder:Favorites Folder": {
-    "prefix": "path to folder:Favorites Folder",
-    "body": "path to favorites folder"
-  },
-  "path to folder:Folder Action Scripts": {
-    "prefix": "path to folder:Folder Action Scripts",
-    "body": "path to Folder Action scripts"
-  },
-  "path to folder:Fonts": {
-    "prefix": "path to folder:Fonts",
-    "body": "path to fonts"
-  },
-  "path to folder:Help": {
-    "prefix": "path to folder:Help",
-    "body": "path to help"
-  },
-  "path to folder:Home Folder": {
-    "prefix": "path to folder:Home Folder",
-    "body": "path to home folder"
-  },
-  "path to folder:Internet Plugins": {
-    "prefix": "path to folder:Internet Plugins",
-    "body": "path to internet plugins"
-  },
-  "path to folder:Keychain Folder": {
-    "prefix": "path to folder:Keychain Folder",
-    "body": "path to keychain folder"
-  },
-  "path to folder:Library Folder": {
-    "prefix": "path to folder:Library Folder",
-    "body": "path to library folder"
-  },
-  "path to folder:Modem Scripts": {
-    "prefix": "path to folder:Modem Scripts",
-    "body": "path to modem scripts"
-  },
-  "path to folder:Movies Folder": {
-    "prefix": "path to folder:Movies Folder",
-    "body": "path to movies folder"
-  },
-  "path to folder:Music Folder": {
-    "prefix": "path to folder:Music Folder",
-    "body": "path to music folder"
-  },
-  "path to folder:Pictures Folder": {
-    "prefix": "path to folder:Pictures Folder",
-    "body": "path to pictures folder"
-  },
-  "path to folder:Preferences": {
-    "prefix": "path to folder:Preferences",
-    "body": "path to preferences"
-  },
-  "path to folder:Printer Descriptions": {
-    "prefix": "path to folder:Printer Descriptions",
-    "body": "path to printer descriptions"
-  },
-  "path to folder:Public Folder": {
-    "prefix": "path to folder:Public Folder",
-    "body": "path to public folder"
-  },
-  "path to folder:Scripting Additions": {
-    "prefix": "path to folder:Scripting Additions",
-    "body": "path to scripting additions"
-  },
-  "path to folder:Scripts Folder": {
-    "prefix": "path to folder:Scripts Folder",
-    "body": "path to scripts folder"
-  },
-  "path to folder:Services Folder": {
-    "prefix": "path to folder:Services Folder",
-    "body": "path to services folder"
-  },
-  "path to folder:Shared Documents": {
-    "prefix": "path to folder:Shared Documents",
-    "body": "path to shared documents"
-  },
-  "path to folder:Shared Libraries": {
-    "prefix": "path to folder:Shared Libraries",
-    "body": "path to shared libraries"
-  },
-  "path to folder:Sites Folder": {
-    "prefix": "path to folder:Sites Folder",
-    "body": "path to sites folder"
-  },
-  "path to folder:Startup Disk": {
-    "prefix": "path to folder:Startup Disk",
-    "body": "path to startup disk"
-  },
-  "path to folder:Startup Items": {
-    "prefix": "path to folder:Startup Items",
-    "body": "path to startup items"
-  },
-  "path to folder:System Folder": {
-    "prefix": "path to folder:System Folder",
-    "body": "path to system folder"
-  },
-  "path to folder:System Preferences": {
-    "prefix": "path to folder:System Preferences",
-    "body": "path to system preferences"
-  },
-  "path to folder:Temporary Items": {
-    "prefix": "path to folder:Temporary Items",
-    "body": "path to temporary items"
-  },
-  "path to folder:Trash": {
-    "prefix": "path to folder:Trash",
-    "body": "path to trash"
-  },
-  "path to folder:Users Folder": {
-    "prefix": "path to folder:Users Folder",
-    "body": "path to users folder"
-  },
-  "path to folder:Utilities Folder": {
-    "prefix": "path to folder:Utilities Folder",
-    "body": "path to utilities folder"
-  },
-  "path to folder:Workflows Folder": {
-    "prefix": "path to folder:Workflows Folder",
-    "body": "path to workflows folder"
-  },
-  "path to:Activity Monitor": {
-    "prefix": "path to:Activity Monitor",
-    "body": "path to \"Activity Monitor\""
-  },
-  "path to:AirPort Utility": {
-    "prefix": "path to:AirPort Utility",
-    "body": "path to \"AirPort Utility\""
-  },
-  "path to:App Store": {
-    "prefix": "path to:App Store",
-    "body": "path to \"App Store\""
-  },
-  "path to:AppleScript Editor": {
-    "prefix": "path to:AppleScript Editor",
-    "body": "path to \"AppleScript Editor\""
-  },
-  "path to:Audio MIDI Setup": {
-    "prefix": "path to:Audio MIDI Setup",
-    "body": "path to \"Audio MIDI Setup\""
-  },
-  "path to:Automator": {
-    "prefix": "path to:Automator",
-    "body": "path to \"Automator\""
-  },
-  "path to:Bluetooth File Exchange": {
-    "prefix": "path to:Bluetooth File Exchange",
-    "body": "path to \"Bluetooth File Exchange\""
-  },
-  "path to:Bootcamp Assistant": {
-    "prefix": "path to:Bootcamp Assistant",
-    "body": "path to \"Bootcamp Assistant\""
-  },
-  "path to:Calculator": {
-    "prefix": "path to:Calculator",
-    "body": "path to \"Calculator\""
-  },
-  "path to:Calendar": {
-    "prefix": "path to:Calendar",
-    "body": "path to \"Calendar\""
-  },
-  "path to:Chess": {
-    "prefix": "path to:Chess",
-    "body": "path to \"Chess\""
-  },
-  "path to:ColorSync Utility": {
-    "prefix": "path to:ColorSync Utility",
-    "body": "path to \"ColorSync Utility\""
-  },
-  "path to:Console": {
-    "prefix": "path to:Console",
-    "body": "path to \"Console\""
-  },
-  "path to:Contacts": {
-    "prefix": "path to:Contacts",
-    "body": "path to \"Contacts\""
-  },
-  "path to:Dashboard": {
-    "prefix": "path to:Dashboard",
-    "body": "path to \"Dashboard\""
-  },
-  "path to:Dictionary": {
-    "prefix": "path to:Dictionary",
-    "body": "path to \"Dictionary\""
-  },
-  "path to:DigitalColor Meter": {
-    "prefix": "path to:DigitalColor Meter",
-    "body": "path to \"DigitalColor Meter\""
-  },
-  "path to:Disk Utility": {
-    "prefix": "path to:Disk Utility",
-    "body": "path to \"Disk Utility\""
-  },
-  "path to:DVD Player": {
-    "prefix": "path to:DVD Player",
-    "body": "path to \"DVD Player\""
-  },
-  "path to:FaceTime": {
-    "prefix": "path to:FaceTime",
-    "body": "path to \"FaceTime\""
-  },
-  "path to:Finder": {
-    "prefix": "path to:Finder",
-    "body": "path to \"Finder\""
-  },
-  "path to:Font Book": {
-    "prefix": "path to:Font Book",
-    "body": "path to \"Font Book\""
-  },
-  "path to:Game Center": {
-    "prefix": "path to:Game Center",
-    "body": "path to \"Game Center\""
-  },
-  "path to:GarageBand": {
-    "prefix": "path to:GarageBand",
-    "body": "path to \"GarageBand\""
-  },
-  "path to:Grab": {
-    "prefix": "path to:Grab",
-    "body": "path to \"Grab\""
-  },
-  "path to:Grapher": {
-    "prefix": "path to:Grapher",
-    "body": "path to \"Grapher\""
-  },
-  "path to:iBooks": {
-    "prefix": "path to:iBooks",
-    "body": "path to \"iBooks\""
-  },
-  "path to:Image Capture": {
-    "prefix": "path to:Image Capture",
-    "body": "path to \"Image Capture\""
-  },
-  "path to:iMovie": {
-    "prefix": "path to:iMovie",
-    "body": "path to \"iMovie\""
-  },
-  "path to:iPhone Configuration Utility": {
-    "prefix": "path to:iPhone Configuration Utility",
-    "body": "path to \"iPhone Configuration Utility\""
-  },
-  "path to:iTunes": {
-    "prefix": "path to:iTunes",
-    "body": "path to \"iTunes\""
-  },
-  "path to:Keychain Access": {
-    "prefix": "path to:Keychain Access",
-    "body": "path to \"Keychain Access\""
-  },
-  "path to:Keynote": {
-    "prefix": "path to:Keynote",
-    "body": "path to \"Keynote\""
-  },
-  "path to:Launchpad": {
-    "prefix": "path to:Launchpad",
-    "body": "path to \"Launchpad\""
-  },
-  "path to:Mail": {
-    "prefix": "path to:Mail",
-    "body": "path to \"Mail\""
-  },
-  "path to:Maps": {
-    "prefix": "path to:Maps",
-    "body": "path to \"Maps\""
-  },
-  "path to:Migration Assistant": {
-    "prefix": "path to:Migration Assistant",
-    "body": "path to \"Migration Assistant\""
-  },
-  "path to:Mission Control": {
-    "prefix": "path to:Mission Control",
-    "body": "path to \"Mission Control\""
-  },
-  "path to:Notes": {
-    "prefix": "path to:Notes",
-    "body": "path to \"Notes\""
-  },
-  "path to:Numbers": {
-    "prefix": "path to:Numbers",
-    "body": "path to \"Numbers\""
-  },
-  "path to:Pages": {
-    "prefix": "path to:Pages",
-    "body": "path to \"Pages\""
-  },
-  "path to:Photo Booth": {
-    "prefix": "path to:Photo Booth",
-    "body": "path to \"Photo Booth\""
-  },
-  "path to:Reminders": {
-    "prefix": "path to:Reminders",
-    "body": "path to \"Reminders\""
-  },
-  "path to:Safari": {
-    "prefix": "path to:Safari",
-    "body": "path to \"Safari\""
-  },
-  "path to:Stickies": {
-    "prefix": "path to:Stickies",
-    "body": "path to \"Stickies\""
-  },
-  "path to:System Information": {
-    "prefix": "path to:System Information",
-    "body": "path to \"System Information\""
-  },
-  "path to:Terminal": {
-    "prefix": "path to:Terminal",
-    "body": "path to \"Terminal\""
-  },
-  "path to:TextEdit": {
-    "prefix": "path to:TextEdit",
-    "body": "path to \"TextEdit\""
-  },
-  "path to:Time Machine": {
-    "prefix": "path to:Time Machine",
-    "body": "path to \"Time Machine\""
-  },
-  "path to:VoiceOver Utility": {
-    "prefix": "path to:VoiceOver Utility",
-    "body": "path to \"VoiceOver Utility\""
-  },
-  "path to:Xcode": {
-    "prefix": "path to:Xcode",
-    "body": "path to \"Xcode\""
-  },
-  "tell:Activity Monitor": {
-    "prefix": "tell:Activity Monitor",
-    "body": "tell application \"Activity Monitor\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:AirPort Utility": {
-    "prefix": "tell:AirPort Utility",
-    "body": "tell application \"AirPort Utility\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:App Store": {
-    "prefix": "tell:App Store",
-    "body": "tell application \"App Store\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:AppleScript Editor": {
-    "prefix": "tell:AppleScript Editor",
-    "body": "tell application \"AppleScript Editor\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Audio MIDI Setup": {
-    "prefix": "tell:Audio MIDI Setup",
-    "body": "tell application \"Audio MIDI Setup\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Automator": {
-    "prefix": "tell:Automator",
-    "body": "tell application \"Automator\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Bluetooth File Exchange": {
-    "prefix": "tell:Bluetooth File Exchange",
-    "body": "tell application \"Bluetooth File Exchange\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Bootcamp Assistant": {
-    "prefix": "tell:Bootcamp Assistant",
-    "body": "tell application \"Bootcamp Assistant\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Calculator": {
-    "prefix": "tell:Calculator",
-    "body": "tell application \"Calculator\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Calendar": {
-    "prefix": "tell:Calendar",
-    "body": "tell application \"Calendar\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Chess": {
-    "prefix": "tell:Chess",
-    "body": "tell application \"Chess\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:ColorSync Utility": {
-    "prefix": "tell:ColorSync Utility",
-    "body": "tell application \"ColorSync Utility\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Console": {
-    "prefix": "tell:Console",
-    "body": "tell application \"Console\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Contacts": {
-    "prefix": "tell:Contacts",
-    "body": "tell application \"Contacts\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Dashboard": {
-    "prefix": "tell:Dashboard",
-    "body": "tell application \"Dashboard\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Dictionary": {
-    "prefix": "tell:Dictionary",
-    "body": "tell application \"Dictionary\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:DigitalColor Meter": {
-    "prefix": "tell:DigitalColor Meter",
-    "body": "tell application \"DigitalColor Meter\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Disk Utility": {
-    "prefix": "tell:Disk Utility",
-    "body": "tell application \"Disk Utility\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:DVD Player": {
-    "prefix": "tell:DVD Player",
-    "body": "tell application \"DVD Player\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:FaceTime": {
-    "prefix": "tell:FaceTime",
-    "body": "tell application \"FaceTime\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Finder": {
-    "prefix": "tell:Finder",
-    "body": "tell application \"Finder\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Font Book": {
-    "prefix": "tell:Font Book",
-    "body": "tell application \"Font Book\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Game Center": {
-    "prefix": "tell:Game Center",
-    "body": "tell application \"Game Center\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:GarageBand": {
-    "prefix": "tell:GarageBand",
-    "body": "tell application \"GarageBand\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Grab": {
-    "prefix": "tell:Grab",
-    "body": "tell application \"Grab\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Grapher": {
-    "prefix": "tell:Grapher",
-    "body": "tell application \"Grapher\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:iBooks": {
-    "prefix": "tell:iBooks",
-    "body": "tell application \"iBooks\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Image Capture": {
-    "prefix": "tell:Image Capture",
-    "body": "tell application \"Image Capture\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:iMovie": {
-    "prefix": "tell:iMovie",
-    "body": "tell application \"iMovie\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:iPhone Configuration Utility": {
-    "prefix": "tell:iPhone Configuration Utility",
-    "body": "tell application \"iPhone Configuration Utility\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:iTunes": {
-    "prefix": "tell:iTunes",
-    "body": "tell application \"iTunes\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Keychain Access": {
-    "prefix": "tell:Keychain Access",
-    "body": "tell application \"Keychain Access\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Keynote": {
-    "prefix": "tell:Keynote",
-    "body": "tell application \"Keynote\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Launchpad": {
-    "prefix": "tell:Launchpad",
-    "body": "tell application \"Launchpad\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Mail": {
-    "prefix": "tell:Mail",
-    "body": "tell application \"Mail\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Maps": {
-    "prefix": "tell:Maps",
-    "body": "tell application \"Maps\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Migration Assistant": {
-    "prefix": "tell:Migration Assistant",
-    "body": "tell application \"Migration Assistant\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Mission Control": {
-    "prefix": "tell:Mission Control",
-    "body": "tell application \"Mission Control\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Notes": {
-    "prefix": "tell:Notes",
-    "body": "tell application \"Notes\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Numbers": {
-    "prefix": "tell:Numbers",
-    "body": "tell application \"Numbers\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Pages": {
-    "prefix": "tell:Pages",
-    "body": "tell application \"Pages\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Photo Booth": {
-    "prefix": "tell:Photo Booth",
-    "body": "tell application \"Photo Booth\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Reminders": {
-    "prefix": "tell:Reminders",
-    "body": "tell application \"Reminders\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Safari": {
-    "prefix": "tell:Safari",
-    "body": "tell application \"Safari\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Stickies": {
-    "prefix": "tell:Stickies",
-    "body": "tell application \"Stickies\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:System Information": {
-    "prefix": "tell:System Information",
-    "body": "tell application \"System Information\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Terminal": {
-    "prefix": "tell:Terminal",
-    "body": "tell application \"Terminal\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:TextEdit": {
-    "prefix": "tell:TextEdit",
-    "body": "tell application \"TextEdit\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Time Machine": {
-    "prefix": "tell:Time Machine",
-    "body": "tell application \"Time Machine\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:VoiceOver Utility": {
-    "prefix": "tell:VoiceOver Utility",
-    "body": "tell application \"VoiceOver Utility\"\n\t${2:--your code}\nend tell"
-  },
-  "tell:Xcode": {
-    "prefix": "tell:Xcode",
-    "body": "tell application \"Xcode\"\n\t${2:--your code}\nend tell"
-  }
+	"activate application": {
+		"prefix": "activate application",
+		"body": "activate application \"${1:application_name}\""
+	},
+	"activate": {
+		"prefix": "activate",
+		"body": "activate"
+	},
+	"administrator privileges": {
+		"prefix": "administrator privileges",
+		"body": "administrator privileges"
+	},
+	"as string": {
+		"prefix": "as string",
+		"body": "as string"
+	},
+	"as user name": {
+		"prefix": "as user name",
+		"body": "as user name \"${1:user}\""
+	},
+	"as user name..password": {
+		"prefix": "as user name..password",
+		"body": "as user name \"${1:user}\" with password \"${2:password}\""
+	},
+	"ASCII character": {
+		"prefix": "ASCII character",
+		"body": "ASCII character \"${1:integer}\""
+	},
+	"ASCII number": {
+		"prefix": "ASCII number",
+		"body": "ASCII number \"${1:character}\""
+	},
+	"beep": {
+		"prefix": "beep",
+		"body": "beep \"${1:integer}\""
+	},
+	"before": {
+		"prefix": "before",
+		"body": "before"
+	},
+	"buttons": {
+		"prefix": "buttons",
+		"body": "buttons {\"${1:buttons}\"${2}} "
+	},
+	"buttons:1": {
+		"prefix": "buttons:1",
+		"body": "buttons {\"${1:button}\"} "
+	},
+	"buttons:2": {
+		"prefix": "buttons:2",
+		"body": "buttons {\"${1:button1}\",\"${2:button2}\"} "
+	},
+	"buttons:3": {
+		"prefix": "buttons:3",
+		"body": "buttons {\"${1:button1}\",\"${2:button2}\",\"${3:button3}\"} "
+	},
+	"buttons:4": {
+		"prefix": "buttons:4",
+		"body": "buttons {\"${1:button1}\",\"${2:button2}\",\"${3:button3}\",\"${4:button3}\"} "
+	},
+	"cancel button name": {
+		"prefix": "cancel button name",
+		"body": "cancel button name \"${1:text}\""
+	},
+	"cancel button": {
+		"prefix": "cancel button",
+		"body": "cancel button \"${1:text}\""
+	},
+	"choose application": {
+		"prefix": "choose application",
+		"body": "choose application"
+	},
+	"choose color default color": {
+		"prefix": "choose color default color",
+		"body": "choose color default color ${1:{${2:red}, ${3:green}, ${4:blue}}}"
+	},
+	"choose color": {
+		"prefix": "choose color",
+		"body": "choose color"
+	},
+	"choose file name": {
+		"prefix": "choose file name",
+		"body": "choose file name"
+	},
+	"choose folder": {
+		"prefix": "choose folder",
+		"body": "choose folder"
+	},
+	"choose remote application": {
+		"prefix": "choose remote application",
+		"body": "choose remote application"
+	},
+	"choose URL": {
+		"prefix": "choose URL",
+		"body": "choose URL"
+	},
+	"clipboard info for": {
+		"prefix": "clipboard info for",
+		"body": "clipboard info for ${1:class}"
+	},
+	"clipboard info": {
+		"prefix": "clipboard info",
+		"body": "clipboard info"
+	},
+	"close access": {
+		"prefix": "close access",
+		"body": "close access \"${1:file}\""
+	},
+	"comment": {
+		"prefix": "comment",
+		"body": "-- ${1:comment}"
+	},
+	"comment:multi-line": {
+		"prefix": "comment:multi-line",
+		"body": "(*\n    ${1:comment}\n*)"
+	},
+	"considering case": {
+		"prefix": "considering case",
+		"body": "considering case \"${1:application_name}\"\n\t${2:--your code}\nend case"
+	},
+	"copy to": {
+		"prefix": "copy to",
+		"body": "copy ${1:inVar} to \"${2:outVar}\""
+	},
+	"count": {
+		"prefix": "count",
+		"body": "count ${1:objectVar}"
+	},
+	"current date": {
+		"prefix": "current date",
+		"body": "current date"
+	},
+	"default alert": {
+		"prefix": "default alert",
+		"body": "default alert \"${1:text}\""
+	},
+	"default answer": {
+		"prefix": "default answer",
+		"body": "default answer \"${1:answer}\""
+	},
+	"default button": {
+		"prefix": "default button",
+		"body": "default button \"${1:text}\""
+	},
+	"default items": {
+		"prefix": "default items",
+		"body": "default items {${1:items}}"
+	},
+	"default location": {
+		"prefix": "default location",
+		"body": "default location ${1:alias}"
+	},
+	"default name": {
+		"prefix": "default name",
+		"body": "default name ${1:text}"
+	},
+	"delay": {
+		"prefix": "delay",
+		"body": "delay ${1:integer}"
+	},
+	"display answer": {
+		"prefix": "display answer",
+		"body": "display dialog \"${1:text}\" default answer \"${2:answer}\" "
+	},
+	"display buttons": {
+		"prefix": "display buttons",
+		"body": "display dialog \"${1:text}\" buttons {\"${2:buttons}\"${3}} "
+	},
+	"display buttons:1": {
+		"prefix": "display buttons:1",
+		"body": "display dialog \"${1:text}\" buttons {\"${2:button}\"} "
+	},
+	"display buttons:2": {
+		"prefix": "display buttons:2",
+		"body": "display dialog \"${1:text}\" buttons {\"${2:button1}\",\"${3:button2}\"} "
+	},
+	"display buttons:3": {
+		"prefix": "display buttons:3",
+		"body": "display dialog \"${1:text}\" buttons {\"${2:button1}\",\"${3:button2}\",\"${4:button3}\"} "
+	},
+	"display buttons:4": {
+		"prefix": "display buttons:4",
+		"body": "display dialog \"${1:text}\" buttons {\"${2:button1}\",\"${3:button2}\",\"${4:button3}\",\"${5:button4}\"} "
+	},
+	"display notification": {
+		"prefix": "display notification",
+		"body": "display notification with title \"${1:text}\" ${2:subtitle \"${3:text}\"}"
+	},
+	"display": {
+		"prefix": "display",
+		"body": "display dialog \"${1:text}\" "
+	},
+	"do shell script": {
+		"prefix": "do shell script",
+		"body": "do shell script \"${1:script}\""
+	},
+	"do shell script..as": {
+		"prefix": "do shell script..as",
+		"body": "do shell script \"${1:script}\" as \"${2:class}\""
+	},
+	"editable URL": {
+		"prefix": "editable URL",
+		"body": "editable URL ${1:boolean}"
+	},
+	"empty selection allowed": {
+		"prefix": "empty selection allowed",
+		"body": "empty selection allowed ${1:boolean}"
+	},
+	"error number": {
+		"prefix": "error number",
+		"body": "error number ${2:-${1:integer}}"
+	},
+	"error reporting": {
+		"prefix": "error reporting",
+		"body": "error reporting ${1:boolean}"
+	},
+	"from Classic domain": {
+		"prefix": "from Classic domain",
+		"body": "from Classic domain"
+	},
+	"from local domain": {
+		"prefix": "from local domain",
+		"body": "from local domain"
+	},
+	"from network domain": {
+		"prefix": "from network domain",
+		"body": "from network domain"
+	},
+	"from system domain": {
+		"prefix": "from system domain",
+		"body": "from system domain"
+	},
+	"from user domain": {
+		"prefix": "from user domain",
+		"body": "from user domain"
+	},
+	"from": {
+		"prefix": "from",
+		"body": "from"
+	},
+	"get eof": {
+		"prefix": "get eof",
+		"body": "get eof ${1:objectVar}"
+	},
+	"get item": {
+		"prefix": "get item",
+		"body": "get item ${1:integer} of {\"${2:item1}\", \"${3:item2}\"${4:, \"${5:item3}\"}}"
+	},
+	"get volume settings": {
+		"prefix": "get volume settings",
+		"body": "get volume settings"
+	},
+	"get word": {
+		"prefix": "get word",
+		"body": "get word ${1:integer} of \"${2:string}\""
+	},
+	"giving up after": {
+		"prefix": "giving up after",
+		"body": "giving up after ${1:integer}"
+	},
+	"global": {
+		"prefix": "global",
+		"body": "global ${1:objectVar}"
+	},
+	"if then": {
+		"prefix": "if then",
+		"body": "if ${1:condition} then\n\t${2:--your code}\nend if"
+	},
+	"if then..else if": {
+		"prefix": "if then..else if",
+		"body": "if ${1:condition} then\n\t${2:--your code}\nelse if ${3:else_condition} then\n\t${4:--your code}\nend if"
+	},
+	"if then..else if..else": {
+		"prefix": "if then..else if..else",
+		"body": "if ${1:condition} then\n\t${2:--your code}\nelse if ${3:else_condition} then\n\t${4:--your code}\nelse\n\t${5:--your code}\nend if"
+	},
+	"if then..else": {
+		"prefix": "if then..else",
+		"body": "if ${1:condition} then\n\t${2:--your code}\nelse\n\t${3:--your code}\nend if"
+	},
+	"if": {
+		"prefix": "if",
+		"body": "if ${1:condition} then\n\t${2:--your code}\nend if"
+	},
+	"if..else if": {
+		"prefix": "if..else if",
+		"body": "if ${1:condition} then\n\t${2:--your code}\nelse if ${3:else_condition} then\n\t${4:--your code}\nend if"
+	},
+	"if..else if..else": {
+		"prefix": "if..else if..else",
+		"body": "if ${1:condition} then\n\t${2:--your code}\nelse if ${3:else_condition} then\n\t${4:--your code}\nelse\n\t${5:--your code}\nend if"
+	},
+	"if..else": {
+		"prefix": "if..else",
+		"body": "if ${1:condition}\n\t${2:--your code}\nelse\n\t${3:--your code}\nend if"
+	},
+	"if..else:false": {
+		"prefix": "if..else:false",
+		"body": "if ${1:condition} is false then\n\t${2:--your code}\nelse\n\t${3:--your code}\nend if"
+	},
+	"if..else:true": {
+		"prefix": "if..else:true",
+		"body": "if ${1:condition} is true then\n\t${2:--your code}\nelse\n\t${3:--your code}\nend if"
+	},
+	"if..exit repeat": {
+		"prefix": "if..exit repeat",
+		"body": "if ${1:condition} then exit repeat"
+	},
+	"if:false": {
+		"prefix": "if:false",
+		"body": "if ${1:condition} is false then\n\t${2:--your code}\nend if"
+	},
+	"if:true": {
+		"prefix": "if:true",
+		"body": "if ${1:condition} is true then\n\t${2:--your code}\nend if"
+	},
+	"in AppleTalk zone": {
+		"prefix": "in AppleTalk zone",
+		"body": "in AppleTalk zone \"${1:zone}\""
+	},
+	"info for": {
+		"prefix": "info for",
+		"body": "info for ${1:folder}"
+	},
+	"info for..size": {
+		"prefix": "info for..size",
+		"body": "info for ${1:folder} size ${2:boolean}"
+	},
+	"invisibles": {
+		"prefix": "invisibles",
+		"body": "invisibles ${1:boolean}"
+	},
+	"launch application": {
+		"prefix": "launch application",
+		"body": "launch application \"${1:application}\""
+	},
+	"load script": {
+		"prefix": "load script",
+		"body": "load script \"${1:file}\""
+	},
+	"local": {
+		"prefix": "local",
+		"body": "local ${1:objectVar}"
+	},
+	"localized string": {
+		"prefix": "localized string",
+		"body": "localized string \"${1:text}\""
+	},
+	"localized string..from table": {
+		"prefix": "localized string..from table",
+		"body": "localized string \"${1:text}\" from table ${2:table}"
+	},
+	"localized string..in bundle": {
+		"prefix": "localized string..in bundle",
+		"body": "localized string \"${1:text}\" in bundle ${2:bundle}"
+	},
+	"log": {
+		"prefix": "log",
+		"body": "log ${1:objectVar}"
+	},
+	"mount volume": {
+		"prefix": "mount volume",
+		"body": "mount volume \"${1:volume}\""
+	},
+	"mount volume..in AppleTalk zone": {
+		"prefix": "mount volume..in AppleTalk zone",
+		"body": "mount volume \"${1:volume}\" in AppleTalk zone \"${2:zone}\""
+	},
+	"mount volume..on server": {
+		"prefix": "mount volume..on server",
+		"body": "mount volume \"${1:volume}\" on server \"${2:server}\""
+	},
+	"multiple selections allowed": {
+		"prefix": "multiple selections allowed",
+		"body": "multiple selections allowed ${1:boolean}"
+	},
+	"name of": {
+		"prefix": "name of",
+		"body": "name of ${1:objectVar}"
+	},
+	"of type": {
+		"prefix": "of type",
+		"body": "of type {${1:items}}"
+	},
+	"offset of..in": {
+		"prefix": "offset of..in",
+		"body": "offset of \"${1:string}\" in ${2:objectVar}"
+	},
+	"OK button name": {
+		"prefix": "OK button name",
+		"body": "OK button name \"${1:text}\""
+	},
+	"on server": {
+		"prefix": "on server",
+		"body": "on server \"${1:server}\""
+	},
+	"on": {
+		"prefix": "on",
+		"body": "on ${1:${2:theHandler}(${3:objectVar})}\n\t${4:--your code}\nend ${2:theHandler}"
+	},
+	"open for access": {
+		"prefix": "open for access",
+		"body": "open for access"
+	},
+	"open location": {
+		"prefix": "open location",
+		"body": "open location \"${1:location}\""
+	},
+	"path to application": {
+		"prefix": "path to application",
+		"body": "path to application \"${1:application}\""
+	},
+	"path to current application": {
+		"prefix": "path to current application",
+		"body": "path to current application"
+	},
+	"path to folder": {
+		"prefix": "path to folder",
+		"body": "path to ${1:folder}"
+	},
+	"path to folder..as string": {
+		"prefix": "path to folder..as string",
+		"body": "path to ${1:folder} as string"
+	},
+	"path to frontmost application": {
+		"prefix": "path to frontmost application",
+		"body": "path to frontmost application"
+	},
+	"path to it": {
+		"prefix": "path to it",
+		"body": "path to it"
+	},
+	"path to me": {
+		"prefix": "path to me",
+		"body": "path to me"
+	},
+	"path to resource": {
+		"prefix": "path to resource",
+		"body": "path to resource \"${1:resource}\""
+	},
+	"path to resource..in bundle": {
+		"prefix": "path to resource..in bundle",
+		"body": "path to resource \"${1:resource}\" in bundle \"${2:file}\""
+	},
+	"path to resource..in directory": {
+		"prefix": "path to resource..in directory",
+		"body": "path to resource \"${1:resource}\" in directory \"${2:directory}\""
+	},
+	"path to": {
+		"prefix": "path to",
+		"body": "path to"
+	},
+	"path to..as string": {
+		"prefix": "path to..as string",
+		"body": "path to \"${1:application}\" as string"
+	},
+	"random number from..to": {
+		"prefix": "random number from..to",
+		"body": "random number from ${1:number} to ${2:number}"
+	},
+	"random number": {
+		"prefix": "random number",
+		"body": "random number"
+	},
+	"read": {
+		"prefix": "read",
+		"body": "read ${1:file}"
+	},
+	"repeat times": {
+		"prefix": "repeat times",
+		"body": "repeat ${1:integer} times"
+	},
+	"repeat until": {
+		"prefix": "repeat until",
+		"body": "repeat until ${1:condition}\n\t${2:--your code}\nend repeat"
+	},
+	"repeat while": {
+		"prefix": "repeat while",
+		"body": "repeat while ${1:condition}\n\t${2:--your code}\nend repeat"
+	},
+	"repeat with from": {
+		"prefix": "repeat with from",
+		"body": "repeat with ${1:increment_value} from ${2:start_value} to ${3:end_value}\n\t${4:--your code}\nend repeat"
+	},
+	"repeat with in": {
+		"prefix": "repeat with in",
+		"body": "repeat with ${1:current_value} in ${2:list_of_value}\n\t${4:--your code}\nend repeat"
+	},
+	"repeat": {
+		"prefix": "repeat",
+		"body": "repeat\n\t${1:--your code}\nend repeat"
+	},
+	"round": {
+		"prefix": "round",
+		"body": "round ${1:real}"
+	},
+	"round:down": {
+		"prefix": "round:down",
+		"body": "round ${1:real} rounding down"
+	},
+	"round:up": {
+		"prefix": "round:up",
+		"body": "round ${1:real} rounding up"
+	},
+	"run application": {
+		"prefix": "run application",
+		"body": "run application \"${1:application}\""
+	},
+	"run script": {
+		"prefix": "run script",
+		"body": "run script \"${1:script}\""
+	},
+	"run script..in": {
+		"prefix": "run script..in",
+		"body": "run script \"${1:script}\" in \"${2:component}\""
+	},
+	"run script..with parameters": {
+		"prefix": "run script..with parameters",
+		"body": "run script \"${1:script}\" with parameters {${2:parameters}}"
+	},
+	"run": {
+		"prefix": "run",
+		"body": "run ${1:objectVar}"
+	},
+	"saving to": {
+		"prefix": "saving to",
+		"body": "saving to \"${1:file}\""
+	},
+	"say": {
+		"prefix": "say",
+		"body": "say \"${1:text}\""
+	},
+	"say..displaying": {
+		"prefix": "say..displaying",
+		"body": "say \"${1:text}\" displaying \"${2:text}\""
+	},
+	"scripting components": {
+		"prefix": "scripting components",
+		"body": "scripting components"
+	},
+	"set eof to": {
+		"prefix": "set eof to",
+		"body": "set eof ${1:objectVar} to \"${2:integer}\""
+	},
+	"set the clipboard": {
+		"prefix": "set the clipboard",
+		"body": "set the clipboard \"${1:text}\""
+	},
+	"set to list": {
+		"prefix": "set to list",
+		"body": "set ${1:objectVar} to {\"${2:item1}\",${3:\"item2\"}${4}}"
+	},
+	"set to": {
+		"prefix": "set to",
+		"body": "set ${1:objectVar} to \"${2:string}\""
+	},
+	"set to..display alert": {
+		"prefix": "set to..display alert",
+		"body": "set ${1:objectVar} to display alert \"${2:text}\""
+	},
+	"set volume": {
+		"prefix": "set volume",
+		"body": "set volume ${1:value}"
+	},
+	"set:alert volume": {
+		"prefix": "set:alert volume",
+		"body": "set volume alert volume ${1:value}"
+	},
+	"set:input volume": {
+		"prefix": "set:input volume",
+		"body": "set volume input volume ${1:value}"
+	},
+	"set:output muted": {
+		"prefix": "set:output muted",
+		"body": "set volume output muted ${1:boolean}"
+	},
+	"set:output volume": {
+		"prefix": "set:output volume",
+		"body": "set volume output volume ${1:value}"
+	},
+	"show package contents": {
+		"prefix": "show package contents",
+		"body": "show package contents ${1:boolean}"
+	},
+	"showing": {
+		"prefix": "showing",
+		"body": "showing {${1:items}}"
+	},
+	"sound name": {
+		"prefix": "sound name",
+		"body": "sound name ${1:sound}"
+	},
+	"starting at": {
+		"prefix": "starting at",
+		"body": "starting at"
+	},
+	"store script": {
+		"prefix": "store script",
+		"body": "store script ${1:objectVar}"
+	},
+	"store script..in": {
+		"prefix": "store script..in",
+		"body": "store script ${1:objectVar} in \"${2:file}\""
+	},
+	"store script..in..replacing": {
+		"prefix": "store script..in..replacing",
+		"body": "store script ${1:objectVar} in \"${2:file}\" replacing ${3:yes|no|ask}"
+	},
+	"summarize": {
+		"prefix": "summarize",
+		"body": "summarize \"${1:objectVar}\""
+	},
+	"summarize..in": {
+		"prefix": "summarize..in",
+		"body": "summarize \"${1:objectVar}\" in ${2:integer}"
+	},
+	"system attribute": {
+		"prefix": "system attribute",
+		"body": "system attribute \"${1:attribute}\""
+	},
+	"system info": {
+		"prefix": "system info",
+		"body": "system info \"${1:attribute}\""
+	},
+	"tell application": {
+		"prefix": "tell application",
+		"body": "tell application \"${1:application_name}\"\n\t${2:--your code}\nend tell"
+	},
+	"tell application..to activate": {
+		"prefix": "tell application..to activate",
+		"body": "tell application \"${1:application_name}\" to activate"
+	},
+	"tell application..to launch": {
+		"prefix": "tell application..to launch",
+		"body": "tell application \"${1:application_name}\" to launch"
+	},
+	"tell application..to run": {
+		"prefix": "tell application..to run",
+		"body": "tell application \"${1:application_name}\" to run"
+	},
+	"tell process": {
+		"prefix": "tell process",
+		"body": "tell process \"${1:application_name}\"\n\t${2:--your code}\nend tell"
+	},
+	"tell to": {
+		"prefix": "tell to",
+		"body": "tell ${1:objectVar} to ${2:${3:function}()}"
+	},
+	"the clipboard": {
+		"prefix": "the clipboard",
+		"body": "the clipboard"
+	},
+	"time to GMT": {
+		"prefix": "time to GMT",
+		"body": "time to GMT"
+	},
+	"try": {
+		"prefix": "try",
+		"body": "try\n\t${1:--your code}\nend try"
+	},
+	"until": {
+		"prefix": "until",
+		"body": "until"
+	},
+	"using delimiters": {
+		"prefix": "using delimiters",
+		"body": "using delimiters"
+	},
+	"using": {
+		"prefix": "using",
+		"body": "using \"${1:voice}\""
+	},
+	"waiting until completion": {
+		"prefix": "waiting until completion",
+		"body": "waiting until completion \"${1:boolean}\""
+	},
+	"with hidden answer": {
+		"prefix": "with hidden answer",
+		"body": "with hidden answer"
+	},
+	"with icon": {
+		"prefix": "with icon",
+		"body": "with icon \"${1:icon}\""
+	},
+	"with icon:caution": {
+		"prefix": "with icon:caution",
+		"body": "with icon caution"
+	},
+	"with icon:file": {
+		"prefix": "with icon:file",
+		"body": "with icon file \"${1:icon_file}\""
+	},
+	"with icon:note": {
+		"prefix": "with icon:note",
+		"body": "with icon note"
+	},
+	"with icon:stop": {
+		"prefix": "with icon:stop",
+		"body": "with icon stop"
+	},
+	"with password": {
+		"prefix": "with password",
+		"body": "with password \"${1:password}\""
+	},
+	"with prompt": {
+		"prefix": "with prompt",
+		"body": "with prompt \"${1:prompt}\""
+	},
+	"with seed": {
+		"prefix": "with seed",
+		"body": "with seed"
+	},
+	"with title": {
+		"prefix": "with title",
+		"body": "with title \"${1:title}\""
+	},
+	"write permission": {
+		"prefix": "write permission",
+		"body": "write permission ${1:boolean}"
+	},
+	"write": {
+		"prefix": "write",
+		"body": "write \"${1:string}\" to ${2:file}"
+	},
+	"activate:Activity Monitor": {
+		"prefix": "activate:Activity Monitor",
+		"body": "activate application \"Activity Monitor\""
+	},
+	"activate:AirPort Utility": {
+		"prefix": "activate:AirPort Utility",
+		"body": "activate application \"AirPort Utility\""
+	},
+	"activate:App Store": {
+		"prefix": "activate:App Store",
+		"body": "activate application \"App Store\""
+	},
+	"activate:AppleScript Editor": {
+		"prefix": "activate:AppleScript Editor",
+		"body": "activate application \"AppleScript Editor\""
+	},
+	"activate:Audio MIDI Setup": {
+		"prefix": "activate:Audio MIDI Setup",
+		"body": "activate application \"Audio MIDI Setup\""
+	},
+	"activate:Automator": {
+		"prefix": "activate:Automator",
+		"body": "activate application \"Automator\""
+	},
+	"activate:Bluetooth File Exchange": {
+		"prefix": "activate:Bluetooth File Exchange",
+		"body": "activate application \"Bluetooth File Exchange\""
+	},
+	"activate:Bootcamp Assistant": {
+		"prefix": "activate:Bootcamp Assistant",
+		"body": "activate application \"Bootcamp Assistant\""
+	},
+	"activate:Calculator": {
+		"prefix": "activate:Calculator",
+		"body": "activate application \"Calculator\""
+	},
+	"activate:Calendar": {
+		"prefix": "activate:Calendar",
+		"body": "activate application \"Calendar\""
+	},
+	"activate:Chess": {
+		"prefix": "activate:Chess",
+		"body": "activate application \"Chess\""
+	},
+	"activate:ColorSync Utility": {
+		"prefix": "activate:ColorSync Utility",
+		"body": "activate application \"ColorSync Utility\""
+	},
+	"activate:Console": {
+		"prefix": "activate:Console",
+		"body": "activate application \"Console\""
+	},
+	"activate:Contacts": {
+		"prefix": "activate:Contacts",
+		"body": "activate application \"Contacts\""
+	},
+	"activate:Dashboard": {
+		"prefix": "activate:Dashboard",
+		"body": "activate application \"Dashboard\""
+	},
+	"activate:Dictionary": {
+		"prefix": "activate:Dictionary",
+		"body": "activate application \"Dictionary\""
+	},
+	"activate:DigitalColor Meter": {
+		"prefix": "activate:DigitalColor Meter",
+		"body": "activate application \"DigitalColor Meter\""
+	},
+	"activate:Disk Utility": {
+		"prefix": "activate:Disk Utility",
+		"body": "activate application \"Disk Utility\""
+	},
+	"activate:DVD Player": {
+		"prefix": "activate:DVD Player",
+		"body": "activate application \"DVD Player\""
+	},
+	"activate:FaceTime": {
+		"prefix": "activate:FaceTime",
+		"body": "activate application \"FaceTime\""
+	},
+	"activate:Finder": {
+		"prefix": "activate:Finder",
+		"body": "activate application \"Finder\""
+	},
+	"activate:Font Book": {
+		"prefix": "activate:Font Book",
+		"body": "activate application \"Font Book\""
+	},
+	"activate:Game Center": {
+		"prefix": "activate:Game Center",
+		"body": "activate application \"Game Center\""
+	},
+	"activate:GarageBand": {
+		"prefix": "activate:GarageBand",
+		"body": "activate application \"GarageBand\""
+	},
+	"activate:Grab": {
+		"prefix": "activate:Grab",
+		"body": "activate application \"Grab\""
+	},
+	"activate:Grapher": {
+		"prefix": "activate:Grapher",
+		"body": "activate application \"Grapher\""
+	},
+	"activate:iBooks": {
+		"prefix": "activate:iBooks",
+		"body": "activate application \"iBooks\""
+	},
+	"activate:Image Capture": {
+		"prefix": "activate:Image Capture",
+		"body": "activate application \"Image Capture\""
+	},
+	"activate:iMovie": {
+		"prefix": "activate:iMovie",
+		"body": "activate application \"iMovie\""
+	},
+	"activate:iPhone Configuration Utility": {
+		"prefix": "activate:iPhone Configuration Utility",
+		"body": "activate application \"iPhone Configuration Utility\""
+	},
+	"activate:iTunes": {
+		"prefix": "activate:iTunes",
+		"body": "activate application \"iTunes\""
+	},
+	"activate:Keychain Access": {
+		"prefix": "activate:Keychain Access",
+		"body": "activate application \"Keychain Access\""
+	},
+	"activate:Keynote": {
+		"prefix": "activate:Keynote",
+		"body": "activate application \"Keynote\""
+	},
+	"activate:Launchpad": {
+		"prefix": "activate:Launchpad",
+		"body": "activate application \"Launchpad\""
+	},
+	"activate:Mail": {
+		"prefix": "activate:Mail",
+		"body": "activate application \"Mail\""
+	},
+	"activate:Maps": {
+		"prefix": "activate:Maps",
+		"body": "activate application \"Maps\""
+	},
+	"activate:Migration Assistant": {
+		"prefix": "activate:Migration Assistant",
+		"body": "activate application \"Migration Assistant\""
+	},
+	"activate:Mission Control": {
+		"prefix": "activate:Mission Control",
+		"body": "activate application \"Mission Control\""
+	},
+	"activate:Notes": {
+		"prefix": "activate:Notes",
+		"body": "activate application \"Notes\""
+	},
+	"activate:Numbers": {
+		"prefix": "activate:Numbers",
+		"body": "activate application \"Numbers\""
+	},
+	"activate:Pages": {
+		"prefix": "activate:Pages",
+		"body": "activate application \"Pages\""
+	},
+	"activate:Photo Booth": {
+		"prefix": "activate:Photo Booth",
+		"body": "activate application \"Photo Booth\""
+	},
+	"activate:Reminders": {
+		"prefix": "activate:Reminders",
+		"body": "activate application \"Reminders\""
+	},
+	"activate:Safari": {
+		"prefix": "activate:Safari",
+		"body": "activate application \"Safari\""
+	},
+	"activate:Stickies": {
+		"prefix": "activate:Stickies",
+		"body": "activate application \"Stickies\""
+	},
+	"activate:System Information": {
+		"prefix": "activate:System Information",
+		"body": "activate application \"System Information\""
+	},
+	"activate:Terminal": {
+		"prefix": "activate:Terminal",
+		"body": "activate application \"Terminal\""
+	},
+	"activate:TextEdit": {
+		"prefix": "activate:TextEdit",
+		"body": "activate application \"TextEdit\""
+	},
+	"activate:Time Machine": {
+		"prefix": "activate:Time Machine",
+		"body": "activate application \"Time Machine\""
+	},
+	"activate:VoiceOver Utility": {
+		"prefix": "activate:VoiceOver Utility",
+		"body": "activate application \"VoiceOver Utility\""
+	},
+	"activate:Xcode": {
+		"prefix": "activate:Xcode",
+		"body": "activate application \"Xcode\""
+	},
+	"error:<name> is illegal as a formal parameter (-2761)": {
+		"prefix": "error:<name> is illegal as a formal parameter (-2761)",
+		"body": "error number -2761"
+	},
+	"error:<name> is not a parameter name for the event <event> (-2762)": {
+		"prefix": "error:<name> is not a parameter name for the event <event> (-2762)",
+		"body": "error number -2762"
+	},
+	"error:<name> isn’t running or program linking isn’t enabled (-906)": {
+		"prefix": "error:<name> isn’t running or program linking isn’t enabled (-906)",
+		"body": "error number -906"
+	},
+	"error:<reference> can't be launched because it is not an application (-2703)": {
+		"prefix": "error:<reference> can't be launched because it is not an application (-2703)",
+		"body": "error number -2703"
+	},
+	"error:<reference> isn't scriptable (-2704)": {
+		"prefix": "error:<reference> isn't scriptable (-2704)",
+		"body": "error number -2704"
+	},
+	"error:A <language element> can't go after this <language element> (-2740)": {
+		"prefix": "error:A <language element> can't go after this <language element> (-2740)",
+		"body": "error number -2740"
+	},
+	"error:A resource wasn’t found (-192)": {
+		"prefix": "error:A resource wasn’t found (-192)",
+		"body": "error number -192"
+	},
+	"error:Application is background-only (-606)": {
+		"prefix": "error:Application is background-only (-606)",
+		"body": "error number -606"
+	},
+	"error:Application is not 32-bit clean (-602)": {
+		"prefix": "error:Application is not 32-bit clean (-602)",
+		"body": "error number -602"
+	},
+	"error:Application isn’t running (-600)": {
+		"prefix": "error:Application isn’t running (-600)",
+		"body": "error number -600"
+	},
+	"error:Attempt to create a value larger than the allowable size (-2708)": {
+		"prefix": "error:Attempt to create a value larger than the allowable size (-2708)",
+		"body": "error number -2708"
+	},
+	"error:Bad name for filed (-37)": {
+		"prefix": "error:Bad name for filed (-37)",
+		"body": "error number -37"
+	},
+	"error:Buffer is too small (-607)": {
+		"prefix": "error:Buffer is too small (-607)",
+		"body": "error number -607"
+	},
+	"error:Can't both consider and ignore <attribute> (-2720)": {
+		"prefix": "error:Can't both consider and ignore <attribute> (-2720)",
+		"body": "error number -2720"
+	},
+	"error:Can't declare <name> as both a local and global variable (-2754)": {
+		"prefix": "error:Can't declare <name> as both a local and global variable (-2754)",
+		"body": "error number -2754"
+	},
+	"error:Can't get the event dictionary (-2709)": {
+		"prefix": "error:Can't get the event dictionary (-2709)",
+		"body": "error number -2709"
+	},
+	"error:Can't perform operation on text longer than 32K bytes (-2721)": {
+		"prefix": "error:Can't perform operation on text longer than 32K bytes (-2721)",
+		"body": "error number -2721"
+	},
+	"error:Can’t divide <number> by zero (-2701)": {
+		"prefix": "error:Can’t divide <number> by zero (-2701)",
+		"body": "error number -2701"
+	},
+	"error:Can’t find remote machine (-915)": {
+		"prefix": "error:Can’t find remote machine (-915)",
+		"body": "error number -915"
+	},
+	"error:Connection is invalid (-609)": {
+		"prefix": "error:Connection is invalid (-609)",
+		"body": "error number -609"
+	},
+	"error:Disk <name> full (-34)": {
+		"prefix": "error:Disk <name> full (-34)",
+		"body": "error number -34"
+	},
+	"error:Disk <name> is disconnected (-124)": {
+		"prefix": "error:Disk <name> is disconnected (-124)",
+		"body": "error number -124"
+	},
+	"error:Disk <name> is locked (-46)": {
+		"prefix": "error:Disk <name> is locked (-46)",
+		"body": "error number -46"
+	},
+	"error:Disk <name> is write protected (-44)": {
+		"prefix": "error:Disk <name> is write protected (-44)",
+		"body": "error number -44"
+	},
+	"error:Disk <name> wasn’t found (-35)": {
+		"prefix": "error:Disk <name> wasn’t found (-35)",
+		"body": "error number -35"
+	},
+	"error:Duplicate file name (-48)": {
+		"prefix": "error:Duplicate file name (-48)",
+		"body": "error number -48"
+	},
+	"error:End of file error (-39)": {
+		"prefix": "error:End of file error (-39)",
+		"body": "error number -39"
+	},
+	"error:Exit statement was not in a repeat loop (-2755)": {
+		"prefix": "error:Exit statement was not in a repeat loop (-2755)",
+		"body": "error number -2755"
+	},
+	"error:Expected <language element> but found <language element> (-2741)": {
+		"prefix": "error:Expected <language element> but found <language element> (-2741)",
+		"body": "error number -2741"
+	},
+	"error:File <name> is already open (-49)": {
+		"prefix": "error:File <name> is already open (-49)",
+		"body": "error number -49"
+	},
+	"error:File <name> is busy (-47)": {
+		"prefix": "error:File <name> is busy (-47)",
+		"body": "error number -47"
+	},
+	"error:File <name> is locked (-45)": {
+		"prefix": "error:File <name> is locked (-45)",
+		"body": "error number -45"
+	},
+	"error:File <name> wasn’t found (-43)": {
+		"prefix": "error:File <name> wasn’t found (-43)",
+		"body": "error number -43"
+	},
+	"error:File <name> wasn’t open (-38)": {
+		"prefix": "error:File <name> wasn’t open (-38)",
+		"body": "error number -38"
+	},
+	"error:File not open with write permission (-61)": {
+		"prefix": "error:File not open with write permission (-61)",
+		"body": "error number -61"
+	},
+	"error:File reference number error (-51)": {
+		"prefix": "error:File reference number error (-51)",
+		"body": "error number -51"
+	},
+	"error:Folder <name> wasn’t found (-120)": {
+		"prefix": "error:Folder <name> wasn’t found (-120)",
+		"body": "error number -120"
+	},
+	"error:Internal table overflow (-2707)": {
+		"prefix": "error:Internal table overflow (-2707)",
+		"body": "error number -2707"
+	},
+	"error:Invalid date and time <date string> (-30720)": {
+		"prefix": "error:Invalid date and time <date string> (-30720)",
+		"body": "error number -30720"
+	},
+	"error:Message size too large for the 7.0 Finder (-2729)": {
+		"prefix": "error:Message size too large for the 7.0 Finder (-2729)",
+		"body": "error number -2729"
+	},
+	"error:More memory needed than is specified in the size resource (-605)": {
+		"prefix": "error:More memory needed than is specified in the size resource (-605)",
+		"body": "error number -605"
+	},
+	"error:No error (0)": {
+		"prefix": "error:No error (0)",
+		"body": "error number 0"
+	},
+	"error:No outstanding high-level event (-608)": {
+		"prefix": "error:No outstanding high-level event (-608)",
+		"body": "error number -608"
+	},
+	"error:No result was returned for some argument of this expression (-2763)": {
+		"prefix": "error:No result was returned for some argument of this expression (-2763)",
+		"body": "error number -2763"
+	},
+	"error:Not enough room to launch application with special requirements (-601)": {
+		"prefix": "error:Not enough room to launch application with special requirements (-601)",
+		"body": "error number -601"
+	},
+	"error:Not enough system memory to connect to remote application (-904)": {
+		"prefix": "error:Not enough system memory to connect to remote application (-904)",
+		"body": "error number -904"
+	},
+	"error:Out of memory (-108)": {
+		"prefix": "error:Out of memory (-108)",
+		"body": "error number -108"
+	},
+	"error:Parameter error (-50)": {
+		"prefix": "error:Parameter error (-50)",
+		"body": "error number -50"
+	},
+	"error:Remote access is not allowed (-905)": {
+		"prefix": "error:Remote access is not allowed (-905)",
+		"body": "error number -905"
+	},
+	"error:Stack overflow (-2706)": {
+		"prefix": "error:Stack overflow (-2706)",
+		"body": "error number -2706"
+	},
+	"error:Tell statements are nested too deeply (-2760)": {
+		"prefix": "error:Tell statements are nested too deeply (-2760)",
+		"body": "error number -2760"
+	},
+	"error:The <name> handler is specified more than once (-2752)": {
+		"prefix": "error:The <name> handler is specified more than once (-2752)",
+		"body": "error number -2752"
+	},
+	"error:The <name> parameter is specified more than once (-2750)": {
+		"prefix": "error:The <name> parameter is specified more than once (-2750)",
+		"body": "error number -2750"
+	},
+	"error:The <name> property is specified more than once (-2751)": {
+		"prefix": "error:The <name> property is specified more than once (-2751)",
+		"body": "error number -2751"
+	},
+	"error:The application has a corrupted dictionary (-2705)": {
+		"prefix": "error:The application has a corrupted dictionary (-2705)",
+		"body": "error number -2705"
+	},
+	"error:The result of a numeric operation was too large (-2702)": {
+		"prefix": "error:The result of a numeric operation was too large (-2702)",
+		"body": "error number -2702"
+	},
+	"error:The variable <name> is not defined (-2753)": {
+		"prefix": "error:The variable <name> is not defined (-2753)",
+		"body": "error number -2753"
+	},
+	"error:Too many files open (-42)": {
+		"prefix": "error:Too many files open (-42)",
+		"body": "error number -42"
+	},
+	"error:Unknown error (-2700)": {
+		"prefix": "error:Unknown error (-2700)",
+		"body": "error number -2700"
+	},
+	"error:User cancelled (-128)": {
+		"prefix": "error:User cancelled (-128)",
+		"body": "error number -128"
+	},
+	"launch:Activity Monitor": {
+		"prefix": "launch:Activity Monitor",
+		"body": "launch application \"Activity Monitor\""
+	},
+	"launch:AirPort Utility": {
+		"prefix": "launch:AirPort Utility",
+		"body": "launch application \"AirPort Utility\""
+	},
+	"launch:App Store": {
+		"prefix": "launch:App Store",
+		"body": "launch application \"App Store\""
+	},
+	"launch:AppleScript Editor": {
+		"prefix": "launch:AppleScript Editor",
+		"body": "launch application \"AppleScript Editor\""
+	},
+	"launch:Audio MIDI Setup": {
+		"prefix": "launch:Audio MIDI Setup",
+		"body": "launch application \"Audio MIDI Setup\""
+	},
+	"launch:Automator": {
+		"prefix": "launch:Automator",
+		"body": "launch application \"Automator\""
+	},
+	"launch:Bluetooth File Exchange": {
+		"prefix": "launch:Bluetooth File Exchange",
+		"body": "launch application \"Bluetooth File Exchange\""
+	},
+	"launch:Bootcamp Assistant": {
+		"prefix": "launch:Bootcamp Assistant",
+		"body": "launch application \"Bootcamp Assistant\""
+	},
+	"launch:Calculator": {
+		"prefix": "launch:Calculator",
+		"body": "launch application \"Calculator\""
+	},
+	"launch:Calendar": {
+		"prefix": "launch:Calendar",
+		"body": "launch application \"Calendar\""
+	},
+	"launch:Chess": {
+		"prefix": "launch:Chess",
+		"body": "launch application \"Chess\""
+	},
+	"launch:ColorSync Utility": {
+		"prefix": "launch:ColorSync Utility",
+		"body": "launch application \"ColorSync Utility\""
+	},
+	"launch:Console": {
+		"prefix": "launch:Console",
+		"body": "launch application \"Console\""
+	},
+	"launch:Contacts": {
+		"prefix": "launch:Contacts",
+		"body": "launch application \"Contacts\""
+	},
+	"launch:Dashboard": {
+		"prefix": "launch:Dashboard",
+		"body": "launch application \"Dashboard\""
+	},
+	"launch:Dictionary": {
+		"prefix": "launch:Dictionary",
+		"body": "launch application \"Dictionary\""
+	},
+	"launch:DigitalColor Meter": {
+		"prefix": "launch:DigitalColor Meter",
+		"body": "launch application \"DigitalColor Meter\""
+	},
+	"launch:Disk Utility": {
+		"prefix": "launch:Disk Utility",
+		"body": "launch application \"Disk Utility\""
+	},
+	"launch:DVD Player": {
+		"prefix": "launch:DVD Player",
+		"body": "launch application \"DVD Player\""
+	},
+	"launch:FaceTime": {
+		"prefix": "launch:FaceTime",
+		"body": "launch application \"FaceTime\""
+	},
+	"launch:Finder": {
+		"prefix": "launch:Finder",
+		"body": "launch application \"Finder\""
+	},
+	"launch:Font Book": {
+		"prefix": "launch:Font Book",
+		"body": "launch application \"Font Book\""
+	},
+	"launch:Game Center": {
+		"prefix": "launch:Game Center",
+		"body": "launch application \"Game Center\""
+	},
+	"launch:GarageBand": {
+		"prefix": "launch:GarageBand",
+		"body": "launch application \"GarageBand\""
+	},
+	"launch:Grab": {
+		"prefix": "launch:Grab",
+		"body": "launch application \"Grab\""
+	},
+	"launch:Grapher": {
+		"prefix": "launch:Grapher",
+		"body": "launch application \"Grapher\""
+	},
+	"launch:iBooks": {
+		"prefix": "launch:iBooks",
+		"body": "launch application \"iBooks\""
+	},
+	"launch:Image Capture": {
+		"prefix": "launch:Image Capture",
+		"body": "launch application \"Image Capture\""
+	},
+	"launch:iMovie": {
+		"prefix": "launch:iMovie",
+		"body": "launch application \"iMovie\""
+	},
+	"launch:iPhone Configuration Utility": {
+		"prefix": "launch:iPhone Configuration Utility",
+		"body": "launch application \"iPhone Configuration Utility\""
+	},
+	"launch:iTunes": {
+		"prefix": "launch:iTunes",
+		"body": "launch application \"iTunes\""
+	},
+	"launch:Keychain Access": {
+		"prefix": "launch:Keychain Access",
+		"body": "launch application \"Keychain Access\""
+	},
+	"launch:Keynote": {
+		"prefix": "launch:Keynote",
+		"body": "launch application \"Keynote\""
+	},
+	"launch:Launchpad": {
+		"prefix": "launch:Launchpad",
+		"body": "launch application \"Launchpad\""
+	},
+	"launch:Mail": {
+		"prefix": "launch:Mail",
+		"body": "launch application \"Mail\""
+	},
+	"launch:Maps": {
+		"prefix": "launch:Maps",
+		"body": "launch application \"Maps\""
+	},
+	"launch:Migration Assistant": {
+		"prefix": "launch:Migration Assistant",
+		"body": "launch application \"Migration Assistant\""
+	},
+	"launch:Mission Control": {
+		"prefix": "launch:Mission Control",
+		"body": "launch application \"Mission Control\""
+	},
+	"launch:Notes": {
+		"prefix": "launch:Notes",
+		"body": "launch application \"Notes\""
+	},
+	"launch:Numbers": {
+		"prefix": "launch:Numbers",
+		"body": "launch application \"Numbers\""
+	},
+	"launch:Pages": {
+		"prefix": "launch:Pages",
+		"body": "launch application \"Pages\""
+	},
+	"launch:Photo Booth": {
+		"prefix": "launch:Photo Booth",
+		"body": "launch application \"Photo Booth\""
+	},
+	"launch:Reminders": {
+		"prefix": "launch:Reminders",
+		"body": "launch application \"Reminders\""
+	},
+	"launch:Safari": {
+		"prefix": "launch:Safari",
+		"body": "launch application \"Safari\""
+	},
+	"launch:Stickies": {
+		"prefix": "launch:Stickies",
+		"body": "launch application \"Stickies\""
+	},
+	"launch:System Information": {
+		"prefix": "launch:System Information",
+		"body": "launch application \"System Information\""
+	},
+	"launch:Terminal": {
+		"prefix": "launch:Terminal",
+		"body": "launch application \"Terminal\""
+	},
+	"launch:TextEdit": {
+		"prefix": "launch:TextEdit",
+		"body": "launch application \"TextEdit\""
+	},
+	"launch:Time Machine": {
+		"prefix": "launch:Time Machine",
+		"body": "launch application \"Time Machine\""
+	},
+	"launch:VoiceOver Utility": {
+		"prefix": "launch:VoiceOver Utility",
+		"body": "launch application \"VoiceOver Utility\""
+	},
+	"launch:Xcode": {
+		"prefix": "launch:Xcode",
+		"body": "launch application \"Xcode\""
+	},
+	"mount:afp": {
+		"prefix": "mount:afp",
+		"body": "mount volume \"${1:volume}\" on server \"afp://${2:server}\""
+	},
+	"mount:http": {
+		"prefix": "mount:http",
+		"body": "mount volume \"${1:volume}\" on server \"http://${2:server}\""
+	},
+	"mount:https": {
+		"prefix": "mount:https",
+		"body": "mount volume \"${1:volume}\" on server \"https://${2:server}\""
+	},
+	"mount:smb": {
+		"prefix": "mount:smb",
+		"body": "mount volume \"${1:volume}\" on server \"smb://${2:server}\""
+	},
+	"path to folder:Application Support": {
+		"prefix": "path to folder:Application Support",
+		"body": "path to application support"
+	},
+	"path to folder:Applications Folder": {
+		"prefix": "path to folder:Applications Folder",
+		"body": "path to applications folder"
+	},
+	"path to folder:Desktop Pictures Folder": {
+		"prefix": "path to folder:Desktop Pictures Folder",
+		"body": "path to desktop pictures folder"
+	},
+	"path to folder:Desktop": {
+		"prefix": "path to folder:Desktop",
+		"body": "path to desktop"
+	},
+	"path to folder:Documents Folder": {
+		"prefix": "path to folder:Documents Folder",
+		"body": "path to documents folder"
+	},
+	"path to folder:Downloads Folder": {
+		"prefix": "path to folder:Downloads Folder",
+		"body": "path to downloads folder"
+	},
+	"path to folder:Favorites Folder": {
+		"prefix": "path to folder:Favorites Folder",
+		"body": "path to favorites folder"
+	},
+	"path to folder:Folder Action Scripts": {
+		"prefix": "path to folder:Folder Action Scripts",
+		"body": "path to Folder Action scripts"
+	},
+	"path to folder:Fonts": {
+		"prefix": "path to folder:Fonts",
+		"body": "path to fonts"
+	},
+	"path to folder:Help": {
+		"prefix": "path to folder:Help",
+		"body": "path to help"
+	},
+	"path to folder:Home Folder": {
+		"prefix": "path to folder:Home Folder",
+		"body": "path to home folder"
+	},
+	"path to folder:Internet Plugins": {
+		"prefix": "path to folder:Internet Plugins",
+		"body": "path to internet plugins"
+	},
+	"path to folder:Keychain Folder": {
+		"prefix": "path to folder:Keychain Folder",
+		"body": "path to keychain folder"
+	},
+	"path to folder:Library Folder": {
+		"prefix": "path to folder:Library Folder",
+		"body": "path to library folder"
+	},
+	"path to folder:Modem Scripts": {
+		"prefix": "path to folder:Modem Scripts",
+		"body": "path to modem scripts"
+	},
+	"path to folder:Movies Folder": {
+		"prefix": "path to folder:Movies Folder",
+		"body": "path to movies folder"
+	},
+	"path to folder:Music Folder": {
+		"prefix": "path to folder:Music Folder",
+		"body": "path to music folder"
+	},
+	"path to folder:Pictures Folder": {
+		"prefix": "path to folder:Pictures Folder",
+		"body": "path to pictures folder"
+	},
+	"path to folder:Preferences": {
+		"prefix": "path to folder:Preferences",
+		"body": "path to preferences"
+	},
+	"path to folder:Printer Descriptions": {
+		"prefix": "path to folder:Printer Descriptions",
+		"body": "path to printer descriptions"
+	},
+	"path to folder:Public Folder": {
+		"prefix": "path to folder:Public Folder",
+		"body": "path to public folder"
+	},
+	"path to folder:Scripting Additions": {
+		"prefix": "path to folder:Scripting Additions",
+		"body": "path to scripting additions"
+	},
+	"path to folder:Scripts Folder": {
+		"prefix": "path to folder:Scripts Folder",
+		"body": "path to scripts folder"
+	},
+	"path to folder:Services Folder": {
+		"prefix": "path to folder:Services Folder",
+		"body": "path to services folder"
+	},
+	"path to folder:Shared Documents": {
+		"prefix": "path to folder:Shared Documents",
+		"body": "path to shared documents"
+	},
+	"path to folder:Shared Libraries": {
+		"prefix": "path to folder:Shared Libraries",
+		"body": "path to shared libraries"
+	},
+	"path to folder:Sites Folder": {
+		"prefix": "path to folder:Sites Folder",
+		"body": "path to sites folder"
+	},
+	"path to folder:Startup Disk": {
+		"prefix": "path to folder:Startup Disk",
+		"body": "path to startup disk"
+	},
+	"path to folder:Startup Items": {
+		"prefix": "path to folder:Startup Items",
+		"body": "path to startup items"
+	},
+	"path to folder:System Folder": {
+		"prefix": "path to folder:System Folder",
+		"body": "path to system folder"
+	},
+	"path to folder:System Preferences": {
+		"prefix": "path to folder:System Preferences",
+		"body": "path to system preferences"
+	},
+	"path to folder:Temporary Items": {
+		"prefix": "path to folder:Temporary Items",
+		"body": "path to temporary items"
+	},
+	"path to folder:Trash": {
+		"prefix": "path to folder:Trash",
+		"body": "path to trash"
+	},
+	"path to folder:Users Folder": {
+		"prefix": "path to folder:Users Folder",
+		"body": "path to users folder"
+	},
+	"path to folder:Utilities Folder": {
+		"prefix": "path to folder:Utilities Folder",
+		"body": "path to utilities folder"
+	},
+	"path to folder:Workflows Folder": {
+		"prefix": "path to folder:Workflows Folder",
+		"body": "path to workflows folder"
+	},
+	"path to:Activity Monitor": {
+		"prefix": "path to:Activity Monitor",
+		"body": "path to \"Activity Monitor\""
+	},
+	"path to:AirPort Utility": {
+		"prefix": "path to:AirPort Utility",
+		"body": "path to \"AirPort Utility\""
+	},
+	"path to:App Store": {
+		"prefix": "path to:App Store",
+		"body": "path to \"App Store\""
+	},
+	"path to:AppleScript Editor": {
+		"prefix": "path to:AppleScript Editor",
+		"body": "path to \"AppleScript Editor\""
+	},
+	"path to:Audio MIDI Setup": {
+		"prefix": "path to:Audio MIDI Setup",
+		"body": "path to \"Audio MIDI Setup\""
+	},
+	"path to:Automator": {
+		"prefix": "path to:Automator",
+		"body": "path to \"Automator\""
+	},
+	"path to:Bluetooth File Exchange": {
+		"prefix": "path to:Bluetooth File Exchange",
+		"body": "path to \"Bluetooth File Exchange\""
+	},
+	"path to:Bootcamp Assistant": {
+		"prefix": "path to:Bootcamp Assistant",
+		"body": "path to \"Bootcamp Assistant\""
+	},
+	"path to:Calculator": {
+		"prefix": "path to:Calculator",
+		"body": "path to \"Calculator\""
+	},
+	"path to:Calendar": {
+		"prefix": "path to:Calendar",
+		"body": "path to \"Calendar\""
+	},
+	"path to:Chess": {
+		"prefix": "path to:Chess",
+		"body": "path to \"Chess\""
+	},
+	"path to:ColorSync Utility": {
+		"prefix": "path to:ColorSync Utility",
+		"body": "path to \"ColorSync Utility\""
+	},
+	"path to:Console": {
+		"prefix": "path to:Console",
+		"body": "path to \"Console\""
+	},
+	"path to:Contacts": {
+		"prefix": "path to:Contacts",
+		"body": "path to \"Contacts\""
+	},
+	"path to:Dashboard": {
+		"prefix": "path to:Dashboard",
+		"body": "path to \"Dashboard\""
+	},
+	"path to:Dictionary": {
+		"prefix": "path to:Dictionary",
+		"body": "path to \"Dictionary\""
+	},
+	"path to:DigitalColor Meter": {
+		"prefix": "path to:DigitalColor Meter",
+		"body": "path to \"DigitalColor Meter\""
+	},
+	"path to:Disk Utility": {
+		"prefix": "path to:Disk Utility",
+		"body": "path to \"Disk Utility\""
+	},
+	"path to:DVD Player": {
+		"prefix": "path to:DVD Player",
+		"body": "path to \"DVD Player\""
+	},
+	"path to:FaceTime": {
+		"prefix": "path to:FaceTime",
+		"body": "path to \"FaceTime\""
+	},
+	"path to:Finder": {
+		"prefix": "path to:Finder",
+		"body": "path to \"Finder\""
+	},
+	"path to:Font Book": {
+		"prefix": "path to:Font Book",
+		"body": "path to \"Font Book\""
+	},
+	"path to:Game Center": {
+		"prefix": "path to:Game Center",
+		"body": "path to \"Game Center\""
+	},
+	"path to:GarageBand": {
+		"prefix": "path to:GarageBand",
+		"body": "path to \"GarageBand\""
+	},
+	"path to:Grab": {
+		"prefix": "path to:Grab",
+		"body": "path to \"Grab\""
+	},
+	"path to:Grapher": {
+		"prefix": "path to:Grapher",
+		"body": "path to \"Grapher\""
+	},
+	"path to:iBooks": {
+		"prefix": "path to:iBooks",
+		"body": "path to \"iBooks\""
+	},
+	"path to:Image Capture": {
+		"prefix": "path to:Image Capture",
+		"body": "path to \"Image Capture\""
+	},
+	"path to:iMovie": {
+		"prefix": "path to:iMovie",
+		"body": "path to \"iMovie\""
+	},
+	"path to:iPhone Configuration Utility": {
+		"prefix": "path to:iPhone Configuration Utility",
+		"body": "path to \"iPhone Configuration Utility\""
+	},
+	"path to:iTunes": {
+		"prefix": "path to:iTunes",
+		"body": "path to \"iTunes\""
+	},
+	"path to:Keychain Access": {
+		"prefix": "path to:Keychain Access",
+		"body": "path to \"Keychain Access\""
+	},
+	"path to:Keynote": {
+		"prefix": "path to:Keynote",
+		"body": "path to \"Keynote\""
+	},
+	"path to:Launchpad": {
+		"prefix": "path to:Launchpad",
+		"body": "path to \"Launchpad\""
+	},
+	"path to:Mail": {
+		"prefix": "path to:Mail",
+		"body": "path to \"Mail\""
+	},
+	"path to:Maps": {
+		"prefix": "path to:Maps",
+		"body": "path to \"Maps\""
+	},
+	"path to:Migration Assistant": {
+		"prefix": "path to:Migration Assistant",
+		"body": "path to \"Migration Assistant\""
+	},
+	"path to:Mission Control": {
+		"prefix": "path to:Mission Control",
+		"body": "path to \"Mission Control\""
+	},
+	"path to:Notes": {
+		"prefix": "path to:Notes",
+		"body": "path to \"Notes\""
+	},
+	"path to:Numbers": {
+		"prefix": "path to:Numbers",
+		"body": "path to \"Numbers\""
+	},
+	"path to:Pages": {
+		"prefix": "path to:Pages",
+		"body": "path to \"Pages\""
+	},
+	"path to:Photo Booth": {
+		"prefix": "path to:Photo Booth",
+		"body": "path to \"Photo Booth\""
+	},
+	"path to:Reminders": {
+		"prefix": "path to:Reminders",
+		"body": "path to \"Reminders\""
+	},
+	"path to:Safari": {
+		"prefix": "path to:Safari",
+		"body": "path to \"Safari\""
+	},
+	"path to:Stickies": {
+		"prefix": "path to:Stickies",
+		"body": "path to \"Stickies\""
+	},
+	"path to:System Information": {
+		"prefix": "path to:System Information",
+		"body": "path to \"System Information\""
+	},
+	"path to:Terminal": {
+		"prefix": "path to:Terminal",
+		"body": "path to \"Terminal\""
+	},
+	"path to:TextEdit": {
+		"prefix": "path to:TextEdit",
+		"body": "path to \"TextEdit\""
+	},
+	"path to:Time Machine": {
+		"prefix": "path to:Time Machine",
+		"body": "path to \"Time Machine\""
+	},
+	"path to:VoiceOver Utility": {
+		"prefix": "path to:VoiceOver Utility",
+		"body": "path to \"VoiceOver Utility\""
+	},
+	"path to:Xcode": {
+		"prefix": "path to:Xcode",
+		"body": "path to \"Xcode\""
+	},
+	"tell:Activity Monitor": {
+		"prefix": "tell:Activity Monitor",
+		"body": "tell application \"Activity Monitor\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:AirPort Utility": {
+		"prefix": "tell:AirPort Utility",
+		"body": "tell application \"AirPort Utility\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:App Store": {
+		"prefix": "tell:App Store",
+		"body": "tell application \"App Store\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:AppleScript Editor": {
+		"prefix": "tell:AppleScript Editor",
+		"body": "tell application \"AppleScript Editor\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Audio MIDI Setup": {
+		"prefix": "tell:Audio MIDI Setup",
+		"body": "tell application \"Audio MIDI Setup\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Automator": {
+		"prefix": "tell:Automator",
+		"body": "tell application \"Automator\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Bluetooth File Exchange": {
+		"prefix": "tell:Bluetooth File Exchange",
+		"body": "tell application \"Bluetooth File Exchange\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Bootcamp Assistant": {
+		"prefix": "tell:Bootcamp Assistant",
+		"body": "tell application \"Bootcamp Assistant\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Calculator": {
+		"prefix": "tell:Calculator",
+		"body": "tell application \"Calculator\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Calendar": {
+		"prefix": "tell:Calendar",
+		"body": "tell application \"Calendar\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Chess": {
+		"prefix": "tell:Chess",
+		"body": "tell application \"Chess\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:ColorSync Utility": {
+		"prefix": "tell:ColorSync Utility",
+		"body": "tell application \"ColorSync Utility\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Console": {
+		"prefix": "tell:Console",
+		"body": "tell application \"Console\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Contacts": {
+		"prefix": "tell:Contacts",
+		"body": "tell application \"Contacts\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Dashboard": {
+		"prefix": "tell:Dashboard",
+		"body": "tell application \"Dashboard\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Dictionary": {
+		"prefix": "tell:Dictionary",
+		"body": "tell application \"Dictionary\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:DigitalColor Meter": {
+		"prefix": "tell:DigitalColor Meter",
+		"body": "tell application \"DigitalColor Meter\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Disk Utility": {
+		"prefix": "tell:Disk Utility",
+		"body": "tell application \"Disk Utility\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:DVD Player": {
+		"prefix": "tell:DVD Player",
+		"body": "tell application \"DVD Player\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:FaceTime": {
+		"prefix": "tell:FaceTime",
+		"body": "tell application \"FaceTime\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Finder": {
+		"prefix": "tell:Finder",
+		"body": "tell application \"Finder\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Font Book": {
+		"prefix": "tell:Font Book",
+		"body": "tell application \"Font Book\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Game Center": {
+		"prefix": "tell:Game Center",
+		"body": "tell application \"Game Center\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:GarageBand": {
+		"prefix": "tell:GarageBand",
+		"body": "tell application \"GarageBand\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Grab": {
+		"prefix": "tell:Grab",
+		"body": "tell application \"Grab\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Grapher": {
+		"prefix": "tell:Grapher",
+		"body": "tell application \"Grapher\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:iBooks": {
+		"prefix": "tell:iBooks",
+		"body": "tell application \"iBooks\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Image Capture": {
+		"prefix": "tell:Image Capture",
+		"body": "tell application \"Image Capture\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:iMovie": {
+		"prefix": "tell:iMovie",
+		"body": "tell application \"iMovie\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:iPhone Configuration Utility": {
+		"prefix": "tell:iPhone Configuration Utility",
+		"body": "tell application \"iPhone Configuration Utility\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:iTunes": {
+		"prefix": "tell:iTunes",
+		"body": "tell application \"iTunes\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Keychain Access": {
+		"prefix": "tell:Keychain Access",
+		"body": "tell application \"Keychain Access\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Keynote": {
+		"prefix": "tell:Keynote",
+		"body": "tell application \"Keynote\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Launchpad": {
+		"prefix": "tell:Launchpad",
+		"body": "tell application \"Launchpad\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Mail": {
+		"prefix": "tell:Mail",
+		"body": "tell application \"Mail\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Maps": {
+		"prefix": "tell:Maps",
+		"body": "tell application \"Maps\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Migration Assistant": {
+		"prefix": "tell:Migration Assistant",
+		"body": "tell application \"Migration Assistant\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Mission Control": {
+		"prefix": "tell:Mission Control",
+		"body": "tell application \"Mission Control\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Notes": {
+		"prefix": "tell:Notes",
+		"body": "tell application \"Notes\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Numbers": {
+		"prefix": "tell:Numbers",
+		"body": "tell application \"Numbers\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Pages": {
+		"prefix": "tell:Pages",
+		"body": "tell application \"Pages\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Photo Booth": {
+		"prefix": "tell:Photo Booth",
+		"body": "tell application \"Photo Booth\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Reminders": {
+		"prefix": "tell:Reminders",
+		"body": "tell application \"Reminders\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Safari": {
+		"prefix": "tell:Safari",
+		"body": "tell application \"Safari\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Stickies": {
+		"prefix": "tell:Stickies",
+		"body": "tell application \"Stickies\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:System Information": {
+		"prefix": "tell:System Information",
+		"body": "tell application \"System Information\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Terminal": {
+		"prefix": "tell:Terminal",
+		"body": "tell application \"Terminal\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:TextEdit": {
+		"prefix": "tell:TextEdit",
+		"body": "tell application \"TextEdit\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Time Machine": {
+		"prefix": "tell:Time Machine",
+		"body": "tell application \"Time Machine\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:VoiceOver Utility": {
+		"prefix": "tell:VoiceOver Utility",
+		"body": "tell application \"VoiceOver Utility\"\n\t${2:--your code}\nend tell"
+	},
+	"tell:Xcode": {
+		"prefix": "tell:Xcode",
+		"body": "tell application \"Xcode\"\n\t${2:--your code}\nend tell"
+	}
 }

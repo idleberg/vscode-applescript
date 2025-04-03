@@ -33,7 +33,7 @@
 		"outDir": "lib",
 
 		"allowImportingTsExtensions": true,
-		"noEmit": true,
+		"noEmit": true
 	},
 	/**
 	 * Use global.d.ts instead of compilerOptions.types
