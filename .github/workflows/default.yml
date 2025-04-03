@@ -3,14 +3,14 @@ name: CI
 on:
   push:
     paths:
-    - '.github/**'
+    - '.github/workflows/**'
     - 'src/**'
     - 'tests/**'
     - 'package.json'
     - 'pnpm-lock.yaml'
   pull_request:
       paths:
-      - '.github/**'
+      - '.github/workflows/**'
       - 'src/**'
       - 'tests/**'
       - 'package.json'
