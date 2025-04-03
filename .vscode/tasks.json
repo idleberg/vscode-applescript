@@ -1,0 +1,40 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Open Shell",
+			"type": "shell",
+			"command": "eval",
+			"args": ["$SHELL"],
+			"presentation": {
+				"clear": true,
+				"focus": true,
+				"group": "developmentGroup",
+				"panel": "dedicated"
+			}
+		},
+		{
+			"label": "Watch",
+			"type": "npm",
+			"script": "dev",
+			"presentation": {
+				"clear": true,
+				"focus": false,
+				"group": "developmentGroup",
+				"panel": "new",
+				"reveal": "silent",
+				"showReuseMessage": false
+			}
+		},
+		{
+			"label": "Development",
+			"dependsOn": ["Watch", "Open Shell"],
+			"group": {
+				"isDefault": true
+			},
+			"runOptions": {
+				"runOn": "folderOpen"
+			}
+		}
+	]
+}
