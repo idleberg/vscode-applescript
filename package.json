@@ -13,7 +13,6 @@
     "compile": "npm run build",
     "build": "concurrently --prefix '{name}' -c 'blue,green' 'npm:build:*'",
     "build:code": "tsup",
-    "build:icon": "gulp",
     "dev": "npm run start",
     "fix": "eslint --fix ./src",
     "lint:ts": "eslint ./src",
