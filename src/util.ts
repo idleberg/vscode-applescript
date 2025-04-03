@@ -62,9 +62,13 @@ export async function spawnPromise(cmd: string, fileName: string, args: Array<st
       outputChannel.show();
     }
 
-    const childProcess = spawn(cmd, args);
+    const childProcess = spawn(cmd, args, {
+			env: process.env
+		});
 
-    activeProcesses.add(childProcess.pid, fileName, cmd);
+		if (childProcess?.pid) {
+			activeProcesses.add(childProcess.pid, fileName, cmd);
+		}
 
     childProcess.stdout.on('data', async (line: string) => {
       const lineString: string = line.toString().trim();
@@ -93,7 +97,9 @@ export async function spawnPromise(cmd: string, fileName: string, args: Array<st
     });
 
     childProcess.on('close', (code: number) => {
-      activeProcesses.remove(childProcess.pid);
+			if (childProcess?.pid) {
+      	activeProcesses.remove(childProcess.pid);
+			}
 
       return (code === 0 || activeProcesses.lastKilledProcessId === childProcess.pid) ? resolve() : reject();
     });
