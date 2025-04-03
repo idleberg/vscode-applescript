@@ -18,6 +18,7 @@
     "fix": "eslint --fix ./src",
     "lint:ts": "eslint ./src",
     "lint": "npm-run-all --parallel lint:*",
+		"prepare": "husky",
     "publish:ovsx": "ovsx publish --no-dependencies",
     "publish:vsce": "vsce publish --githubBranch main --no-dependencies",
     "start": "npm run build:code -- --watch",
@@ -460,6 +461,8 @@
     "vscode-get-config": "^0.4.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "@types/node": "^20",
     "@types/vscode": "1.75.0",
     "applescript-svg-icon": "github:idleberg/applescript-svg-icon",
