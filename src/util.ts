@@ -70,9 +70,7 @@ export async function spawnPromise(
 			outputChannel.show();
 		}
 
-		const childProcess = spawn(cmd, args, {
-			env: process.env,
-		});
+		const childProcess = spawn(cmd, args);
 
 		if (childProcess?.pid) {
 			activeProcesses.add(childProcess.pid, fileName, cmd);
