@@ -463,6 +463,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
+    "@eslint/js": "^9.23.0",
     "@types/node": "^20.17.30",
     "@types/vscode": "1.75.0",
     "applescript-svg-icon": "github:idleberg/applescript-svg-icon",
