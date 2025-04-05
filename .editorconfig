@@ -14,7 +14,7 @@ block_comment_start = /*
 block_comment = *
 block_comment_end = */
 
-[*.{yml,yaml}]
+[*.{tmLanguage,yml,yaml}]
 indent_style = space
 
 [*.md]
