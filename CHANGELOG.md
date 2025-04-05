@@ -1,4 +1,10 @@
-# v0.26.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v1.26.1)
+# v0.27.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.27.0)
+
+- add `Alt`+`Enter` keybinding for continued lines (#40 by @donaldguy)
+- update tooling
+- update dependencies
+
+# v0.26.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.26.1)
 
 - fix `tsup` config
 - update dependencies
