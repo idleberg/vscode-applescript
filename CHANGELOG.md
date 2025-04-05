@@ -52,7 +52,7 @@
 - put options in order
 - update dependencies
 
-# v0.21.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.21.2
+# v0.21.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.21.2)
 - update tooling
 - update dependencies
 
