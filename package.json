@@ -1,491 +1,495 @@
 {
-  "name": "applescript",
-  "displayName": "AppleScript",
-  "description": "Language syntax, snippets and build system for AppleScript and JavaScript for Automation",
-  "version": "0.26.0",
-  "publisher": "idleberg",
-  "license": "MIT",
-  "author": {
-    "name": "Jan T. Sott",
-    "url": "http://github.com/idleberg"
-  },
-  "scripts": {
-    "compile": "npm run build",
-    "build": "npm-run-all --parallel build:*",
-    "build:code": "tsup",
-    "build:icon": "gulp",
-    "dev": "npm run start",
-    "fix": "eslint --fix ./src",
-    "lint:ts": "eslint ./src",
-    "lint": "npm-run-all --parallel lint:*",
-    "publish:ovsx": "ovsx publish --no-dependencies",
-    "publish:vsce": "vsce publish --githubBranch main --no-dependencies",
-    "start": "npm run build:code -- --watch",
-    "test": "npm run lint",
-    "vscode:prepublish": "npm run build"
-  },
-  "keywords": [
-    "apple",
-    "applescript",
-    "jxa",
-    "javascript for automation",
-    "macos"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/idleberg/vscode-applescript.git"
-  },
-  "homepage": "https://github.com/idleberg/vscode-applescript",
-  "bugs": {
-    "url": "https://github.com/idleberg/vscode-applescript/issues"
-  },
-  "main": "./lib/index.js",
-  "icon": "resources/logo.png",
-  "engines": {
-    "vscode": "^1.75.0"
-  },
-  "categories": [
-    "Programming Languages",
-    "Snippets",
-    "Other"
-  ],
-  "activationEvents": [
-    "onLanguage:javascript"
-  ],
-  "contributes": {
-    "configurationDefaults": {
-      "[applescript]": {
-        "files.encoding": "macroman"
-      }
-    },
-    "configuration": {
-      "type": "object",
-      "title": "AppleScript",
-      "properties": {
-        "applescript.showNotifications": {
-          "type": "boolean",
-          "default": true,
-          "description": "Show build notifications indicating success or failure",
-          "order": 1
-        },
-        "applescript.alwaysShowOutput": {
-          "type": "boolean",
-          "default": false,
-          "description": "Specify whether to show the output panel on errors only or on each build",
-          "order": 2
-        },
-        "applescript.convertErrorRange": {
-          "type": "boolean",
-          "default": false,
-          "description": "Convert error range to line/column",
-          "order": 3
-        },
-        "applescript.alwaysOpenBuildTask": {
-          "type": "boolean",
-          "default": true,
-          "description": "Specify whether to open the newly created build task",
-          "order": 4
-        },
-        "applescript.defaultBuildTask": {
-          "type": "string",
-          "enum": [
-            "script",
-            "bundle",
-            "app"
-          ],
-          "default": "script",
-          "description": "Specify the default build task when creating a new task file",
-          "order": 5
-        },
-        "applescript.ignoreOS": {
-          "type": "boolean",
-          "default": false,
-          "description": "For debugging purposes, you can disable the OS eligibility test",
-          "order": 6
-        },
-        "applescript.osacompile.executeOnly": {
-          "type": "boolean",
-          "default": false,
-          "description": "Save the resulting script as execute-only",
-          "order": 8
-        },
-        "applescript.osacompile.stayOpen": {
-          "type": "boolean",
-          "default": false,
-          "description": "Stay open after run handler",
-          "order": 9
-        },
-        "applescript.osacompile.startupScreen": {
-          "type": "boolean",
-          "default": false,
-          "description": "Show startup-screen",
-          "order": 10
-        },
-        "applescript.osascript.outputStyle": {
-          "type": "string",
-          "default": "",
-          "markdownDescription": "%osascriptOutputStyle%",
-          "order": 11
-        },
-        "applescript.scpt.theme": {
-          "type": "string",
-          "enum": [
-            "(none)",
-            "css-variables",
-            "dark-plus",
-            "dracula-soft",
-            "dracula",
-            "github-dark-dimmed",
-            "github-dark",
-            "github-light",
-            "hc_light",
-            "light-plus",
-            "material-theme-darker",
-            "material-theme-lighter",
-            "material-theme-ocean",
-            "material-theme-palenight",
-            "material-theme",
-            "min-dark",
-            "min-light",
-            "monokai",
-            "nord",
-            "one-dark-pro",
-            "poimandres",
-            "rose-pine-dawn",
-            "rose-pine-moon",
-            "rose-pine",
-            "slack-dark",
-            "slack-ochin",
-            "solarized-dark",
-            "solarized-light",
-            "vitesse-dark",
-            "vitesse-light"
-          ],
-          "default": "(none)",
-          "markdownDescription": "You can specify a syntax theme for binary AppleScript files, which are displayed in a custom web-view. Changes apply after re-opening the file or editor.",
-          "order": 13
-        },
-        "applescript.scpt.overrideThemeBackground": {
-          "type": "boolean",
-          "default": false,
-          "description": "Override theme background color of the syntax theme. Changes apply after re-opening the file or editor.",
-          "order": 14
-        },
-        "applescript.allowMultiTermination": {
-          "type": "boolean",
-          "default": false,
-          "description": "Allows the selection of multiple processes to be terminated",
-          "order": 15
-        }
-      }
-    },
-    "commands": [
-      {
-        "command": "extension.applescript.run",
-        "title": "AppleScript: Run Script",
-        "icon": {
-          "dark": "./resources/dark/run.svg",
-          "light": "./resources/light/run.svg"
-        }
-      },
-      {
-        "command": "extension.applescript.compile",
-        "title": "AppleScript: Compile Script",
-        "icon": {
-          "dark": "./resources/dark/script.svg",
-          "light": "./resources/light/script.svg"
-        }
-      },
-      {
-        "command": "extension.applescript.compileBundle",
-        "title": "AppleScript: Compile Script bundle",
-        "icon": {
-          "dark": "./resources/dark/bundle.svg",
-          "light": "./resources/light/bundle.svg"
-        }
-      },
-      {
-        "command": "extension.applescript.compileApp",
-        "title": "AppleScript: Compile Application",
-        "icon": {
-          "dark": "./resources/dark/app.svg",
-          "light": "./resources/light/app.svg"
-        }
-      },
-      {
-        "command": "extension.applescript.openSettings",
-        "title": "AppleScript: Open Settings",
-        "icon": {
-          "dark": "./resources/dark/settings.svg",
-          "light": "./resources/light/settings.svg"
-        }
-      },
-      {
-        "command": "extension.applescript.terminateProcess",
-        "title": "AppleScript: Terminate Process",
-        "icon": {
-          "dark": "./resources/dark/terminate.svg",
-          "light": "./resources/light/terminate.svg"
-        }
-      },
-      {
-        "command": "extension.applescript.createBuildTask",
-        "title": "AppleScript: Create Build Task",
-        "icon": {
-          "dark": "./resources/dark/task.svg",
-          "light": "./resources/light/task.svg"
-        }
-      },
-      {
-        "command": "extension.jxa.run",
-        "title": "JXA: Run Script",
-        "icon": {
-          "dark": "./resources/dark/run.svg",
-          "light": "./resources/light/run.svg"
-        }
-      },
-      {
-        "command": "extension.jxa.compile",
-        "title": "JXA: Compile Script",
-        "icon": {
-          "dark": "./resources/dark/script.svg",
-          "light": "./resources/light/script.svg"
-        }
-      },
-      {
-        "command": "extension.jxa.compileBundle",
-        "title": "JXA: Compile Script bundle",
-        "icon": {
-          "dark": "./resources/dark/bundle.svg",
-          "light": "./resources/light/bundle.svg"
-        }
-      },
-      {
-        "command": "extension.jxa.compileApp",
-        "title": "JXA: Compile Application",
-        "icon": {
-          "dark": "./resources/dark/app.svg",
-          "light": "./resources/light/app.svg"
-        }
-      },
-      {
-        "command": "extension.jxa.openSettings",
-        "title": "JXA: Open Settings",
-        "icon": {
-          "dark": "./resources/dark/settings.svg",
-          "light": "./resources/light/settings.svg"
-        }
-      },
-      {
-        "command": "extension.jxa.terminateProcess",
-        "title": "JXA: Terminate Process",
-        "icon": {
-          "dark": "./resources/dark/terminate.svg",
-          "light": "./resources/light/terminate.svg"
-        }
-      }
-    ],
-    "menus": {
-      "editor/title": [
-        {
-          "when": "resourceLangId == applescript",
-          "command": "extension.applescript.run",
-          "group": "navigation@1"
-        },
-        {
-          "when": "resourceLangId == applescript",
-          "command": "extension.applescript.compile",
-          "group": "navigation@2"
-        },
-        {
-          "when": "resourceLangId == applescript",
-          "command": "extension.applescript.compileBundle",
-          "group": "navigation@3"
-        },
-        {
-          "when": "resourceLangId == applescript",
-          "command": "extension.applescript.compileApp",
-          "group": "navigation@4"
-        },
-        {
-          "when": "resourceLangId == applescript",
-          "command": "extension.applescript.createBuildTask",
-          "group": "navigation@5"
-        },
-        {
-          "when": "resourceLangId == applescript",
-          "command": "extension.applescript.terminateProcess",
-          "group": "navigation@6"
-        },
-        {
-          "when": "resourceLangId == applescript",
-          "command": "extension.applescript.openSettings",
-          "group": "navigation@6"
-        },
-        {
-          "when": "resourceLangId == jxa",
-          "command": "extension.jxa.run",
-          "group": "navigation@1"
-        },
-        {
-          "when": "resourceLangId == jxa",
-          "command": "extension.jxa.compile",
-          "group": "navigation@2"
-        },
-        {
-          "when": "resourceLangId == jxa",
-          "command": "extension.jxa.compileBundle",
-          "group": "navigation@3"
-        },
-        {
-          "when": "resourceLangId == jxa",
-          "command": "extension.jxa.compileApp",
-          "group": "navigation@4"
-        },
-        {
-          "when": "resourceLangId == jxa",
-          "command": "extension.applescript.terminateProcess",
-          "group": "navigation@5"
-        },
-        {
-          "when": "resourceLangId == jxa",
-          "command": "extension.applescript.openSettings",
-          "group": "navigation@6"
-        }
-      ]
-    },
-    "keybindings": [
-      {
-        "key": "shift+alt+b",
-        "when": "editorFocus && editorLangId == applescript",
-        "command": "extension.applescript.compile"
-      },
-      {
-        "key": "shift+alt+r",
-        "when": "editorFocus && editorLangId == applescript",
-        "command": "extension.applescript.run"
-      },
-      {
+	"name": "applescript",
+	"displayName": "AppleScript",
+	"description": "Language syntax, snippets and build system for AppleScript and JavaScript for Automation",
+	"version": "0.26.1",
+	"publisher": "idleberg",
+	"license": "MIT",
+	"author": {
+		"name": "Jan T. Sott",
+		"url": "http://github.com/idleberg"
+	},
+	"scripts": {
+		"compile": "npm run build",
+		"build": "concurrently --prefix '{name}' -c 'blue,green' 'npm:build:*'",
+		"build:code": "tsup",
+		"dev": "npm run start",
+		"fix": "eslint --fix ./src",
+		"lint:ts": "eslint ./src",
+		"lint": "concurrently --prefix '{name}' -c 'blue,green' 'npm:lint:*'",
+		"prepare": "husky",
+		"publish:ovsx": "ovsx publish --no-dependencies",
+		"publish:vsce": "vsce publish --githubBranch main --no-dependencies",
+		"start": "npm run build:code -- --watch",
+		"test": "npm run lint",
+		"vscode:prepublish": "npm run build"
+	},
+	"keywords": [
+		"apple",
+		"applescript",
+		"jxa",
+		"javascript for automation",
+		"macos"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/idleberg/vscode-applescript.git"
+	},
+	"homepage": "https://github.com/idleberg/vscode-applescript",
+	"bugs": {
+		"url": "https://github.com/idleberg/vscode-applescript/issues"
+	},
+	"main": "./lib/index.js",
+	"icon": "resources/logo.png",
+	"engines": {
+		"vscode": "^1.75.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Snippets",
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:javascript"
+	],
+	"contributes": {
+		"configurationDefaults": {
+			"[applescript]": {
+				"files.encoding": "macroman"
+			}
+		},
+		"configuration": {
+			"type": "object",
+			"title": "AppleScript",
+			"properties": {
+				"applescript.showNotifications": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show build notifications indicating success or failure",
+					"order": 1
+				},
+				"applescript.alwaysShowOutput": {
+					"type": "boolean",
+					"default": false,
+					"description": "Specify whether to show the output panel on errors only or on each build",
+					"order": 2
+				},
+				"applescript.convertErrorRange": {
+					"type": "boolean",
+					"default": false,
+					"description": "Convert error range to line/column",
+					"order": 3
+				},
+				"applescript.alwaysOpenBuildTask": {
+					"type": "boolean",
+					"default": true,
+					"description": "Specify whether to open the newly created build task",
+					"order": 4
+				},
+				"applescript.defaultBuildTask": {
+					"type": "string",
+					"enum": [
+						"script",
+						"bundle",
+						"app"
+					],
+					"default": "script",
+					"description": "Specify the default build task when creating a new task file",
+					"order": 5
+				},
+				"applescript.ignoreOS": {
+					"type": "boolean",
+					"default": false,
+					"description": "For debugging purposes, you can disable the OS eligibility test",
+					"order": 6
+				},
+				"applescript.osacompile.executeOnly": {
+					"type": "boolean",
+					"default": false,
+					"description": "Save the resulting script as execute-only",
+					"order": 8
+				},
+				"applescript.osacompile.stayOpen": {
+					"type": "boolean",
+					"default": false,
+					"description": "Stay open after run handler",
+					"order": 9
+				},
+				"applescript.osacompile.startupScreen": {
+					"type": "boolean",
+					"default": false,
+					"description": "Show startup-screen",
+					"order": 10
+				},
+				"applescript.osascript.outputStyle": {
+					"type": "string",
+					"default": "",
+					"markdownDescription": "%osascriptOutputStyle%",
+					"order": 11
+				},
+				"applescript.scpt.theme": {
+					"type": "string",
+					"enum": [
+						"(none)",
+						"css-variables",
+						"dark-plus",
+						"dracula-soft",
+						"dracula",
+						"github-dark-dimmed",
+						"github-dark",
+						"github-light",
+						"hc_light",
+						"light-plus",
+						"material-theme-darker",
+						"material-theme-lighter",
+						"material-theme-ocean",
+						"material-theme-palenight",
+						"material-theme",
+						"min-dark",
+						"min-light",
+						"monokai",
+						"nord",
+						"one-dark-pro",
+						"poimandres",
+						"rose-pine-dawn",
+						"rose-pine-moon",
+						"rose-pine",
+						"slack-dark",
+						"slack-ochin",
+						"solarized-dark",
+						"solarized-light",
+						"vitesse-dark",
+						"vitesse-light"
+					],
+					"default": "(none)",
+					"markdownDescription": "You can specify a syntax theme for binary AppleScript files, which are displayed in a custom web-view. Changes apply after re-opening the file or editor.",
+					"order": 13
+				},
+				"applescript.scpt.overrideThemeBackground": {
+					"type": "boolean",
+					"default": false,
+					"description": "Override theme background color of the syntax theme. Changes apply after re-opening the file or editor.",
+					"order": 14
+				},
+				"applescript.allowMultiTermination": {
+					"type": "boolean",
+					"default": false,
+					"description": "Allows the selection of multiple processes to be terminated",
+					"order": 15
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "extension.applescript.run",
+				"title": "AppleScript: Run Script",
+				"icon": {
+					"dark": "./resources/dark/run.svg",
+					"light": "./resources/light/run.svg"
+				}
+			},
+			{
+				"command": "extension.applescript.compile",
+				"title": "AppleScript: Compile Script",
+				"icon": {
+					"dark": "./resources/dark/script.svg",
+					"light": "./resources/light/script.svg"
+				}
+			},
+			{
+				"command": "extension.applescript.compileBundle",
+				"title": "AppleScript: Compile Script bundle",
+				"icon": {
+					"dark": "./resources/dark/bundle.svg",
+					"light": "./resources/light/bundle.svg"
+				}
+			},
+			{
+				"command": "extension.applescript.compileApp",
+				"title": "AppleScript: Compile Application",
+				"icon": {
+					"dark": "./resources/dark/app.svg",
+					"light": "./resources/light/app.svg"
+				}
+			},
+			{
+				"command": "extension.applescript.openSettings",
+				"title": "AppleScript: Open Settings",
+				"icon": {
+					"dark": "./resources/dark/settings.svg",
+					"light": "./resources/light/settings.svg"
+				}
+			},
+			{
+				"command": "extension.applescript.terminateProcess",
+				"title": "AppleScript: Terminate Process",
+				"icon": {
+					"dark": "./resources/dark/terminate.svg",
+					"light": "./resources/light/terminate.svg"
+				}
+			},
+			{
+				"command": "extension.applescript.createBuildTask",
+				"title": "AppleScript: Create Build Task",
+				"icon": {
+					"dark": "./resources/dark/task.svg",
+					"light": "./resources/light/task.svg"
+				}
+			},
+			{
+				"command": "extension.jxa.run",
+				"title": "JXA: Run Script",
+				"icon": {
+					"dark": "./resources/dark/run.svg",
+					"light": "./resources/light/run.svg"
+				}
+			},
+			{
+				"command": "extension.jxa.compile",
+				"title": "JXA: Compile Script",
+				"icon": {
+					"dark": "./resources/dark/script.svg",
+					"light": "./resources/light/script.svg"
+				}
+			},
+			{
+				"command": "extension.jxa.compileBundle",
+				"title": "JXA: Compile Script bundle",
+				"icon": {
+					"dark": "./resources/dark/bundle.svg",
+					"light": "./resources/light/bundle.svg"
+				}
+			},
+			{
+				"command": "extension.jxa.compileApp",
+				"title": "JXA: Compile Application",
+				"icon": {
+					"dark": "./resources/dark/app.svg",
+					"light": "./resources/light/app.svg"
+				}
+			},
+			{
+				"command": "extension.jxa.openSettings",
+				"title": "JXA: Open Settings",
+				"icon": {
+					"dark": "./resources/dark/settings.svg",
+					"light": "./resources/light/settings.svg"
+				}
+			},
+			{
+				"command": "extension.jxa.terminateProcess",
+				"title": "JXA: Terminate Process",
+				"icon": {
+					"dark": "./resources/dark/terminate.svg",
+					"light": "./resources/light/terminate.svg"
+				}
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"when": "resourceLangId == applescript",
+					"command": "extension.applescript.run",
+					"group": "navigation@1"
+				},
+				{
+					"when": "resourceLangId == applescript",
+					"command": "extension.applescript.compile",
+					"group": "navigation@2"
+				},
+				{
+					"when": "resourceLangId == applescript",
+					"command": "extension.applescript.compileBundle",
+					"group": "navigation@3"
+				},
+				{
+					"when": "resourceLangId == applescript",
+					"command": "extension.applescript.compileApp",
+					"group": "navigation@4"
+				},
+				{
+					"when": "resourceLangId == applescript",
+					"command": "extension.applescript.createBuildTask",
+					"group": "navigation@5"
+				},
+				{
+					"when": "resourceLangId == applescript",
+					"command": "extension.applescript.terminateProcess",
+					"group": "navigation@6"
+				},
+				{
+					"when": "resourceLangId == applescript",
+					"command": "extension.applescript.openSettings",
+					"group": "navigation@6"
+				},
+				{
+					"when": "resourceLangId == jxa",
+					"command": "extension.jxa.run",
+					"group": "navigation@1"
+				},
+				{
+					"when": "resourceLangId == jxa",
+					"command": "extension.jxa.compile",
+					"group": "navigation@2"
+				},
+				{
+					"when": "resourceLangId == jxa",
+					"command": "extension.jxa.compileBundle",
+					"group": "navigation@3"
+				},
+				{
+					"when": "resourceLangId == jxa",
+					"command": "extension.jxa.compileApp",
+					"group": "navigation@4"
+				},
+				{
+					"when": "resourceLangId == jxa",
+					"command": "extension.applescript.terminateProcess",
+					"group": "navigation@5"
+				},
+				{
+					"when": "resourceLangId == jxa",
+					"command": "extension.applescript.openSettings",
+					"group": "navigation@6"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"key": "shift+alt+b",
+				"when": "editorFocus && editorLangId == applescript",
+				"command": "extension.applescript.compile"
+			},
+			{
+				"key": "shift+alt+r",
+				"when": "editorFocus && editorLangId == applescript",
+				"command": "extension.applescript.run"
+			},
+			{
 				"key": "alt+enter",
 				"when": "editorFocus && editorLangId == applescript",
 				"command": "editor.action.insertSnippet",
 				"args": {
 					"langid": "applescript",
 					"name": "continued line"
-				}	
+				}
 			}
-    ],
-    "languages": [
-      {
-        "id": "applescript",
-        "aliases": [
-          "AppleScript",
-          "applescript"
-        ],
-        "extensions": [
-          ".applescript"
-        ],
-        "firstLine": "^#!/.*\\bosascript\\b",
-        "configuration": "./config/applescript.configuration.json"
-      },
-      {
-        "id": "applescript.binary",
-        "aliases": [
-          "Binary AppleScript",
-          "applescript.binary",
-          "scpt"
-        ],
-        "extensions": [
-          ".scpt"
-        ],
-        "configuration": "./config/applescript.configuration.json"
-      },
-      {
-        "id": "jxa",
-        "aliases": [
-          "JavaScript for Automation (JXA)",
-          "jxa"
-        ],
-        "extensions": [
-          ".jxa",
-          ".jxainc"
-        ],
-        "configuration": "./config/jxa.configuration.json"
-      },
-      {
-        "id": "applescript-injection"
-      }
-    ],
-    "customEditors": [
-      {
-        "viewType": "applescript.binary",
-        "displayName": "AppleScript (Binary)",
-        "selector": [
-          {
-            "filenamePattern": "*.scpt"
-          },
-          {
-            "filenamePattern": "*.scptd"
-          }
-        ],
-        "priority": "default"
-      }
-    ],
-    "grammars": [
-      {
-        "language": "applescript",
-        "scopeName": "source.applescript",
-        "path": "./syntaxes/applescript.tmLanguage"
-      },
-      {
-        "language": "jxa",
-        "scopeName": "source.js.jxa",
-        "path": "./syntaxes/jxa.tmLanguage",
-        "embeddedLanguages": {
-          "source.js": "javascript"
-        }
-      },
-      {
-        "language": "applescript-injection",
-        "scopeName": "markdown.applescript.codeblock",
-        "path": "./syntaxes/codeblock.json",
-        "injectTo": [
-          "text.html.markdown"
-        ],
-        "embeddedLanguages": {
-          "meta.embedded.block.applescript": "applescript"
-        }
-      }
-    ],
-    "snippets": [
-      {
-        "language": "applescript",
-        "path": "./snippets/applescript.json"
-      }
-    ]
-  },
-  "dependencies": {
-    "line-column": "^1.0.2",
-    "vscode-get-config": "^0.4.0"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/vscode": "1.75.0",
-    "applescript-svg-icon": "github:idleberg/applescript-svg-icon",
-    "cross-env": "^7.0.3",
-    "eslint": "9.12.0",
-    "eslint-plugin-jsonc": "^2.16.0",
-    "gulp": "^5.0.0",
-    "gulp-raster-update": "^0.2.0",
-    "gulp-rename": "^2.0.0",
-    "husky": "^9.1.6",
-    "lint-staged": "^15.2.10",
-    "npm-run-all2": "^6.2.3",
-    "tsup": "^8.3.0",
-    "typescript": "^5.6.3",
-    "typescript-eslint": "^8.9.0"
-  },
-  "lint-staged": {
-    "*.(ts|json|yml)": "eslint --cache --fix"
-  }
+		],
+		"languages": [
+			{
+				"id": "applescript",
+				"aliases": [
+					"AppleScript",
+					"applescript"
+				],
+				"extensions": [
+					".applescript"
+				],
+				"firstLine": "^#!/.*\\bosascript\\b",
+				"configuration": "./config/applescript.configuration.json"
+			},
+			{
+				"id": "applescript.binary",
+				"aliases": [
+					"Binary AppleScript",
+					"applescript.binary",
+					"scpt"
+				],
+				"extensions": [
+					".scpt"
+				],
+				"configuration": "./config/applescript.configuration.json"
+			},
+			{
+				"id": "jxa",
+				"aliases": [
+					"JavaScript for Automation (JXA)",
+					"jxa"
+				],
+				"extensions": [
+					".jxa",
+					".jxainc"
+				],
+				"configuration": "./config/jxa.configuration.json"
+			},
+			{
+				"id": "applescript-injection"
+			}
+		],
+		"customEditors": [
+			{
+				"viewType": "applescript.binary",
+				"displayName": "AppleScript (Binary)",
+				"selector": [
+					{
+						"filenamePattern": "*.scpt"
+					},
+					{
+						"filenamePattern": "*.scptd"
+					}
+				],
+				"priority": "default"
+			}
+		],
+		"grammars": [
+			{
+				"language": "applescript",
+				"scopeName": "source.applescript",
+				"path": "./syntaxes/applescript.tmLanguage"
+			},
+			{
+				"language": "jxa",
+				"scopeName": "source.js.jxa",
+				"path": "./syntaxes/jxa.tmLanguage",
+				"embeddedLanguages": {
+					"source.js": "javascript"
+				}
+			},
+			{
+				"language": "applescript-injection",
+				"scopeName": "markdown.applescript.codeblock",
+				"path": "./syntaxes/codeblock.json",
+				"injectTo": [
+					"text.html.markdown"
+				],
+				"embeddedLanguages": {
+					"meta.embedded.block.applescript": "applescript"
+				}
+			}
+		],
+		"snippets": [
+			{
+				"language": "applescript",
+				"path": "./snippets/applescript.json"
+			}
+		]
+	},
+	"dependencies": {
+		"line-column": "^1.0.2",
+		"vscode-get-config": "^0.4.0"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^19.8.0",
+		"@commitlint/config-conventional": "^19.8.0",
+		"@eslint/js": "^9.23.0",
+		"@types/node": "^20.17.30",
+		"@types/vscode": "1.75.0",
+		"applescript-svg-icon": "github:idleberg/applescript-svg-icon",
+		"concurrently": "^9.1.2",
+		"cross-env": "^7.0.3",
+		"eslint": "9.23.0",
+		"eslint-plugin-jsonc": "^2.20.0",
+		"gulp": "^5.0.0",
+		"gulp-raster-update": "^0.2.0",
+		"gulp-rename": "^2.0.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^15.5.0",
+		"prettier": "^3.5.3",
+		"tsup": "^8.4.0",
+		"typescript": "^5.8.2",
+		"typescript-eslint": "^8.29.0"
+	},
+	"lint-staged": {
+		"*.(ts|json|yml)": "eslint --cache --fix"
+	}
 }
