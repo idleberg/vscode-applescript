@@ -490,6 +490,10 @@
 		"typescript-eslint": "^8.29.0"
 	},
 	"lint-staged": {
-		"*.(ts|json|yml)": "eslint --cache --fix"
+		"*.(ts|json|yml)": [
+			"eslint --cache --fix",
+			"prettier --write"
+		],
+		"*.md": "prettier --write"
 	}
 }
