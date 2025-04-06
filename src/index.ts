@@ -1,5 +1,3 @@
-"use strict";
-
 import { commands, type ExtensionContext } from "vscode";
 import { createBuildTask } from "./task.ts";
 import { osacompile, osascript } from "./osa.ts";

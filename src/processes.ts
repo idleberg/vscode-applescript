@@ -1,3 +1,4 @@
+// @ts-expect-error TODO Fix package
 import { getConfig } from "vscode-get-config";
 import { kill } from "node:process";
 import { window } from "vscode";

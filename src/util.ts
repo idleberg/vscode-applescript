@@ -1,5 +1,6 @@
 // Dependencies
 import { basename, dirname, extname, join } from "node:path";
+// @ts-expect-error TODO Fix package
 import { getConfig } from "vscode-get-config";
 import { spawn } from "node:child_process";
 import { type OutputChannel, window } from "vscode";
@@ -34,7 +35,7 @@ async function getLineCol(lineString: string): Promise<string | boolean> {
 	}
 
 	const lineCol = lineColumn(editorText, { origin: 1 }).fromIndex(
-		result.groups.rangeFrom,
+		parseInt(result.groups.rangeFrom, 10),
 	);
 
 	if (!lineCol) {

@@ -1,11 +1,15 @@
 import { basename, resolve } from "node:path";
+// @ts-expect-error TODO Fix package
 import { getConfig } from "vscode-get-config";
 import { getOutName } from "./util.ts";
 import { promises as fs } from "node:fs";
 import { window, workspace } from "vscode";
 
 async function createBuildTask(isJXA = false): Promise<void> {
-	if (typeof workspace.workspaceFolders === "undefined") {
+	if (
+		typeof workspace.workspaceFolders === "undefined" ||
+		workspace.workspaceFolders.length < 1
+	) {
 		window.showErrorMessage(
 			"Task support is only available when working on a workspace folder. It is not available when editing single files.",
 		);
@@ -95,7 +99,7 @@ async function createBuildTask(isJXA = false): Promise<void> {
 
 	const jsonString = JSON.stringify(taskFile, null, 2);
 	const dotFolder = resolve(
-		workspace.workspaceFolders[0].uri.fsPath,
+		workspace.workspaceFolders[0]!.uri.fsPath,
 		".vscode",
 	);
 	const buildFile = resolve(dotFolder, "tasks.json");

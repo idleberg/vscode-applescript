@@ -1,4 +1,4 @@
-// Dependencies
+// @ts-expect-error TODO Fix package
 import { getConfig } from "vscode-get-config";
 import { getOutName, spawnPromise } from "./util.ts";
 import { platform } from "node:os";
