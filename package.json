@@ -461,6 +461,10 @@
 			{
 				"language": "applescript",
 				"path": "./snippets/applescript.json"
+			},
+			{
+				"language": "applescript",
+				"path": "./snippets/editor-actions.json"
 			}
 		]
 	},
