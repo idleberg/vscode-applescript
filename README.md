@@ -9,7 +9,7 @@ Language syntax, snippets and build system for AppleScript and JavaScript for Au
 
 ![Screenshot](https://raw.githubusercontent.com/idleberg/vscode-applescript/main/resources/screenshot.png)
 
-*Screenshot of AppleScript in Visual Studio Code with [Hopscotch](https://marketplace.visualstudio.com/items?itemName=idleberg.hopscotch) theme*
+_Screenshot of AppleScript in Visual Studio Code with [Hopscotch](https://marketplace.visualstudio.com/items?itemName=idleberg.hopscotch) theme_
 
 ## Installation
 
@@ -45,32 +45,32 @@ $ ovsx get idleberg.applescript
 
 On macOS, you can make use of the following build commands through the [command-palette](https://code.visualstudio.com/docs/editor/codebasics#_command-palette):
 
-* AppleScript: Run Script – <kbd>Shift ⇧</kbd>+<kbd>Option ⌥</kbd>+<kbd>R</kbd>
-* AppleScript: Compile Script – <kbd>Shift ⇧</kbd>+<kbd>Option ⌥</kbd>+<kbd>B</kbd>
-* AppleScript: Compile Script bundle
-* AppleScript: Compile Application
-* JXA: Run Script
-* JXA: Compile Script
-* JXA: Compile Script bundle
-* JXA: Compile Application
+- AppleScript: Run Script – <kbd>Shift ⇧</kbd>+<kbd>Option ⌥</kbd>+<kbd>R</kbd>
+- AppleScript: Compile Script – <kbd>Shift ⇧</kbd>+<kbd>Option ⌥</kbd>+<kbd>B</kbd>
+- AppleScript: Compile Script bundle
+- AppleScript: Compile Application
+- JXA: Run Script
+- JXA: Compile Script
+- JXA: Compile Script bundle
+- JXA: Compile Application
 
 ### Settings
 
 You can tweak the defaults for this package, `osacompile` and `osascript` in the package settings.
 
-| Setting                         | Default    | Description                                                                                        |
-|---------------------------------|------------|----------------------------------------------------------------------------------------------------|
-| `showNotifications`             | `true`     | Show build notifications indicating success or failure                                             |
-| `alwaysShowOutput`              | `false`    | Specify whether to show the output panel on errors only or on each build                           |
-| `convertErrorRange`             | `false`    | Convert error range to line/column                                                                 |
-| `defaultBuildTask`              | `"script"` | Specify the default build task when creating a new task file                                       |
-| `allowMultiTermination`         | `false`    | Allows the selection of multiple processes to be terminated                                        |
-| `osacompile.executeOnly`        | `false`    | Save the resulting script as execute-only                                                          |
-| `osacompile.stayOpen`           | `false`    | Stay open after run handler                                                                        |
-| `osacompile.startupScreen`      | `false`    | Show startup-screen                                                                                |
-| `osascript.outputStyle`         | -          | The flags argument is a string consisting of any of the modifier characters `e`, `h`, `o`, and `s` |
-| `scpt.theme`                    | `"(none)"` | Custom syntax theme for binary AppleScript files, which are opened in a custom web-view            |
-| `scpt.overrideThemeBackground`  | `false`    | Allows overriding the syntax-theme's background color                                              |
+| Setting                        | Default    | Description                                                                                        |
+| ------------------------------ | ---------- | -------------------------------------------------------------------------------------------------- |
+| `showNotifications`            | `true`     | Show build notifications indicating success or failure                                             |
+| `alwaysShowOutput`             | `false`    | Specify whether to show the output panel on errors only or on each build                           |
+| `convertErrorRange`            | `false`    | Convert error range to line/column                                                                 |
+| `defaultBuildTask`             | `"script"` | Specify the default build task when creating a new task file                                       |
+| `allowMultiTermination`        | `false`    | Allows the selection of multiple processes to be terminated                                        |
+| `osacompile.executeOnly`       | `false`    | Save the resulting script as execute-only                                                          |
+| `osacompile.stayOpen`          | `false`    | Stay open after run handler                                                                        |
+| `osacompile.startupScreen`     | `false`    | Show startup-screen                                                                                |
+| `osascript.outputStyle`        | -          | The flags argument is a string consisting of any of the modifier characters `e`, `h`, `o`, and `s` |
+| `scpt.theme`                   | `"(none)"` | Custom syntax theme for binary AppleScript files, which are opened in a custom web-view            |
+| `scpt.overrideThemeBackground` | `false`    | Allows overriding the syntax-theme's background color                                              |
 
 #### File Encoding
 
@@ -80,12 +80,12 @@ The default character encoding for AppleScript text files is [Mac Roman](https:/
 
 ```json
 {
-  "[applescript]": {
-    "files.encoding": "utf16le"
-  }
+	"[applescript]": {
+		"files.encoding": "utf16le"
+	}
 }
 ```
 
 ## License
 
-This work is licensed under [The MIT License](https://opensource.org/licenses/MIT)
+This work is licensed under [The MIT License](https://opensource.org/licenses/MIT).
