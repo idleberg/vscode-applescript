@@ -54,6 +54,12 @@
 					<key>name</key>
 					<string>constant.other.attributes.application.applescript</string>
 				</dict>
+				<dict>
+						<key>match</key>
+						<string>¬(?=\n)</string>
+						<key>name</key>
+						<string>constant.character.escape.line-continuation.applescript</string>
+				</dict>
 			</array>
 		</dict>
 		<key>blocks</key>
