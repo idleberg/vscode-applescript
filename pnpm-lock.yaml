@@ -11,9 +11,6 @@ importers:
       line-column:
         specifier: ^1.0.2
         version: 1.0.2
-      nano-staged:
-        specifier: ^0.8.0
-        version: 0.8.0
       vscode-get-config:
         specifier: ^0.4.0
         version: 0.4.0
@@ -57,9 +54,6 @@ importers:
       husky:
         specifier: ^9.1.7
         version: 9.1.7
-      prettier:
-        specifier: ^3.5.3
-        version: 3.5.3
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(jiti@2.4.2)(typescript@5.8.3)(yaml@2.7.1)
@@ -1615,11 +1609,6 @@ packages:
   mz@2.7.0:
     resolution: {integrity: sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==}
 
-  nano-staged@0.8.0:
-    resolution: {integrity: sha512-QSEqPGTCJbkHU2yLvfY6huqYPjdBrOaTMKatO1F8nCSrkQGXeKwtCiCnsdxnuMhbg3DTVywKaeWLGCE5oJpq0g==}
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-    hasBin: true
-
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
@@ -1781,11 +1770,6 @@ packages:
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
-
-  prettier@3.5.3:
-    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
-    engines: {node: '>=14'}
-    hasBin: true
 
   process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
@@ -3698,10 +3682,6 @@ snapshots:
       object-assign: 4.1.1
       thenify-all: 1.6.0
 
-  nano-staged@0.8.0:
-    dependencies:
-      picocolors: 1.1.1
-
   natural-compare@1.4.0: {}
 
   normalize-path@3.0.0: {}
@@ -3852,8 +3832,6 @@ snapshots:
       yaml: 2.7.1
 
   prelude-ls@1.2.1: {}
-
-  prettier@3.5.3: {}
 
   process-nextick-args@2.0.1: {}
 
