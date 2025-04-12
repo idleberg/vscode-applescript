@@ -34,11 +34,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Enable Corepack
-        run: |
-          npm install --global corepack@latest
-          corepack enable
-
       - name: Get pnpm store directory
         shell: bash
         run: |
@@ -51,6 +46,11 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
+
+      - name: Enable Corepack
+        run: |
+          pnpm install --global corepack@10.8.0
+          corepack enable
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --strict-peer-dependencies
