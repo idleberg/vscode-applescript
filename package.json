@@ -11,8 +11,7 @@
 	},
 	"scripts": {
 		"compile": "npm run build",
-		"build": "concurrently --prefix '{name}' -c 'blue,green' 'npm:build:*'",
-		"build:code": "tsup",
+		"build": "tsup",
 		"dev": "npm run start",
 		"lint": "biome check --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
 		"prepare": "husky",
