@@ -1,7 +1,7 @@
+import { kill } from 'node:process';
+import { window } from 'vscode';
 // @ts-expect-error TODO Fix package
-import { getConfig } from "vscode-get-config";
-import { kill } from "node:process";
-import { window } from "vscode";
+import { getConfig } from 'vscode-get-config';
 
 const activeProcesses = new Map<number, ActiveProcess>();
 
@@ -38,7 +38,7 @@ export async function pick() {
 		return;
 	}
 
-	const { allowMultiTermination } = await getConfig("applescript");
+	const { allowMultiTermination } = await getConfig('applescript');
 
 	const pick = await window.showQuickPick(processList, {
 		canPickMany: allowMultiTermination,
@@ -49,7 +49,7 @@ export async function pick() {
 		const picks = Array.isArray(pick) ? pick : [pick];
 
 		picks.map((item) => {
-			const pid = item.detail.split(" ")[0];
+			const pid = item.detail.split(' ')[0];
 
 			kill(Number(pid));
 		});

@@ -1,28 +1,24 @@
-import { basename, resolve } from "node:path";
+import { promises as fs } from 'node:fs';
+import { basename, resolve } from 'node:path';
+import { window, workspace } from 'vscode';
 // @ts-expect-error TODO Fix package
-import { getConfig } from "vscode-get-config";
-import { getOutName } from "./util.ts";
-import { promises as fs } from "node:fs";
-import { window, workspace } from "vscode";
+import { getConfig } from 'vscode-get-config';
+import { getOutName } from './util.ts';
 
 async function createBuildTask(isJXA = false): Promise<void> {
-	if (
-		typeof workspace.workspaceFolders === "undefined" ||
-		workspace.workspaceFolders.length < 1
-	) {
+	if (typeof workspace.workspaceFolders === 'undefined' || workspace.workspaceFolders.length < 1) {
 		window.showErrorMessage(
-			"Task support is only available when working on a workspace folder. It is not available when editing single files.",
+			'Task support is only available when working on a workspace folder. It is not available when editing single files.',
 		);
 		return;
 	}
 
-	const { alwaysOpenBuildTask, defaultBuildTask, osacompile, osascript } =
-		await getConfig("applescript");
+	const { alwaysOpenBuildTask, defaultBuildTask, osacompile, osascript } = await getConfig('applescript');
 
 	const doc = window.activeTextEditor?.document;
 
 	if (!doc) {
-		console.error("[idleberg.applescript] Document not found");
+		console.error('[idleberg.applescript] Document not found');
 		return;
 	}
 	const fileName: string = basename(doc.fileName);
@@ -32,77 +28,66 @@ async function createBuildTask(isJXA = false): Promise<void> {
 	const appArgs: string[] = [];
 
 	if (isJXA === true) {
-		args.push("-l", "JavaScript");
+		args.push('-l', 'JavaScript');
 	}
 
 	if (osacompile.executeOnly === true) {
-		args.push("-x");
+		args.push('-x');
 	}
 
 	if (osacompile.stayOpen === true) {
-		appArgs.push("-s");
+		appArgs.push('-s');
 	}
 
 	if (osacompile.startupScreen === true) {
-		appArgs.push("-u");
+		appArgs.push('-u');
 	}
 
-	if (
-		osascript.outputStyle.trim().length > 0 &&
-		osascript.outputStyle.trim().length <= 2
-	) {
-		runArgs.push("-s", osascript.outputStyle.trim());
+	if (osascript.outputStyle.trim().length > 0 && osascript.outputStyle.trim().length <= 2) {
+		runArgs.push('-s', osascript.outputStyle.trim());
 	}
 
 	const taskFile = {
-		version: "2.0.0",
+		version: '2.0.0',
 		tasks: [
 			{
-				label: "Run Script",
-				type: "shell",
-				command: "osascript",
+				label: 'Run Script',
+				type: 'shell',
+				command: 'osascript',
 				args: [...args, ...runArgs, fileName],
 			},
 			{
-				label: "Compile Script",
-				type: "shell",
-				command: "osacompile",
-				args: [...args, "-o", basename(getOutName(doc.fileName)), fileName],
-				group: defaultBuildTask === "script" ? "build" : "none",
+				label: 'Compile Script',
+				type: 'shell',
+				command: 'osacompile',
+				args: [...args, '-o', basename(getOutName(doc.fileName)), fileName],
+				group: defaultBuildTask === 'script' ? 'build' : 'none',
 			},
 			{
-				label: "Compile Script Bundle",
-				type: "shell",
-				command: "osacompile",
-				args: [
-					...args,
-					"-o",
-					basename(getOutName(doc.fileName, "scptd")),
-					fileName,
-				],
-				group: defaultBuildTask === "bundle" ? "build" : "none",
+				label: 'Compile Script Bundle',
+				type: 'shell',
+				command: 'osacompile',
+				args: [...args, '-o', basename(getOutName(doc.fileName, 'scptd')), fileName],
+				group: defaultBuildTask === 'bundle' ? 'build' : 'none',
 			},
 			{
-				label: "Compile Application",
-				type: "shell",
-				command: "osacompile",
-				args: [
-					...args,
-					"-o",
-					basename(getOutName(doc.fileName, "app")),
-					fileName,
-				],
-				group: defaultBuildTask === "app" ? "build" : "none",
+				label: 'Compile Application',
+				type: 'shell',
+				command: 'osacompile',
+				args: [...args, '-o', basename(getOutName(doc.fileName, 'app')), fileName],
+				group: defaultBuildTask === 'app' ? 'build' : 'none',
 			},
 		],
 	};
 
+	if (!workspace.workspaceFolders[0]?.uri.fsPath) {
+		window.showErrorMessage('Did not find workspace folder.');
+		return;
+	}
+
 	const jsonString = JSON.stringify(taskFile, null, 2);
-	const dotFolder = resolve(
-		workspace.workspaceFolders[0]!.uri.fsPath,
-		".vscode",
-	);
-	const buildFile = resolve(dotFolder, "tasks.json");
+	const dotFolder = resolve(workspace.workspaceFolders[0].uri.fsPath, '.vscode');
+	const buildFile = resolve(dotFolder, 'tasks.json');
 
 	await fs.mkdir(dotFolder);
 
@@ -114,10 +99,7 @@ async function createBuildTask(isJXA = false): Promise<void> {
 			window.showTextDocument(taskFile);
 		}
 	} catch (error) {
-		console.error(
-			"[idleberg.applescript]",
-			error instanceof Error ? error.message : error,
-		);
+		console.error('[idleberg.applescript]', error instanceof Error ? error.message : error);
 	}
 }
 
