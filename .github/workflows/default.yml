@@ -36,7 +36,7 @@ jobs:
 
       - name: Enable Corepack
         run: |
-          npm install --global corepack@10.8.0
+          npm install --global corepack@latest
           corepack enable
 
       - name: Get pnpm store directory
