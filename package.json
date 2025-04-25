@@ -40,8 +40,14 @@
 	"engines": {
 		"vscode": "^1.85.0"
 	},
-	"categories": ["Programming Languages", "Snippets", "Other"],
-	"activationEvents": ["onLanguage:javascript"],
+	"categories": [
+		"Programming Languages",
+		"Snippets",
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:javascript"
+	],
 	"contributes": {
 		"configurationDefaults": {
 			"[applescript]": {
@@ -78,7 +84,11 @@
 				},
 				"applescript.defaultBuildTask": {
 					"type": "string",
-					"enum": ["script", "bundle", "app"],
+					"enum": [
+						"script",
+						"bundle",
+						"app"
+					],
 					"default": "script",
 					"description": "Specify the default build task when creating a new task file",
 					"order": 5
@@ -364,21 +374,38 @@
 		"languages": [
 			{
 				"id": "applescript",
-				"aliases": ["AppleScript", "applescript"],
-				"extensions": [".applescript"],
+				"aliases": [
+					"AppleScript",
+					"applescript"
+				],
+				"extensions": [
+					".applescript"
+				],
 				"firstLine": "^#!/.*\\bosascript\\b",
 				"configuration": "./config/applescript.configuration.json"
 			},
 			{
 				"id": "applescript.binary",
-				"aliases": ["Binary AppleScript", "applescript.binary", "scpt"],
-				"extensions": [".scpt"],
+				"aliases": [
+					"Binary AppleScript",
+					"applescript.binary",
+					"scpt"
+				],
+				"extensions": [
+					".scpt"
+				],
 				"configuration": "./config/applescript.configuration.json"
 			},
 			{
 				"id": "jxa",
-				"aliases": ["JavaScript for Automation (JXA)", "jxa"],
-				"extensions": [".jxa", ".jxainc"],
+				"aliases": [
+					"JavaScript for Automation (JXA)",
+					"jxa"
+				],
+				"extensions": [
+					".jxa",
+					".jxainc"
+				],
 				"configuration": "./config/jxa.configuration.json"
 			},
 			{
@@ -418,7 +445,9 @@
 				"language": "applescript-injection",
 				"scopeName": "markdown.applescript.codeblock",
 				"path": "./syntaxes/codeblock.json",
-				"injectTo": ["text.html.markdown"],
+				"injectTo": [
+					"text.html.markdown"
+				],
 				"embeddedLanguages": {
 					"meta.embedded.block.applescript": "applescript"
 				}
@@ -445,7 +474,7 @@
 		"@commitlint/config-conventional": "^19.8.0",
 		"@total-typescript/tsconfig": "^1.0.4",
 		"@types/line-column": "^1.0.2",
-		"@types/node": "^20.17.30",
+		"@types/node": "^20.17.31",
 		"@types/vscode": "1.85.0",
 		"applescript-svg-icon": "github:idleberg/applescript-svg-icon",
 		"cross-env": "^7.0.3",
@@ -455,7 +484,7 @@
 		"lefthook": "^1.11.11",
 		"tsup": "^8.4.0",
 		"typescript": "^5.8.3",
-		"typescript-eslint": "^8.29.0"
+		"typescript-eslint": "^8.31.0"
 	},
 	"packageManager": "pnpm@10.8.0+sha512.0e82714d1b5b43c74610193cb20734897c1d00de89d0e18420aebc5977fa13d780a9cb05734624e81ebd81cc876cd464794850641c48b9544326b5622ca29971"
 }
