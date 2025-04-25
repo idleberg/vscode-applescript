@@ -8,7 +8,7 @@ pre-commit:
     biome:
       run: |
         npx biome check \
-          --config-path=biome.json \
+          --config-path=biome.jsonc \
           --fix \
           --no-errors-on-unmatched \
           --reporter=summary \

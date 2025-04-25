@@ -13,7 +13,7 @@
 		"compile": "npm run build",
 		"build": "tsup",
 		"dev": "npm run start",
-		"lint": "biome check --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
+		"lint": "biome check --config-path=biome.jsonc --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
 		"publish:ovsx": "ovsx publish --no-dependencies",
 		"publish:vsce": "vsce publish --githubBranch main --no-dependencies",
 		"start": "npm run build:code -- --watch",
@@ -40,14 +40,8 @@
 	"engines": {
 		"vscode": "^1.85.0"
 	},
-	"categories": [
-		"Programming Languages",
-		"Snippets",
-		"Other"
-	],
-	"activationEvents": [
-		"onLanguage:javascript"
-	],
+	"categories": ["Programming Languages", "Snippets", "Other"],
+	"activationEvents": ["onLanguage:javascript"],
 	"contributes": {
 		"configurationDefaults": {
 			"[applescript]": {
@@ -84,11 +78,7 @@
 				},
 				"applescript.defaultBuildTask": {
 					"type": "string",
-					"enum": [
-						"script",
-						"bundle",
-						"app"
-					],
+					"enum": ["script", "bundle", "app"],
 					"default": "script",
 					"description": "Specify the default build task when creating a new task file",
 					"order": 5
@@ -374,38 +364,21 @@
 		"languages": [
 			{
 				"id": "applescript",
-				"aliases": [
-					"AppleScript",
-					"applescript"
-				],
-				"extensions": [
-					".applescript"
-				],
+				"aliases": ["AppleScript", "applescript"],
+				"extensions": [".applescript"],
 				"firstLine": "^#!/.*\\bosascript\\b",
 				"configuration": "./config/applescript.configuration.json"
 			},
 			{
 				"id": "applescript.binary",
-				"aliases": [
-					"Binary AppleScript",
-					"applescript.binary",
-					"scpt"
-				],
-				"extensions": [
-					".scpt"
-				],
+				"aliases": ["Binary AppleScript", "applescript.binary", "scpt"],
+				"extensions": [".scpt"],
 				"configuration": "./config/applescript.configuration.json"
 			},
 			{
 				"id": "jxa",
-				"aliases": [
-					"JavaScript for Automation (JXA)",
-					"jxa"
-				],
-				"extensions": [
-					".jxa",
-					".jxainc"
-				],
+				"aliases": ["JavaScript for Automation (JXA)", "jxa"],
+				"extensions": [".jxa", ".jxainc"],
 				"configuration": "./config/jxa.configuration.json"
 			},
 			{
@@ -445,9 +418,7 @@
 				"language": "applescript-injection",
 				"scopeName": "markdown.applescript.codeblock",
 				"path": "./syntaxes/codeblock.json",
-				"injectTo": [
-					"text.html.markdown"
-				],
+				"injectTo": ["text.html.markdown"],
 				"embeddedLanguages": {
 					"meta.embedded.block.applescript": "applescript"
 				}
