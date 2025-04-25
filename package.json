@@ -14,7 +14,6 @@
 		"build": "tsup",
 		"dev": "npm run start",
 		"lint": "biome check --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
-		"prepare": "husky",
 		"publish:ovsx": "ovsx publish --no-dependencies",
 		"publish:vsce": "vsce publish --githubBranch main --no-dependencies",
 		"start": "npm run build:code -- --watch",
@@ -453,7 +452,7 @@
 		"gulp": "^5.0.0",
 		"gulp-raster-update": "^0.2.0",
 		"gulp-rename": "^2.0.0",
-		"husky": "^9.1.7",
+		"lefthook": "^1.11.11",
 		"tsup": "^8.4.0",
 		"typescript": "^5.8.3",
 		"typescript-eslint": "^8.29.0"

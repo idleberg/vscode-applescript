@@ -1,0 +1,17 @@
+commit-msg:
+  commands:
+    commitlint:
+      run: npx --no -- commitlint --edit $1
+
+pre-commit:
+  commands:
+    biome:
+      run: |
+        npx biome check \
+          --config-path=biome.json \
+          --fix \
+          --no-errors-on-unmatched \
+          --reporter=summary \
+          --staged \
+          --vcs-enabled=true \
+          --vcs-use-ignore-file=true

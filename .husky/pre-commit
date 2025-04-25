@@ -1,7 +1,0 @@
-pnpx @biomejs/biome check \
-	--fix \
-	--no-errors-on-unmatched \
-	--reporter=summary \
-	--staged \
-	--vcs-enabled=true \
-	--vcs-use-ignore-file=true
