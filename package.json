@@ -452,10 +452,10 @@
 		"gulp": "^5.0.0",
 		"gulp-raster-update": "^0.2.0",
 		"gulp-rename": "^2.0.0",
-		"lefthook": "^1.11.11",
+		"lefthook": "^1.11.12",
 		"tsup": "^8.4.0",
 		"typescript": "^5.8.3",
-		"typescript-eslint": "^8.31.0"
+		"typescript-eslint": "^8.31.1"
 	},
 	"packageManager": "pnpm@10.8.0+sha512.0e82714d1b5b43c74610193cb20734897c1d00de89d0e18420aebc5977fa13d780a9cb05734624e81ebd81cc876cd464794850641c48b9544326b5622ca29971"
 }
