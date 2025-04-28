@@ -1,3 +1,8 @@
+# v0.27.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.27.1)
+
+- do not focus output channel
+- update dependencies
+
 # v0.27.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.27.0)
 
 - add `Alt`+`Enter` keybinding for continued lines (#40 by @donaldguy)
@@ -59,6 +64,7 @@
 - update dependencies
 
 # v0.21.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.21.2)
+
 - update tooling
 - update dependencies
 
@@ -133,7 +139,7 @@
 
 # v0.14.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.14.0)
 
-- add *Create Build Task* command
+- add _Create Build Task_ command
 - fix `outputStyle` max length
 
 # v0.13.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.13.0)
