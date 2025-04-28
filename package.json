@@ -2,7 +2,7 @@
 	"name": "applescript",
 	"displayName": "AppleScript",
 	"description": "Language syntax, snippets and build system for AppleScript and JavaScript for Automation",
-	"version": "0.27.0",
+	"version": "0.27.1",
 	"publisher": "idleberg",
 	"license": "MIT",
 	"author": {
@@ -40,8 +40,14 @@
 	"engines": {
 		"vscode": "^1.85.0"
 	},
-	"categories": ["Programming Languages", "Snippets", "Other"],
-	"activationEvents": ["onLanguage:javascript"],
+	"categories": [
+		"Programming Languages",
+		"Snippets",
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:javascript"
+	],
 	"contributes": {
 		"configurationDefaults": {
 			"[applescript]": {
@@ -78,7 +84,11 @@
 				},
 				"applescript.defaultBuildTask": {
 					"type": "string",
-					"enum": ["script", "bundle", "app"],
+					"enum": [
+						"script",
+						"bundle",
+						"app"
+					],
 					"default": "script",
 					"description": "Specify the default build task when creating a new task file",
 					"order": 5
@@ -364,21 +374,38 @@
 		"languages": [
 			{
 				"id": "applescript",
-				"aliases": ["AppleScript", "applescript"],
-				"extensions": [".applescript"],
+				"aliases": [
+					"AppleScript",
+					"applescript"
+				],
+				"extensions": [
+					".applescript"
+				],
 				"firstLine": "^#!/.*\\bosascript\\b",
 				"configuration": "./config/applescript.configuration.json"
 			},
 			{
 				"id": "applescript.binary",
-				"aliases": ["Binary AppleScript", "applescript.binary", "scpt"],
-				"extensions": [".scpt"],
+				"aliases": [
+					"Binary AppleScript",
+					"applescript.binary",
+					"scpt"
+				],
+				"extensions": [
+					".scpt"
+				],
 				"configuration": "./config/applescript.configuration.json"
 			},
 			{
 				"id": "jxa",
-				"aliases": ["JavaScript for Automation (JXA)", "jxa"],
-				"extensions": [".jxa", ".jxainc"],
+				"aliases": [
+					"JavaScript for Automation (JXA)",
+					"jxa"
+				],
+				"extensions": [
+					".jxa",
+					".jxainc"
+				],
 				"configuration": "./config/jxa.configuration.json"
 			},
 			{
@@ -418,7 +445,9 @@
 				"language": "applescript-injection",
 				"scopeName": "markdown.applescript.codeblock",
 				"path": "./syntaxes/codeblock.json",
-				"injectTo": ["text.html.markdown"],
+				"injectTo": [
+					"text.html.markdown"
+				],
 				"embeddedLanguages": {
 					"meta.embedded.block.applescript": "applescript"
 				}
