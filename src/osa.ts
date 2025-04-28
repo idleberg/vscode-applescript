@@ -55,7 +55,7 @@ async function osacompile(compileTarget: string, userOptions: CommandFlags = { i
 			.catch((error) => {
 				console.error('[idleberg.applescript]', error instanceof Error ? error.message : error);
 
-				outputChannel.show(true);
+				outputChannel.show();
 
 				if (showNotifications) {
 					window.showErrorMessage('Failed to compile or exited with error (see output for details)');
@@ -101,7 +101,7 @@ async function osascript(options: CommandFlags = { isJXA: false }): Promise<void
 
 	spawnPromise('osascript', doc.fileName, args, outputChannel).catch((error) => {
 		console.error('[idleberg.applescript]', error instanceof Error ? error.message : error);
-		outputChannel.show(true);
+		outputChannel.show();
 
 		if (showNotifications) {
 			window.showErrorMessage('Failed to run script or exited with error (see output for details)');
