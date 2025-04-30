@@ -1,13 +1,13 @@
 commit-msg:
   commands:
     commitlint:
-      run: npx --no -- commitlint --edit $1
+      run: pnpm exec commitlint --edit $1
 
 pre-commit:
   commands:
     biome:
       run: |
-        npx biome check \
+        pnpm exec biome check \
           --config-path=biome.jsonc \
           --fix \
           --no-errors-on-unmatched \
