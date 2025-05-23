@@ -1,4 +1,5 @@
 {
+	"editor.formatOnPaste": true,
 	"editor.formatOnSave": true,
 	"[javascript]": {
 		"editor.defaultFormatter": "biomejs.biome"
