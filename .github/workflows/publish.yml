@@ -48,10 +48,14 @@ jobs:
       - name: Publish to Open VSX Registry
         uses: HaaLeo/publish-vscode-extension@v2
         with:
+          dependencies: false
+          dryRun: true
           pat: ${{ secrets.OVSX_PERSONAL_ACCESS_TOKEN }}
 
       - name: Publish to Visual Studio Marketplace
         uses: HaaLeo/publish-vscode-extension@v2
         with:
+          dependencies: false
+          dryRun: true
           pat: ${{ secrets.VSCE_PERSONAL_ACCESS_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
