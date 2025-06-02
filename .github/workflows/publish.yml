@@ -50,6 +50,7 @@ jobs:
         with:
           dependencies: false
           pat: ${{ secrets.OVSX_PERSONAL_ACCESS_TOKEN }}
+          skipDuplicate: true
 
       - name: Publish to Visual Studio Marketplace
         uses: HaaLeo/publish-vscode-extension@v2
@@ -57,3 +58,4 @@ jobs:
           dependencies: false
           pat: ${{ secrets.VSCE_PERSONAL_ACCESS_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
+          skipDuplicate: true
