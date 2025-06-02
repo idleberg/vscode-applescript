@@ -14,7 +14,7 @@ tsconfig.tsbuildinfo
 
 # Build
 lib/
-resouces/logo.png
+resources/logo.png
 
 # Project specific
 *.vsix
