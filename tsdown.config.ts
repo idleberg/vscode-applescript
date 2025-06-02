@@ -1,8 +1,8 @@
-import { defineConfig } from 'tsup';
+import { defineConfig } from 'tsdown';
 
 export default defineConfig({
-	bundle: true,
-	cjsInterop: true,
+	// bundle: true,
+	// cjsInterop: true,
 	clean: true,
 	entry: ['src/index.ts'],
 	external: ['vscode'],

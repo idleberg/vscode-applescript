@@ -12,7 +12,7 @@
 	"scripts": {
 		"compile": "npm run build",
 		"build": "concurrently --prefix-colors 'blue,green' 'npm:build:*'",
-		"build:code": "tsup",
+		"build:code": "tsdown",
 		"build:image": "sharp resize 1024 1024 --input node_modules/applescript-svg-icon/src/applescript.svg --output resources/logo.png",
 		"dev": "npm run start",
 		"lint": "biome check --config-path=biome.jsonc --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
@@ -454,7 +454,7 @@
 		"cross-env": "^7.0.3",
 		"lefthook": "^1.11.12",
 		"sharp-cli": "^5.1.0",
-		"tsup": "^8.5.0",
+		"tsdown": "^0.12.6",
 		"typescript": "^5.8.3",
 		"typescript-eslint": "^8.31.1"
 	},
