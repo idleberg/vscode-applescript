@@ -454,7 +454,7 @@
 		"cross-env": "^7.0.3",
 		"lefthook": "^1.11.12",
 		"sharp-cli": "^5.1.0",
-		"tsup": "^8.4.0",
+		"tsup": "^8.5.0",
 		"typescript": "^5.8.3",
 		"typescript-eslint": "^8.31.1"
 	},
