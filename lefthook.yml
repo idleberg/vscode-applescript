@@ -15,3 +15,4 @@ pre-commit:
           --staged \
           --vcs-enabled=true \
           --vcs-use-ignore-file=true
+      stage_fixed: true
