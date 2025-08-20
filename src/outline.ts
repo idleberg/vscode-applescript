@@ -639,8 +639,6 @@ export const appleScriptSymbolProvider: DocumentSymbolProvider = {
 			return out;
 		};
 
-		const symbols = emitSymbols();
-
 		// Helper: build variable symbols belonging to a node but not inside its child nodes
 		function makeVarSymbolsForNode(
 			nodeIdx: number,
@@ -696,12 +694,7 @@ export const appleScriptSymbolProvider: DocumentSymbolProvider = {
 			return sym;
 		}
 
-		// Add top-level function/tell symbols
-		for (let i = 0; i < nodes.length; i++) {
-			if (nodes[i]?.parent === -1) {
-				symbols.push(makeFuncSymbol(i, nodes, variables));
-			}
-		}
+		const symbols = emitSymbols();
 		if (!Array.isArray(symbols)) {
 			return [];
 		}
