@@ -43,7 +43,11 @@
 		"vscode": "^1.85.0"
 	},
 	"categories": ["Programming Languages", "Snippets", "Other"],
-	"activationEvents": ["onLanguage:javascript"],
+	"activationEvents": [
+		"onLanguage:javascript",
+		"onLanguage:applescript",
+		"onLanguage:jxa"
+	],
 	"contributes": {
 		"configurationDefaults": {
 			"[applescript]": {

@@ -1,8 +1,16 @@
-import { type ExtensionContext, commands } from 'vscode';
+import { type ExtensionContext, commands, languages } from 'vscode';
 import { osacompile, osascript } from './osa.ts';
+import { appleScriptSymbolProvider, jxaSymbolProvider } from './outline.ts';
 import { pick } from './processes.ts';
 import { createBuildTask } from './task.ts';
 
+/**
+ * Activate the VS Code extension.
+ *
+ * This registers editor/command handlers for AppleScript and JXA workflows
+ * (run, compile, build task creation, termination) and hooks the document
+ * symbol providers for the `applescript` and `jxa` languages.
+ */
 async function activate(context: ExtensionContext): Promise<void> {
 	context.subscriptions.push(
 		/**
@@ -66,6 +74,9 @@ async function activate(context: ExtensionContext): Promise<void> {
 		commands.registerTextEditorCommand('extension.jxa.terminateProcess', async () => {
 			await pick();
 		}),
+
+		languages.registerDocumentSymbolProvider({ language: 'applescript' }, appleScriptSymbolProvider),
+		languages.registerDocumentSymbolProvider({ language: 'jxa' }, jxaSymbolProvider),
 	);
 }
 
