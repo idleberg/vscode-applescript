@@ -1,11 +1,11 @@
 import {
+	commands,
 	DocumentSymbol,
 	type DocumentSymbolProvider,
 	Range,
 	type SymbolInformation,
 	SymbolKind,
 	type TextDocument,
-	commands,
 	workspace,
 } from 'vscode';
 
@@ -632,7 +632,7 @@ export const appleScriptSymbolProvider: DocumentSymbolProvider = {
 			// functions/tells
 			for (let i = 0; i < nodes.length; i++) {
 				if (nodes[i]?.parent === -1) {
-					out.push(makeFuncSymbol(i, nodes, variables));
+					out.push(_makeFuncSymbol(i, nodes, variables));
 				}
 			}
 
@@ -669,7 +669,7 @@ export const appleScriptSymbolProvider: DocumentSymbolProvider = {
 		}
 
 		// Recursively build function/tell symbols tree (pure helper)
-		function makeFuncSymbol(
+		function _makeFuncSymbol(
 			nodeIdx: number,
 			nodesArr: typeof nodes,
 			variablesArr: Array<{ name: string; index: number }>,
@@ -688,7 +688,7 @@ export const appleScriptSymbolProvider: DocumentSymbolProvider = {
 				new Range(start, end),
 				new Range(start, start),
 			);
-			const childFuncSyms = node.children.map((ci) => makeFuncSymbol(ci, nodesArr, variablesArr));
+			const childFuncSyms = node.children.map((ci) => _makeFuncSymbol(ci, nodesArr, variablesArr));
 			const varSyms = makeVarSymbolsForNode(nodeIdx, nodesArr, variablesArr);
 			sym.children = [...childFuncSyms, ...varSyms];
 			return sym;

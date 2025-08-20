@@ -1,4 +1,4 @@
-import { type ExtensionContext, commands, languages } from 'vscode';
+import { commands, type ExtensionContext, languages } from 'vscode';
 import { osacompile, osascript } from './osa.ts';
 import { appleScriptSymbolProvider, jxaSymbolProvider } from './outline.ts';
 import { pick } from './processes.ts';
