@@ -1,6 +1,7 @@
 import { commands, type ExtensionContext, languages } from 'vscode';
 import { osacompile, osascript } from './osa.ts';
-import { appleScriptSymbolProvider, jxaSymbolProvider } from './outline.ts';
+import { appleScriptSymbolProvider } from './outline.ts';
+import { jxaSymbolProvider } from './outline-jxa.ts';
 import { pick } from './processes.ts';
 import { createBuildTask } from './task.ts';
 

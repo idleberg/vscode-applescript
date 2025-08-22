@@ -1,12 +1,9 @@
 import {
-	commands,
 	DocumentSymbol,
 	type DocumentSymbolProvider,
 	Range,
-	type SymbolInformation,
 	SymbolKind,
 	type TextDocument,
-	workspace,
 } from 'vscode';
 
 /**
@@ -561,21 +558,7 @@ export const appleScriptSymbolProvider: DocumentSymbolProvider = {
 		/**
 		 * Collect top-level entry points (bare calls) that are not inside handlers.
 		 */
-		const collectEntryPoints = (): Array<{ name: string; index: number }> => {
-			const out: Array<{ name: string; index: number }> = [];
-			let m = entryPointRegex.exec(text);
-			while (m !== null) {
-				const name = m[1] ?? '';
-				const index = typeof m.index === 'number' ? m.index : 0;
-				if (!isCommentAtOffset(index)) {
-					const isTopLevel = !handlerRanges.some((r) => index > r.start && index < r.end);
-					if (isTopLevel && !functionBlocks.some((h) => h.name === name)) out.push({ name, index });
-				}
-				m = entryPointRegex.exec(text);
-			}
-			return out;
-		};
-		const entryPoints = collectEntryPoints();
+		const entryPoints = collectEntryPoints(text, document, entryPointRegex, handlerRanges, functionBlocks);
 
 		/**
 		 * Emit final DocumentSymbol array from collected pieces.
@@ -702,46 +685,3 @@ export const appleScriptSymbolProvider: DocumentSymbolProvider = {
 	},
 };
 
-/**
- * JXA (JavaScript for Automation) Document Symbol Provider.
- *
- * Instead of re-implementing a JS parser, this provider delegates to the
- * built-in JavaScript Document Symbol Provider by creating a virtual
- * JavaScript document with the same content and invoking
- * `vscode.executeDocumentSymbolProvider` on it. The returned symbols may be
- * either `DocumentSymbol[]` or `SymbolInformation[]` depending on the
- * provider; this code converts `SymbolInformation[]` into a flat
- * `DocumentSymbol[]` (using the symbol's location as both range and selectionRange).
- *
- * This approach leverages the editor's JavaScript tooling to provide a
- * richer outline for JXA files without duplicating parsing logic.
- */
-// JXA: delegate to JavaScript's outline by creating a virtual JS document with identical content
-export const jxaSymbolProvider: DocumentSymbolProvider = {
-	async provideDocumentSymbols(document) {
-		const text = document.getText();
-		const jsDoc = await workspace.openTextDocument({ language: 'javascript', content: text });
-		const result = await commands.executeCommand<(DocumentSymbol | SymbolInformation)[] | undefined>(
-			'vscode.executeDocumentSymbolProvider',
-			jsDoc.uri,
-		);
-		if (!Array.isArray(result) || result.length === 0) return [];
-		// If already DocumentSymbols (presence of selectionRange), return as-is
-		const first = result[0] as DocumentSymbol | SymbolInformation;
-		if ((first as DocumentSymbol).selectionRange !== undefined) {
-			return result as DocumentSymbol[];
-		}
-		// Convert SymbolInformation[] to DocumentSymbol[] (flat)
-		const infos = result as SymbolInformation[];
-		return infos.map((s) => {
-			const range = s.location.range;
-			return new DocumentSymbol(
-				s.name ?? '',
-				s.containerName ?? '',
-				s.kind ?? SymbolKind.Function,
-				range,
-				new Range(range.start, range.start),
-			);
-		});
-	},
-};

@@ -48,9 +48,7 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onLanguage:javascript",
-		"onLanguage:applescript",
-		"onLanguage:jxa"
+		"onLanguage:javascript"
 	],
 	"contributes": {
 		"configurationDefaults": {
@@ -469,6 +467,7 @@
 		]
 	},
 	"dependencies": {
+		"acorn": "^8.15.0",
 		"line-column": "^1.0.2",
 		"vscode-get-config": "^0.4.0"
 	},
