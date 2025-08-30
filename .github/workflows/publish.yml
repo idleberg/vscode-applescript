@@ -40,7 +40,7 @@ jobs:
         run: pnpm install --frozen-lockfile --strict-peer-dependencies
 
       - name: Lint Source
-        run: pnpm dlx @biomejs/biome ci
+        run: pnpm exec biome ci
 
       - name: Run Tests
         run: pnpm run --if-present test
