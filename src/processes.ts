@@ -48,7 +48,7 @@ export async function pick() {
 	if (pick) {
 		const picks = Array.isArray(pick) ? pick : [pick];
 
-		picks.map((item) => {
+		picks.forEach((item) => {
 			const pid = item.detail.split(' ')[0];
 
 			kill(Number(pid));
