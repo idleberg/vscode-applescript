@@ -1,10 +1,8 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-	"organizeImports": {
-		"enabled": true
-	},
+	"root": false,
+	"$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
 	"files": {
-		"ignore": ["lib/**", "node_modules/**", "pnpm-lockfile.yaml"]
+		"includes": ["**", "!**/lib", "!**/node_modules", "!**/pnpm-lockfile.yaml"]
 	},
 	"linter": {
 		"enabled": true,
