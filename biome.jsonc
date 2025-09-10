@@ -1,13 +1,33 @@
 {
-	"root": false,
-	"$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
 	"files": {
-		"includes": ["**", "!**/lib", "!**/node_modules", "!**/pnpm-lockfile.yaml"]
+		"includes": [
+			"*.ts",
+			"**/*.json",
+			"src/**",
+			"test/**",
+			"!dist",
+			"!package.json",
+			"!test-results"
+		]
 	},
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"style": {
+				"noParameterAssign": "error",
+				"useAsConstAssertion": "error",
+				"useDefaultParameterLast": "error",
+				"useEnumInitializers": "error",
+				"useSelfClosingElements": "error",
+				"useSingleVarDeclarator": "error",
+				"noUnusedTemplateLiteral": "error",
+				"useNumberNamespace": "error",
+				"noInferrableTypes": "error",
+				"noUselessElse": "error"
+			}
 		}
 	},
 	"formatter": {

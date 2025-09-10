@@ -8,7 +8,6 @@ pre-commit:
     biome:
       run: |
         pnpm exec biome check \
-          --config-path=biome.jsonc \
           --fix \
           --no-errors-on-unmatched \
           --reporter=summary \

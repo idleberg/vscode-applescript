@@ -472,21 +472,20 @@
 		"vscode-get-config": "^0.4.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.9.4",
-		"@commitlint/cli": "^19.8.0",
-		"@commitlint/config-conventional": "^19.8.0",
+		"@biomejs/biome": "^2.2.4",
+		"@commitlint/cli": "^19.8.1",
+		"@commitlint/config-conventional": "^19.8.1",
 		"@total-typescript/tsconfig": "^1.0.4",
 		"@types/line-column": "^1.0.2",
-		"@types/node": "^20.17.31",
+		"@types/node": "^24.3.1",
 		"@types/vscode": "1.85.0",
 		"applescript-svg-icon": "github:idleberg/applescript-svg-icon",
-		"concurrently": "^9.1.2",
-		"cross-env": "^7.0.3",
-		"lefthook": "^1.11.12",
-		"sharp-cli": "^5.1.0",
-		"tsdown": "^0.12.6",
-		"typescript": "^5.8.3",
-		"typescript-eslint": "^8.31.1"
+		"concurrently": "^9.2.1",
+		"cross-env": "^10.0.0",
+		"lefthook": "^1.12.4",
+		"sharp-cli": "^5.2.0",
+		"tsdown": "^0.15.0",
+		"typescript": "^5.9.2"
 	},
 	"packageManager": "pnpm@10.8.0+sha512.0e82714d1b5b43c74610193cb20734897c1d00de89d0e18420aebc5977fa13d780a9cb05734624e81ebd81cc876cd464794850641c48b9544326b5622ca29971"
 }
