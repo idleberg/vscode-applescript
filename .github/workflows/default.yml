@@ -30,14 +30,11 @@ jobs:
         with:
           fetch-depth: 1
 
+      - uses: pnpm/action-setup@v4
+
       - uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node-version }}
-
-      - name: Enable Corepack
-        run: |
-          npm install --global corepack@latest
-          corepack enable
 
       - name: Get pnpm store directory
         shell: bash
