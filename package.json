@@ -15,7 +15,7 @@
 		"build:code": "tsdown",
 		"build:image": "sharp resize 1024 1024 --input node_modules/applescript-svg-icon/src/applescript.svg --output resources/logo.png",
 		"dev": "npm run start",
-		"lint": "biome check --config-path=biome.jsonc --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
+		"lint": "biome check --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
 		"publish:ovsx": "ovsx publish --no-dependencies",
 		"publish:vsce": "vsce publish --githubBranch main --no-dependencies",
 		"start": "npm run build:code -- --watch",
