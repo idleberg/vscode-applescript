@@ -1,10 +1,5 @@
-import type { Node } from "acorn";
-import {
-	DocumentSymbol,
-	type DocumentSymbolProvider,
-	Range,
-	SymbolKind,
-} from "vscode";
+import type { Node } from 'acorn';
+import { DocumentSymbol, type DocumentSymbolProvider, Range, SymbolKind } from 'vscode';
 import type {
 	ArrowFunctionExpression,
 	BaseNode,
@@ -25,7 +20,7 @@ import type {
 	VariableDeclaration,
 	WhileStatement,
 	WithStatement,
-} from "../types/acorn-types";
+} from '../types/acorn-types';
 
 /**
  * Creates a DocumentSymbol from an acorn AST node.
@@ -35,18 +30,9 @@ import type {
  * @param kind - The VS Code SymbolKind for this symbol
  * @returns A DocumentSymbol with proper range and empty children array
  */
-function createSymbol(
-	node: BaseNode,
-	name: string,
-	kind: SymbolKind,
-): DocumentSymbol {
-	const range = new Range(
-		node.loc.start.line - 1,
-		node.loc.start.column,
-		node.loc.end.line - 1,
-		node.loc.end.column,
-	);
-	const symbol = new DocumentSymbol(name, "", kind, range, range);
+function createSymbol(node: BaseNode, name: string, kind: SymbolKind): DocumentSymbol {
+	const range = new Range(node.loc.start.line - 1, node.loc.start.column, node.loc.end.line - 1, node.loc.end.column);
+	const symbol = new DocumentSymbol(name, '', kind, range, range);
 	symbol.children = [];
 	return symbol;
 }
@@ -62,12 +48,8 @@ function createSymbol(
  * @param parent - The parent DocumentSymbol to add nested symbols to
  * @param processedNodes - WeakSet tracking already processed nodes to avoid duplicates
  */
-function processConditionalBody(
-	stmt: Statement,
-	parent: DocumentSymbol,
-	processedNodes: WeakSet<Node>,
-) {
-	if (stmt.type === "BlockStatement") {
+function processConditionalBody(stmt: Statement, parent: DocumentSymbol, processedNodes: WeakSet<Node>) {
+	if (stmt.type === 'BlockStatement') {
 		const blockStmt = stmt as BlockStatement;
 		processBlockContent(blockStmt.body, parent, processedNodes);
 	} else {
@@ -94,42 +76,35 @@ function processVariableDeclaration(
 	parentArray: DocumentSymbol[] | DocumentSymbol,
 	processedNodes: WeakSet<Node>,
 ) {
-	const targetArray = Array.isArray(parentArray)
-		? parentArray
-		: parentArray.children || [];
+	const targetArray = Array.isArray(parentArray) ? parentArray : parentArray.children || [];
 
 	for (const decl of node.declarations) {
 		// Skip destructuring patterns for now
-		if (decl.id.type !== "Identifier") continue;
+		if (decl.id.type !== 'Identifier') continue;
 
 		const id = decl.id as Identifier;
 		let kind = SymbolKind.Variable;
 
 		// Determine the symbol kind based on the initializer
 		if (decl.init) {
-			if (
-				decl.init.type === "ArrowFunctionExpression" ||
-				decl.init.type === "FunctionExpression"
-			) {
+			if (decl.init.type === 'ArrowFunctionExpression' || decl.init.type === 'FunctionExpression') {
 				kind = SymbolKind.Function;
 				const funcSymbol = createSymbol(decl, id.name, kind);
 				targetArray.push(funcSymbol);
 
 				// Process function body if it exists
-				const funcExpr = decl.init as
-					| ArrowFunctionExpression
-					| FunctionExpression;
-				if (funcExpr.body.type === "BlockStatement") {
+				const funcExpr = decl.init as ArrowFunctionExpression | FunctionExpression;
+				if (funcExpr.body.type === 'BlockStatement') {
 					processBlockContent(funcExpr.body.body, funcSymbol, processedNodes);
 				}
 				continue;
 			}
-			if (decl.init.type === "ClassExpression") {
+			if (decl.init.type === 'ClassExpression') {
 				kind = SymbolKind.Class;
-			} else if (node.kind === "const") {
+			} else if (node.kind === 'const') {
 				kind = SymbolKind.Constant;
 			}
-		} else if (node.kind === "const") {
+		} else if (node.kind === 'const') {
 			kind = SymbolKind.Constant;
 		}
 
@@ -154,25 +129,17 @@ function processVariableDeclaration(
  * @param parent - The parent DocumentSymbol to add discovered symbols to
  * @param processedNodes - WeakSet tracking already processed nodes to avoid duplicates
  */
-function processBlockContent(
-	statements: Statement[],
-	parent: DocumentSymbol,
-	processedNodes: WeakSet<Node>,
-) {
+function processBlockContent(statements: Statement[], parent: DocumentSymbol, processedNodes: WeakSet<Node>) {
 	for (const stmt of statements) {
 		// Skip if already processed
 		if (processedNodes.has(stmt)) continue;
 		processedNodes.add(stmt);
 
 		switch (stmt.type) {
-			case "FunctionDeclaration": {
+			case 'FunctionDeclaration': {
 				const funcDecl = stmt as FunctionDeclaration;
 				if (funcDecl.id) {
-					const funcSymbol = createSymbol(
-						funcDecl,
-						funcDecl.id.name,
-						SymbolKind.Function,
-					);
+					const funcSymbol = createSymbol(funcDecl, funcDecl.id.name, SymbolKind.Function);
 					parent.children?.push(funcSymbol);
 
 					// Recursively process nested content
@@ -181,15 +148,11 @@ function processBlockContent(
 				break;
 			}
 
-			case "VariableDeclaration":
-				processVariableDeclaration(
-					stmt as VariableDeclaration,
-					parent,
-					processedNodes,
-				);
+			case 'VariableDeclaration':
+				processVariableDeclaration(stmt as VariableDeclaration, parent, processedNodes);
 				break;
 
-			case "IfStatement": {
+			case 'IfStatement': {
 				const ifStmt = stmt as IfStatement;
 				// Process if/else blocks
 				processConditionalBody(ifStmt.consequent, parent, processedNodes);
@@ -199,46 +162,42 @@ function processBlockContent(
 				break;
 			}
 
-			case "ForStatement": {
+			case 'ForStatement': {
 				const forStmt = stmt as ForStatement;
 				processConditionalBody(forStmt.body, parent, processedNodes);
 				break;
 			}
 
-			case "ForInStatement": {
+			case 'ForInStatement': {
 				const forInStmt = stmt as ForInStatement;
 				processConditionalBody(forInStmt.body, parent, processedNodes);
 				break;
 			}
 
-			case "ForOfStatement": {
+			case 'ForOfStatement': {
 				const forOfStmt = stmt as ForOfStatement;
 				processConditionalBody(forOfStmt.body, parent, processedNodes);
 				break;
 			}
 
-			case "WhileStatement": {
+			case 'WhileStatement': {
 				const whileStmt = stmt as WhileStatement;
 				processConditionalBody(whileStmt.body, parent, processedNodes);
 				break;
 			}
 
-			case "DoWhileStatement": {
+			case 'DoWhileStatement': {
 				const doWhileStmt = stmt as DoWhileStatement;
 				processConditionalBody(doWhileStmt.body, parent, processedNodes);
 				break;
 			}
 
-			case "TryStatement": {
+			case 'TryStatement': {
 				const tryStmt = stmt as TryStatement;
 				// Process try/catch/finally blocks
 				processBlockContent(tryStmt.block.body, parent, processedNodes);
 				if (tryStmt.handler) {
-					processBlockContent(
-						tryStmt.handler.body.body,
-						parent,
-						processedNodes,
-					);
+					processBlockContent(tryStmt.handler.body.body, parent, processedNodes);
 				}
 				if (tryStmt.finalizer) {
 					processBlockContent(tryStmt.finalizer.body, parent, processedNodes);
@@ -246,7 +205,7 @@ function processBlockContent(
 				break;
 			}
 
-			case "SwitchStatement": {
+			case 'SwitchStatement': {
 				const switchStmt = stmt as SwitchStatement;
 				// Process switch cases
 				for (const switchCase of switchStmt.cases) {
@@ -255,13 +214,13 @@ function processBlockContent(
 				break;
 			}
 
-			case "WithStatement": {
+			case 'WithStatement': {
 				const withStmt = stmt as WithStatement;
 				processConditionalBody(withStmt.body, parent, processedNodes);
 				break;
 			}
 
-			case "BlockStatement": {
+			case 'BlockStatement': {
 				const blockStmt = stmt as BlockStatement;
 				// Process nested block statements
 				processBlockContent(blockStmt.body, parent, processedNodes);
@@ -294,12 +253,12 @@ export const jxaSymbolProvider: DocumentSymbolProvider = {
 			const text = document.getText();
 
 			// Use acorn to parse JavaScript/JXA code
-			const acorn = await import("acorn");
+			const acorn = await import('acorn');
 
 			// Parse the code into an AST
 			const ast = acorn.parse(text, {
-				ecmaVersion: "latest",
-				sourceType: "script", // JXA behaves more like a script than a module
+				ecmaVersion: 'latest',
+				sourceType: 'script', // JXA behaves more like a script than a module
 				locations: true,
 				allowReturnOutsideFunction: true,
 				allowImportExportEverywhere: true,
@@ -312,39 +271,29 @@ export const jxaSymbolProvider: DocumentSymbolProvider = {
 			// Process top-level declarations only
 			for (const node of ast.body) {
 				switch (node.type) {
-					case "ClassDeclaration": {
+					case 'ClassDeclaration': {
 						const classDecl = node as ClassDeclaration;
 						if (classDecl.id) {
-							const classSymbol = createSymbol(
-								classDecl,
-								classDecl.id.name,
-								SymbolKind.Class,
-							);
+							const classSymbol = createSymbol(classDecl, classDecl.id.name, SymbolKind.Class);
 							symbols.push(classSymbol);
 							processedNodes.add(node);
 
 							// Process class methods
 							for (const member of classDecl.body.body) {
-								if (member.type === "MethodDefinition" && member.key) {
+								if (member.type === 'MethodDefinition' && member.key) {
 									const key = member.key as Identifier;
 									const methodName = key.name;
 									if (methodName) {
 										const methodSymbol = createSymbol(
 											member,
 											methodName,
-											member.kind === "constructor"
-												? SymbolKind.Constructor
-												: SymbolKind.Method,
+											member.kind === 'constructor' ? SymbolKind.Constructor : SymbolKind.Method,
 										);
 										classSymbol.children.push(methodSymbol);
 
 										// Process method body
 										if (member.value.body) {
-											processBlockContent(
-												member.value.body.body,
-												methodSymbol,
-												processedNodes,
-											);
+											processBlockContent(member.value.body.body, methodSymbol, processedNodes);
 										}
 									}
 								}
@@ -353,40 +302,28 @@ export const jxaSymbolProvider: DocumentSymbolProvider = {
 						break;
 					}
 
-					case "FunctionDeclaration": {
+					case 'FunctionDeclaration': {
 						const funcDecl = node as FunctionDeclaration;
 						if (funcDecl.id) {
-							const funcSymbol = createSymbol(
-								funcDecl,
-								funcDecl.id.name,
-								SymbolKind.Function,
-							);
+							const funcSymbol = createSymbol(funcDecl, funcDecl.id.name, SymbolKind.Function);
 							symbols.push(funcSymbol);
 							processedNodes.add(node);
 
 							// Process function body
-							processBlockContent(
-								funcDecl.body.body,
-								funcSymbol,
-								processedNodes,
-							);
+							processBlockContent(funcDecl.body.body, funcSymbol, processedNodes);
 						}
 						break;
 					}
 
-					case "VariableDeclaration":
-						processVariableDeclaration(
-							node as VariableDeclaration,
-							symbols,
-							processedNodes,
-						);
+					case 'VariableDeclaration':
+						processVariableDeclaration(node as VariableDeclaration, symbols, processedNodes);
 						break;
 				}
 			}
 
 			return symbols;
 		} catch (error) {
-			console.error("Error parsing JXA file:", error);
+			console.error('Error parsing JXA file:', error);
 			return [];
 		}
 	},

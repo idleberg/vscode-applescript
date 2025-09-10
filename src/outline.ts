@@ -1,10 +1,4 @@
-import {
-	DocumentSymbol,
-	type DocumentSymbolProvider,
-	Range,
-	SymbolKind,
-	type TextDocument,
-} from 'vscode';
+import { DocumentSymbol, type DocumentSymbolProvider, Range, SymbolKind, type TextDocument } from 'vscode';
 
 /**
  * A parsed function/tell block as returned by the scanner.
@@ -684,4 +678,3 @@ export const appleScriptSymbolProvider: DocumentSymbolProvider = {
 		return symbols.filter((s) => s instanceof DocumentSymbol);
 	},
 };
-
