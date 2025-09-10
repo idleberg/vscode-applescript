@@ -1,4 +1,7 @@
 {
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "always"
+	},
 	"editor.formatOnPaste": true,
 	"editor.formatOnSave": true,
 	"[javascript]": {
