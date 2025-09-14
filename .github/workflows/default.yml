@@ -6,12 +6,14 @@ on:
       - ".github/workflows/**"
       - "src/**"
       - "tests/**"
+      - "types/**"
       - "package.json"
       - "pnpm-lock.yaml"
   pull_request:
     paths:
       - ".github/workflows/**"
       - "src/**"
+      - "types/**"
       - "tests/**"
       - "package.json"
       - "pnpm-lock.yaml"
