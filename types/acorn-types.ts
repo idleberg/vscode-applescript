@@ -3,88 +3,88 @@
  * These extend the base acorn types with the properties we need to access.
  */
 
-import type { Node, SourceLocation } from "acorn";
+import type { Node, SourceLocation } from 'acorn';
 
 export interface BaseNode extends Node {
 	loc: SourceLocation;
 }
 
 export interface Identifier extends BaseNode {
-	type: "Identifier";
+	type: 'Identifier';
 	name: string;
 }
 
 export interface VariableDeclarator extends BaseNode {
-	type: "VariableDeclarator";
+	type: 'VariableDeclarator';
 	id: Identifier | Pattern;
 	init?: Expression;
 }
 
 export interface VariableDeclaration extends BaseNode {
-	type: "VariableDeclaration";
+	type: 'VariableDeclaration';
 	declarations: VariableDeclarator[];
-	kind: "const" | "let" | "var";
+	kind: 'const' | 'let' | 'var';
 }
 
 export interface BlockStatement extends BaseNode {
-	type: "BlockStatement";
+	type: 'BlockStatement';
 	body: Statement[];
 }
 
 export interface FunctionDeclaration extends BaseNode {
-	type: "FunctionDeclaration";
+	type: 'FunctionDeclaration';
 	id: Identifier | null;
 	params: Pattern[];
 	body: BlockStatement;
 }
 
 export interface FunctionExpression extends BaseNode {
-	type: "FunctionExpression";
+	type: 'FunctionExpression';
 	id?: Identifier | null;
 	params: Pattern[];
 	body: BlockStatement;
 }
 
 export interface ArrowFunctionExpression extends BaseNode {
-	type: "ArrowFunctionExpression";
+	type: 'ArrowFunctionExpression';
 	params: Pattern[];
 	body: BlockStatement | Expression;
 }
 
 export interface ClassDeclaration extends BaseNode {
-	type: "ClassDeclaration";
+	type: 'ClassDeclaration';
 	id: Identifier | null;
 	body: ClassBody;
 }
 
 export interface ClassExpression extends BaseNode {
-	type: "ClassExpression";
+	type: 'ClassExpression';
 	id?: Identifier | null;
 	body: ClassBody;
 }
 
 export interface ClassBody extends BaseNode {
-	type: "ClassBody";
+	type: 'ClassBody';
 	body: MethodDefinition[];
 }
 
 export interface MethodDefinition extends BaseNode {
-	type: "MethodDefinition";
+	type: 'MethodDefinition';
 	key: Identifier | Expression;
 	value: FunctionExpression;
-	kind: "constructor" | "method" | "get" | "set";
+	kind: 'constructor' | 'method' | 'get' | 'set';
 	static: boolean;
 }
 
 export interface IfStatement extends BaseNode {
-	type: "IfStatement";
+	type: 'IfStatement';
 	test: Expression;
 	consequent: Statement;
 	alternate?: Statement | null;
 }
 
 export interface ForStatement extends BaseNode {
-	type: "ForStatement";
+	type: 'ForStatement';
 	init?: VariableDeclaration | Expression | null;
 	test?: Expression | null;
 	update?: Expression | null;
@@ -92,72 +92,72 @@ export interface ForStatement extends BaseNode {
 }
 
 export interface ForInStatement extends BaseNode {
-	type: "ForInStatement";
+	type: 'ForInStatement';
 	left: VariableDeclaration | Pattern;
 	right: Expression;
 	body: Statement;
 }
 
 export interface ForOfStatement extends BaseNode {
-	type: "ForOfStatement";
+	type: 'ForOfStatement';
 	left: VariableDeclaration | Pattern;
 	right: Expression;
 	body: Statement;
 }
 
 export interface WhileStatement extends BaseNode {
-	type: "WhileStatement";
+	type: 'WhileStatement';
 	test: Expression;
 	body: Statement;
 }
 
 export interface DoWhileStatement extends BaseNode {
-	type: "DoWhileStatement";
+	type: 'DoWhileStatement';
 	body: Statement;
 	test: Expression;
 }
 
 export interface TryStatement extends BaseNode {
-	type: "TryStatement";
+	type: 'TryStatement';
 	block: BlockStatement;
 	handler?: CatchClause | null;
 	finalizer?: BlockStatement | null;
 }
 
 export interface CatchClause extends BaseNode {
-	type: "CatchClause";
+	type: 'CatchClause';
 	param?: Pattern | null;
 	body: BlockStatement;
 }
 
 export interface SwitchStatement extends BaseNode {
-	type: "SwitchStatement";
+	type: 'SwitchStatement';
 	discriminant: Expression;
 	cases: SwitchCase[];
 }
 
 export interface SwitchCase extends BaseNode {
-	type: "SwitchCase";
+	type: 'SwitchCase';
 	test?: Expression | null;
 	consequent: Statement[];
 }
 
 export interface WithStatement extends BaseNode {
-	type: "WithStatement";
+	type: 'WithStatement';
 	object: Expression;
 	body: Statement;
 }
 
 export interface NewExpression extends BaseNode {
-	type: "NewExpression";
+	type: 'NewExpression';
 	callee: Expression | Identifier;
 	arguments: Expression[];
 }
 
 export interface Program extends BaseNode {
-	type: "Program";
+	type: 'Program';
 	body: Statement[];
-	sourceType: "script" | "module";
+	sourceType: 'script' | 'module';
 }
 
 // Union types for categories
@@ -199,136 +199,131 @@ export type Expression =
 	| ObjectExpression
 	| Literal;
 
-export type Pattern =
-	| Identifier
-	| ObjectPattern
-	| ArrayPattern
-	| RestElement
-	| AssignmentPattern;
+export type Pattern = Identifier | ObjectPattern | ArrayPattern | RestElement | AssignmentPattern;
 
 // Additional types we reference but don't fully define
 export interface ExpressionStatement extends BaseNode {
-	type: "ExpressionStatement";
+	type: 'ExpressionStatement';
 	expression: Expression;
 }
 
 export interface ReturnStatement extends BaseNode {
-	type: "ReturnStatement";
+	type: 'ReturnStatement';
 	argument?: Expression | null;
 }
 
 export interface ThrowStatement extends BaseNode {
-	type: "ThrowStatement";
+	type: 'ThrowStatement';
 	argument: Expression;
 }
 
 export interface BreakStatement extends BaseNode {
-	type: "BreakStatement";
+	type: 'BreakStatement';
 	label?: Identifier | null;
 }
 
 export interface ContinueStatement extends BaseNode {
-	type: "ContinueStatement";
+	type: 'ContinueStatement';
 	label?: Identifier | null;
 }
 
 export interface CallExpression extends BaseNode {
-	type: "CallExpression";
+	type: 'CallExpression';
 	callee: Expression;
 	arguments: Expression[];
 }
 
 export interface MemberExpression extends BaseNode {
-	type: "MemberExpression";
+	type: 'MemberExpression';
 	object: Expression;
 	property: Expression;
 	computed: boolean;
 }
 
 export interface AssignmentExpression extends BaseNode {
-	type: "AssignmentExpression";
+	type: 'AssignmentExpression';
 	operator: string;
 	left: Pattern | Expression;
 	right: Expression;
 }
 
 export interface BinaryExpression extends BaseNode {
-	type: "BinaryExpression";
+	type: 'BinaryExpression';
 	operator: string;
 	left: Expression;
 	right: Expression;
 }
 
 export interface UnaryExpression extends BaseNode {
-	type: "UnaryExpression";
+	type: 'UnaryExpression';
 	operator: string;
 	argument: Expression;
 	prefix: boolean;
 }
 
 export interface UpdateExpression extends BaseNode {
-	type: "UpdateExpression";
-	operator: "++" | "--";
+	type: 'UpdateExpression';
+	operator: '++' | '--';
 	argument: Expression;
 	prefix: boolean;
 }
 
 export interface LogicalExpression extends BaseNode {
-	type: "LogicalExpression";
-	operator: "||" | "&&" | "??";
+	type: 'LogicalExpression';
+	operator: '||' | '&&' | '??';
 	left: Expression;
 	right: Expression;
 }
 
 export interface ConditionalExpression extends BaseNode {
-	type: "ConditionalExpression";
+	type: 'ConditionalExpression';
 	test: Expression;
 	consequent: Expression;
 	alternate: Expression;
 }
 
 export interface ArrayExpression extends BaseNode {
-	type: "ArrayExpression";
+	type: 'ArrayExpression';
 	elements: (Expression | null)[];
 }
 
 export interface ObjectExpression extends BaseNode {
-	type: "ObjectExpression";
+	type: 'ObjectExpression';
 	properties: Property[];
 }
 
 export interface Property extends BaseNode {
-	type: "Property";
+	type: 'Property';
 	key: Expression;
 	value: Expression;
-	kind: "init" | "get" | "set";
+	kind: 'init' | 'get' | 'set';
 	shorthand: boolean;
 	computed: boolean;
 }
 
 export interface Literal extends BaseNode {
-	type: "Literal";
+	type: 'Literal';
 	value: string | number | boolean | null | RegExp;
 	raw: string;
 }
 
 export interface ObjectPattern extends BaseNode {
-	type: "ObjectPattern";
+	type: 'ObjectPattern';
 	properties: Property[];
 }
 
 export interface ArrayPattern extends BaseNode {
-	type: "ArrayPattern";
+	type: 'ArrayPattern';
 	elements: (Pattern | null)[];
 }
 
 export interface RestElement extends BaseNode {
-	type: "RestElement";
+	type: 'RestElement';
 	argument: Pattern;
 }
 
 export interface AssignmentPattern extends BaseNode {
-	type: "AssignmentPattern";
+	type: 'AssignmentPattern';
 	left: Pattern;
 	right: Expression;
 }
