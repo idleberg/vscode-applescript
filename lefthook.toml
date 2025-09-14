@@ -1,0 +1,1 @@
+extends = ["lefthook/biome.toml", "lefthook/commitlint.toml"]
