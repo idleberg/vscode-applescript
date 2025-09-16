@@ -472,7 +472,6 @@
 		"vscode-get-config": "^0.4.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.2.4",
 		"@commitlint/cli": "^19.8.1",
 		"@commitlint/config-conventional": "^19.8.1",
 		"@idleberg/configs": "^0.1.0",
@@ -483,7 +482,6 @@
 		"applescript-svg-icon": "github:idleberg/applescript-svg-icon",
 		"concurrently": "^9.2.1",
 		"cross-env": "^10.0.0",
-		"lefthook": "^1.13.0",
 		"sharp-cli": "^5.2.0",
 		"tsdown": "^0.15.1",
 		"typescript": "^5.9.2"
