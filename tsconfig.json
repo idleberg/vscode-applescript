@@ -1,10 +1,8 @@
 {
-	"extends": "@total-typescript/tsconfig/tsc/no-dom/library",
+	"extends": "@idleberg/configs/tsc",
 	"compilerOptions": {
-		"allowImportingTsExtensions": true,
 		"module": "ESNext",
 		"moduleResolution": "bundler",
-		"noEmit": true,
 		"target": "ESNext"
 	}
 }

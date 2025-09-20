@@ -474,7 +474,7 @@
 	"devDependencies": {
 		"@commitlint/cli": "^19.8.1",
 		"@commitlint/config-conventional": "^19.8.1",
-		"@idleberg/configs": "^0.1.0",
+		"@idleberg/configs": "^0.3.1",
 		"@total-typescript/tsconfig": "^1.0.4",
 		"@types/line-column": "^1.0.2",
 		"@types/node": "^24.4.0",

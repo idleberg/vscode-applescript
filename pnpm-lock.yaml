@@ -25,8 +25,8 @@ importers:
         specifier: ^19.8.1
         version: 19.8.1
       '@idleberg/configs':
-        specifier: ^0.1.0
-        version: 0.1.0(@biomejs/biome@2.2.4)(lefthook@1.13.0)
+        specifier: ^0.3.1
+        version: 0.3.1
       '@total-typescript/tsconfig':
         specifier: ^1.0.4
         version: 1.0.4
@@ -219,11 +219,8 @@ packages:
   '@epic-web/invariant@1.0.0':
     resolution: {integrity: sha512-lrTPqgvfFQtR/eY/qkIzp98OGdNJu0m5ji3q/nJI8v3SXkRKEnWiOxMmbvcSoAIzv/cGiuvRy57k4suKQSAdwA==}
 
-  '@idleberg/configs@0.1.0':
-    resolution: {integrity: sha512-ACpQC3GMEggg4IbPZ9l2uZ0PjH4WV+0XPldGdyx178yfhQqypfIsEAN8QzvOEjs3UdhNwZYIAK4Lw5wZqQj2hQ==}
-    peerDependencies:
-      '@biomejs/biome': ^2.2.4
-      lefthook: ^1.13.0
+  '@idleberg/configs@0.3.1':
+    resolution: {integrity: sha512-Mo3Q4vkjtvDZzw+0jvCVyAc/ykXJQSZfS3izXU7ggHJckW/DodBPdlPqDLNv6gXASKt1oiiZj/Abb9yztn7zsg==}
 
   '@img/sharp-darwin-arm64@0.34.2':
     resolution: {integrity: sha512-OfXHZPppddivUJnqyKoi5YVeHRkkNE2zUFT2gbpKxp/JZCFYEYubnMg+gOp6lWfasPrTS+KPosKqdI+ELYVDtg==}
@@ -1402,9 +1399,10 @@ snapshots:
 
   '@epic-web/invariant@1.0.0': {}
 
-  '@idleberg/configs@0.1.0(@biomejs/biome@2.2.4)(lefthook@1.13.0)':
+  '@idleberg/configs@0.3.1':
     dependencies:
       '@biomejs/biome': 2.2.4
+      '@total-typescript/tsconfig': 1.0.4
       lefthook: 1.13.0
 
   '@img/sharp-darwin-arm64@0.34.2':
