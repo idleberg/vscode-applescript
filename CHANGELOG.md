@@ -1,3 +1,8 @@
+# v0.28.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.28.1)
+
+- update tooling
+- update dependencies
+
 # v0.28.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.28.0)
 
 - add outline view support for applescript and jxa (thanks @geordiekorper)
