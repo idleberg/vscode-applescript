@@ -2,7 +2,7 @@
 	"name": "applescript",
 	"displayName": "AppleScript",
 	"description": "Language syntax, snippets and build system for AppleScript and JavaScript for Automation",
-	"version": "0.28.0",
+	"version": "0.28.1",
 	"publisher": "idleberg",
 	"license": "MIT",
 	"author": {
@@ -475,15 +475,14 @@
 		"@commitlint/cli": "^19.8.1",
 		"@commitlint/config-conventional": "^19.8.1",
 		"@idleberg/configs": "^0.3.1",
-		"@total-typescript/tsconfig": "^1.0.4",
 		"@types/line-column": "^1.0.2",
-		"@types/node": "^24.5.2",
+		"@types/node": "^24.4.0",
 		"@types/vscode": "1.85.0",
 		"applescript-svg-icon": "github:idleberg/applescript-svg-icon",
 		"concurrently": "^9.2.1",
 		"cross-env": "^10.0.0",
 		"sharp-cli": "^5.2.0",
-		"tsdown": "^0.15.4",
+		"tsdown": "^0.15.1",
 		"typescript": "^5.9.2"
 	},
 	"packageManager": "pnpm@10.15.1+sha512.34e538c329b5553014ca8e8f4535997f96180a1d0f614339357449935350d924e22f8614682191264ec33d1462ac21561aff97f6bb18065351c162c7e8f6de67"
