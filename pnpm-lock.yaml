@@ -27,14 +27,11 @@ importers:
       '@idleberg/configs':
         specifier: ^0.3.1
         version: 0.3.1
-      '@total-typescript/tsconfig':
-        specifier: ^1.0.4
-        version: 1.0.4
       '@types/line-column':
         specifier: ^1.0.2
         version: 1.0.2
       '@types/node':
-        specifier: ^24.5.2
+        specifier: ^24.4.0
         version: 24.5.2
       '@types/vscode':
         specifier: 1.85.0
@@ -52,7 +49,7 @@ importers:
         specifier: ^5.2.0
         version: 5.2.0
       tsdown:
-        specifier: ^0.15.4
+        specifier: ^0.15.1
         version: 0.15.4(typescript@5.9.2)
       typescript:
         specifier: ^5.9.2
