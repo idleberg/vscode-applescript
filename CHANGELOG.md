@@ -1,4 +1,4 @@
-# v0.28.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.28.1)
+# v0.28.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.28.1)
 
 - update tooling
 - update dependencies
