@@ -2,7 +2,7 @@ import { promises as fs } from 'node:fs';
 import { basename, resolve } from 'node:path';
 import { window, workspace } from 'vscode';
 import { getConfig } from 'vscode-get-config';
-import { getOutName } from './util.ts';
+import { fileExists, getOutName } from './util.ts';
 
 async function createBuildTask(isJXA = false): Promise<void> {
 	if (typeof workspace.workspaceFolders === 'undefined' || workspace.workspaceFolders.length < 1) {
@@ -88,7 +88,18 @@ async function createBuildTask(isJXA = false): Promise<void> {
 	const dotFolder = resolve(workspace.workspaceFolders[0].uri.fsPath, '.vscode');
 	const buildFile = resolve(dotFolder, 'tasks.json');
 
-	await fs.mkdir(dotFolder);
+	try {
+		await fs.mkdir(dotFolder);
+	} catch {
+		console.warn('[idleberg.applescript] This workspace already contains a .vscode folder.');
+	}
+
+	if (await fileExists(buildFile)) {
+		window.showErrorMessage(
+			'This workspace already has a task file. If you want to override it, delete it manually and try again.',
+		);
+		return;
+	}
 
 	try {
 		await fs.writeFile(buildFile, jsonString);

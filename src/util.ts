@@ -1,4 +1,6 @@
 import { spawn } from 'node:child_process';
+import { constants } from 'node:fs';
+import { access } from 'node:fs/promises';
 // Dependencies
 import { basename, dirname, extname, join } from 'node:path';
 import lineColumn from 'line-column';
@@ -107,4 +109,14 @@ export async function spawnPromise(
 			return code === 0 || activeProcesses.lastKilledProcessId === childProcess.pid ? resolve() : reject();
 		});
 	});
+}
+
+export async function fileExists(filePath: string): Promise<boolean> {
+	try {
+		await access(filePath, constants.F_OK);
+	} catch {
+		return false;
+	}
+
+	return true;
 }
