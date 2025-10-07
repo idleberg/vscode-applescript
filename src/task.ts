@@ -96,7 +96,7 @@ async function createBuildTask(isJXA = false): Promise<void> {
 
 	if (await fileExists(buildFile)) {
 		window.showErrorMessage(
-			'This workspace already has a task file. If you want to override it, delete it manually and try again.',
+			'This workspace already has a task file. If you want to overwrite it, delete it manually and try again.',
 		);
 		return;
 	}
