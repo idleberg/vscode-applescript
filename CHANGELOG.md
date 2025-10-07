@@ -1,3 +1,8 @@
+# v0.28.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.28.2)
+
+- improve error handling when creating build tasks
+- update dependencies
+
 # v0.28.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.28.1)
 
 - update tooling
