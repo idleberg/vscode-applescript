@@ -3,7 +3,6 @@ import { spawn } from 'node:child_process';
 import { basename, dirname, extname, join } from 'node:path';
 import lineColumn from 'line-column';
 import { type OutputChannel, window } from 'vscode';
-// @ts-expect-error TODO Fix package
 import { getConfig } from 'vscode-get-config';
 import * as activeProcesses from './processes.ts';
 

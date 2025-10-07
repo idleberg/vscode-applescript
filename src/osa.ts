@@ -1,6 +1,5 @@
 import { platform } from 'node:os';
 import { window } from 'vscode';
-// @ts-expect-error TODO Fix package
 import { getConfig } from 'vscode-get-config';
 import { getOutName, spawnPromise } from './util.ts';
 

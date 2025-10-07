@@ -1,7 +1,6 @@
 import { promises as fs } from 'node:fs';
 import { basename, resolve } from 'node:path';
 import { window, workspace } from 'vscode';
-// @ts-expect-error TODO Fix package
 import { getConfig } from 'vscode-get-config';
 import { getOutName } from './util.ts';
 

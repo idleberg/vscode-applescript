@@ -1,6 +1,5 @@
 import { kill } from 'node:process';
 import { window } from 'vscode';
-// @ts-expect-error TODO Fix package
 import { getConfig } from 'vscode-get-config';
 
 const activeProcesses = new Map<number, ActiveProcess>();
