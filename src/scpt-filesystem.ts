@@ -1,7 +1,7 @@
-import type { FSWatcher } from 'fs';
-import { readFile, stat, watch, writeFile } from 'fs/promises';
+import { type FSWatcher, watch as watchSync } from 'node:fs';
+import { readFile, stat } from 'node:fs/promises';
 import * as vscode from 'vscode';
-import { compileScpt, decompileScpt, scptUriToFileUri } from './scpt-util';
+import { compileScpt, decompileScpt, scptUriToFileUri } from './scpt-util.ts';
 
 /**
  * Virtual FileSystemProvider for binary AppleScript (.scpt) files
@@ -19,7 +19,7 @@ export class ScptFileSystemProvider implements vscode.FileSystemProvider {
 	/**
 	 * Watch for changes to the underlying .scpt file
 	 */
-	watch(uri: vscode.Uri, options: { recursive: boolean; excludes: string[] }): vscode.Disposable {
+	watch(uri: vscode.Uri): vscode.Disposable {
 		const fileUri = scptUriToFileUri(uri);
 		const filePath = fileUri.fsPath;
 
@@ -31,7 +31,7 @@ export class ScptFileSystemProvider implements vscode.FileSystemProvider {
 		}
 
 		// Watch the actual file for changes
-		const watcher = watch(filePath, async (eventType) => {
+		const watcher = watchSync(filePath, async (eventType) => {
 			if (eventType === 'change' || eventType === 'rename') {
 				this._emitter.fire([
 					{
@@ -69,7 +69,7 @@ export class ScptFileSystemProvider implements vscode.FileSystemProvider {
 				mtime: stats.mtimeMs,
 				size: stats.size, // Note: This is the binary size, not decompiled size
 			};
-		} catch (error: any) {
+		} catch {
 			throw vscode.FileSystemError.FileNotFound(uri);
 		}
 	}
@@ -87,7 +87,7 @@ export class ScptFileSystemProvider implements vscode.FileSystemProvider {
 
 			// Return as UTF-8 bytes
 			return Buffer.from(sourceCode, 'utf-8');
-		} catch (error: any) {
+		} catch {
 			// If decompilation fails, try reading as text (might be a plain text file)
 			try {
 				const buffer = await readFile(filePath);
@@ -147,7 +147,7 @@ export class ScptFileSystemProvider implements vscode.FileSystemProvider {
 	/**
 	 * Rename operation (move the underlying .scpt file)
 	 */
-	async rename(oldUri: vscode.Uri, newUri: vscode.Uri, options: { overwrite: boolean }): Promise<void> {
+	async rename(oldUri: vscode.Uri, newUri: vscode.Uri): Promise<void> {
 		const oldFileUri = scptUriToFileUri(oldUri);
 		const newFileUri = scptUriToFileUri(newUri);
 
@@ -167,7 +167,7 @@ export class ScptFileSystemProvider implements vscode.FileSystemProvider {
 	/**
 	 * Delete the underlying .scpt file
 	 */
-	async delete(uri: vscode.Uri, options: { recursive: boolean }): Promise<void> {
+	async delete(uri: vscode.Uri): Promise<void> {
 		const fileUri = scptUriToFileUri(uri);
 
 		try {
@@ -188,7 +188,7 @@ export class ScptFileSystemProvider implements vscode.FileSystemProvider {
 	/**
 	 * Create directory (not supported for .scpt files)
 	 */
-	async createDirectory(uri: vscode.Uri): Promise<void> {
+	async createDirectory(): Promise<void> {
 		throw vscode.FileSystemError.NoPermissions('Cannot create directory in scpt: filesystem');
 	}
 
