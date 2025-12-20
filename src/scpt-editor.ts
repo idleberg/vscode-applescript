@@ -140,7 +140,6 @@ export class ScptEditorProvider implements vscode.CustomReadonlyEditorProvider<S
 					}
 
 					.editor-placeholder-label-container span {
-						font-size: 13px;
 						line-height: 1.5;
 						color: var(--vscode-foreground);
 					}
@@ -154,7 +153,6 @@ export class ScptEditorProvider implements vscode.CustomReadonlyEditorProvider<S
 					}
 
 					.editor-placeholder-details h3 {
-						font-size: 13px;
 						font-weight: 600;
 						margin-bottom: 8px;
 						color: var(--vscode-foreground);
@@ -193,7 +191,6 @@ export class ScptEditorProvider implements vscode.CustomReadonlyEditorProvider<S
 						padding: 4px 14px;
 						border: none;
 						border-radius: 2px;
-						font-size: 13px;
 						font-family: var(--vscode-font-family);
 						cursor: pointer;
 						text-decoration: none;
