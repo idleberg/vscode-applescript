@@ -179,6 +179,10 @@
 		},
 		"commands": [
 			{
+				"command": "extension.applescript.openBinaryFile",
+				"title": "AppleScript: Open Binary File"
+			},
+			{
 				"command": "extension.applescript.run",
 				"title": "AppleScript: Run Script",
 				"icon": {
@@ -349,6 +353,13 @@
 					"when": "resourceLangId == jxa",
 					"command": "extension.applescript.openSettings",
 					"group": "navigation@6"
+				}
+			],
+			"explorer/context": [
+				{
+					"when": "resourceExtname == .scpt || resourceExtname == .scptd",
+					"command": "extension.applescript.openBinaryFile",
+					"group": "navigation"
 				}
 			]
 		},

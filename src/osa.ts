@@ -108,4 +108,91 @@ async function osascript(options: CommandFlags = { isJXA: false }): Promise<void
 	});
 }
 
-export { osacompile, osascript };
+/**
+ * Decompiles a binary AppleScript (.scpt) file to source text
+ * @param filePath Path to the .scpt file to decompile
+ * @returns Promise resolving to the decompiled source code
+ */
+async function osadecompile(filePath: string): Promise<string> {
+	const { ignoreOS } = await getConfig('applescript');
+
+	if (platform() !== 'darwin' && ignoreOS !== true) {
+		throw new Error('osadecompile is only available on macOS');
+	}
+
+	return new Promise((resolve, reject) => {
+		const { spawn } = require('node:child_process');
+		const process = spawn('osadecompile', [filePath]);
+
+		let stdout = '';
+		let stderr = '';
+
+		process.stdout.on('data', (data: Buffer) => {
+			stdout += data.toString();
+		});
+
+		process.stderr.on('data', (data: Buffer) => {
+			stderr += data.toString();
+		});
+
+		process.on('close', (code: number) => {
+			if (code !== 0) {
+				const error = stderr || 'Unknown error';
+				console.error('[idleberg.applescript] osadecompile failed:', error);
+				reject(new Error(`Failed to decompile ${filePath}: ${error}`));
+			} else {
+				resolve(stdout);
+			}
+		});
+
+		process.on('error', (error: Error) => {
+			console.error('[idleberg.applescript] osadecompile error:', error);
+			reject(error);
+		});
+	});
+}
+
+/**
+ * Compiles AppleScript source to a binary file using stdin
+ * @param sourceCode AppleScript source code
+ * @param outputPath Path where the compiled .scpt should be written
+ */
+async function osacompileFromSource(sourceCode: string, outputPath: string): Promise<void> {
+	const { ignoreOS } = await getConfig('applescript');
+
+	if (platform() !== 'darwin' && ignoreOS !== true) {
+		throw new Error('osacompile is only available on macOS');
+	}
+
+	return new Promise((resolve, reject) => {
+		const { spawn } = require('node:child_process');
+		const process = spawn('osacompile', ['-o', outputPath, '-']);
+
+		let stderr = '';
+
+		process.stderr.on('data', (data: Buffer) => {
+			stderr += data.toString();
+		});
+
+		process.on('close', (code: number) => {
+			if (code !== 0) {
+				const error = stderr || 'Unknown error';
+				console.error('[idleberg.applescript] osacompile failed:', error);
+				reject(new Error(`Failed to compile to ${outputPath}: ${error}`));
+			} else {
+				resolve();
+			}
+		});
+
+		process.on('error', (error: Error) => {
+			console.error('[idleberg.applescript] osacompile error:', error);
+			reject(error);
+		});
+
+		// Write source code to stdin
+		process.stdin.write(sourceCode);
+		process.stdin.end();
+	});
+}
+
+export { osacompile, osacompileFromSource, osadecompile, osascript };

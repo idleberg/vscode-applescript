@@ -1,8 +1,10 @@
-import { commands, type ExtensionContext, languages } from 'vscode';
+import { commands, type ExtensionContext, languages, type Uri, window, workspace } from 'vscode';
 import { osacompile, osascript } from './osa.ts';
 import { appleScriptSymbolProvider } from './outline.ts';
 import { jxaSymbolProvider } from './outline-jxa.ts';
 import { pick } from './processes.ts';
+import { ScptFileSystemProvider } from './scpt-filesystem.ts';
+import { fileUriToScptUri, validateOsaTools } from './scpt-util.ts';
 import { createBuildTask } from './task.ts';
 
 /**
@@ -13,7 +15,55 @@ import { createBuildTask } from './task.ts';
  * symbol providers for the `applescript` and `jxa` languages.
  */
 async function activate(context: ExtensionContext): Promise<void> {
+	// Register virtual filesystem provider for binary .scpt files
+	const scptFs = new ScptFileSystemProvider();
 	context.subscriptions.push(
+		workspace.registerFileSystemProvider('scpt', scptFs, {
+			isCaseSensitive: true,
+			isReadonly: false,
+		}),
+	);
+
+	// Validate osa tools are available (macOS only)
+	const osaToolsAvailable = await validateOsaTools();
+
+	context.subscriptions.push(
+		/**
+		 * Binary .scpt file support
+		 */
+		commands.registerCommand('extension.applescript.openBinaryFile', async (uri?: Uri) => {
+			if (!osaToolsAvailable) {
+				window.showErrorMessage('Binary AppleScript files require macOS with osadecompile/osacompile tools');
+				return;
+			}
+
+			// Resolve the target URI
+			const targetUri =
+				uri ??
+				(await (async () => {
+					const selected = await window.showOpenDialog({
+						canSelectFiles: true,
+						canSelectFolders: false,
+						canSelectMany: false,
+						filters: { 'AppleScript Binary': ['scpt', 'scptd'] },
+						title: 'Open Binary AppleScript File',
+					});
+					return selected?.[0];
+				})());
+
+			if (!targetUri) {
+				return;
+			}
+
+			// Convert file: URI to scpt: URI for virtual filesystem
+			const scptUri = fileUriToScptUri(targetUri);
+
+			// Open in editor with AppleScript language
+			const doc = await workspace.openTextDocument(scptUri);
+			await languages.setTextDocumentLanguage(doc, 'applescript');
+			await window.showTextDocument(doc, { preview: false });
+		}),
+
 		/**
 		 * AppleScript
 		 */
