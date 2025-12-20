@@ -106,7 +106,7 @@ export class ScptEditorProvider implements vscode.CustomReadonlyEditorProvider<S
 				<style>
 					body {
 						font-family: var(--vscode-font-family);
-						font-size: var(--vscode-font-size);
+						font-size: 14px;
 						color: var(--vscode-foreground);
 						background-color: var(--vscode-editor-background);
 						margin: 0;
@@ -232,14 +232,13 @@ export class ScptEditorProvider implements vscode.CustomReadonlyEditorProvider<S
 						</svg>
 					</div>
 					<div class="editor-placeholder-label-container">
-						<span>The file is not displayed in the text editor because it is a binary AppleScript file. It will be decompiled when you click on "Edit File".</span>
+						<span>The file is not displayed in the text editor because it is binary AppleScript. It will be decompiled when you click on "Edit File".</span>
 					</div>
 					<div class="editor-placeholder-details">
 						<h3>What happens when you edit:</h3>
 						<ul>
 							<li>The file will be decompiled using <code>osadecompile</code></li>
-							<li>You can edit the source code in the native VSCode editor</li>
-							<li>Full syntax highlighting and editor features are available</li>
+							<li>You can edit the source code in the editor</li>
 							<li>On save, the code will be compiled back to binary using <code>osacompile</code></li>
 						</ul>
 						<h3>Things to note:</h3>
