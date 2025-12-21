@@ -1,6 +1,7 @@
 import { kill } from 'node:process';
 import { window } from 'vscode';
 import { getConfig } from 'vscode-get-config';
+import type { ActiveProcess } from '../types';
 
 const activeProcesses = new Map<number, ActiveProcess>();
 

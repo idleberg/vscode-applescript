@@ -49,10 +49,6 @@ On macOS, you can make use of the following build commands through the [command-
 - AppleScript: Compile Script – <kbd>Shift ⇧</kbd>+<kbd>Option ⌥</kbd>+<kbd>B</kbd>
 - AppleScript: Compile Script bundle
 - AppleScript: Compile Application
-- JXA: Run Script
-- JXA: Compile Script
-- JXA: Compile Script bundle
-- JXA: Compile Application
 
 ### Settings
 
