@@ -21,6 +21,9 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^20.2.0
         version: 20.2.0
+      '@idleberg/applescript-svg-icon':
+        specifier: github:idleberg/applescript-svg-icon
+        version: applescript-svg-icon@https://codeload.github.com/idleberg/applescript-svg-icon/tar.gz/497c0e8c87460bb6ebf86334edce0c139c3080c5
       '@idleberg/configs':
         specifier: ^0.4.1
         version: 0.4.1(picomatch@4.0.3)
@@ -33,9 +36,6 @@ importers:
       '@types/vscode':
         specifier: 1.85.0
         version: 1.85.0
-      applescript-svg-icon:
-        specifier: github:idleberg/applescript-svg-icon
-        version: https://codeload.github.com/idleberg/applescript-svg-icon/tar.gz/497c0e8c87460bb6ebf86334edce0c139c3080c5
       concurrently:
         specifier: ^9.2.1
         version: 9.2.1
