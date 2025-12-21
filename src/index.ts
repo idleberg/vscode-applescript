@@ -29,7 +29,7 @@ async function activate(context: ExtensionContext): Promise<void> {
 	const osaToolsAvailable = await validateOsaTools();
 
 	// Register custom editor for binary .scpt files (shows warning card)
-	const scptEditorProvider = new ScptEditorProvider(context);
+	const scptEditorProvider = new ScptEditorProvider(osaToolsAvailable);
 	context.subscriptions.push(
 		window.registerCustomEditorProvider(ScptEditorProvider.viewType, scptEditorProvider, {
 			webviewOptions: {

@@ -1,7 +1,8 @@
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
-import type * as vscode from 'vscode';
+import * as vscode from 'vscode';
 import { osacompileFromSource, osadecompile } from './osa.ts';
+import { basename } from 'node:path';
 
 const execFileAsync = promisify(execFile);
 
@@ -20,6 +21,7 @@ export async function decompileScpt(filePath: string): Promise<string> {
  * @param outputPath Absolute path where the .scpt file should be written
  */
 export async function compileScpt(sourceCode: string, outputPath: string): Promise<void> {
+	vscode.window.showInformationMessage(`Compiling to ${basename(outputPath)}`)
 	return await osacompileFromSource(sourceCode, outputPath);
 }
 

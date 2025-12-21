@@ -12,8 +12,8 @@ export class ScptEditorProvider implements vscode.CustomReadonlyEditorProvider<S
 	public static readonly viewType = 'applescript.binary';
 
 	constructor(
-		// private readonly context: vscode.ExtensionContext,
-		private readonly osaToolsAvailable: boolean,
+		private readonly context: vscode.ExtensionContext,
+		// private readonly osaToolsAvailable: boolean,
 	) {}
 
 	/**
@@ -54,7 +54,7 @@ export class ScptEditorProvider implements vscode.CustomReadonlyEditorProvider<S
 	 * Opens the file for editing using the scpt: FileSystemProvider
 	 */
 	private async openFileForEditing(uri: vscode.Uri, webviewPanel: vscode.WebviewPanel): Promise<void> {
-		if (!this.osaToolsAvailable) {
+		if (!this.context) {
 			vscode.window.showErrorMessage('Binary AppleScript files require macOS with osadecompile/osacompile tools');
 			return;
 		}
