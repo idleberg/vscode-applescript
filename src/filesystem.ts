@@ -43,7 +43,7 @@ export class ScptFileSystemProvider implements vscode.FileSystemProvider {
 			}
 		});
 
-		this._watchers.set(filePath, watcher as any);
+		this._watchers.set(filePath, watcher);
 
 		return new vscode.Disposable(() => {
 			const w = this._watchers.get(filePath);
