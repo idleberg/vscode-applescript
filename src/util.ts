@@ -1,10 +1,9 @@
 import { spawn } from 'node:child_process';
 import { constants } from 'node:fs';
 import { access } from 'node:fs/promises';
-// Dependencies
 import { basename, dirname, extname, join } from 'node:path';
 import lineColumn from 'line-column';
-import { type OutputChannel, Uri, window } from 'vscode';
+import { type OutputChannel, type Uri, window } from 'vscode';
 import { getConfig } from 'vscode-get-config';
 import * as activeProcesses from './processes.ts';
 
