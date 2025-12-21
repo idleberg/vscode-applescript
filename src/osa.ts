@@ -116,15 +116,15 @@ async function osadecompile(filePath: string): Promise<string> {
 		const { spawn } = require('node:child_process');
 		const process = spawn('osadecompile', [filePath]);
 
-		let stdout = '';
-		let stderr = '';
+		const stdout: string[] = [];
+		const stderr: string[] = [];
 
 		process.stdout.on('data', (data: Buffer) => {
-			stdout += data.toString();
+			stdout.push(data.toString());
 		});
 
 		process.stderr.on('data', (data: Buffer) => {
-			stderr += data.toString();
+			stderr.push(data.toString());
 		});
 
 		process.on('close', (code: number) => {
@@ -133,7 +133,7 @@ async function osadecompile(filePath: string): Promise<string> {
 				console.error('[idleberg.applescript] osadecompile failed:', error);
 				reject(new Error(`Failed to decompile ${filePath}: ${error}`));
 			} else {
-				resolve(stdout);
+				resolve(stdout.join(''));
 			}
 		});
 
@@ -149,7 +149,7 @@ async function osadecompile(filePath: string): Promise<string> {
  * @param sourceCode AppleScript source code
  * @param outputPath Path where the compiled .scpt should be written
  */
-async function osacompileFromSource(sourceCode: string, outputPath: string): Promise<void> {
+async function osacompileFromSource(sourceCode: string, outputPath: string): Promise<string> {
 	const { ignoreOS } = await getConfig('applescript');
 
 	if (platform() !== 'darwin' && ignoreOS !== true) {
@@ -160,10 +160,15 @@ async function osacompileFromSource(sourceCode: string, outputPath: string): Pro
 		const { spawn } = require('node:child_process');
 		const process = spawn('osacompile', ['-o', outputPath, '-']);
 
-		let stderr = '';
+		const stdout: string[] = [];
+		const stderr: string[] = [];
+
+		process.stdout.on('data', (data: Buffer) => {
+			stdout.push(data.toString());
+		});
 
 		process.stderr.on('data', (data: Buffer) => {
-			stderr += data.toString();
+			stderr.push(data.toString());
 		});
 
 		process.on('close', (code: number) => {
@@ -172,7 +177,7 @@ async function osacompileFromSource(sourceCode: string, outputPath: string): Pro
 				console.error('[idleberg.applescript] osacompile failed:', error);
 				reject(new Error(`Failed to compile to ${outputPath}: ${error}`));
 			} else {
-				resolve();
+				resolve(stdout.join(''));
 			}
 		});
 
