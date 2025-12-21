@@ -1,9 +1,8 @@
 import { type FSWatcher, watch as watchSync } from 'node:fs';
-import { readFile, stat } from 'node:fs/promises';
+import { readFile, rename, stat, unlink } from 'node:fs/promises';
 import * as vscode from 'vscode';
+import { osacompileFromSource, osadecompile } from './osa.ts';
 import { scptUriToFileUri } from './util.ts';
-import { osadecompile, osacompileFromSource } from './osa.ts';
-import { rename, unlink } from 'node:fs/promises';
 
 /**
  * Virtual FileSystemProvider for binary AppleScript (.scpt) files

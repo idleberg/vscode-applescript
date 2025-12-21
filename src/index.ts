@@ -5,8 +5,8 @@ import { jxaSymbolProvider } from './outline-jxa.ts';
 import { pick } from './processes.ts';
 import { ScptEditorProvider } from './scpt-editor.ts';
 import { ScptFileSystemProvider } from './scpt-filesystem.ts';
-import { fileUriToScptUri } from './util.ts';
 import { createBuildTask } from './task.ts';
+import { fileUriToScptUri } from './util.ts';
 
 /**
  * Activate the VS Code extension.
