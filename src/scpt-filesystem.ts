@@ -3,6 +3,7 @@ import { readFile, stat } from 'node:fs/promises';
 import * as vscode from 'vscode';
 import { scptUriToFileUri } from './util.ts';
 import { osadecompile, osacompileFromSource } from './osa.ts';
+import { rename, unlink } from 'node:fs/promises';
 
 /**
  * Virtual FileSystemProvider for binary AppleScript (.scpt) files
@@ -153,8 +154,7 @@ export class ScptFileSystemProvider implements vscode.FileSystemProvider {
 		const newFileUri = scptUriToFileUri(newUri);
 
 		try {
-			const fs = require('fs').promises;
-			await fs.rename(oldFileUri.fsPath, newFileUri.fsPath);
+			await rename(oldFileUri.fsPath, newFileUri.fsPath);
 
 			this._emitter.fire([
 				{ type: vscode.FileChangeType.Deleted, uri: oldUri },
@@ -172,8 +172,7 @@ export class ScptFileSystemProvider implements vscode.FileSystemProvider {
 		const fileUri = scptUriToFileUri(uri);
 
 		try {
-			const fs = require('fs').promises;
-			await fs.unlink(fileUri.fsPath);
+			await unlink(fileUri.fsPath);
 
 			this._emitter.fire([
 				{
