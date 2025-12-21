@@ -136,11 +136,11 @@ export class ScptFileSystemProvider implements vscode.FileSystemProvider {
 					uri: uri,
 				},
 			]);
-		} catch (error: any) {
+		} catch (error) {
 			if (error instanceof vscode.FileSystemError) {
 				throw error;
 			}
-			throw vscode.FileSystemError.Unavailable(`Failed to write ${uri.fsPath}: ${error.message}`);
+			throw vscode.FileSystemError.Unavailable(`Failed to write ${uri.fsPath}: ${(error as Error).message}`);
 		}
 	}
 
@@ -159,8 +159,8 @@ export class ScptFileSystemProvider implements vscode.FileSystemProvider {
 				{ type: vscode.FileChangeType.Deleted, uri: oldUri },
 				{ type: vscode.FileChangeType.Created, uri: newUri },
 			]);
-		} catch (error: any) {
-			throw vscode.FileSystemError.Unavailable(`Failed to rename: ${error.message}`);
+		} catch (error) {
+			throw vscode.FileSystemError.Unavailable(`Failed to rename: ${(error as Error).message}`);
 		}
 	}
 
@@ -180,7 +180,7 @@ export class ScptFileSystemProvider implements vscode.FileSystemProvider {
 					uri: uri,
 				},
 			]);
-		} catch (error: any) {
+		} catch {
 			throw vscode.FileSystemError.FileNotFound(uri);
 		}
 	}
