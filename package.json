@@ -37,7 +37,7 @@
 	"bugs": {
 		"url": "https://github.com/idleberg/vscode-applescript/issues"
 	},
-	"main": "./lib/index.js",
+	"main": "./lib/index.cjs",
 	"icon": "resources/logo.png",
 	"engines": {
 		"vscode": "^1.85.0"
@@ -480,20 +480,20 @@
 	"dependencies": {
 		"acorn": "^8.15.0",
 		"line-column": "^1.0.2",
-		"vscode-get-config": "^0.5.0"
+		"vscode-get-config": "^0.6.2"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^20.1.0",
-		"@commitlint/config-conventional": "^20.0.0",
-		"@idleberg/configs": "^0.3.1",
+		"@commitlint/cli": "^20.2.0",
+		"@commitlint/config-conventional": "^20.2.0",
+		"@idleberg/configs": "^0.4.1",
 		"@types/line-column": "^1.0.2",
 		"@types/node": "^24.7.0",
-		"@types/vscode": "1.85.0",
+		"@types/vscode": "1.107.0",
 		"applescript-svg-icon": "github:idleberg/applescript-svg-icon",
 		"concurrently": "^9.2.1",
 		"cross-env": "^10.1.0",
 		"sharp-cli": "^5.2.0",
-		"tsdown": "^0.15.6",
+		"tsdown": "^0.18.1",
 		"typescript": "^5.9.3"
 	},
 	"packageManager": "pnpm@10.15.1+sha512.34e538c329b5553014ca8e8f4535997f96180a1d0f614339357449935350d924e22f8614682191264ec33d1462ac21561aff97f6bb18065351c162c7e8f6de67"
