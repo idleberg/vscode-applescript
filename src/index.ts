@@ -5,7 +5,7 @@ import { jxaSymbolProvider } from './outline-jxa.ts';
 import { pick } from './processes.ts';
 import { ScptEditorProvider } from './scpt-editor.ts';
 import { ScptFileSystemProvider } from './scpt-filesystem.ts';
-import { fileUriToScptUri, validateOsaTools } from './scpt-util.ts';
+import { fileUriToScptUri } from './util.ts';
 import { createBuildTask } from './task.ts';
 
 /**
@@ -25,11 +25,8 @@ async function activate(context: ExtensionContext): Promise<void> {
 		}),
 	);
 
-	// Validate osa tools are available (macOS only)
-	const osaToolsAvailable = await validateOsaTools();
-
 	// Register custom editor for binary .scpt files (shows warning card)
-	const scptEditorProvider = new ScptEditorProvider(osaToolsAvailable);
+	const scptEditorProvider = new ScptEditorProvider(context);
 	context.subscriptions.push(
 		window.registerCustomEditorProvider(ScptEditorProvider.viewType, scptEditorProvider, {
 			webviewOptions: {

@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { fileUriToScptUri } from './scpt-util.ts';
+import { fileUriToScptUri } from './util.ts';
 
 /**
  * Custom editor provider for binary AppleScript (.scpt) files

@@ -1,7 +1,8 @@
 import { type FSWatcher, watch as watchSync } from 'node:fs';
 import { readFile, stat } from 'node:fs/promises';
 import * as vscode from 'vscode';
-import { compileScpt, decompileScpt, scptUriToFileUri } from './scpt-util.ts';
+import { scptUriToFileUri } from './util.ts';
+import { osadecompile, osacompileFromSource } from './osa.ts';
 
 /**
  * Virtual FileSystemProvider for binary AppleScript (.scpt) files
@@ -83,7 +84,7 @@ export class ScptFileSystemProvider implements vscode.FileSystemProvider {
 
 		try {
 			// Decompile the binary file
-			const sourceCode = await decompileScpt(filePath);
+			const sourceCode = await osadecompile(filePath);
 
 			// Return as UTF-8 bytes
 			return Buffer.from(sourceCode, 'utf-8');
@@ -127,7 +128,7 @@ export class ScptFileSystemProvider implements vscode.FileSystemProvider {
 			const sourceCode = Buffer.from(content).toString('utf-8');
 
 			// Compile to binary .scpt
-			await compileScpt(sourceCode, filePath);
+			await osacompileFromSource(sourceCode, filePath);
 
 			// Fire change event
 			this._emitter.fire([
