@@ -162,7 +162,7 @@ async function osacompileFromSource(sourceCode: string, outputPath: string): Pro
 	if (textEditor) {
 		const scope = textEditor.document.languageId;
 
-		// This is the only remaining JXA functionality
+		// Intentionally keeping minimal JXA compability
 		if (['javascript', 'jxa'].includes(scope)) {
 			args.push('-l', 'JavaScript');
 		}
