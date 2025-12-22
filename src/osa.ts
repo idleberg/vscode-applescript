@@ -31,40 +31,39 @@ async function osacompile(compileTarget: string): Promise<void> {
 		return;
 	}
 
-	doc.save().then(() => {
-		const outName = getOutName(doc.fileName, compileTarget);
-		const args: string[] = ['-o', outName];
+	await doc.save();
 
-		if (options.executeOnly === true) {
-			args.push('-x');
+	const outName = getOutName(doc.fileName, compileTarget);
+	const args: string[] = ['-o', outName];
+
+	if (options.executeOnly === true) {
+		args.push('-x');
+	}
+
+	if (compileTarget === 'app' && options.stayOpen === true) {
+		args.push('-s');
+	}
+
+	if (compileTarget === 'app' && options.startupScreen === true) {
+		args.push('-u');
+	}
+
+	args.push(doc.fileName);
+
+	try {
+		await spawnPromise('osacompile', doc.fileName, args, outputChannel);
+		if (showNotifications) {
+			window.showInformationMessage(`Successfully compiled '${doc.fileName}'`);
 		}
+	} catch (error) {
+		console.error('[idleberg.applescript]', error instanceof Error ? error.message : error);
 
-		if (compileTarget === 'app' && options.stayOpen === true) {
-			args.push('-s');
+		outputChannel.show();
+
+		if (showNotifications) {
+			window.showErrorMessage('Failed to compile or exited with error (see output for details)');
 		}
-
-		if (compileTarget === 'app' && options.startupScreen === true) {
-			args.push('-u');
-		}
-
-		args.push(doc.fileName);
-
-		spawnPromise('osacompile', doc.fileName, args, outputChannel)
-			.then(() => {
-				if (showNotifications) {
-					window.showInformationMessage(`Successfully compiled '${doc.fileName}'`);
-				}
-			})
-			.catch((error) => {
-				console.error('[idleberg.applescript]', error instanceof Error ? error.message : error);
-
-				outputChannel.show();
-
-				if (showNotifications) {
-					window.showErrorMessage('Failed to compile or exited with error (see output for details)');
-				}
-			});
-	});
+	}
 }
 
 async function osascript(): Promise<void> {
@@ -98,14 +97,16 @@ async function osascript(): Promise<void> {
 		args.unshift('-s', osascript.outputStyle.trim());
 	}
 
-	spawnPromise('osascript', doc.fileName, args, outputChannel).catch((error) => {
+	try {
+		await spawnPromise('osascript', doc.fileName, args, outputChannel);
+	} catch (error) {
 		console.error('[idleberg.applescript]', error instanceof Error ? error.message : error);
 		outputChannel.show();
 
 		if (showNotifications) {
 			window.showErrorMessage('Failed to run script or exited with error (see output for details)');
 		}
-	});
+	}
 }
 
 /**
