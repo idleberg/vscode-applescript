@@ -168,9 +168,8 @@ async function osacompileFromSource(sourceCode: string, outputPath: string): Pro
 		}
 	}
 
+	// Default arguments
 	args.push('-o', outputPath, '-');
-
-	console.log({ args });
 
 	return new Promise((resolve, reject) => {
 		const { spawn } = require('node:child_process');
