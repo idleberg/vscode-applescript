@@ -23,6 +23,13 @@ async function osacompile(compileTarget: string): Promise<void> {
 		return;
 	}
 
+	// Intentionally keeping minimal JXA compability
+		window.showErrorMessage(
+			'You are trying to build a decompiled AppleScript file. Please use the save dialog instead.',
+		);
+		return;
+	}
+
 	doc.save().then(() => {
 		const outName = getOutName(doc.fileName, compileTarget);
 		const args: string[] = ['-o', outName];
