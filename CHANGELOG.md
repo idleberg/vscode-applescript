@@ -1,3 +1,10 @@
+# v0.29.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.29.0)
+
+- add binary editing feature
+- remove all JXA features (they are now part of a separate package, which will still be installed)
+- update tooling
+- update dependencies
+
 # v0.28.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.28.2)
 
 - improve error handling when creating build tasks
