@@ -156,9 +156,25 @@ async function osacompileFromSource(sourceCode: string, outputPath: string): Pro
 		throw new Error('osacompile is only available on macOS');
 	}
 
+	const args: string[] = [];
+	const textEditor = window.activeTextEditor;
+
+	if (textEditor) {
+		const scope = textEditor.document.languageId;
+
+		// This is the only remaining JXA functionality
+		if (['javascript', 'jxa'].includes(scope)) {
+			args.push('-l', 'JavaScript');
+		}
+	}
+
+	args.push('-o', outputPath, '-');
+
+	console.log({ args });
+
 	return new Promise((resolve, reject) => {
 		const { spawn } = require('node:child_process');
-		const process = spawn('osacompile', ['-o', outputPath, '-']);
+		const process = spawn('osacompile', args);
 
 		const stdout: string[] = [];
 		const stderr: string[] = [];
