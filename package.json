@@ -16,6 +16,7 @@
 		"build:image": "sharp resize 1024 1024 --input node_modules/@idleberg/applescript-svg-icon/src/applescript.svg --output resources/logo.png",
 		"dev": "npm run start",
 		"lint": "biome check",
+		"prepare": "lefthook install",
 		"publish:ovsx": "ovsx publish --no-dependencies",
 		"publish:vsce": "vsce publish --githubBranch main --no-dependencies",
 		"start": "npm run build:code -- --watch",
