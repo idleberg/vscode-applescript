@@ -2,7 +2,7 @@ import { type FSWatcher, watch as watchSync } from 'node:fs';
 import { readFile, rename, stat, unlink } from 'node:fs/promises';
 import * as vscode from 'vscode';
 import { osacompileFromSource, osadecompile } from '../osa.ts';
-import { scptUriToFileUri } from '../util.ts';
+import { fileExists, scptUriToFileUri } from '../util.ts';
 
 /**
  * Virtual FileSystemProvider for binary AppleScript (.scpt) files
@@ -111,10 +111,7 @@ export class ScptFileSystemProvider implements vscode.FileSystemProvider {
 		const filePath = fileUri.fsPath;
 
 		try {
-			// Check if file exists
-			const exists = await stat(filePath)
-				.then(() => true)
-				.catch(() => false);
+			const exists = await fileExists(filePath);
 
 			if (!exists && !options.create) {
 				throw vscode.FileSystemError.FileNotFound(uri);
