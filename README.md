@@ -8,7 +8,7 @@
 > [!IMPORTANT]
 > JXA support is now deprecated and has been moved to a separate extension. Please refer to the [deprecation notice](https://github.com/idleberg/vscode-jxa/discussions/2) for details.
 
-Language syntax, snippets and build system for AppleScriptgit
+Language syntax, snippets and build system for AppleScript.
 
 ![Screenshot](https://raw.githubusercontent.com/idleberg/vscode-applescript/main/resources/screenshot.png)
 
