@@ -141,7 +141,15 @@ export class ScptFileSystemProvider implements vscode.FileSystemProvider {
 			if (error instanceof vscode.FileSystemError) {
 				throw error;
 			}
-			throw vscode.FileSystemError.Unavailable(`Failed to write ${uri.fsPath}: ${(error as Error).message}`);
+
+			if ((error as Error).message.includes('A unknown token can’t go after this identifier')) {
+				vscode.window.showErrorMessage(
+					'Failed to write file. If you are trying to compile JXA to binary AppleScript, you will need to set the correct language for the source.',
+				);
+				return;
+			}
+
+			throw vscode.FileSystemError.Unavailable((error as Error).message);
 		}
 	}
 
