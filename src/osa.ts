@@ -24,6 +24,7 @@ async function osacompile(compileTarget: string): Promise<void> {
 	}
 
 	// Intentionally keeping minimal JXA compability
+	if (doc.uri.scheme === 'scpt') {
 		window.showErrorMessage(
 			'You are trying to build a decompiled AppleScript file. Please use the save dialog instead.',
 		);
