@@ -12,8 +12,6 @@ Language syntax, snippets and build system for AppleScript and JavaScript for Au
 
 ![Screenshot](https://raw.githubusercontent.com/idleberg/vscode-applescript/main/resources/screenshot.png)
 
-_Screenshot of AppleScript in Visual Studio Code with [Hopscotch](https://marketplace.visualstudio.com/items?itemName=idleberg.hopscotch) theme_
-
 ## Installation
 
 ### Extension Marketplace
