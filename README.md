@@ -30,7 +30,7 @@ With [shell commands](https://code.visualstudio.com/docs/editor/command-line) in
 
 ### Packaged Extension
 
-Download the packaged extension from the the [release page](https://github.com/idleberg/vscode-applescript/releases) and install it from the command-line:
+Download the packaged extension from the [release page](https://github.com/idleberg/vscode-applescript/releases) and install it from the command line:
 
 ```bash
 $ code --install-extension path/to/applescript-*.vsix
@@ -71,7 +71,7 @@ You can tweak the defaults for this package, `osacompile` and `osascript` in the
 
 #### File Encoding
 
-The default character encoding for AppleScript text files is [Mac Roman](https://www.wikiwand.com/en/Mac_OS_Roman). If you wish to change this, you can do so in the settings.
+The default character encoding for AppleScript text files is [Mac Roman](https://www.wikiwand.com/en/Mac_OS_Roman). If you'd like to change this, you can just do so in the settings.
 
 **Example:**
 
