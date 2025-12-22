@@ -2,6 +2,12 @@ import { kill } from 'node:process';
 import { window } from 'vscode';
 import { getConfig } from 'vscode-get-config';
 
+type ActiveProcess = {
+	created: number;
+	file: string;
+	process: string;
+};
+
 const activeProcesses = new Map<number, ActiveProcess>();
 
 export let lastKilledProcessId = 0;

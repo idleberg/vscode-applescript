@@ -49,10 +49,6 @@ On macOS, you can make use of the following build commands through the [command-
 - AppleScript: Compile Script – <kbd>Shift ⇧</kbd>+<kbd>Option ⌥</kbd>+<kbd>B</kbd>
 - AppleScript: Compile Script bundle
 - AppleScript: Compile Application
-- JXA: Run Script
-- JXA: Compile Script
-- JXA: Compile Script bundle
-- JXA: Compile Application
 
 ### Settings
 
@@ -69,8 +65,6 @@ You can tweak the defaults for this package, `osacompile` and `osascript` in the
 | `osacompile.stayOpen`          | `false`    | Stay open after run handler                                                                        |
 | `osacompile.startupScreen`     | `false`    | Show startup-screen                                                                                |
 | `osascript.outputStyle`        | -          | The flags argument is a string consisting of any of the modifier characters `e`, `h`, `o`, and `s` |
-| `scpt.theme`                   | `"(none)"` | Custom syntax theme for binary AppleScript files, which are opened in a custom web-view            |
-| `scpt.overrideThemeBackground` | `false`    | Allows overriding the syntax-theme's background color                                              |
 
 #### File Encoding
 
