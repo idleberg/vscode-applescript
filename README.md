@@ -27,7 +27,7 @@ With [shell commands](https://code.visualstudio.com/docs/editor/command-line) in
 
 ### Packaged Extension
 
-Download the packaged extension from the the [release page](https://github.com/idleberg/vscode-applescript/releases) and install it from the command-line:
+Download the packaged extension from the [release page](https://github.com/idleberg/vscode-applescript/releases) and install it from the command-line:
 
 ```bash
 $ code --install-extension path/to/applescript-*.vsix
