@@ -1,8 +1,8 @@
 import { commands, type ExtensionContext, languages, type Uri, window, workspace } from 'vscode';
-import { ScptEditorProvider } from './editor.ts';
-import { ScptFileSystemProvider } from './filesystem.ts';
+import { ScptEditorProvider } from './providers/editor.ts';
+import { ScptFileSystemProvider } from './providers/filesystem.ts';
 import { osacompile, osascript } from './osa.ts';
-import { appleScriptSymbolProvider } from './outline.ts';
+import { appleScriptSymbolProvider } from './providers/symbols.ts';
 import { pick } from './processes.ts';
 import { createBuildTask } from './task.ts';
 import { fileUriToScptUri } from './util.ts';
