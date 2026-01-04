@@ -36,6 +36,9 @@
 	"bugs": {
 		"url": "https://github.com/idleberg/vscode-applescript/issues"
 	},
+	"sponsor": {
+		"url": "https://buymeacoffee.com/idleberg"
+	},
 	"main": "./lib/index.cjs",
 	"icon": "resources/logo.png",
 	"engines": {
