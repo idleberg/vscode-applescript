@@ -69,7 +69,9 @@ You can tweak the defaults for this package, `osacompile` and `osascript` in the
 
 #### File Encoding
 
-The default character encoding for AppleScript text files is [Mac Roman](https://www.wikiwand.com/en/Mac_OS_Roman). If you'd like to change this, you can just do so in the settings.
+In prior versions of macOS, the default character encoding for AppleScript text files was [Mac Roman](https://www.wikiwand.com/en/Mac_OS_Roman); it is now UTF-8.
+
+If you are using this extension to edit old AppleScript text files, and your VS Code cannot open the files, you may need to change VS Code's default encoding for AppleScript files in the settings.
 
 **Example:**
 
@@ -80,6 +82,10 @@ The default character encoding for AppleScript text files is [Mac Roman](https:/
 	}
 }
 ```
+
+**Note:**
+
+However, if an AppleScript file has been edited and compiled in Apple's Script Editor app, it saves the compiled binary into the same AppleScript file, making it unreadable in VS Code. To recover from this, open the AppleScript file in Apple's Script Editor app, and either copy the content from its UI, or use its File > Export to export the file as text-only file.
 
 ## License
 
