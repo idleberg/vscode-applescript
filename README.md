@@ -6,7 +6,10 @@
 [![Build](https://img.shields.io/github/actions/workflow/status/idleberg/vscode-applescript/default.yml?style=for-the-badge)](https://github.com/idleberg/vscode-applescript/actions)
 
 > [!IMPORTANT]
-> JXA support is now deprecated and has been moved to a separate extension. Please refer to the [deprecation notice](https://github.com/idleberg/vscode-jxa/discussions/2) for details.
+> JXA support is now deprecated and has been moved to a separate extension.
+> Please refer to the
+> [deprecation notice](https://github.com/idleberg/vscode-jxa/discussions/2) for
+> details.
 
 Language syntax, snippets and build system for AppleScript.
 
@@ -22,19 +25,24 @@ Launch Quick Open, paste the following command, and press <kbd>Enter</kbd>
 
 ### CLI
 
-With [shell commands](https://code.visualstudio.com/docs/editor/command-line) installed, you can use the following command to install the extension:
+With [shell commands](https://code.visualstudio.com/docs/editor/command-line)
+installed, you can use the following command to install the extension:
 
 `$ code --install-extension idleberg.applescript`
 
 ### Packaged Extension
 
-Download the packaged extension from the [release page](https://github.com/idleberg/vscode-applescript/releases) and install it from the command line:
+Download the packaged extension from the
+[release page](https://github.com/idleberg/vscode-applescript/releases) and
+install it from the command line:
 
 ```bash
 $ code --install-extension path/to/applescript-*.vsix
 ```
 
-Alternatively, you can download the packaged extension from the [Open VSX Registry](https://open-vsx.org/) or install it using the [`ovsx`](https://www.npmjs.com/package/ovsx) command-line tool:
+Alternatively, you can download the packaged extension from the
+[Open VSX Registry](https://open-vsx.org/) or install it using the
+[`ovsx`](https://www.npmjs.com/package/ovsx) command-line tool:
 
 ```bash
 $ ovsx get idleberg.applescript
@@ -44,49 +52,51 @@ $ ovsx get idleberg.applescript
 
 ### Building
 
-On macOS, you can make use of the following build commands through the [command-palette](https://code.visualstudio.com/docs/editor/codebasics#_command-palette):
+On macOS, you can make use of the following build commands through the
+[command-palette](https://code.visualstudio.com/docs/editor/codebasics#_command-palette):
 
 - AppleScript: Run Script – <kbd>Shift ⇧</kbd>+<kbd>Option ⌥</kbd>+<kbd>R</kbd>
-- AppleScript: Compile Script – <kbd>Shift ⇧</kbd>+<kbd>Option ⌥</kbd>+<kbd>B</kbd>
+- AppleScript: Compile Script – <kbd>Shift ⇧</kbd>+<kbd>Option
+  ⌥</kbd>+<kbd>B</kbd>
 - AppleScript: Compile Script bundle
 - AppleScript: Compile Application
 
 ### Settings
 
-You can tweak the defaults for this package, `osacompile` and `osascript` in the package settings.
+You can tweak the defaults for this package, `osacompile` and `osascript` in the
+package settings.
 
-| Setting                        | Default    | Description                                                                                        |
-| ------------------------------ | ---------- | -------------------------------------------------------------------------------------------------- |
-| `showNotifications`            | `true`     | Show build notifications indicating success or failure                                             |
-| `alwaysShowOutput`             | `false`    | Specify whether to show the output panel on errors only or on each build                           |
-| `convertErrorRange`            | `false`    | Convert error range to line/column                                                                 |
-| `defaultBuildTask`             | `"script"` | Specify the default build task when creating a new task file                                       |
-| `allowMultiTermination`        | `false`    | Allows the selection of multiple processes to be terminated                                        |
-| `osacompile.executeOnly`       | `false`    | Save the resulting script as execute-only                                                          |
-| `osacompile.stayOpen`          | `false`    | Stay open after run handler                                                                        |
-| `osacompile.startupScreen`     | `false`    | Show startup-screen                                                                                |
-| `osascript.outputStyle`        | -          | The flags argument is a string consisting of any of the modifier characters `e`, `h`, `o`, and `s` |
+| Setting                    | Default    | Description                                                                                        |
+| -------------------------- | ---------- | -------------------------------------------------------------------------------------------------- |
+| `showNotifications`        | `true`     | Show build notifications indicating success or failure                                             |
+| `alwaysShowOutput`         | `false`    | Specify whether to show the output panel on errors only or on each build                           |
+| `convertErrorRange`        | `false`    | Convert error range to line/column                                                                 |
+| `defaultBuildTask`         | `"script"` | Specify the default build task when creating a new task file                                       |
+| `allowMultiTermination`    | `false`    | Allows the selection of multiple processes to be terminated                                        |
+| `osacompile.executeOnly`   | `false`    | Save the resulting script as execute-only                                                          |
+| `osacompile.stayOpen`      | `false`    | Stay open after run handler                                                                        |
+| `osacompile.startupScreen` | `false`    | Show startup-screen                                                                                |
+| `osascript.outputStyle`    | -          | The flags argument is a string consisting of any of the modifier characters `e`, `h`, `o`, and `s` |
 
 #### File Encoding
 
-In prior versions of macOS, the default character encoding for AppleScript text files was [Mac Roman](https://www.wikiwand.com/en/Mac_OS_Roman); it is now UTF-8.
+In prior versions of macOS, the default character encoding for AppleScript text
+files was [Mac Roman](https://www.wikiwand.com/en/Mac_OS_Roman); it is now
+UTF-8.
 
-If you are using this extension to edit old AppleScript text files, and your VS Code cannot open the files, you may need to change VS Code's default encoding for AppleScript files in the settings.
+You can tweak the default file encoding in your Visual Studio Code settings.
 
 **Example:**
 
 ```json
 {
 	"[applescript]": {
-		"files.encoding": "utf16le"
+		"files.encoding": "macroman"
 	}
 }
 ```
 
-**Note:**
-
-However, if an AppleScript file has been edited and compiled in Apple's Script Editor app, it saves the compiled binary into the same AppleScript file, making it unreadable in VS Code. To recover from this, open the AppleScript file in Apple's Script Editor app, and either copy the content from its UI, or use its File > Export to export the file as text-only file.
-
 ## License
 
-This work is licensed under [The MIT License](https://opensource.org/licenses/MIT).
+This work is licensed under
+[The MIT License](https://opensource.org/licenses/MIT).
