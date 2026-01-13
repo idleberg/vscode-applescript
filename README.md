@@ -6,9 +6,10 @@
 [![Build](https://img.shields.io/github/actions/workflow/status/idleberg/vscode-applescript/default.yml?style=for-the-badge)](https://github.com/idleberg/vscode-applescript/actions)
 
 > [!IMPORTANT]
-> JXA support has been moved to a [separate extension](https://github.com/idleberg/vscode-jxa).
-> Please refer to the [deprecation notice](https://github.com/idleberg/vscode-jxa/discussions/2) for
-> details.
+> JXA support has been moved to a
+> [separate extension](https://github.com/idleberg/vscode-jxa). Please refer to
+> the [deprecation notice](https://github.com/idleberg/vscode-jxa/discussions/2)
+> for details.
 
 Language syntax, snippets and build system for AppleScript.
 
