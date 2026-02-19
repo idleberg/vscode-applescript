@@ -7,9 +7,7 @@
 
 > [!IMPORTANT]
 > JXA support has been moved to a
-> [separate extension](https://github.com/idleberg/vscode-jxa). Please refer to
-> the [deprecation notice](https://github.com/idleberg/vscode-jxa/discussions/2)
-> for details.
+> [separate extension](https://github.com/idleberg/vscode-jxa). As of March 24, 2026, it will no longer be bundled as an extension.
 
 Language syntax, snippets and build system for AppleScript.
 
