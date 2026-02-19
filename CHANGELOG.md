@@ -1,3 +1,7 @@
+# v0.29.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.29.2)
+
+- fix typo in docs
+
 # v0.29.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.29.1)
 
 - use native icons
