@@ -167,7 +167,7 @@
 			{
 				"command": "extension.applescript.terminateProcess",
 				"title": "AppleScript: Terminate Process",
-				"icon": "$(close)"
+				"icon": "$(circle-slash)"
 			},
 			{
 				"command": "extension.applescript.createBuildTask",
