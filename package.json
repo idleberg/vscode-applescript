@@ -142,58 +142,37 @@
 			{
 				"command": "extension.applescript.run",
 				"title": "AppleScript: Run Script",
-				"icon": {
-					"dark": "./resources/dark/run.svg",
-					"light": "./resources/light/run.svg"
-				}
+				"icon": "$(play)"
 			},
 			{
 				"command": "extension.applescript.compile",
 				"title": "AppleScript: Compile Script",
-				"icon": {
-					"dark": "./resources/dark/script.svg",
-					"light": "./resources/light/script.svg"
-				}
+				"icon": "$(save)"
 			},
 			{
 				"command": "extension.applescript.compileBundle",
 				"title": "AppleScript: Compile Script bundle",
-				"icon": {
-					"dark": "./resources/dark/bundle.svg",
-					"light": "./resources/light/bundle.svg"
-				}
+				"icon": "$(layers)"
 			},
 			{
 				"command": "extension.applescript.compileApp",
 				"title": "AppleScript: Compile Application",
-				"icon": {
-					"dark": "./resources/dark/app.svg",
-					"light": "./resources/light/app.svg"
-				}
+				"icon": "$(package)"
 			},
 			{
 				"command": "extension.applescript.openSettings",
 				"title": "AppleScript: Open Settings",
-				"icon": {
-					"dark": "./resources/dark/settings.svg",
-					"light": "./resources/light/settings.svg"
-				}
+				"icon": "$(settings)"
 			},
 			{
 				"command": "extension.applescript.terminateProcess",
 				"title": "AppleScript: Terminate Process",
-				"icon": {
-					"dark": "./resources/dark/terminate.svg",
-					"light": "./resources/light/terminate.svg"
-				}
+				"icon": "$(close)"
 			},
 			{
 				"command": "extension.applescript.createBuildTask",
 				"title": "AppleScript: Create Build Task",
-				"icon": {
-					"dark": "./resources/dark/task.svg",
-					"light": "./resources/light/task.svg"
-				}
+				"icon": "$(checklist)"
 			}
 		],
 		"menus": {
@@ -341,17 +320,17 @@
 		"vscode-get-config": "^0.6.2"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^20.3.1",
-		"@commitlint/config-conventional": "^20.3.1",
+		"@commitlint/cli": "^20.4.1",
+		"@commitlint/config-conventional": "^20.4.1",
 		"@idleberg/applescript-svg-icon": "github:idleberg/applescript-svg-icon",
-		"@idleberg/configs": "^0.4.1",
+		"@idleberg/configs": "^0.4.2",
 		"@types/line-column": "^1.0.2",
 		"@types/node": "^24.7.0",
 		"@types/vscode": "1.85.0",
 		"concurrently": "^9.2.1",
 		"cross-env": "^10.1.0",
 		"sharp-cli": "^5.2.0",
-		"tsdown": "^0.19.0",
+		"tsdown": "^0.20.3",
 		"typescript": "^5.9.3"
 	},
 	"extensionDependencies": [
