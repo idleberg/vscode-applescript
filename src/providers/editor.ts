@@ -197,29 +197,7 @@ export class ScptEditorProvider implements vscode.CustomReadonlyEditorProvider<S
 						outline-offset: 2px;
 					}
 
-					.monaco-text-button {
-						color: var(--vscode-button-foreground);
-						background-color: var(--vscode-button-background);
-					}
-
-					.monaco-text-button:hover {
-						background-color: var(--vscode-button-hoverBackground);
-					}
-
-					.monaco-text-button:focus {
-						outline: 1px solid var(--vscode-focusBorder);
-					}
-
-					.monaco-button-secondary {
-						color: var(--vscode-button-secondaryForeground);
-						background-color: var(--vscode-button-secondaryBackground);
-					}
-
-					.monaco-button-secondary:hover {
-						background-color: var(--vscode-button-secondaryHoverBackground);
-					}
-
-					.monaco-button-secondary:focus {
+					.monaco-button:focus {
 						outline: 1px solid var(--vscode-focusBorder);
 					}
 				</style>
@@ -249,19 +227,33 @@ export class ScptEditorProvider implements vscode.CustomReadonlyEditorProvider<S
 						</ul>
 					</div>
 					<div class="editor-placeholder-buttons-container">
-						<a id="editButton" class="monaco-button monaco-text-button" tabindex="0" role="button" aria-disabled="false">Edit File</a>
-						<a id="cancelButton" class="monaco-button monaco-button-secondary" tabindex="0" role="button" aria-disabled="false">Cancel</a>
+						<a id="editButton" class="monaco-button" style="color: var(--vscode-button-foreground); background-color: var(--vscode-button-background);" tabindex="0" role="button" aria-disabled="false">Edit File</a>
+						<a id="cancelButton" class="monaco-button" style="color: var(--vscode-button-secondaryForeground); background-color: var(--vscode-button-secondaryBackground);" tabindex="0" role="button" aria-disabled="false">Cancel</a>
 					</div>
 				</div>
 
 				<script nonce="${nonce}">
 					const vscode = acquireVsCodeApi();
 
-					document.getElementById('editButton').addEventListener('click', function() {
+					const editButton = document.getElementById('editButton');
+					editButton.addEventListener('mouseenter', function() {
+						this.style.backgroundColor = 'var(--vscode-button-hoverBackground)';
+					});
+					editButton.addEventListener('mouseleave', function() {
+						this.style.backgroundColor = 'var(--vscode-button-background)';
+					});
+					editButton.addEventListener('click', function() {
 						vscode.postMessage({ command: 'editFile' });
 					});
 
-					document.getElementById('cancelButton').addEventListener('click', function() {
+					const cancelButton = document.getElementById('cancelButton');
+					cancelButton.addEventListener('mouseenter', function() {
+						this.style.backgroundColor = 'var(--vscode-button-secondaryHoverBackground)';
+					});
+					cancelButton.addEventListener('mouseleave', function() {
+						this.style.backgroundColor = 'var(--vscode-button-secondaryBackground)';
+					});
+					cancelButton.addEventListener('click', function() {
 						vscode.postMessage({ command: 'cancel' });
 					});
 				</script>
