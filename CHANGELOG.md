@@ -1,3 +1,7 @@
+# v0.29.3 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.29.3)
+
+- update button hover styles on custom webview
+
 # v0.29.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.29.2)
 
 - fix typo in docs
