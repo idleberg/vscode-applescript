@@ -5,6 +5,7 @@ export default defineConfig({
 	entry: ['src/index.ts'],
 	external: ['vscode'],
 	format: 'cjs',
+	inlineOnly: false,
 	minify: true,
 	noExternal: ['line-column', 'vscode-get-config'],
 	outDir: 'lib',
