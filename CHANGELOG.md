@@ -1,3 +1,8 @@
+# v0.29.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.29.1)
+
+- use native icons
+- update dependencies
+
 # v0.29.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.29.0)
 
 - add binary editing feature
