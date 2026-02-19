@@ -1,3 +1,8 @@
+# v0.29.4 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.29.4)
+
+- update icons and menu order
+- allow overwriting task files
+
 # v0.29.3 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.29.3)
 
 - update button hover styles on custom webview

@@ -2,7 +2,7 @@
 	"name": "applescript",
 	"displayName": "AppleScript",
 	"description": "Language syntax, snippets and build system for AppleScript and JavaScript for Automation",
-	"version": "0.29.3",
+	"version": "0.29.4",
 	"publisher": "idleberg",
 	"license": "MIT",
 	"author": {
@@ -145,29 +145,29 @@
 				"icon": "$(play)"
 			},
 			{
+				"command": "extension.applescript.terminateProcess",
+				"title": "AppleScript: Terminate Process",
+				"icon": "$(notebook-stop)"
+			},
+			{
 				"command": "extension.applescript.compile",
 				"title": "AppleScript: Compile Script",
-				"icon": "$(save)"
+				"icon": "$(file-code)"
 			},
 			{
 				"command": "extension.applescript.compileBundle",
 				"title": "AppleScript: Compile Script bundle",
-				"icon": "$(layers)"
+				"icon": "$(file-submodule)"
 			},
 			{
 				"command": "extension.applescript.compileApp",
 				"title": "AppleScript: Compile Application",
-				"icon": "$(package)"
+				"icon": "$(archive)"
 			},
 			{
 				"command": "extension.applescript.openSettings",
 				"title": "AppleScript: Open Settings",
 				"icon": "$(settings)"
-			},
-			{
-				"command": "extension.applescript.terminateProcess",
-				"title": "AppleScript: Terminate Process",
-				"icon": "$(circle-slash)"
 			},
 			{
 				"command": "extension.applescript.createBuildTask",
@@ -184,33 +184,33 @@
 				},
 				{
 					"when": "resourceLangId == applescript",
-					"command": "extension.applescript.compile",
+					"command": "extension.applescript.terminateProcess",
 					"group": "navigation@2"
 				},
 				{
 					"when": "resourceLangId == applescript",
-					"command": "extension.applescript.compileBundle",
+					"command": "extension.applescript.compile",
 					"group": "navigation@3"
 				},
 				{
 					"when": "resourceLangId == applescript",
-					"command": "extension.applescript.compileApp",
+					"command": "extension.applescript.compileBundle",
 					"group": "navigation@4"
 				},
 				{
 					"when": "resourceLangId == applescript",
-					"command": "extension.applescript.createBuildTask",
+					"command": "extension.applescript.compileApp",
 					"group": "navigation@5"
 				},
 				{
 					"when": "resourceLangId == applescript",
-					"command": "extension.applescript.terminateProcess",
+					"command": "extension.applescript.createBuildTask",
 					"group": "navigation@6"
 				},
 				{
 					"when": "resourceLangId == applescript",
 					"command": "extension.applescript.openSettings",
-					"group": "navigation@6"
+					"group": "navigation@7"
 				}
 			],
 			"explorer/context": [
@@ -341,5 +341,19 @@
 			"lefthook"
 		]
 	},
-	"packageManager": "pnpm@10.26.1+sha512.664074abc367d2c9324fdc18037097ce0a8f126034160f709928e9e9f95d98714347044e5c3164d65bd5da6c59c6be362b107546292a8eecb7999196e5ce58fa"
+	"packageManager": "pnpm@10.26.1+sha512.664074abc367d2c9324fdc18037097ce0a8f126034160f709928e9e9f95d98714347044e5c3164d65bd5da6c59c6be362b107546292a8eecb7999196e5ce58fa",
+	"__metadata": {
+		"id": "d57cfcbb-5746-48be-a607-96967331a91c",
+		"publisherId": "d142cf02-af52-4395-9363-148909445cb3",
+		"publisherDisplayName": "idleberg",
+		"targetPlatform": "universal",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1771521179362,
+		"pinned": true,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 498088
+	}
 }
