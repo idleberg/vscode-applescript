@@ -34,8 +34,8 @@ importers:
         specifier: ^24.7.0
         version: 24.7.0
       '@types/vscode':
-        specifier: 1.85.0
-        version: 1.85.0
+        specifier: 1.98.0
+        version: 1.98.0
       concurrently:
         specifier: ^9.2.1
         version: 9.2.1
@@ -728,8 +728,8 @@ packages:
   '@types/node@24.7.0':
     resolution: {integrity: sha512-IbKooQVqUBrlzWTi79E8Fw78l8k1RNtlDDNWsFZs7XonuQSJ8oNYfEeclhprUldXISRMLzBpILuKgPlIxm+/Yw==}
 
-  '@types/vscode@1.85.0':
-    resolution: {integrity: sha512-CF/RBon/GXwdfmnjZj0WTUMZN5H6YITOfBCP4iEZlOtVQXuzw6t7Le7+cR+7JzdMrnlm7Mfp49Oj2TuSXIWo3g==}
+  '@types/vscode@1.98.0':
+    resolution: {integrity: sha512-+KuiWhpbKBaG2egF+51KjbGWatTH5BbmWQjSLMDCssb4xF8FJnW4nGH4nuAdOOfMbpD0QlHtI+C3tPq+DoKElg==}
 
   ajv@8.18.0:
     resolution: {integrity: sha512-PlXPeEWMXMZ7sPYOHqmDyCJzcfNrUr3fGNKtezX14ykXOEIvyK81d+qydx89KY5O71FKMPaQ2vBfBFI5NHR63A==}
@@ -2432,7 +2432,7 @@ snapshots:
     dependencies:
       undici-types: 7.14.0
 
-  '@types/vscode@1.85.0': {}
+  '@types/vscode@1.98.0': {}
 
   ajv@8.18.0:
     dependencies:

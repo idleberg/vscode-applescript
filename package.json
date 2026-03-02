@@ -41,7 +41,7 @@
 	"main": "./lib/index.cjs",
 	"icon": "resources/logo.png",
 	"engines": {
-		"vscode": "^1.85.0"
+		"vscode": "^1.98.0"
 	},
 	"categories": [
 		"Programming Languages",
@@ -326,7 +326,7 @@
 		"@idleberg/configs": "^0.4.2",
 		"@types/line-column": "^1.0.2",
 		"@types/node": "^24.7.0",
-		"@types/vscode": "1.85.0",
+		"@types/vscode": "1.98.0",
 		"concurrently": "^9.2.1",
 		"cross-env": "^10.1.0",
 		"sharp-cli": "^5.2.0",
@@ -341,19 +341,5 @@
 			"lefthook"
 		]
 	},
-	"packageManager": "pnpm@10.26.1+sha512.664074abc367d2c9324fdc18037097ce0a8f126034160f709928e9e9f95d98714347044e5c3164d65bd5da6c59c6be362b107546292a8eecb7999196e5ce58fa",
-	"__metadata": {
-		"id": "d57cfcbb-5746-48be-a607-96967331a91c",
-		"publisherId": "d142cf02-af52-4395-9363-148909445cb3",
-		"publisherDisplayName": "idleberg",
-		"targetPlatform": "universal",
-		"isApplicationScoped": false,
-		"isPreReleaseVersion": false,
-		"hasPreReleaseVersion": false,
-		"installedTimestamp": 1771521179362,
-		"pinned": true,
-		"preRelease": false,
-		"source": "gallery",
-		"size": 498088
-	}
+	"packageManager": "pnpm@10.26.1+sha512.664074abc367d2c9324fdc18037097ce0a8f126034160f709928e9e9f95d98714347044e5c3164d65bd5da6c59c6be362b107546292a8eecb7999196e5ce58fa"
 }
