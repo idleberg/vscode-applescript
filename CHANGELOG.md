@@ -1,6 +1,7 @@
 # v0.30.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.30.0)
 
 - require `vscode>=1.98.0`
+- update dependencies
 
 # v0.29.4 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.29.4)
 
