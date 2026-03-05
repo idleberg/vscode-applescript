@@ -8,13 +8,17 @@
 .github/
 .husky/
 .travis.yml
+biome.jsonc
+commitlint.config.ts
 gulpfile.js
+lefthook.toml
 package-lock.json
 rollup.config.js
 src/
 tools/
 tsconfig.json
 tsconfig.tsbuildinfo
+tsdown.config.ts
 tslint.json
 types/
 webpack.config.js
