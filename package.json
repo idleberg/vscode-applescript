@@ -317,11 +317,11 @@
 	},
 	"dependencies": {
 		"line-column": "^1.0.2",
-		"vscode-get-config": "^0.6.2"
+		"vscode-get-config": "^0.6.3"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^20.4.1",
-		"@commitlint/config-conventional": "^20.4.1",
+		"@commitlint/cli": "^20.4.3",
+		"@commitlint/config-conventional": "^20.4.3",
 		"@idleberg/applescript-svg-icon": "github:idleberg/applescript-svg-icon",
 		"@idleberg/configs": "^0.4.2",
 		"@types/line-column": "^1.0.2",
@@ -330,7 +330,7 @@
 		"concurrently": "^9.2.1",
 		"cross-env": "^10.1.0",
 		"sharp-cli": "^5.2.0",
-		"tsdown": "^0.20.3",
+		"tsdown": "^0.21.0",
 		"typescript": "^5.9.3"
 	},
 	"extensionDependencies": [
