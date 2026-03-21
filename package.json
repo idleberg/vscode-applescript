@@ -320,17 +320,17 @@
 		"vscode-get-config": "^0.6.3"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^20.4.3",
-		"@commitlint/config-conventional": "^20.4.3",
+		"@commitlint/cli": "^20.5.0",
+		"@commitlint/config-conventional": "^20.5.0",
 		"@idleberg/applescript-svg-icon": "github:idleberg/applescript-svg-icon",
 		"@idleberg/configs": "^0.4.2",
 		"@types/line-column": "^1.0.2",
-		"@types/node": "^24.7.0",
+		"@types/node": "^24.12.0",
 		"@types/vscode": "1.98.0",
 		"concurrently": "^9.2.1",
 		"cross-env": "^10.1.0",
 		"sharp-cli": "^5.2.0",
-		"tsdown": "^0.21.0",
+		"tsdown": "^0.21.4",
 		"typescript": "^5.9.3"
 	},
 	"pnpm": {
