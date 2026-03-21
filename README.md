@@ -5,10 +5,6 @@
 [![Open VSX Downloads](https://img.shields.io/open-vsx/dt/idleberg/applescript?style=for-the-badge&label=Open%20VSX)](https://open-vsx.org/extension/idleberg/applescript)
 [![Build](https://img.shields.io/github/actions/workflow/status/idleberg/vscode-applescript/default.yml?style=for-the-badge)](https://github.com/idleberg/vscode-applescript/actions)
 
-> [!IMPORTANT]
-> JXA support has been moved to a
-> [separate extension](https://github.com/idleberg/vscode-jxa). As of March 24, 2026, it will no longer be bundled as dependency.
-
 Language syntax, snippets and build system for AppleScript.
 
 ![Screenshot](https://raw.githubusercontent.com/idleberg/vscode-applescript/main/resources/screenshot.png)
