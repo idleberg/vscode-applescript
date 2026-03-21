@@ -333,9 +333,6 @@
 		"tsdown": "^0.21.0",
 		"typescript": "^5.9.3"
 	},
-	"extensionDependencies": [
-		"idleberg.jxa"
-	],
 	"pnpm": {
 		"onlyBuiltDependencies": [
 			"lefthook"
