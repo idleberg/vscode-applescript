@@ -5,7 +5,7 @@ export default defineConfig({
 	deps: {
 		alwaysBundle: ['line-column', 'vscode-get-config'],
 		neverBundle: ['vscode'],
-		onlyAllowBundle: false,
+		onlyBundle: false,
 	},
 	entry: ['src/index.ts'],
 	format: 'cjs',
