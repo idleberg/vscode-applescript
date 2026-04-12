@@ -23,14 +23,6 @@ async function osacompile(compileTarget: string): Promise<void> {
 		return;
 	}
 
-	// Intentionally keeping minimal JXA compability
-	if (doc.uri.scheme === 'scpt') {
-		window.showErrorMessage(
-			'You are trying to build a decompiled AppleScript file. Please use the save dialog instead.',
-		);
-		return;
-	}
-
 	await doc.save();
 
 	const outName = getOutName(doc.fileName, compileTarget);
@@ -166,16 +158,6 @@ async function osacompileFromSource(sourceCode: string, outputPath: string): Pro
 	}
 
 	const args: string[] = [];
-	const textEditor = window.activeTextEditor;
-
-	if (textEditor) {
-		const scope = textEditor.document.languageId;
-
-		// Intentionally keeping minimal JXA compability
-		if (['javascript', 'jxa'].includes(scope)) {
-			args.push('-l', 'JavaScript');
-		}
-	}
 
 	// Default arguments
 	args.push('-o', outputPath, '-');

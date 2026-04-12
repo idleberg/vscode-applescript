@@ -4,7 +4,7 @@ import { window, workspace } from 'vscode';
 import { getConfig } from 'vscode-get-config';
 import { fileExists, getOutName } from './util.ts';
 
-async function createBuildTask(isJXA = false): Promise<void> {
+async function createBuildTask(): Promise<void> {
 	if (typeof workspace.workspaceFolders === 'undefined' || workspace.workspaceFolders.length < 1) {
 		window.showErrorMessage(
 			'Task support is only available when working on a workspace folder. It is not available when editing single files.',
@@ -25,10 +25,6 @@ async function createBuildTask(isJXA = false): Promise<void> {
 	const args: string[] = [];
 	const runArgs: string[] = [];
 	const appArgs: string[] = [];
-
-	if (isJXA === true) {
-		args.push('-l', 'JavaScript');
-	}
 
 	if (osacompile.executeOnly === true) {
 		args.push('-x');

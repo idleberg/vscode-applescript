@@ -139,16 +139,6 @@ export class ScptFileSystemProvider implements vscode.FileSystemProvider {
 				throw error;
 			}
 
-			// Intentionally keeping minimal JXA compability
-			if ((error as Error).message.includes('A unknown token can’t go after this identifier')) {
-				vscode.window.showErrorMessage('Failed to save file', {
-					detail:
-						'This usually happens when you are trying to compile JXA to binary AppleScript. Make sure to select the correct language mode for the source file, i.e. JXA or JavaScript, then try again.',
-					modal: true,
-				});
-				return;
-			}
-
 			throw vscode.FileSystemError.Unavailable((error as Error).message);
 		}
 	}
