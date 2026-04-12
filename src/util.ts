@@ -111,9 +111,14 @@ export async function spawnPromise(
 				activeProcesses.remove(childProcess.pid);
 			}
 
-			const result = { stdout: stdoutChunks.join(''), stderr: stderrChunks.join('') };
+			const stdout = stdoutChunks.join('');
+			const stderr = stderrChunks.join('');
 
-			return code === 0 || activeProcesses.lastKilledProcessId === childProcess.pid ? resolve(result) : reject(result);
+			if (code === 0 || activeProcesses.lastKilledProcessId === childProcess.pid) {
+				resolve({ stdout, stderr });
+			} else {
+				reject(new Error(stderr || 'Unknown error'));
+			}
 		});
 
 		if (stdin !== undefined) {

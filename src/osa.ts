@@ -85,8 +85,10 @@ async function osascript(): Promise<void> {
 		args.push(doc.fileName);
 	}
 
-	if (osascript.outputStyle.trim().length > 0 && osascript.outputStyle.trim().length <= 2) {
-		args.unshift('-s', osascript.outputStyle.trim());
+	const outputStyle = osascript.outputStyle.trim();
+
+	if (outputStyle.length > 0 && outputStyle.length <= 2) {
+		args.unshift('-s', outputStyle);
 	}
 
 	try {
@@ -116,9 +118,8 @@ async function osadecompile(filePath: string): Promise<string> {
 	try {
 		const { stdout } = await spawnPromise('osadecompile', filePath, [filePath], outputChannel);
 		return stdout;
-	} catch (result) {
-		const { stderr } = result as { stdout: string; stderr: string };
-		throw new Error(`Failed to decompile ${filePath}: ${stderr || 'Unknown error'}`);
+	} catch (error) {
+		throw new Error(`Failed to decompile ${filePath}: ${error instanceof Error ? error.message : error}`);
 	}
 }
 
@@ -134,17 +135,13 @@ async function osacompileFromSource(sourceCode: string, outputPath: string): Pro
 		throw new Error('osacompile is only available on macOS');
 	}
 
-	const args: string[] = [];
-
-	// Default arguments
-	args.push('-o', outputPath, '-');
+	const args = ['-o', outputPath, '-'];
 
 	try {
 		const { stdout } = await spawnPromise('osacompile', outputPath, args, outputChannel, sourceCode);
 		return stdout;
-	} catch (result) {
-		const { stderr } = result as { stdout: string; stderr: string };
-		throw new Error(`Failed to compile to ${outputPath}: ${stderr || 'Unknown error'}`);
+	} catch (error) {
+		throw new Error(`Failed to compile to ${outputPath}: ${error instanceof Error ? error.message : error}`);
 	}
 }
 
