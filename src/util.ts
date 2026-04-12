@@ -58,7 +58,8 @@ export async function spawnPromise(
 	fileName: string,
 	args: Array<string>,
 	outputChannel: OutputChannel,
-): Promise<void> {
+	stdin?: string,
+): Promise<{ stdout: string; stderr: string }> {
 	const { alwaysShowOutput } = await getConfig('applescript');
 
 	return new Promise((resolve, reject) => {
@@ -74,8 +75,12 @@ export async function spawnPromise(
 			activeProcesses.add(childProcess.pid, fileName, cmd);
 		}
 
+		const stdoutChunks: string[] = [];
+		const stderrChunks: string[] = [];
+
 		childProcess.stdout.on('data', async (line: string) => {
 			const lineString: string = line.toString().trim();
+			stdoutChunks.push(line.toString());
 
 			if (lineString.length) {
 				const lineCol = await getLineCol(lineString);
@@ -89,6 +94,7 @@ export async function spawnPromise(
 
 		childProcess.stderr.on('data', async (line: string) => {
 			const lineString: string = line.toString().trim();
+			stderrChunks.push(line.toString());
 
 			if (lineString.length) {
 				const lineCol = await getLineCol(lineString);
@@ -105,8 +111,15 @@ export async function spawnPromise(
 				activeProcesses.remove(childProcess.pid);
 			}
 
-			return code === 0 || activeProcesses.lastKilledProcessId === childProcess.pid ? resolve() : reject();
+			const result = { stdout: stdoutChunks.join(''), stderr: stderrChunks.join('') };
+
+			return code === 0 || activeProcesses.lastKilledProcessId === childProcess.pid ? resolve(result) : reject(result);
 		});
+
+		if (stdin !== undefined) {
+			childProcess.stdin.write(stdin);
+			childProcess.stdin.end();
+		}
 	});
 }
 
