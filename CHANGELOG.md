@@ -1,3 +1,8 @@
+# v0.31.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.31.1)
+
+- fix activationEvents language
+- update dependencies
+
 # v0.31.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.31.0)
 
 - remove dependency on [idleberg.jxa](https://github.com/idleberg/vscode-jxa)
