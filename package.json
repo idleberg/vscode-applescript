@@ -49,7 +49,7 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onLanguage:javascript"
+		"onLanguage:applescript"
 	],
 	"contributes": {
 		"configurationDefaults": {
