@@ -4,7 +4,7 @@ import { window, workspace } from 'vscode';
 import { getConfig } from 'vscode-get-config';
 import { fileExists, getOutName } from './util.ts';
 
-async function createBuildTask(): Promise<void> {
+export async function createBuildTask(): Promise<void> {
 	if (typeof workspace.workspaceFolders === 'undefined' || workspace.workspaceFolders.length < 1) {
 		window.showErrorMessage(
 			'Task support is only available when working on a workspace folder. It is not available when editing single files.',
@@ -110,5 +110,3 @@ async function createBuildTask(): Promise<void> {
 		console.error('[idleberg.applescript]', error instanceof Error ? error.message : error);
 	}
 }
-
-export { createBuildTask };

@@ -5,7 +5,7 @@ import { getOutName, spawnPromise } from './util.ts';
 
 const outputChannel = window.createOutputChannel('AppleScript');
 
-async function osacompile(compileTarget: string): Promise<void> {
+export async function osacompile(compileTarget: string): Promise<void> {
 	const { ignoreOS, osacompile, showNotifications } = await getConfig('applescript');
 
 	// might become useful in a future release
@@ -58,7 +58,7 @@ async function osacompile(compileTarget: string): Promise<void> {
 	}
 }
 
-async function osascript(): Promise<void> {
+export async function osascript(): Promise<void> {
 	const { ignoreOS, osascript, showNotifications } = await getConfig('applescript');
 
 	if (platform() !== 'darwin' && ignoreOS !== true) {
@@ -108,7 +108,7 @@ async function osascript(): Promise<void> {
  * @param filePath Path to the .scpt file to decompile
  * @returns Promise resolving to the decompiled source code
  */
-async function osadecompile(filePath: string): Promise<string> {
+export async function osadecompile(filePath: string): Promise<string> {
 	const { ignoreOS } = await getConfig('applescript');
 
 	if (platform() !== 'darwin' && ignoreOS !== true) {
@@ -128,7 +128,7 @@ async function osadecompile(filePath: string): Promise<string> {
  * @param sourceCode AppleScript source code
  * @param outputPath Path where the compiled .scpt should be written
  */
-async function osacompileFromSource(sourceCode: string, outputPath: string): Promise<string> {
+export async function osacompileFromSource(sourceCode: string, outputPath: string): Promise<string> {
 	const { ignoreOS } = await getConfig('applescript');
 
 	if (platform() !== 'darwin' && ignoreOS !== true) {
@@ -144,5 +144,3 @@ async function osacompileFromSource(sourceCode: string, outputPath: string): Pro
 		throw new Error(`Failed to compile to ${outputPath}: ${error instanceof Error ? error.message : error}`);
 	}
 }
-
-export { osacompile, osacompileFromSource, osadecompile, osascript };
