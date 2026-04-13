@@ -14,7 +14,7 @@ import { fileUriToScptUri } from './util.ts';
  * (run, compile, build task creation, termination) and hooks the document
  * symbol providers for the `applescript` and languages.
  */
-async function activate(context: ExtensionContext): Promise<void> {
+export async function activate(context: ExtensionContext): Promise<void> {
 	// Register virtual filesystem provider for binary .scpt files
 	const scptFs = new ScptFileSystemProvider();
 	context.subscriptions.push(
@@ -97,5 +97,3 @@ async function activate(context: ExtensionContext): Promise<void> {
 		languages.registerDocumentSymbolProvider({ language: 'applescript' }, appleScriptSymbolProvider),
 	);
 }
-
-export { activate };
