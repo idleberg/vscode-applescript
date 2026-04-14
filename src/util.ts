@@ -8,7 +8,7 @@ import { getConfig } from 'vscode-get-config';
 import * as activeProcesses from './processes.ts';
 
 async function getLineCol(lineString: string): Promise<string | boolean> {
-	if (!(await getConfig('applescript.convertErrorRange'))) {
+	if (!(await getConfig<boolean>('applescript.convertErrorRange'))) {
 		return false;
 	}
 
@@ -60,7 +60,7 @@ export async function spawnPromise(
 	outputChannel: OutputChannel,
 	stdin?: string,
 ): Promise<{ stdout: string; stderr: string }> {
-	const { alwaysShowOutput } = await getConfig('applescript');
+	const { alwaysShowOutput } = await getConfig<{ alwaysShowOutput: boolean }>('applescript');
 
 	return new Promise((resolve, reject) => {
 		outputChannel.clear();

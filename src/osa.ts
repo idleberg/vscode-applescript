@@ -1,9 +1,8 @@
 import { platform } from 'node:os';
 import { window } from 'vscode';
 import { getConfig } from 'vscode-get-config';
+import { outputChannel } from './channel.ts';
 import { getOutName, spawnPromise } from './util.ts';
-
-const outputChannel = window.createOutputChannel('AppleScript');
 
 export async function osacompile(compileTarget: string): Promise<void> {
 	const { ignoreOS, osacompile, showNotifications } = await getConfig('applescript');

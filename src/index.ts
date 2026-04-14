@@ -1,4 +1,5 @@
 import { commands, type ExtensionContext, languages, type Uri, window, workspace } from 'vscode';
+import { outputChannel } from './channel.ts';
 import { osacompile, osascript } from './osa.ts';
 import { pick } from './processes.ts';
 import { ScptEditorProvider } from './providers/editor.ts';
@@ -96,4 +97,8 @@ export async function activate(context: ExtensionContext): Promise<void> {
 
 		languages.registerDocumentSymbolProvider({ language: 'applescript' }, appleScriptSymbolProvider),
 	);
+}
+
+export function deactivate(): void {
+	outputChannel.dispose();
 }
