@@ -1,6 +1,6 @@
 # AppleScript for Visual Studio Code
 
-[![License](https://img.shields.io/github/license/idleberg/vscode-applescript?color=blue&style=for-the-badge)]
+[![License](https://img.shields.io/github/license/idleberg/vscode-applescript?color=blue&style=for-the-badge)(LICENSE)]
 [![Version](https://img.shields.io/github/v/release/idleberg/vscode-applescript?style=for-the-badge)](https://github.com/idleberg/vscode-applescript/releases)
 [![Build](https://img.shields.io/github/actions/workflow/status/idleberg/vscode-applescript/default.yml?style=for-the-badge)](https://github.com/idleberg/vscode-applescript/actions)
 
@@ -92,4 +92,4 @@ You can tweak the default file encoding in your Visual Studio Code settings.
 ## License
 
 This work is licensed under
-[The MIT License](https://opensource.org/licenses/MIT).
+[The MIT License](LICENSE).
