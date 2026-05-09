@@ -1,3 +1,7 @@
+# v0.32.2 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.32.2)
+
+- use `main` field for exporting ESM
+
 # v0.32.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.32.1)
 
 - fix versioning
