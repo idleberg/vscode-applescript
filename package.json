@@ -2,7 +2,7 @@
 	"name": "applescript",
 	"displayName": "AppleScript",
 	"description": "Language syntax, snippets and build system for AppleScript and JavaScript for Automation",
-	"version": "0.31.1",
+	"version": "0.32.0",
 	"publisher": "idleberg",
 	"license": "MIT",
 	"author": {
@@ -38,7 +38,8 @@
 	"sponsor": {
 		"url": "https://buymeacoffee.com/idleberg"
 	},
-	"main": "./lib/index.js",
+	"type": "module",
+	"exports": "./lib/index.js",
 	"icon": "resources/logo.png",
 	"engines": {
 		"vscode": "^1.100.0"
