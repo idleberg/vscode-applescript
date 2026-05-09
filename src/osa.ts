@@ -4,13 +4,15 @@ import { getConfig } from 'vscode-get-config';
 import { outputChannel } from './channel.ts';
 import { getOutName, spawnPromise } from './util.ts';
 
+const IS_DARWIN = platform() === 'darwin';
+
 export async function osacompile(compileTarget: string): Promise<void> {
 	const { ignoreOS, osacompile, showNotifications } = await getConfig('applescript');
 
 	// might become useful in a future release
 	const options = { ...osacompile };
 
-	if (platform() !== 'darwin' && ignoreOS !== true) {
+	if (!IS_DARWIN && ignoreOS !== true) {
 		window.showWarningMessage('This command is only available on macOS');
 		return;
 	}
@@ -60,7 +62,7 @@ export async function osacompile(compileTarget: string): Promise<void> {
 export async function osascript(): Promise<void> {
 	const { ignoreOS, osascript, showNotifications } = await getConfig('applescript');
 
-	if (platform() !== 'darwin' && ignoreOS !== true) {
+	if (!IS_DARWIN && ignoreOS !== true) {
 		window.showWarningMessage('This command is only available on macOS');
 		return;
 	}
@@ -110,7 +112,7 @@ export async function osascript(): Promise<void> {
 export async function osadecompile(filePath: string): Promise<string> {
 	const { ignoreOS } = await getConfig('applescript');
 
-	if (platform() !== 'darwin' && ignoreOS !== true) {
+	if (!IS_DARWIN && ignoreOS !== true) {
 		throw new Error('osadecompile is only available on macOS');
 	}
 
@@ -130,7 +132,7 @@ export async function osadecompile(filePath: string): Promise<string> {
 export async function osacompileFromSource(sourceCode: string, outputPath: string): Promise<string> {
 	const { ignoreOS } = await getConfig('applescript');
 
-	if (platform() !== 'darwin' && ignoreOS !== true) {
+	if (!IS_DARWIN && ignoreOS !== true) {
 		throw new Error('osacompile is only available on macOS');
 	}
 
