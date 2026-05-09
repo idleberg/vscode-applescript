@@ -1,3 +1,8 @@
+# v0.32.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.32.0)
+
+- exported as ESM, requires `vscode>=1.100.0`
+- update dependencies
+
 # v0.31.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.31.1)
 
 - fix activationEvents language

@@ -39,7 +39,6 @@
 		"url": "https://buymeacoffee.com/idleberg"
 	},
 	"main": "./lib/index.mjs",
-	"exports": "./lib/index.mjs",
 	"icon": "resources/logo.png",
 	"engines": {
 		"vscode": "^1.100.0"
