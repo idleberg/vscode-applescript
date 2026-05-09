@@ -42,6 +42,7 @@ jobs:
         run: pnpm run --if-present test
 
       - name: Publish to Open VSX Registry
+        id: publish-ovsx
         uses: HaaLeo/publish-vscode-extension@ca5561daa085dee804bf9f37fe0165785a9b14db # v2.0.0
         with:
           dependencies: false
@@ -52,6 +53,13 @@ jobs:
         uses: HaaLeo/publish-vscode-extension@ca5561daa085dee804bf9f37fe0165785a9b14db # v2.0.0
         with:
           dependencies: false
+          extensionFile: ${{ steps.publish-ovsx.outputs.vsixPath }}
           pat: ${{ secrets.VSCE_PERSONAL_ACCESS_TOKEN }}
           registryUrl: https://marketplace.visualstudio.com
           skipDuplicate: true
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@da05d552573ad5aba039eaac05058a918a7bf631 # v2.2.2
+        with:
+          files: ${{ steps.publish-ovsx.outputs.vsixPath }}
+          generate_release_notes: true
