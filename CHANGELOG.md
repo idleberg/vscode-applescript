@@ -1,3 +1,7 @@
+# v0.32.1 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.32.1)
+
+- fix versioning
+
 # v0.32.0 [#](https://github.com/idleberg/vscode-applescript/releases/tag/v0.32.0)
 
 - exported as ESM, requires `vscode>=1.100.0`
