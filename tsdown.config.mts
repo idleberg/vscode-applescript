@@ -8,7 +8,7 @@ export default defineConfig({
 		onlyBundle: false,
 	},
 	entry: ['src/index.ts'],
-	format: 'cjs',
+	format: 'esm',
 	minify: true,
 	outDir: 'lib',
 	platform: 'node',

@@ -38,18 +38,16 @@
 	"sponsor": {
 		"url": "https://buymeacoffee.com/idleberg"
 	},
-	"main": "./lib/index.cjs",
+	"main": "./lib/index.mjs",
+	"exports": "./lib/index.mjs",
 	"icon": "resources/logo.png",
 	"engines": {
-		"vscode": "^1.98.0"
+		"vscode": "^1.100.0"
 	},
 	"categories": [
 		"Programming Languages",
 		"Snippets",
 		"Other"
-	],
-	"activationEvents": [
-		"onLanguage:applescript"
 	],
 	"contributes": {
 		"configurationDefaults": {
@@ -320,22 +318,23 @@
 		"vscode-get-config": "^0.6.3"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^20.5.0",
-		"@commitlint/config-conventional": "^20.5.0",
+		"@commitlint/cli": "^21.0.0",
+		"@commitlint/config-conventional": "^21.0.0",
 		"@idleberg/applescript-svg-icon": "github:idleberg/applescript-svg-icon",
 		"@idleberg/configs": "^0.4.2",
 		"@types/line-column": "^1.0.2",
-		"@types/node": "^24.12.2",
-		"@types/vscode": "1.98.0",
+		"@types/node": "^24.12.3",
+		"@types/vscode": "1.100.0",
 		"concurrently": "^9.2.1",
 		"cross-env": "^10.1.0",
 		"sharp-cli": "^5.2.0",
-		"tsdown": "^0.21.7",
-		"typescript": "^6.0.2"
+		"tsdown": "^0.22.0",
+		"typescript": "^6.0.3"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
-			"lefthook"
+			"lefthook",
+			"sharp"
 		]
 	},
 	"packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319"
