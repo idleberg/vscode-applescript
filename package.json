@@ -38,7 +38,7 @@
 	"sponsor": {
 		"url": "https://buymeacoffee.com/idleberg"
 	},
-	"main": "./lib/index.mjs",
+	"main": "./lib/index.js",
 	"icon": "resources/logo.png",
 	"engines": {
 		"vscode": "^1.100.0"

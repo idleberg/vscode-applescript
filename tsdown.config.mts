@@ -11,6 +11,7 @@ export default defineConfig({
 	format: 'esm',
 	minify: true,
 	outDir: 'lib',
+	outExtensions: () => ({ js: '.js' }),
 	platform: 'node',
 	target: 'es2020',
 });
